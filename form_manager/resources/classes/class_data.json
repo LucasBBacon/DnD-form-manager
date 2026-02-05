@@ -1,0 +1,404 @@
+{
+    "barbarian": {
+        "label": "Barbarian",
+        "hit_die": 12,
+        "primary_ability": ["strength"],
+        "saving_throws": ["dexterity", "charisma"],
+        "proficiencies": {
+            "armor": ["light", "medium", "shields"],
+            "weapons": ["simple", "martial"],
+            "tools": [],
+            "skills": {
+                "choose": 2,
+                "from": ["animal_handling", "athletics", "intimidation", "nature", "perception", "survival"]
+            }
+        },
+        "multiclass_proficiencies": {
+            "armor": ["shields"],
+            "weapons": ["simple", "martial"]
+        },
+        "equipment_choices": [
+            [
+                {"item": "greataxe"},
+                {"item": "martial_weapon_melee"}
+            ],
+            [
+                {"item": "handaxe", "count": 2},
+                {"item": "simple_weapon"}
+            ],
+            [
+                {"item": "explorers_pack", "plus": "javelin_4"}
+            ]
+        ],
+        "progression": {
+            "1":  ["rage", "unarmored_defense"],
+            "2":  ["reckless_attack", "danger_sense"],
+            "3":  [
+                "primal_path",
+                {
+                    "id": "rage",
+                    "overrides": {
+                        "modifiers": [
+                            {
+                                "type": "resource_grant",
+                                "resource": "rage",
+                                "count": 3,
+                                "recharge": "long_rest"
+                            },
+                            {
+                                "type": "rule_override",
+                                "rule": "rage_damage",
+                                "value": 2
+                            }
+                        ]
+                    }
+                }
+            ],
+            "4":  ["ability_score_improvement"],
+            "5":  ["extra_attack", "fast_movement"],
+            "6":  [
+                {
+                    "id": "rage",
+                    "overrides": {
+                        "modifiers": [
+                            {
+                                "type": "resource_grant",
+                                "resource": "rage",
+                                "count": 4,
+                                "recharge": "long_rest"
+                            },
+                            {
+                                "type": "rule_override",
+                                "rule": "rage_damage",
+                                "value": 2
+                            }
+                        ]
+                    }
+                }
+            ],
+            "7":  ["feral_instinct"],
+            "8":  ["ability_score_improvement"],
+            "9":  [
+                "brutal_critical",
+                {
+                    "id": "rage",
+                    "overrides": {
+                        "modifiers": [
+                            {
+                                "type": "resource_grant",
+                                "resource": "rage",
+                                "count": 4,
+                                "recharge": "long_rest"
+                            },
+                            {
+                                "type": "rule_override",
+                                "rule": "rage_damage",
+                                "value": 3
+                            }
+                        ]
+                    }
+                }
+            ],
+            "10": [],
+            "11": ["relentless_rage"],
+            "12": [
+                "ability_score_improvement",
+                {
+                    "id": "rage",
+                    "overrides": {
+                        "modifiers": [
+                            {
+                                "type": "resource_grant",
+                                "resource": "rage",
+                                "count": 5,
+                                "recharge": "long_rest"
+                            },
+                            {
+                                "type": "rule_override",
+                                "rule": "rage_damage",
+                                "value": 3
+                            }
+                        ]
+                    }
+                }
+            ],
+            "13": [
+                {
+                    "id": "brutal_critical",
+                    "overrides": {
+                        "modifiers": [
+                            {
+                                "type": "rule_override",
+                                "rule": "critical_damage_dice",
+                                "value": 2
+                            }
+                        ]
+                    }
+                }
+            ],
+            "14": [],
+            "15": ["persistent_rage"],
+            "16": [
+                "ability_score_improvement",
+                {
+                    "id": "rage",
+                    "overrides": {
+                        "modifiers": [
+                            {
+                                "type": "resource_grant",
+                                "resource": "rage",
+                                "count": 6,
+                                "recharge": "long_rest"
+                            },
+                            {
+                                "type": "rule_override",
+                                "rule": "rage_damage",
+                                "value": 4
+                            }
+                        ]
+                    }
+                }
+            ],
+            "17": ["brutal_critical"],
+            "18": ["indomitable_might"],
+            "19": ["ability_score_improvement"],
+            "20": [
+                "primal_champion",
+                {
+                    "id": "rage",
+                    "overrides": {
+                        "modifiers": [
+                            {
+                                "type": "resource_grant",
+                                "resource": "rage",
+                                "count": 999,
+                                "recharge": "long_rest"
+                            },
+                            {
+                                "type": "rule_override",
+                                "rule": "rage_damage",
+                                "value": 4
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "subclasses": {
+            "berserker": {
+                "label": "Path of the Berserker",
+                "progression": {
+                    "3": ["frenzy"],
+                    "6": ["mindless_rage"],
+                    "10": ["intimidating_presence"],
+                    "14": ["retaliation"]
+                }
+            },
+            "totem_warrior": {
+                "label": "Path of the Totem Warrior",
+                "progression": {
+                    "3": ["spirit_seeker", "totem_spirit"],
+                    "6": ["aspect_of_the_beast"],
+                    "10": ["spirit_walker"],
+                    "14": ["totemic_attunement"]
+                }
+            }
+        }
+    },
+    "bard": {
+        "label": "Bard",
+        "hit_die": 8,
+        "primary_ability": ["charisma"],
+        "saving_throws": ["charisma", "dexterity"],
+        "proficiencies": {
+            "armor": ["light"],
+            "weapons": ["simple", "hand_crossbows", "longswords", "rapiers", "shortswords"],
+            "tools": {
+                "choose": 3,
+                "from": "instruments"
+            },
+            "skills": {
+                "choose": 2,
+                "from": ["acrobatics", "animal_handling", "athletics", "history", "insight", "intimidation", "perception", "survival"]
+            }
+        },
+        "multiclass_proficiencies": {
+            "armor": ["light"],
+            "tools": ["instrument"],
+            "skills": {
+                "choose": 1,
+                "from": "any"
+            }
+        },
+        "equipment_choices": [
+            [
+                {"item": "rapier"},
+                {"item": "longsword"},
+                {"item": "simple_weapon"}
+            ],
+            [
+                {"item": "diplomars_backpack"},
+                {"item": "entertainers_backpack"}
+            ],
+            [
+                {"item": "lute"},
+                {"item": "musical_instrument"}
+            ],
+            [
+                {"item": "leather_armor", "plus": "dagger"}
+            ]
+        ],
+        "progression": {},
+        "subclasses": {}
+    },
+    "fighter": {
+        "label": "Fighter",
+        "hit_die": 10,
+        "primary_ability": ["strength", "dexterity"],
+        "saving_throws": ["strength", "constitution"],
+        "proficiencies": {
+            "armor": ["light", "medium", "heavy", "shields"],
+            "weapons": ["simple", "martial"],
+            "tools": [],
+            "skills": {
+                "choose": 2,
+                "from": ["acrobatics", "animal_handling", "athletics", "history", "insight", "intimidation", "perception", "survival"]
+            }
+        },
+        "multiclass_proficiencies": {
+            "armor": ["light", "medium", "shields"],
+            "weapons": ["simple", "martial"]
+        },
+        "equipment_choices": [
+            [
+                {"item": "chain_mail"},
+                {"item": "leather_armor", "plus": ["longbow", "arrows_20"]}
+            ],
+            [
+                {"item": "martial_weapon", "shield": "true"},
+                {"item": "martial_weapon", "count": 2}
+            ]
+        ],
+        "progression": {
+            "1": ["fighting_style", "second_wind"],
+            "2": ["action_surge"],
+            "3": ["martial_archetype"],
+            "4": ["ability_score_improvement"],
+            "5": ["extra_attack"],
+            "6": ["ability_score_improvement"],
+            "7": [],
+            "8": ["ability_score_improvement"],
+            "9": ["indomitable"],
+            "10": [],
+            "11": [
+                {
+                    "id": "extra_attack",
+                    "overrides": {
+                        "modifiers": [
+                            {
+                                "type": "rule_override",
+                                "rule": "attack_action_count",
+                                "value": 3
+                            }
+                        ]
+                    }
+                }
+            ],
+            "12": ["ability_score_improvement"],
+            "13": [
+                {
+                    "id": "indomitable",
+                    "overrides": {
+                        "modifiers": [
+                            {
+                                "type": "resource_grant",
+                                "resource": "indomitable",
+                                "count": 2,
+                                "recharge": "long_rest"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "14": ["ability_score_improvement"],
+            "15": [],
+            "16": ["ability_score_improvement"],
+            "17": [
+                {
+                    "id": "action_surge",
+                    "overrides": {
+                        "modifiers": [
+                            {
+                                "type": "resource_grant",
+                                "resource": "action_surge",
+                                "count": 2,
+                                "recharge": "short_rest"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "indomitable",
+                    "overrides": {
+                        "modifiers": [
+                            {
+                                "type": "resource_grant",
+                                "resource": "indomitable",
+                                "count": 3,
+                                "recharge": "long_rest"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "18": [],
+            "19": ["ability_score_improvement"],
+            "20": [
+                {
+                    "id": "extra_attack",
+                    "overrides": {
+                        "modifiers": [
+                            {
+                                "type": "rule_override",
+                                "rule": "attack_action_count",
+                                "value": 4
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "subclasses": {
+            "champion": {
+                "label": "Champion",
+                "progression": {
+                    "3": ["improved_critical"],
+                    "7": ["remarkable_athlete"],
+                    "10": ["fighting_style"],
+                    "15": ["superior_critical"],
+                    "18": ["survivor"]
+                }
+            },
+            "battle_master": {
+                "label": "Battle Master",
+                "progression": {
+                    "3": ["combat_superiority", "student_of_war"],
+                    "7": ["know_your_enemy", "add_superiority", "add_maneuver_2"],
+                    "10": ["improved_combat_superiority"],
+                    "15": ["relentless"],
+                    "18": ["improved_combat_superiority"]
+                }
+            },
+            "eldritch_knight": {
+                "label": "Eldritch Knight",
+                "progression": {
+                    "3": ["spellcasting_ek", "weapon_bond"],
+                    "7": ["war_magic"],
+                    "10": ["eldritch_strike"],
+                    "15": ["arcane_charge"],
+                    "18": ["improved_war_magic"]
+                }
+            }
+        }
+    }
+}
