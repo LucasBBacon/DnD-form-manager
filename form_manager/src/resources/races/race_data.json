@@ -41,7 +41,7 @@
                         {
                             "type": "speed",
                             "target": "walking",
-                            "value": 30
+                            "value": 25
                         }
                     ]
                 }

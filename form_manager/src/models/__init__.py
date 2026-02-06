@@ -1,4 +1,4 @@
 __all__ = ["Character"]
 
 
-from character import Character
+from form_manager.src.models.character import Character
