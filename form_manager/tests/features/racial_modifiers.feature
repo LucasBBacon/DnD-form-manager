@@ -4,7 +4,7 @@ Feature: Racial Modifiers
     Scenario: Applying Fixed Racial Ability Bonuses
         Given a new character session is started with default stats
         When the user selects "Dwarf" as their race
-        Then the user "Constitution" score should increase by 1
+        Then the user "Constitution" score should increase by 2
         And the user size should be set to "Medium"
         And the user speed should be set to 25 ft
         And "Darkvision" should be added to the user feature list
