@@ -23,3 +23,11 @@ class Character:
     languages: List[str] = field(default_factory=list)
     features: List[str] = field(default_factory=list)
     pending_choices: List[str] = field(default_factory=list)
+    
+    proficiences: Dict[str, List[str]] = field(default_factory=lambda: {
+        "armor": [], "weapon": [], "tool": [], "skill": []
+    })
+    
+    def choose(self, pending_category, choice) -> 'Character':
+        return self
+    

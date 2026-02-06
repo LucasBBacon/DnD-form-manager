@@ -85,8 +85,11 @@ def check_pending_choices(session_context, item):
 
 @when(parsers.parse('the user selects "{choice}" from "{pending_category}" pending choice'))
 def resolve_pending_choice(session_context, choice, pending_category):
-    pass
-
+    char = session_context['character']
+    assert pending_category in char.pending_choices, f"Character does not have a pending choice for '{pending_category}'"
+    char.choose(pending_category, choice)
+    assert pending_category not in char.pending_choices, f"Character still has pending choice for '{pending_category}'"
+    
 
 @then(parsers.parse('"{language}" should be added to the user languages'))
 def check_languages(session_context, language):
@@ -96,4 +99,6 @@ def check_languages(session_context, language):
 
 @then(parsers.parse('"{item}" should be added to the "{category}" proficiencies of the user'))
 def check_categorized_proficiency(session_context, item, category):
-    pass
+    char = session_context['character']
+    assert category in char.proficiencies, f"Proficiency category '{category}' does not exist on Character."
+    assert item in char.proficiencies, f"Expected '{item}' in '{category}' proficiencies, but got: {char.proficiencies[category]}"
