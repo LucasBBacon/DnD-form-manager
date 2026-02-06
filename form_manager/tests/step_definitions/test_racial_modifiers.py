@@ -32,6 +32,13 @@ def select_race(session_context, race_name):
     applicator = RaceService(RACE_DATA_PATH, TRAITS_DATA_PATH)
     character = session_context['character']
     applicator.apply_race(character, race_name)
+    
+
+@when(parsers.parse('the user selects "{subrace_name}" as their subrace'))
+def select_subrace(session_context, subrace_name):
+    applicator = RaceService(RACE_DATA_PATH, TRAITS_DATA_PATH)
+    character = session_context['character']
+    applicator.apply_race(character, subrace_name)
 
 
 @then(parsers.parse('the user "{ability}" score should increase by {amount:d}'))
