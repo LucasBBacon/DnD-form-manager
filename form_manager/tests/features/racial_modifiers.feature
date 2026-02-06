@@ -15,7 +15,6 @@ Feature: Racial Modifiers
         And "Common" should be added to the user languages
         And "Dwarvish" should be added to the user languages
 
-
     Scenario: Applying Fixed Sub Race Racial Ability Bonuses and Features
         Given a new character session is started with default stats
         When the user selects "Dwarf" as their race
@@ -32,4 +31,11 @@ Feature: Racial Modifiers
         And "Common" should be added to the user languages
         And "Dwarvish" should be added to the user languages
         And "Dwarven Armor Training" should be added to the user feature list
+
+    Scenario: Applying Fixed Racial Ability Bonuses and Features From Pending Choice
+        Given a new character session is started with default stats
+        And the user selects "Dwarf" as their race
+        Then "Tool Proficiency" should be added to the user pending choices
+        When the user selects "Smith's Tools" from "Tool Proficiency" pending choice
+        Then "Smith's Tools" should be added to the "tool" proficiencies of the user
         

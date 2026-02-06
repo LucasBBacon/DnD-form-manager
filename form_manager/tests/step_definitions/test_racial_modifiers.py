@@ -26,6 +26,9 @@ def new_character(session_context):
     session_context['base_stats'] = session_context['character'].stats.copy()
 
 
+@given(parsers.parse(''))
+
+
 @when(parsers.parse('the user selects "{race_name}" as their race'))
 def select_race(session_context, race_name):
     # character is selected and applied through race applicator
@@ -80,7 +83,17 @@ def check_pending_choices(session_context, item):
     assert item in char.pending_choices, f"Choice '{item}' not found in {char.pending_choices}"
 
 
+@when(parsers.parse('the user selects "{choice}" from "{pending_category}" pending choice'))
+def resolve_pending_choice(session_context, choice, pending_category):
+    pass
+
+
 @then(parsers.parse('"{language}" should be added to the user languages'))
 def check_languages(session_context, language):
     char = session_context['character']
     assert language in char.languages, f"Language '{language}' not found in {char.languages}"
+
+
+@then(parsers.parse('"{item}" should be added to the "{category}" proficiencies of the user'))
+def check_categorized_proficiency(session_context, item, category):
+    pass

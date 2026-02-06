@@ -1,5 +1,5 @@
 import json
-from typing import Dict
+from typing import Dict, Optional
 from form_manager.src.models.character import Character
 
 
@@ -16,16 +16,30 @@ class RaceService:
             print(f"Warning: {path} not found.")
             return {}
     
-    def apply_race(self, character: Character, race_key: str) -> Character:
-        race_key = race_key.lower()
-        if race_key not in self.race_data:
-            raise ValueError(f"Race '{race_key} not found.'")
+    def apply_race(self, character: Character, race_name: str) -> Character:
+        race_key = race_name.lower().replace(" ", "_")
+        race_node = self.__find_race_node(race_key)
+        if not race_node:
+            raise ValueError(f"Race or Subrace '{race_name}' not found.")
         
-        race = self.race_data[race_key]
+        self.__apply_traits(character, race_node)
         
-        for trait_entry in race.get('traits', []):
+        return character
+    
+    def __find_race_node(self, key: str) -> Optional[Dict]:
+        if key in self.race_data:
+            return self.race_data[key]
+        
+        for race_val in self.race_data.values():
+            subraces = race_val.get('subraces', {})
+            if key in subraces:
+                return subraces[key]
+            
+        return None
+    
+    def __apply_traits(self, character: Character, race_node: Dict) -> None:
+        for trait_entry in race_node.get('traits', []):
             trait_id = trait_entry.get('id')
-            print(trait_id)
             base_trait = self.traits_data.get(trait_id, {})
             label = trait_entry.get('overrides', {}).get('label') or base_trait.get('label') or trait_id.replace('_', ' ').title()
             if trait_id not in ['ability_score_increase', 'speed', 'size', 'languages', 'age', 'alignment']:
@@ -36,8 +50,6 @@ class RaceService:
                 modifiers = base_trait.get('modifiers', [])
             
             self.__apply_modifiers(character, modifiers)
-        
-        return character
             
     def __apply_modifiers(self, character: Character, modifiers):
         print(modifiers)
