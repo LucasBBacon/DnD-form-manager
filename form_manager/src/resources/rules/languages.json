@@ -7,6 +7,10 @@
         "label": "Dwarvish",
         "script": "Dwarvish"
     },
+    "draconic": {
+        "label": "Draconic",
+        "script": "Draconic"
+    },
     "elvish": {
         "label": "Elvish",
         "script": "Elvish"

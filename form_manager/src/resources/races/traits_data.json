@@ -120,9 +120,9 @@
             {
                 "type": "tool_proficiency_choice",
                 "list": [
-                    "smith's tools",
-                    "brewer's supplies",
-                    "mason tools"
+                    "smiths_tools",
+                    "brewers_supplies",
+                    "mason_tools"
                 ],
                 "count": 1
             }
@@ -234,7 +234,7 @@
                 "type": "spell_choice",
                 "list": "wizard",
                 "level": 0,
-                "abliity": "intelligence",
+                "ability": "intelligence",
                 "count": 1
             }
         ]

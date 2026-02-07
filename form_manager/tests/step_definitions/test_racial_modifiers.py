@@ -16,6 +16,9 @@ SPELL_LIST_PATH = os.path.join(BASE_DIR, '../../src/resources/spells/spell_list.
 scenarios("../features/racial_modifiers.feature")
 
 
+def normalize_text(raw_input: str) -> str:
+    return raw_input.lower().replace(" ", "_").replace("'", "")
+
 @pytest.fixture
 def session_context() -> Dict:
     return {}
@@ -85,11 +88,11 @@ def check_pending_choices(session_context, item):
 
 @when(parsers.parse('the user selects "{choice}" from "{pending_category}" pending choice'))
 def resolve_pending_choice(session_context, choice, pending_category):
-    choice = choice.lower()
+    choice_normalized = normalize_text(choice)
     char = session_context['character']
     choice_labels = [c.label for c in char.pending_choices]
     assert pending_category in choice_labels, f"Character does not have a pending choice for '{pending_category}'"
-    char.choose(pending_category, choice)
+    char.choose(pending_category, choice_normalized)
     choice_labels = [c.label for c in char.pending_choices]
     assert pending_category not in choice_labels, f"Character still has pending choice for '{pending_category}'"
     
@@ -102,21 +105,24 @@ def check_languages(session_context, language):
     
 @then(parsers.parse('"{spell}" should be added to the user "{level}" spells'))
 def check_spells(session_context, spell, level):
-    level_int = 0
-    match level:
-        case "Cantrip":
-            level_int = 0
-        case "1st Level":
-            level_int = 1
-        case "2nd Level":
-            level_int = 2
+    level_map = {
+        "Cantrip": "0",
+        "1st Level": "1",
+        "2nd Level": "2"
+    }
+    target_level = level_map.get(level)
+    if not target_level:
+        raise ValueError(f"Unknown spell level label: {level}")
+    
     char = session_context['character']
-    assert spell in char.spells[level_int], f"Language '{spell}' not found in {char.spells[level_int]}"
+    spell_normalized = normalize_text(spell)
+    
+    assert spell_normalized in char.spells[target_level], f"Spell '{spell_normalized}' not found in level {target_level} spells: {char.spells[target_level]}"
 
 
 @then(parsers.parse('"{item}" should be added to the "{category}" proficiencies of the user'))
 def check_categorized_proficiency(session_context, item, category):
     char = session_context['character']
-    item = item.lower()
+    item_normalized = normalize_text(item)
     assert category in char.proficiencies, f"Proficiency category '{category}' does not exist on Character."
-    assert item in char.proficiencies[category], f"Expected '{item}' in '{category}' proficiencies, but got: {char.proficiencies[category]}"
+    assert item_normalized in char.proficiencies[category], f"Expected '{item_normalized}' in '{category}' proficiencies, but got: {char.proficiencies[category]}"

@@ -9,7 +9,8 @@ class PendingChoice:
     options: List[str]
     count: int
     target_type: str
-
+    level: int = 0
+    
 
 @dataclass
 class Character:
@@ -36,7 +37,10 @@ class Character:
         "armor": [], "weapon": [], "tool": [], "skill": []
     })
     
-    spells: List[List[str]] = field(default_factory=list)
+    spells: Dict[str, List[str]] = field(default_factory=lambda: {
+        "0": [], "1": [], "2": [], "3": [], "4": [], 
+        "5": [], "6": [], "7": [], "8": [], "9": [] 
+    })
     
     def choose(self, choice_label: str, selection: str) -> 'Character':
         choice_obj = next((c for c in self.pending_choices if c.label == choice_label))
@@ -47,12 +51,20 @@ class Character:
         if choice_obj.options and selection not in choice_obj.options:
             raise ValueError(f"'{selection}' is not a valid option for {choice_label}")    
         
-        if choice_obj.target_type == "tool":
-            self.proficiencies['tool'].append(selection)
-        elif choice_obj.target_type == "skill":
-            self.proficiencies['skill'].append(selection)
-        elif choice_obj.target_type == "language":
-            self.languages.append(selection.title())
+        match choice_obj.target_type:
+            case "tool":
+                self.proficiencies['tool'].append(selection)
+                pass
+            case "skill":
+                self.proficiencies['skill'].append(selection)
+                pass
+            case "language":
+                self.languages.append(selection.title())
+                pass
+            case "spell":
+                level = str(getattr(choice_obj, "level", "0"))
+                self.spells[level].append(selection)
+                pass
             
         choice_obj.count -= 1
         if choice_obj.count <= 0:

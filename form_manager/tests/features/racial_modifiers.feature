@@ -49,7 +49,22 @@ Feature: Racial Modifiers
     Scenario: Giving Cantrip Choice from Race
         Given a new character session is started with default stats
         When the user selects "High Elf" as their race
-        Then "Cantrip" should be added to the user pending choices
-        When the user selects "Acid Splash" from "Cantrip" pending choice
-        Then "Acid Splash" should be added to the user spells
+        Then "Wizard Spell" should be added to the user pending choices
+        When the user selects "Acid Splash" from "Wizard Spell" pending choice
+        Then "Acid Splash" should be added to the user "Cantrip" spells
         
+    Scenario: Gaining Language from Extra Language Choice
+        Given a new character session is started with default stats
+        When the user selects "High Elf" as their race
+        Then "Language" should be added to the user pending choices
+        When the user selects "Dwarvish" from "Language" pending choice
+        Then "Dwarvish" should be added to the user languages
+
+    Scenario: Applying Features from Draconic Ancestry Choices
+        Given a new character session is started with default stats
+        When the user selects "Dragonborn" as their race
+        Then "Draconic Ancestry" should be added to the user pending choices
+        When the user selects "Black" from "Draconic Ancestry" pending choice
+        Then "Acid" should be added to the user draconic damage type
+        And "Dexterity" should be the ability save for user breath weapon
+        And "5 by 30" ft "Line" should be the type for user breath weapon

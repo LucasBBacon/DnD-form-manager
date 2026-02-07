@@ -90,19 +90,32 @@ class RaceService:
                                                options=choice_options,
                                                count=mod.get('count', 1),
                                                target_type='language')
+                        pass
                 
                     case 'tool_proficiency_choice':
                         choice = PendingChoice(label='Tool Proficiency',
                                                options=mod.get('list', []),
                                                count=mod.get('count', 1),
                                                target_type='tool')
+                        pass
+                    
+                    case 'spell_choice':
+                        class_key = mod.get('list')
+                        level = mod.get('level', 0)
+                        available_spells = []
+                        class_spells = self.spells_list.get(class_key)
+                        if class_spells and len(class_spells) > level:
+                            available_spells = class_spells[level]
+                        choice = PendingChoice(label=f"{class_key.capitalize()} Spell",
+                                               options=available_spells,
+                                               count=mod.get('count', 1),
+                                               target_type='spell',
+                                               level=level)
+                        pass
                         
                 if choice:
                     character.pending_choices.append(choice)
                     
-            elif m_type == 'cantrip':
-                continue # to implement
-                
             elif m_type == 'sense':
                 target = mod.get('target')
                 if target:
