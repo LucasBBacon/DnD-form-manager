@@ -4,9 +4,10 @@ from form_manager.src.models.character import Character, PendingChoice
 
 
 class RaceService:
-    def __init__(self, race_data_path: str, traits_data_path: str) -> None:
+    def __init__(self, race_data_path: str, traits_data_path: str, languages_data_path: str) -> None:
         self.race_data = self.__load(race_data_path)
         self.traits_data = self.__load(traits_data_path)
+        self.languages_data = self.__load(languages_data_path)
     
     def __load(self, path: str) -> Dict:
         try:
@@ -73,12 +74,27 @@ class RaceService:
                 if lang not in character.languages:
                     character.languages.append(lang)
                     
-            elif m_type == 'tool_proficiency_choice':
-                choice = PendingChoice(label='Tool Proficiency',
-                                       options=mod.get('list', []),
-                                       count=mod.get('count', 1),
-                                       target_type='tool')
-                character.pending_choices.append(choice)
+            elif 'choice' in str(m_type):
+                choice = None
+                match m_type:
+                    case 'language_choice':
+                        language_options = [lang.get('label', "").lower() for lang in self.languages_data.values()]
+                        choice_options = mod.get('pool', language_options)
+                        choice_options = language_options if choice_options == 'any' else choice_options
+                        print(choice_options)
+                        choice = PendingChoice(label='Language',
+                                               options=choice_options,
+                                               count=mod.get('count', 1),
+                                               target_type='language')
+                
+                    case 'tool_proficiency_choice':
+                        choice = PendingChoice(label='Tool Proficiency',
+                                               options=mod.get('list', []),
+                                               count=mod.get('count', 1),
+                                               target_type='tool')
+                        
+                if choice:
+                    character.pending_choices.append(choice)
                 
             elif m_type == 'sense':
                 target = mod.get('target')

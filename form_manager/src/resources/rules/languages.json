@@ -1,0 +1,34 @@
+{
+    "common": {
+        "label": "Common",
+        "script": "Common"
+    },
+    "dwarvish": {
+        "label": "Dwarvish",
+        "script": "Dwarvish"
+    },
+    "elvish": {
+        "label": "Elvish",
+        "script": "Elvish"
+    },
+    "giant": {
+        "label": "Giant",
+        "script": "Dwarvish"
+    },
+    "gnomish": {
+        "label": "Gnomish",
+        "script": "Dwarvish"
+    },
+    "goblin": {
+        "label": "Goblin",
+        "script": "Dwarvish"
+    },
+    "halfling": {
+        "label": "Halfling",
+        "script": "Common"
+    },
+    "orc": {
+        "label": "Orc",
+        "script": "Dwarvish"
+    }
+}

@@ -39,18 +39,18 @@ class Character:
     def choose(self, choice_label: str, selection: str) -> 'Character':
         choice_obj = next((c for c in self.pending_choices if c.label == choice_label))
         selection = selection.lower()
-        
+            
         if not choice_obj:
             raise ValueError(f"No pending choice found for '{choice_label}'")
         if choice_obj.options and selection not in choice_obj.options:
-            raise ValueError(f"'{selection}' is not a valid option ofr {choice_label}")    
+            raise ValueError(f"'{selection}' is not a valid option for {choice_label}")    
         
         if choice_obj.target_type == "tool":
             self.proficiencies['tool'].append(selection)
         elif choice_obj.target_type == "skill":
             self.proficiencies['skill'].append(selection)
         elif choice_obj.target_type == "language":
-            self.languages.append(selection)
+            self.languages.append(selection.title())
             
         choice_obj.count -= 1
         if choice_obj.count <= 0:

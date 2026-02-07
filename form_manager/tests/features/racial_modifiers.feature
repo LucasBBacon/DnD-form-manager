@@ -39,3 +39,16 @@ Feature: Racial Modifiers
         When the user selects "Smith's Tools" from "Tool Proficiency" pending choice
         Then "Smith's Tools" should be added to the "tool" proficiencies of the user
         
+    Scenario: Applying Language Choice from Race
+        Given a new character session is started with default stats
+        When the user selects "Human" as their race
+        Then "Language" should be added to the user pending choices
+        When the user selects "Elvish" from "Language" pending choice
+        Then "Elvish" should be added to the user languages
+
+    Scenario: Giving Cantrip Choice from Race
+        Given a new character session is started with default stats
+        When the user selects "High Elf" as their race
+        Then "Cantrip" should be added to the user pending choices
+        When the user selects "Acid Splash" from "Cantrip" pending choice
+        
