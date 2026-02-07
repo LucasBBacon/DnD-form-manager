@@ -34,7 +34,7 @@ Feature: Racial Modifiers
 
     Scenario: Applying Fixed Racial Ability Bonuses and Features From Pending Choice
         Given a new character session is started with default stats
-        And the user selects "Dwarf" as their race
+        When the user selects "Dwarf" as their race
         Then "Tool Proficiency" should be added to the user pending choices
         When the user selects "Smith's Tools" from "Tool Proficiency" pending choice
         Then "Smith's Tools" should be added to the "tool" proficiencies of the user

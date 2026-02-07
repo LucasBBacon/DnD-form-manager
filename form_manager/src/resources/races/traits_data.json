@@ -120,9 +120,9 @@
             {
                 "type": "tool_proficiency_choice",
                 "list": [
-                    "smiths_tools",
-                    "brewers_supplies",
-                    "mason_tools"
+                    "smith's tools",
+                    "brewer's supplies",
+                    "mason tools"
                 ],
                 "count": 1
             }

@@ -26,9 +26,6 @@ def new_character(session_context):
     session_context['base_stats'] = session_context['character'].stats.copy()
 
 
-@given(parsers.parse(''))
-
-
 @when(parsers.parse('the user selects "{race_name}" as their race'))
 def select_race(session_context, race_name):
     # character is selected and applied through race applicator
@@ -80,15 +77,20 @@ def check_feature_list(session_context, feature):
 def check_pending_choices(session_context, item):
     # checks if the pending item exists
     char = session_context['character']
-    assert item in char.pending_choices, f"Choice '{item}' not found in {char.pending_choices}"
+    choice_labels = [c.label for c in char.pending_choices]
+    assert item in choice_labels, f"Choice '{item}' not found in {choice_labels}"
 
 
 @when(parsers.parse('the user selects "{choice}" from "{pending_category}" pending choice'))
 def resolve_pending_choice(session_context, choice, pending_category):
+    choice = choice.lower()
     char = session_context['character']
-    assert pending_category in char.pending_choices, f"Character does not have a pending choice for '{pending_category}'"
+    choice_labels = [c.label for c in char.pending_choices]
+    assert pending_category in choice_labels, f"Character does not have a pending choice for '{pending_category}'"
     char.choose(pending_category, choice)
-    assert pending_category not in char.pending_choices, f"Character still has pending choice for '{pending_category}'"
+    choice_labels = [c.label for c in char.pending_choices]
+    assert pending_category not in choice_labels, f"Character still has pending choice for '{pending_category}'"
+    assert choice in char.proficiencies['tool']
     
 
 @then(parsers.parse('"{language}" should be added to the user languages'))
@@ -100,5 +102,6 @@ def check_languages(session_context, language):
 @then(parsers.parse('"{item}" should be added to the "{category}" proficiencies of the user'))
 def check_categorized_proficiency(session_context, item, category):
     char = session_context['character']
+    item = item.lower()
     assert category in char.proficiencies, f"Proficiency category '{category}' does not exist on Character."
-    assert item in char.proficiencies, f"Expected '{item}' in '{category}' proficiencies, but got: {char.proficiencies[category]}"
+    assert item in char.proficiencies[category], f"Expected '{item}' in '{category}' proficiencies, but got: {char.proficiencies[category]}"

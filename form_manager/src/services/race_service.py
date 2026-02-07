@@ -1,6 +1,6 @@
 import json
 from typing import Dict, Optional
-from form_manager.src.models.character import Character
+from form_manager.src.models.character import Character, PendingChoice
 
 
 class RaceService:
@@ -74,9 +74,11 @@ class RaceService:
                     character.languages.append(lang)
                     
             elif m_type == 'tool_proficiency_choice':
-                options = mod.get('list', [])
-                choice_name = 'Tool Proficiency'
-                character.pending_choices.append(choice_name)
+                choice = PendingChoice(label='Tool Proficiency',
+                                       options=mod.get('list', []),
+                                       count=mod.get('count', 1),
+                                       target_type='tool')
+                character.pending_choices.append(choice)
                 
             elif m_type == 'sense':
                 target = mod.get('target')

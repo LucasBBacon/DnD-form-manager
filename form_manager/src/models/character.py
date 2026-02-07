@@ -4,6 +4,14 @@ from typing import Dict, List
 
 
 @dataclass
+class PendingChoice:
+    label: str
+    options: List[str]
+    count: int
+    target_type: str
+
+
+@dataclass
 class Character:
     """
     Representation of a character and their attributes in memory.
@@ -22,12 +30,30 @@ class Character:
     speed: int = 30
     languages: List[str] = field(default_factory=list)
     features: List[str] = field(default_factory=list)
-    pending_choices: List[str] = field(default_factory=list)
+    pending_choices: List[PendingChoice] = field(default_factory=list)
     
-    proficiences: Dict[str, List[str]] = field(default_factory=lambda: {
+    proficiencies: Dict[str, List[str]] = field(default_factory=lambda: {
         "armor": [], "weapon": [], "tool": [], "skill": []
     })
     
-    def choose(self, pending_category, choice) -> 'Character':
+    def choose(self, choice_label: str, selection: str) -> 'Character':
+        choice_obj = next((c for c in self.pending_choices if c.label == choice_label))
+        selection = selection.lower()
+        
+        if not choice_obj:
+            raise ValueError(f"No pending choice found for '{choice_label}'")
+        if choice_obj.options and selection not in choice_obj.options:
+            raise ValueError(f"'{selection}' is not a valid option ofr {choice_label}")    
+        
+        if choice_obj.target_type == "tool":
+            self.proficiencies['tool'].append(selection)
+        elif choice_obj.target_type == "skill":
+            self.proficiencies['skill'].append(selection)
+        elif choice_obj.target_type == "language":
+            self.languages.append(selection)
+            
+        choice_obj.count -= 1
+        if choice_obj.count <= 0:
+            self.pending_choices.remove(choice_obj)
+        
         return self
-    
