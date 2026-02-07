@@ -4,10 +4,15 @@ from form_manager.src.models.character import Character, PendingChoice
 
 
 class RaceService:
-    def __init__(self, race_data_path: str, traits_data_path: str, languages_data_path: str) -> None:
+    def __init__(self, 
+                 race_data_path: str, 
+                 traits_data_path: str, 
+                 languages_data_path: str,
+                 spells_list_path: str) -> None:
         self.race_data = self.__load(race_data_path)
         self.traits_data = self.__load(traits_data_path)
         self.languages_data = self.__load(languages_data_path)
+        self.spells_list = self.__load(spells_list_path)
     
     def __load(self, path: str) -> Dict:
         try:
@@ -81,7 +86,6 @@ class RaceService:
                         language_options = [lang.get('label', "").lower() for lang in self.languages_data.values()]
                         choice_options = mod.get('pool', language_options)
                         choice_options = language_options if choice_options == 'any' else choice_options
-                        print(choice_options)
                         choice = PendingChoice(label='Language',
                                                options=choice_options,
                                                count=mod.get('count', 1),
@@ -95,6 +99,9 @@ class RaceService:
                         
                 if choice:
                     character.pending_choices.append(choice)
+                    
+            elif m_type == 'cantrip':
+                continue # to implement
                 
             elif m_type == 'sense':
                 target = mod.get('target')

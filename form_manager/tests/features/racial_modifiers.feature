@@ -51,4 +51,5 @@ Feature: Racial Modifiers
         When the user selects "High Elf" as their race
         Then "Cantrip" should be added to the user pending choices
         When the user selects "Acid Splash" from "Cantrip" pending choice
+        Then "Acid Splash" should be added to the user spells
         

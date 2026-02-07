@@ -400,5 +400,85 @@
                 }
             }
         }
+    },
+    "wizard": {
+        "label": "Wizard",
+        "hit_die": 6,
+        "primary_ability": ["intelligence"],
+        "saving_throws": ["intelligence", "wisdom"],
+        "proficiencies": {
+            "armor": [],
+            "weapons": ["daggers", "darts", "slings", "quarterstaffs", "light_crossbows"],
+            "tools": [],
+            "skills": {
+                "choose": 2,
+                "from": ["arcana", "history", "insight", "investigation", "medicine", "religion"]
+            }
+        },
+        "multiclass_proficiencies": {},
+        "equipment_choices": [
+            [
+                {"item": "quaterstaff"},
+                {"item": "dagger"}
+            ],
+            [
+                {"item": "component_pouch"},
+                {"item": "arcane_focus"}
+            ],
+            [
+                {"item": "spellbook"}
+            ]
+        ],
+        "progression": {
+            "1":  ["spellcasting", "arcane_recovery"],
+            "2":  ["arcane_tradition"],
+            "3":  [],
+            "4":  ["ability_score_improvement"],
+            "5":  [],
+            "6":  ["ability_score_improvement"],
+            "7":  [],
+            "8":  ["ability_score_improvement"],
+            "9":  [],
+            "10": [],
+            "11": [],
+            "12": ["ability_score_improvement"],
+            "13": [],
+            "14": [],
+            "15": [],
+            "16": ["ability_score_improvement"],
+            "17": [],
+            "18": ["spell_mastery"],
+            "19": ["ability_score_improvement"],
+            "20": ["signature_spell"]
+        },
+        "subclasses": {
+            "abjuration": {
+                "label": "School of Abjuration",
+                "progression": {
+                    "2": ["abjuration_savant", "arcane_ward"],
+                    "6": ["projected_ward"],
+                    "10": ["imporved_abjuration"],
+                    "14": ["spell_resistance"]
+                }
+            },
+            "conjuration": {
+                "label": "School of Conjuration",
+                "progression": {
+                    "2": ["conjuration_savant", "minor_conjuration"],
+                    "6": ["benign_transposition"],
+                    "10": ["focused_conjuration"],
+                    "14": ["durable_summons"]
+                }
+            },
+            "divination": {
+                "label": "School of Divination",
+                "progression": {
+                    "2": ["divination_savant", "portent"],
+                    "6": ["expert_divination"],
+                    "10": ["the_third_eye"],
+                    "14": ["greater_portent"]
+                }
+            }
+        }
     }
 }

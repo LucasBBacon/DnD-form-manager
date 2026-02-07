@@ -36,6 +36,8 @@ class Character:
         "armor": [], "weapon": [], "tool": [], "skill": []
     })
     
+    spells: List[List[str]] = field(default_factory=list)
+    
     def choose(self, choice_label: str, selection: str) -> 'Character':
         choice_obj = next((c for c in self.pending_choices if c.label == choice_label))
         selection = selection.lower()

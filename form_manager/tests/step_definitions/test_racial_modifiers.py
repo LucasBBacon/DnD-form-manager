@@ -11,6 +11,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 RACE_DATA_PATH = os.path.join(BASE_DIR, '../../src/resources/races/race_data.json')
 TRAITS_DATA_PATH = os.path.join(BASE_DIR, '../../src/resources/races/traits_data.json')
 LANGUAGES_DATA_PATH = os.path.join(BASE_DIR, '../../src/resources/rules/languages.json')
+SPELL_LIST_PATH = os.path.join(BASE_DIR, '../../src/resources/spells/spell_list.json')
 
 scenarios("../features/racial_modifiers.feature")
 
@@ -30,14 +31,14 @@ def new_character(session_context):
 @when(parsers.parse('the user selects "{race_name}" as their race'))
 def select_race(session_context, race_name):
     # character is selected and applied through race applicator
-    applicator = RaceService(RACE_DATA_PATH, TRAITS_DATA_PATH, LANGUAGES_DATA_PATH)
+    applicator = RaceService(RACE_DATA_PATH, TRAITS_DATA_PATH, LANGUAGES_DATA_PATH, SPELL_LIST_PATH)
     character = session_context['character']
     applicator.apply_race(character, race_name)
     
 
 @when(parsers.parse('the user selects "{subrace_name}" as their subrace'))
 def select_subrace(session_context, subrace_name):
-    applicator = RaceService(RACE_DATA_PATH, TRAITS_DATA_PATH, LANGUAGES_DATA_PATH)
+    applicator = RaceService(RACE_DATA_PATH, TRAITS_DATA_PATH, LANGUAGES_DATA_PATH, SPELL_LIST_PATH)
     character = session_context['character']
     applicator.apply_race(character, subrace_name)
 
@@ -97,6 +98,20 @@ def resolve_pending_choice(session_context, choice, pending_category):
 def check_languages(session_context, language):
     char = session_context['character']
     assert language in char.languages, f"Language '{language}' not found in {char.languages}"
+    
+    
+@then(parsers.parse('"{spell}" should be added to the user "{level}" spells'))
+def check_spells(session_context, spell, level):
+    level_int = 0
+    match level:
+        case "Cantrip":
+            level_int = 0
+        case "1st Level":
+            level_int = 1
+        case "2nd Level":
+            level_int = 2
+    char = session_context['character']
+    assert spell in char.spells[level_int], f"Language '{spell}' not found in {char.spells[level_int]}"
 
 
 @then(parsers.parse('"{item}" should be added to the "{category}" proficiencies of the user'))
