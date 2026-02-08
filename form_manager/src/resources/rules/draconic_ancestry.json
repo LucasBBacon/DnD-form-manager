@@ -1,0 +1,82 @@
+{
+    "black": {
+        "label": "Black",
+        "damage_type": "acid",
+        "breath_weapon": {
+            "area": "5 by 30 ft line",
+            "save": "dexterity"
+        }
+    },
+    "blue": {
+        "label": "Blue",
+        "damage_type": "lightning",
+        "breath_weapon": {
+            "area": "5 by 30 ft line",
+            "save": "dexterity"
+        }
+    },
+    "brass": {
+        "label": "Brass",
+        "damage_type": "fire",
+        "breath_weapon": {
+            "area": "5 by 30 ft line",
+            "save": "dexterity"
+        }
+    },
+    "bronze": {
+        "label": "Bronze",
+        "damage_type": "lightning",
+        "breath_weapon": {
+            "area": "5 by 30 ft line",
+            "save": "dexterity"
+        }
+    },
+    "copper": {
+        "label": "Copper",
+        "damage_type": "acid",
+        "breath_weapon": {
+            "area": "5 by 30 ft line",
+            "save": "dexterity"
+        }
+    },
+    "gold": {
+        "label": "Gold",
+        "damage_type": "fire",
+        "breath_weapon": {
+            "area": "15 ft cone",
+            "save": "dexterity"
+        }
+    },
+    "green": {
+        "label": "Green",
+        "damage_type": "poison",
+        "breath_weapon": {
+            "area": "15 ft cone",
+            "save": "constitution"
+        }
+    },
+    "red": {
+        "label": "Red",
+        "damage_type": "fire",
+        "breath_weapon": {
+            "area": "15 ft cone",
+            "save": "dexterity"
+        }
+    },
+    "silver": {
+        "label": "Silver",
+        "damage_type": "cold",
+        "breath_weapon": {
+            "area": "15 ft cone",
+            "save": "constitution"
+        }
+    },
+    "white": {
+        "label": "White",
+        "damage_type": "cold",
+        "breath_weapon": {
+            "area": "15 ft cone",
+            "save": "constitution"
+        }
+    }
+}

@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Dict, List
+from typing import Any, Dict, List
 
 
 @dataclass
@@ -10,6 +10,7 @@ class PendingChoice:
     count: int
     target_type: str
     level: int = 0
+    choice_map: Dict[str, Any] = field(default_factory=dict)
     
 
 @dataclass
@@ -36,11 +37,13 @@ class Character:
     proficiencies: Dict[str, List[str]] = field(default_factory=lambda: {
         "armor": [], "weapon": [], "tool": [], "skill": []
     })
+    resistances: List[str] = field(default_factory=list)
     
     spells: Dict[str, List[str]] = field(default_factory=lambda: {
         "0": [], "1": [], "2": [], "3": [], "4": [], 
         "5": [], "6": [], "7": [], "8": [], "9": [] 
     })
+    breath_weapon: Dict[str, str] = field(default_factory=dict)
     
     def choose(self, choice_label: str, selection: str) -> 'Character':
         choice_obj = next((c for c in self.pending_choices if c.label == choice_label))
@@ -65,6 +68,13 @@ class Character:
                 level = str(getattr(choice_obj, "level", "0"))
                 self.spells[level].append(selection)
                 pass
+            case "draconic_ancestry":
+                payload = choice_obj.choice_map.get(selection, {})
+                if "damage_type" in payload:
+                    self.resistances.append(payload["damage_type"])
+                if "breath_weapon" in payload:
+                    self.breath_weapon = payload["breath_weapon"]
+                    self.breath_weapon["damage_type"] = payload.get("damage_type")
             
         choice_obj.count -= 1
         if choice_obj.count <= 0:

@@ -12,6 +12,7 @@ RACE_DATA_PATH = os.path.join(BASE_DIR, '../../src/resources/races/race_data.jso
 TRAITS_DATA_PATH = os.path.join(BASE_DIR, '../../src/resources/races/traits_data.json')
 LANGUAGES_DATA_PATH = os.path.join(BASE_DIR, '../../src/resources/rules/languages.json')
 SPELL_LIST_PATH = os.path.join(BASE_DIR, '../../src/resources/spells/spell_list.json')
+DRACONIC_ANCESTRY_PATH = os.path.join(BASE_DIR, '../../src/resources/rules/draconic_ancestry.json')
 
 scenarios("../features/racial_modifiers.feature")
 
@@ -34,14 +35,14 @@ def new_character(session_context):
 @when(parsers.parse('the user selects "{race_name}" as their race'))
 def select_race(session_context, race_name):
     # character is selected and applied through race applicator
-    applicator = RaceService(RACE_DATA_PATH, TRAITS_DATA_PATH, LANGUAGES_DATA_PATH, SPELL_LIST_PATH)
+    applicator = RaceService(RACE_DATA_PATH, TRAITS_DATA_PATH, LANGUAGES_DATA_PATH, SPELL_LIST_PATH, DRACONIC_ANCESTRY_PATH)
     character = session_context['character']
     applicator.apply_race(character, race_name)
     
 
 @when(parsers.parse('the user selects "{subrace_name}" as their subrace'))
 def select_subrace(session_context, subrace_name):
-    applicator = RaceService(RACE_DATA_PATH, TRAITS_DATA_PATH, LANGUAGES_DATA_PATH, SPELL_LIST_PATH)
+    applicator = RaceService(RACE_DATA_PATH, TRAITS_DATA_PATH, LANGUAGES_DATA_PATH, SPELL_LIST_PATH, DRACONIC_ANCESTRY_PATH)
     character = session_context['character']
     applicator.apply_race(character, subrace_name)
 
@@ -126,3 +127,25 @@ def check_categorized_proficiency(session_context, item, category):
     item_normalized = normalize_text(item)
     assert category in char.proficiencies, f"Proficiency category '{category}' does not exist on Character."
     assert item_normalized in char.proficiencies[category], f"Expected '{item_normalized}' in '{category}' proficiencies, but got: {char.proficiencies[category]}"
+
+
+@then(parsers.parse('"{damage_type}" should be added to the user draconic damage type'))
+def check_draconic_damage(session_context, damage_type):
+    char = session_context['character']
+    damage_type_normalized = normalize_text(damage_type)
+    assert damage_type_normalized in char.resistances, f"Expected {damage_type} in resistances: {char.resistances}"
+    
+    
+@then(parsers.parse('"{ability}" should be the ability save for user breath weapon'))
+def check_breath_save(session_context, ability):
+    char = session_context['character']
+    ability_normalized = normalize_text(ability)
+    actual = char.breath_weapon.get('save')
+    assert actual == ability_normalized, f"Expected breath save {ability}, got {actual}"
+    
+@then(parsers.parse('"{area}" should be the area for user breath weapon'))
+def check_breath_area(session_context, area):
+    char = session_context['character']
+    actual = char.breath_weapon.get('area', "").lower()
+    assert actual == area, f"Expected breath area {area}, got {actual}"
+    

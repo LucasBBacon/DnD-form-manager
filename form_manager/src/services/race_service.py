@@ -8,11 +8,15 @@ class RaceService:
                  race_data_path: str, 
                  traits_data_path: str, 
                  languages_data_path: str,
-                 spells_list_path: str) -> None:
+                 spells_list_path: str,
+                 draconic_ancestry_path: Optional[str] = None) -> None:
         self.race_data = self.__load(race_data_path)
         self.traits_data = self.__load(traits_data_path)
         self.languages_data = self.__load(languages_data_path)
         self.spells_list = self.__load(spells_list_path)
+        self.draconic_ancestry = {}
+        if draconic_ancestry_path:
+            self.draconic_ancestry = self.__load(draconic_ancestry_path)
     
     def __load(self, path: str) -> Dict:
         try:
@@ -112,6 +116,16 @@ class RaceService:
                                                target_type='spell',
                                                level=level)
                         pass
+                    
+                    case "choice_trigger":
+                        trigger_id = mod.get('choice_id')
+                        if trigger_id == 'draconic_ancestry':
+                            options_list = list(self.draconic_ancestry.keys())
+                            choice = PendingChoice(label="Draconic Ancestry",
+                                                   options=options_list,
+                                                   count=1,
+                                                   target_type="draconic_ancestry",
+                                                   choice_map=self.draconic_ancestry)
                         
                 if choice:
                     character.pending_choices.append(choice)

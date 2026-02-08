@@ -67,4 +67,14 @@ Feature: Racial Modifiers
         When the user selects "Black" from "Draconic Ancestry" pending choice
         Then "Acid" should be added to the user draconic damage type
         And "Dexterity" should be the ability save for user breath weapon
-        And "5 by 30" ft "Line" should be the type for user breath weapon
+        And "5 by 30 ft line" should be the area for user breath weapon
+
+    Scenario: Applying Skill Proficiencies from a Skill Versatility Choice
+        Given a new character session is started with default stats
+        When the user selects "Half Elf" as their race
+        Then "Skill Choice" should be added to the user pending choices
+        When the user selects "Athletics" from "Skill Choice" pending choice
+        Then "Athletics" should be added to the "skill" proficiencies of the user
+        And "Skill Choice" should be added to the user pending choices  
+        When the user selects "Animal Handling" from "Skill Choice" pending choice
+        Then "Animal Handling" should be added to the "skill" proficiencies of the user
