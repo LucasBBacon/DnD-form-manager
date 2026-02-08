@@ -11,6 +11,7 @@ class PendingChoice:
     target_type: str
     level: int = 0
     choice_map: Dict[str, Any] = field(default_factory=dict)
+    unique: bool = True
     
 
 @dataclass
@@ -75,6 +76,15 @@ class Character:
                 if "breath_weapon" in payload:
                     self.breath_weapon = payload["breath_weapon"]
                     self.breath_weapon["damage_type"] = payload.get("damage_type")
+            case 'ability_bonus':
+                bonus = choice_obj.level if choice_obj.level else 1
+                if selection in self.stats:
+                    self.stats[selection] += bonus
+                else:
+                    raise ValueError(f"Invalid ability score: {selection}")
+        
+        if choice_obj.unique and selection in choice_obj.options:
+            choice_obj.options.remove(selection)
             
         choice_obj.count -= 1
         if choice_obj.count <= 0:

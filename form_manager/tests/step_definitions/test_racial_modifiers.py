@@ -4,8 +4,7 @@ import pytest
 from pytest_bdd import given, scenarios, parsers, then, when
 
 from form_manager.src.models.character import Character
-from form_manager.src.services.race_service import RaceService
-from form_manager.src.services.rules_manager import RulesManager
+from form_manager.src.services import RaceService, RulesManager
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -101,6 +100,15 @@ def check_choice_removed(session_context, pending_category):
     choice_labels = [c.label for c in char.pending_choices]
     assert pending_category not in choice_labels, f"Character still has pending choice for '{pending_category}'"
     
+
+@then(parsers.parse('the user should not be able to select "{ability}" again'))
+def check_option_removed(session_context, ability):
+    char = session_context['character']
+    choice = next((c for c in char.pending_choices if c.label == "Ability Bonus"), None)
+    ability_normalized = normalize_text(ability)
+    if choice:
+        assert ability_normalized not in choice.options
+
 
 @then(parsers.parse('"{language}" should be added to the user languages'))
 def check_languages(session_context, language):

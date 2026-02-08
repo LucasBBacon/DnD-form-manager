@@ -91,6 +91,7 @@ Feature: Racial Modifiers
         Then "Ability Bonus" should be added to the user pending choices
         When the user selects "Wisdom" from "Ability Bonus" pending choice
         Then the user "Wisdom" score should increase by 1
+        And the user should not be able to select "Wisdom" again
         And "Ability Bonus" should be added to the user pending choices  
         When the user selects "Strength" from "Ability Bonus" pending choice
         Then the user "Strength" score should increase by 1

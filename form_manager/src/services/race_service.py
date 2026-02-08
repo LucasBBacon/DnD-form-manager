@@ -73,72 +73,82 @@ class RaceService:
                     character.languages.append(lang)
                     
             elif 'choice' in str(m_type):
-                choice = None
-                match m_type:
-                    case 'language_choice':
-                        language_options = [lang.get('label', "").lower() 
-                                            for lang in self.rules.languages.values()]
-                        choice_options = mod.get('pool', language_options)
-                        choice_options = language_options if choice_options == 'any' else choice_options
-                        choice = PendingChoice(label='Language',
-                                               options=choice_options,
-                                               count=mod.get('count', 1),
-                                               target_type='language')
-                        pass
-                
-                    case 'tool_proficiency_choice':
-                        choice = PendingChoice(label='Tool Proficiency',
-                                               options=mod.get('list', []),
-                                               count=mod.get('count', 1),
-                                               target_type='tool')
-                        pass
-                    
-                    case 'spell_choice':
-                        class_key = mod.get('list')
-                        level = mod.get('level', 0)
-                        available_spells = []
-                        class_spells = self.rules.spells.get(class_key)
-                        if class_spells and len(class_spells) > level:
-                            available_spells = class_spells[level]
-                        choice = PendingChoice(label=f"{class_key.capitalize()} Spell",
-                                               options=available_spells,
-                                               count=mod.get('count', 1),
-                                               target_type='spell',
-                                               level=level)
-                        pass
-                    
-                    case "choice_trigger":
-                        trigger_id = mod.get('choice_id')
-                        if trigger_id == 'draconic_ancestry':
-                            options_list = list(self.rules.draconic_ancestry.keys())
-                            choice = PendingChoice(label="Draconic Ancestry",
-                                                   options=options_list,
-                                                   count=1,
-                                                   target_type="draconic_ancestry",
-                                                   choice_map=self.rules.draconic_ancestry)
-                        pass
-                    
-                    case 'skill_choice':
-                        all_skills = []
-                        for cat_skills in self.rules.skills.values():
-                            all_skills.extend(cat_skills)
-                        options = mod.get('list', all_skills)
-                        if mod.get('pool') == 'any':
-                            options = all_skills
-                        choice = PendingChoice(label="Skill Choice",
-                                               options=options,
-                                               count=mod.get('count', 1),
-                                               target_type="skill")
-                        pass
-                    
-                    case 'ability_bonus_choice':
-                        pass    
-                    
-                if choice:
-                    character.pending_choices.append(choice)
+                self.__resolve_choices(character, mod, m_type)
                     
             elif m_type == 'sense':
                 target = mod.get('target')
                 if target:
                     character.features.append(target.capitalize())
+
+    def __resolve_choices(self, character: Character, mod, m_type):
+        choice = None
+        match m_type:
+            case 'language_choice':
+                language_options = [lang.get('label', "").lower() 
+                                            for lang in self.rules.languages.values()]
+                choice_options = mod.get('pool', language_options)
+                choice_options = language_options if choice_options == 'any' else choice_options
+                choice = PendingChoice(label='Language',
+                                               options=choice_options,
+                                               count=mod.get('count', 1),
+                                               target_type='language')
+                pass
+                
+            case 'tool_proficiency_choice':
+                choice = PendingChoice(label='Tool Proficiency',
+                                               options=mod.get('list', []),
+                                               count=mod.get('count', 1),
+                                               target_type='tool')
+                pass
+                    
+            case 'spell_choice':
+                class_key = mod.get('list')
+                level = mod.get('level', 0)
+                available_spells = []
+                class_spells = self.rules.spells.get(class_key)
+                if class_spells and len(class_spells) > level:
+                    available_spells = class_spells[level]
+                choice = PendingChoice(label=f"{class_key.capitalize()} Spell",
+                                               options=available_spells,
+                                               count=mod.get('count', 1),
+                                               target_type='spell',
+                                               level=level)
+                pass
+                    
+            case "choice_trigger":
+                trigger_id = mod.get('choice_id')
+                if trigger_id == 'draconic_ancestry':
+                    options_list = list(self.rules.draconic_ancestry.keys())
+                    choice = PendingChoice(label="Draconic Ancestry",
+                                                   options=options_list,
+                                                   count=1,
+                                                   target_type="draconic_ancestry",
+                                                   choice_map=self.rules.draconic_ancestry)
+                pass
+                    
+            case 'skill_choice':
+                all_skills = []
+                for cat_skills in self.rules.skills.values():
+                    all_skills.extend(cat_skills)
+                options = mod.get('list', all_skills)
+                if mod.get('pool') == 'any':
+                    options = all_skills
+                choice = PendingChoice(label="Skill Choice",
+                                               options=options,
+                                               count=mod.get('count', 1),
+                                               target_type="skill")
+                pass
+                    
+            case 'ability_bonus_choice':
+                options = list(character.stats.keys())
+                choice = PendingChoice(label="Ability Bonus",
+                                       options=options,
+                                       count=mod.get('count', 1),
+                                       target_type="ability_bonus",
+                                       level=mod.get('amount', 1),
+                                       unique=True)
+                pass
+                    
+        if choice:
+            character.pending_choices.append(choice)
     
