@@ -658,7 +658,7 @@
             {
                 "id": "ability_score_increase",
                 "overrides": {
-                    "description": "Your Charisma score increases by 1, and two other ability scores of your choice increases by 1.",
+                    "description": "Your Charisma score increases by 2, and two other ability scores of your choice increases by 1.",
                     "modifiers": [
                         {
                             "type": "ability_bonus",

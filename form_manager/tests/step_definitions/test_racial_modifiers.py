@@ -5,14 +5,11 @@ from pytest_bdd import given, scenarios, parsers, then, when
 
 from form_manager.src.models.character import Character
 from form_manager.src.services.race_service import RaceService
+from form_manager.src.services.rules_manager import RulesManager
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-RACE_DATA_PATH = os.path.join(BASE_DIR, '../../src/resources/races/race_data.json')
-TRAITS_DATA_PATH = os.path.join(BASE_DIR, '../../src/resources/races/traits_data.json')
-LANGUAGES_DATA_PATH = os.path.join(BASE_DIR, '../../src/resources/rules/languages.json')
-SPELL_LIST_PATH = os.path.join(BASE_DIR, '../../src/resources/spells/spell_list.json')
-DRACONIC_ANCESTRY_PATH = os.path.join(BASE_DIR, '../../src/resources/rules/draconic_ancestry.json')
+RESOURCES_DIR = os.path.join(BASE_DIR, '../../src/resources')
 
 scenarios("../features/racial_modifiers.feature")
 
@@ -35,14 +32,16 @@ def new_character(session_context):
 @when(parsers.parse('the user selects "{race_name}" as their race'))
 def select_race(session_context, race_name):
     # character is selected and applied through race applicator
-    applicator = RaceService(RACE_DATA_PATH, TRAITS_DATA_PATH, LANGUAGES_DATA_PATH, SPELL_LIST_PATH, DRACONIC_ANCESTRY_PATH)
+    rules_manager = RulesManager(RESOURCES_DIR)
+    applicator = RaceService(rules_manager)
     character = session_context['character']
     applicator.apply_race(character, race_name)
     
 
 @when(parsers.parse('the user selects "{subrace_name}" as their subrace'))
 def select_subrace(session_context, subrace_name):
-    applicator = RaceService(RACE_DATA_PATH, TRAITS_DATA_PATH, LANGUAGES_DATA_PATH, SPELL_LIST_PATH, DRACONIC_ANCESTRY_PATH)
+    rules_manager = RulesManager(RESOURCES_DIR)
+    applicator = RaceService(rules_manager)
     character = session_context['character']
     applicator.apply_race(character, subrace_name)
 
@@ -94,6 +93,11 @@ def resolve_pending_choice(session_context, choice, pending_category):
     choice_labels = [c.label for c in char.pending_choices]
     assert pending_category in choice_labels, f"Character does not have a pending choice for '{pending_category}'"
     char.choose(pending_category, choice_normalized)
+    
+
+@then(parsers.parse('"{pending_category}" should be removed from the user pending choices'))
+def check_choice_removed(session_context, pending_category):
+    char = session_context['character']
     choice_labels = [c.label for c in char.pending_choices]
     assert pending_category not in choice_labels, f"Character still has pending choice for '{pending_category}'"
     

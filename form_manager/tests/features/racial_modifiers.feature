@@ -38,6 +38,7 @@ Feature: Racial Modifiers
         Then "Tool Proficiency" should be added to the user pending choices
         When the user selects "Smith's Tools" from "Tool Proficiency" pending choice
         Then "Smith's Tools" should be added to the "tool" proficiencies of the user
+        And "Tool Proficiency" should be removed from the user pending choices
         
     Scenario: Applying Language Choice from Race
         Given a new character session is started with default stats
@@ -45,6 +46,7 @@ Feature: Racial Modifiers
         Then "Language" should be added to the user pending choices
         When the user selects "Elvish" from "Language" pending choice
         Then "Elvish" should be added to the user languages
+        And "Language" should be removed from the user pending choices
 
     Scenario: Giving Cantrip Choice from Race
         Given a new character session is started with default stats
@@ -52,6 +54,7 @@ Feature: Racial Modifiers
         Then "Wizard Spell" should be added to the user pending choices
         When the user selects "Acid Splash" from "Wizard Spell" pending choice
         Then "Acid Splash" should be added to the user "Cantrip" spells
+        And "Wizard Spell" should be removed from the user pending choices
         
     Scenario: Gaining Language from Extra Language Choice
         Given a new character session is started with default stats
@@ -59,6 +62,7 @@ Feature: Racial Modifiers
         Then "Language" should be added to the user pending choices
         When the user selects "Dwarvish" from "Language" pending choice
         Then "Dwarvish" should be added to the user languages
+        And "Language" should be removed from the user pending choices
 
     Scenario: Applying Features from Draconic Ancestry Choices
         Given a new character session is started with default stats
@@ -68,6 +72,7 @@ Feature: Racial Modifiers
         Then "Acid" should be added to the user draconic damage type
         And "Dexterity" should be the ability save for user breath weapon
         And "5 by 30 ft line" should be the area for user breath weapon
+        And "Draconic Ancestry" should be removed from the user pending choices
 
     Scenario: Applying Skill Proficiencies from a Skill Versatility Choice
         Given a new character session is started with default stats
@@ -78,3 +83,15 @@ Feature: Racial Modifiers
         And "Skill Choice" should be added to the user pending choices  
         When the user selects "Animal Handling" from "Skill Choice" pending choice
         Then "Animal Handling" should be added to the "skill" proficiencies of the user
+        And "Skill Choice" should be removed from the user pending choices
+
+    Scenario: Applying Ability Score Increase from Ability Bonus Choice
+        Given a new character session is started with default stats
+        When the user selects "Half Elf" as their race
+        Then "Ability Bonus" should be added to the user pending choices
+        When the user selects "Wisdom" from "Ability Bonus" pending choice
+        Then the user "Wisdom" score should increase by 1
+        And "Ability Bonus" should be added to the user pending choices  
+        When the user selects "Strength" from "Ability Bonus" pending choice
+        Then the user "Strength" score should increase by 1
+        And "Ability Bonus" should be removed from the user pending choices

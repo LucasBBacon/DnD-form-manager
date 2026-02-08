@@ -1,30 +1,12 @@
 import json
 from typing import Dict, Optional
 from form_manager.src.models.character import Character, PendingChoice
+from form_manager.src.services.rules_manager import RulesManager
 
 
 class RaceService:
-    def __init__(self, 
-                 race_data_path: str, 
-                 traits_data_path: str, 
-                 languages_data_path: str,
-                 spells_list_path: str,
-                 draconic_ancestry_path: Optional[str] = None) -> None:
-        self.race_data = self.__load(race_data_path)
-        self.traits_data = self.__load(traits_data_path)
-        self.languages_data = self.__load(languages_data_path)
-        self.spells_list = self.__load(spells_list_path)
-        self.draconic_ancestry = {}
-        if draconic_ancestry_path:
-            self.draconic_ancestry = self.__load(draconic_ancestry_path)
-    
-    def __load(self, path: str) -> Dict:
-        try:
-            with open(path, 'r') as f:
-                return json.load(f)
-        except FileNotFoundError:
-            print(f"Warning: {path} not found.")
-            return {}
+    def __init__(self, rules_manager: RulesManager) -> None:
+        self.rules = rules_manager
     
     def apply_race(self, character: Character, race_name: str) -> Character:
         race_key = race_name.lower().replace(" ", "_")
@@ -37,10 +19,10 @@ class RaceService:
         return character
     
     def __find_race_node(self, key: str) -> Optional[Dict]:
-        if key in self.race_data:
-            return self.race_data[key]
+        if key in self.rules.races:
+            return self.rules.races[key]
         
-        for race_val in self.race_data.values():
+        for race_val in self.rules.races.values():
             subraces = race_val.get('subraces', {})
             if key in subraces:
                 return subraces[key]
@@ -50,9 +32,16 @@ class RaceService:
     def __apply_traits(self, character: Character, race_node: Dict) -> None:
         for trait_entry in race_node.get('traits', []):
             trait_id = trait_entry.get('id')
-            base_trait = self.traits_data.get(trait_id, {})
-            label = trait_entry.get('overrides', {}).get('label') or base_trait.get('label') or trait_id.replace('_', ' ').title()
-            if trait_id not in ['ability_score_increase', 'speed', 'size', 'languages', 'age', 'alignment']:
+            base_trait = self.rules.traits.get(trait_id, {})
+            label = (trait_entry.get('overrides', {}).get('label') 
+                     or base_trait.get('label') 
+                     or trait_id.replace('_', ' ').title())
+            if trait_id not in ['ability_score_increase', 
+                                'speed', 
+                                'size', 
+                                'languages', 
+                                'age', 
+                                'alignment']:
                 character.features.append(label)
                 
             modifiers = trait_entry.get('overrides', {}).get('modifiers')
@@ -87,7 +76,8 @@ class RaceService:
                 choice = None
                 match m_type:
                     case 'language_choice':
-                        language_options = [lang.get('label', "").lower() for lang in self.languages_data.values()]
+                        language_options = [lang.get('label', "").lower() 
+                                            for lang in self.rules.languages.values()]
                         choice_options = mod.get('pool', language_options)
                         choice_options = language_options if choice_options == 'any' else choice_options
                         choice = PendingChoice(label='Language',
@@ -107,7 +97,7 @@ class RaceService:
                         class_key = mod.get('list')
                         level = mod.get('level', 0)
                         available_spells = []
-                        class_spells = self.spells_list.get(class_key)
+                        class_spells = self.rules.spells.get(class_key)
                         if class_spells and len(class_spells) > level:
                             available_spells = class_spells[level]
                         choice = PendingChoice(label=f"{class_key.capitalize()} Spell",
@@ -120,13 +110,30 @@ class RaceService:
                     case "choice_trigger":
                         trigger_id = mod.get('choice_id')
                         if trigger_id == 'draconic_ancestry':
-                            options_list = list(self.draconic_ancestry.keys())
+                            options_list = list(self.rules.draconic_ancestry.keys())
                             choice = PendingChoice(label="Draconic Ancestry",
                                                    options=options_list,
                                                    count=1,
                                                    target_type="draconic_ancestry",
-                                                   choice_map=self.draconic_ancestry)
-                        
+                                                   choice_map=self.rules.draconic_ancestry)
+                        pass
+                    
+                    case 'skill_choice':
+                        all_skills = []
+                        for cat_skills in self.rules.skills.values():
+                            all_skills.extend(cat_skills)
+                        options = mod.get('list', all_skills)
+                        if mod.get('pool') == 'any':
+                            options = all_skills
+                        choice = PendingChoice(label="Skill Choice",
+                                               options=options,
+                                               count=mod.get('count', 1),
+                                               target_type="skill")
+                        pass
+                    
+                    case 'ability_bonus_choice':
+                        pass    
+                    
                 if choice:
                     character.pending_choices.append(choice)
                     
