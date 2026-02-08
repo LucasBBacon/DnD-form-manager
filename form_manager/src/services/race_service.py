@@ -1,5 +1,5 @@
 import json
-from typing import Dict, Optional
+from typing import Dict, List, Optional
 from form_manager.src.models.character import Character, PendingChoice
 from form_manager.src.services.rules_manager import RulesManager
 
@@ -51,7 +51,13 @@ class RaceService:
             self.__apply_modifiers(character, modifiers)
             
     def __apply_modifiers(self, character: Character, modifiers):
-        print(modifiers)
+        fixed_bonuses = []
+        for mod in modifiers:
+            if mod.get('type') == 'ability_bonus':
+                target = mod.get('target')
+                if target and target != 'all':
+                    fixed_bonuses.append(target)
+        
         for mod in modifiers:
             m_type = mod.get('type')
             
@@ -76,14 +82,14 @@ class RaceService:
                     character.languages.append(lang)
                     
             elif 'choice' in str(m_type):
-                self.__resolve_choices(character, mod, m_type)
+                self.__resolve_choices(character, mod, m_type, fixed_bonuses)
                     
             elif m_type == 'sense':
                 target = mod.get('target')
                 if target:
                     character.features.append(target.capitalize())
 
-    def __resolve_choices(self, character: Character, mod, m_type):
+    def __resolve_choices(self, character: Character, mod, m_type, fixed_bonuses: Optional[List[str]] = None):
         choice = None
         match m_type:
             case 'language_choice':
@@ -95,14 +101,12 @@ class RaceService:
                                                options=choice_options,
                                                count=mod.get('count', 1),
                                                target_type='language')
-                pass
                 
             case 'tool_proficiency_choice':
                 choice = PendingChoice(label='Tool Proficiency',
                                                options=mod.get('list', []),
                                                count=mod.get('count', 1),
                                                target_type='tool')
-                pass
                     
             case 'spell_choice':
                 class_key = mod.get('list')
@@ -116,7 +120,6 @@ class RaceService:
                                                count=mod.get('count', 1),
                                                target_type='spell',
                                                level=level)
-                pass
                     
             case "choice_trigger":
                 trigger_id = mod.get('choice_id')
@@ -127,7 +130,6 @@ class RaceService:
                                                    count=1,
                                                    target_type="draconic_ancestry",
                                                    choice_map=self.rules.draconic_ancestry)
-                pass
                     
             case 'skill_choice':
                 all_skills = []
@@ -140,17 +142,19 @@ class RaceService:
                                                options=options,
                                                count=mod.get('count', 1),
                                                target_type="skill")
-                pass
                     
             case 'ability_bonus_choice':
                 options = list(character.stats.keys())
+                if fixed_bonuses:
+                    for fb in fixed_bonuses:
+                        if fb in options:
+                            options.remove(fb)
                 choice = PendingChoice(label="Ability Bonus",
                                        options=options,
                                        count=mod.get('count', 1),
                                        target_type="ability_bonus",
                                        level=mod.get('amount', 1),
                                        unique=True)
-                pass
                     
         if choice:
             character.pending_choices.append(choice)
