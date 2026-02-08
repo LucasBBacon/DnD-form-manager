@@ -8,7 +8,7 @@ class RulesManager:
         self.resources_dir = resources_dir
         self.__cache = {}
         
-    def __load_json(self, relative_path: str) -> Dict[str, Any]:
+    def _load_json(self, relative_path: str) -> Dict[str, Any]:
         if relative_path in self.__cache:
             return self.__cache[relative_path]
         
@@ -24,24 +24,24 @@ class RulesManager:
         
     @property
     def races(self) -> Dict:
-        return self.__load_json('races/race_data.json')
+        return self._load_json('races/race_data.json')
     
     @property
     def traits(self) -> Dict:
-        return self.__load_json('races/traits_data.json')
+        return self._load_json('races/traits_data.json')
     
     @property
     def languages(self) -> Dict:
-        return self.__load_json('rules/languages.json')
+        return self._load_json('rules/languages.json')
     
     @property
     def spells(self) -> Dict:
-        return self.__load_json('spells/spell_list.json')
+        return self._load_json('spells/spell_list.json')
     
     @property
     def draconic_ancestry(self) -> Dict:
-        return self.__load_json('rules/draconic_ancestry.json')
+        return self._load_json('rules/draconic_ancestry.json')
     
     @property
     def skills(self) -> Dict:
-        return self.__load_json('rules/skills.json')
+        return self._load_json('rules/skills.json')

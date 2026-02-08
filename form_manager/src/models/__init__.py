@@ -1,4 +1,4 @@
-__all__ = ["Character"]
+__all__ = ["Character", "PendingChoice", "TargetType"]
 
 
-from form_manager.src.models.character import Character
+from form_manager.src.models.character import Character, PendingChoice, TargetType

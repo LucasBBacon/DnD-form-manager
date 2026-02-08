@@ -3,6 +3,15 @@ from enum import Enum
 from typing import Any, Dict, List
 
 
+class TargetType(str, Enum):
+    TOOL = "tool"
+    SKILL = "skill"
+    LANGUAGE = "language"
+    SPELL = "spell"
+    ABILITY_BONUS = "ability_bonus"
+    DRACONIC_ANCESTRY = "draconic_ancestry"
+
+
 @dataclass
 class PendingChoice:
     label: str
@@ -47,45 +56,54 @@ class Character:
     breath_weapon: Dict[str, str] = field(default_factory=dict)
     
     def choose(self, choice_label: str, selection: str) -> 'Character':
-        choice_obj = next((c for c in self.pending_choices if c.label == choice_label))
-        selection = selection.lower()
-            
+        choice_obj = next((c for c in self.pending_choices if c.label == choice_label), None)
+        print(choice_obj)          
         if not choice_obj:
             raise ValueError(f"No pending choice found for '{choice_label}'")
+        
+        # Validation
+        selection = selection.lower()
         if choice_obj.options and selection not in choice_obj.options:
             raise ValueError(f"'{selection}' is not a valid option for {choice_label}")    
         
+        # Logic
         match choice_obj.target_type:
-            case "tool":
+            case TargetType.TOOL:
                 self.proficiencies['tool'].append(selection)
-                pass
-            case "skill":
+                
+            case TargetType.SKILL:
                 self.proficiencies['skill'].append(selection)
-                pass
-            case "language":
+                
+            case TargetType.LANGUAGE:
                 self.languages.append(selection.title())
-                pass
-            case "spell":
+                
+            case TargetType.SPELL:
                 level = str(getattr(choice_obj, "level", "0"))
                 self.spells[level].append(selection)
-                pass
-            case "draconic_ancestry":
+            
+            case TargetType.ABILITY_BONUS:
+                bonus = choice_obj.level if choice_obj.level else 1
+                if selection in self.stats:
+                    self.stats[selection] += bonus
+                else:
+                    raise ValueError(f"Invalid ability score: {selection}")
+            
+            case TargetType.DRACONIC_ANCESTRY:
                 payload = choice_obj.choice_map.get(selection, {})
                 if "damage_type" in payload:
                     self.resistances.append(payload["damage_type"])
                 if "breath_weapon" in payload:
                     self.breath_weapon = payload["breath_weapon"]
                     self.breath_weapon["damage_type"] = payload.get("damage_type")
-            case 'ability_bonus':
-                bonus = choice_obj.level if choice_obj.level else 1
-                if selection in self.stats:
-                    self.stats[selection] += bonus
-                else:
-                    raise ValueError(f"Invalid ability score: {selection}")
+                    
+            case _:
+                return self
         
+        # Optional Comsumption
         if choice_obj.unique and selection in choice_obj.options:
             choice_obj.options.remove(selection)
             
+        # Counter
         choice_obj.count -= 1
         if choice_obj.count <= 0:
             self.pending_choices.remove(choice_obj)

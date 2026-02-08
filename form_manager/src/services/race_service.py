@@ -60,6 +60,9 @@ class RaceService:
                 value = mod.get('value')
                 if target in character.stats:
                     character.stats[target] += value
+                elif target == 'all':
+                    for stat in character.stats.keys():
+                        character.stats[stat] += value
             
             elif m_type == 'size':
                 character.size = mod.get('value').title()
