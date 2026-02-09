@@ -56,9 +56,6 @@ Feature: Item Properties and Usage
         Then the item "Longsword" should have a damage die of "1d4"
         And the item "Longsword" should have a range of "20/60"
 
-Feature: Custom Item Names and Templates
-    As a player, I want to rename items to create unique items based on templates so that my character feels unique while following the rules.
-
     Scenario: Renaming an existing item
         Given the user has a "Longsword" in their inventory
         When the user renames "Longsword" to "Goblin Cleaver"
