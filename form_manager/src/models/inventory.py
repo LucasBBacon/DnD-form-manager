@@ -43,3 +43,15 @@ class Inventory:
     def get_item_count(self, name: str) -> int:
         item = self.get_item(name)
         return item.quantity if item else 0
+    
+    def equip_item(self, item_name: str) -> None:
+        item = self.get_item(item_name)
+        if not item:
+            raise ValueError(f"Cannot equip: Item '{item_name}' not found.")
+        item.equipped = True
+        
+    def unequip_item(self, item_name: str) -> None:
+        item = self.get_item(item_name)
+        if not item:
+            raise ValueError(f"Cannot unequip: Item '{item_name}' not found.")
+        item.equipped = False
