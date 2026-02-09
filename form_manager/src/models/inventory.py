@@ -55,3 +55,6 @@ class Inventory:
         if not item:
             raise ValueError(f"Cannot unequip: Item '{item_name}' not found.")
         item.equipped = False
+        
+    def get_total_weight(self) -> float:
+        return sum(item.weight * item.quantity for item in self.items)

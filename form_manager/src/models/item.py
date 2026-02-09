@@ -10,6 +10,7 @@ class Item:
     category: Optional[str] = None
     properties: List[str] = field(default_factory=list)
     equipped: bool = False
+    weight: float = 0.0
     
     def __post_init__(self):
         pass
