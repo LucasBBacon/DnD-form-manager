@@ -69,8 +69,8 @@ def check_inventory_count(session_context, count, item_name):
     assert found_count == count, f"Expected {count} of {item_name}, found {found_count}"
     
     
-@then(parsers.parse('the inventory should contina "{item_name}"'))
-def check_invetory_contains(session_context, item_name):
+@then(parsers.parse('the inventory should contain "{item_name}"'))
+def check_inventory_contains(session_context, item_name):
     char = session_context['character']
     assert char.inventory.has_item(item_name)
     
@@ -82,7 +82,7 @@ def check_not_stackable(session_context, item_name):
     assert item.stackable is False
     
     
-@then(parsers.parse('the item "{item_name}" should be marked as stackable'))
+@then(parsers.parse('the "{item_name}" entry should be marked as stackable'))
 def check_stackable(session_context, item_name):
     char = session_context['character']
     item = char.inventory.get_item(item_name)
@@ -99,4 +99,4 @@ def check_inventory_entries(session_context, entry_count, item_name):
 @then(parsers.parse('"{item_name}" should be removed from the inventory list'))
 def check_item_removed(session_context, item_name):
     char = session_context['character']
-    assert not char.inveotry.has_item(item_name)
+    assert not char.inventory.has_item(item_name)

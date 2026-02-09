@@ -2,6 +2,8 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import Any, Dict, List
 
+from form_manager.src.models.inventory import Inventory
+
 
 class TargetType(str, Enum):
     TOOL = "tool"
@@ -48,6 +50,8 @@ class Character:
         "armor": [], "weapon": [], "tool": [], "skill": []
     })
     resistances: List[str] = field(default_factory=list)
+    
+    inventory: Inventory = field(default_factory=Inventory)
     
     spells: Dict[str, List[str]] = field(default_factory=lambda: {
         "0": [], "1": [], "2": [], "3": [], "4": [], 
