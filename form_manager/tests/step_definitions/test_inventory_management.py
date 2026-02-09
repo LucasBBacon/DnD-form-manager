@@ -40,7 +40,7 @@ def add_single_item(session_context, item_name):
 @when(parsers.parse('the user adds {count:d} "{item_name}" to their inventory'))
 def add_multiple_items(session_context, count, item_name):
     char = session_context['character']
-    item = Item(name=item_name)
+    item = Item(name=item_name, stackable=True)
     char.inventory.add_item(item, count)
     
 

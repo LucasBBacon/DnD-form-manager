@@ -16,6 +16,7 @@ class Inventory:
             existing_item = self.get_item(item.name)
             if existing_item:
                 existing_item.quantity += count
+                return
         
         item.quantity = count
         self.items.append(item)
@@ -29,13 +30,12 @@ class Inventory:
             item.quantity -= count
             if item.quantity <= 0:
                 self.items.remove(item)
-                
         else:
             self.items.remove(item)
         
     def get_item(self, name: str) -> Optional[Item]:
-        name_lower = name.lower()
-        return next((i for i in self.items if i.name.lower() == name_lower), None)
+        name_lower = name.lower().lower()
+        return next((i for i in self.items if i.name.strip().lower() == name_lower), None)
     
     def has_item(self, name: str) -> bool:
         return self.get_item(name) is not None
