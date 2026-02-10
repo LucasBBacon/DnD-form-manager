@@ -1,10 +1,8 @@
 import os
-from typing import Dict
-import pytest
 from pytest_bdd import given, scenarios, parsers, then, when
 
 from form_manager.src.models.character import Character
-from form_manager.src.services import RaceService, RulesManager
+from form_manager.src.services import RaceService
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -16,10 +14,6 @@ scenarios("../features/racial_modifiers.feature")
 def normalize_text(raw_input: str) -> str:
     return raw_input.lower().replace(" ", "_").replace("'", "")
 
-@pytest.fixture
-def session_context() -> Dict:
-    return {}
-
 
 @given("a new character session is started with default stats")
 def new_character(session_context):
@@ -29,17 +23,15 @@ def new_character(session_context):
 
 
 @when(parsers.parse('the user selects "{race_name}" as their race'))
-def select_race(session_context, race_name):
+def select_race(session_context, rules_manager, race_name):
     # character is selected and applied through race applicator
-    rules_manager = RulesManager(RESOURCES_DIR)
     applicator = RaceService(rules_manager)
     character = session_context['character']
     applicator.apply_race(character, race_name)
     
 
 @when(parsers.parse('the user selects "{subrace_name}" as their subrace'))
-def select_subrace(session_context, subrace_name):
-    rules_manager = RulesManager(RESOURCES_DIR)
+def select_subrace(session_context, rules_manager, subrace_name):
     applicator = RaceService(rules_manager)
     character = session_context['character']
     applicator.apply_race(character, subrace_name)

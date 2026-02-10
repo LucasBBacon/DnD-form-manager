@@ -6,10 +6,6 @@ from form_manager.src.models import Character, Item
 
 scenarios("../features/inventory_management.feature")
 
-@pytest.fixture
-def session_context():
-    return {}
-
 
 @given("a new character session is started")
 def new_character(session_context):

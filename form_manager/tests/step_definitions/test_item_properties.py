@@ -1,13 +1,8 @@
-import os
 import pytest
 from pytest_bdd import given, scenarios, then, when, parsers
 
 from form_manager.src.models import Character, Item, DamageType
-from form_manager.src.services import RulesManager
 
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-RESOURCES_DIR = os.path.join(BASE_DIR, '../../src/resources')
 
 scenarios("../features/item_properties.feature")
 
@@ -15,13 +10,11 @@ scenarios("../features/item_properties.feature")
 def normalize_text(raw_input: str) -> str:
     return raw_input.lower().replace(" ", "_").replace("'", "")
 
-@pytest.fixture
-def session_context():
-    return {}
-
-@pytest.fixture
-def rules_manager():
-    return RulesManager(RESOURCES_DIR)
+def find_item(context, item_name):
+    char = context['character']
+    item = char.inventory.get_item(item_name)
+    assert item is not None, f"Item {item_name} not found"
+    return item
 
 
 @given("a new character session is started")
@@ -30,9 +23,12 @@ def new_character(session_context):
     
     
 @given(parsers.parse('the user has a "{item_name}" in their inventory'))
-def user_has_specific_item(session_context, item_name):
+def user_has_specific_item(session_context, rules_manager, item_name):
     char = session_context['character']
     item = Item(name=item_name)
+    weapon_key = normalize_text(item_name)
+    if weapon_data := rules_manager.weapons.get(weapon_key):
+        item.apply_weapon_stats(weapon_data)
     char.inventory.add_item(item)
     
     
@@ -59,6 +55,12 @@ def user_has_weighted_items(session_context, count, item_name, weight):
     char = session_context['character']
     item = Item(name=item_name, weight=weight, stackable=True)
     char.inventory.add_item(item, count)
+
+
+@given(parsers.parse('the item "{item_name}" does not have the property "{property_name}"'))
+def check_item_missing_property(session_context, item_name, property_name):
+    item = find_item(session_context, item_name)
+    assert property_name not in item.properties, f"Item '{item_name}' unexpectedly has property '{property_name}'"
 
 
 @when(parsers.parse('the user creates a custom item named "{item_name}"'))
@@ -102,17 +104,13 @@ def check_inventory_weight(session_context):
 
 @when(parsers.parse('the user sets the damage die of "{item_name}" to "{dice}"'))
 def set_item_damage_die(session_context, item_name, dice):
-    char = session_context['character']
-    item = char.inventory.get_item(item_name)
-    assert item is not None, f"Item {item_name} not found"
+    item = find_item(session_context, item_name)
     item.damage_dice = dice
     
 
 @when(parsers.parse('the user sets the damage type of "{item_name}" to "{type_name}"'))
 def set_item_damage_type(session_context, item_name, type_name):
-    char = session_context['character']
-    item = char.inventory.get_item(item_name)
-    assert item is not None, f"Item {item_name} not found"
+    item = find_item(session_context, item_name)
     try:
         damage_enum = DamageType(type_name.lower())
         item.damage_type = damage_enum
@@ -122,23 +120,25 @@ def set_item_damage_type(session_context, item_name, type_name):
         
 @when(parsers.parse('the user treats "{item_name}" as an improvised weapon'))
 def treat_as_improvised(session_context, item_name):
-    char = session_context['character']
-    item = char.inventory.get_item(item_name)
-    assert item is not None, f"Item {item_name} not found"
+    item = find_item(session_context, item_name)
     item.make_improvised()
 
 
 @when(parsers.parse('the user treats "{item_name}" as a "{weapon_name}"'))
 def treat_as_weapon(session_context, rules_manager, item_name, weapon_name):
-    char = session_context['character']
-    item = char.inventory.get_item(item_name)
-    assert item is not None, f"Item {item_name} not found"
+    item = find_item(session_context, item_name)
 
     weapon_key = normalize_text(weapon_name)
     weapon_stats = rules_manager.weapons.get(weapon_key)
     assert weapon_stats is not None, f"Weapon template '{weapon_name}' not found."
     
     item.apply_weapon_stats(weapon_stats)
+    
+
+@when(parsers.parse('the user uses the "{item_name}" as an improvised thrown weapon'))
+def use_as_improvised_thrown(session_context, item_name):
+    item = find_item(session_context, item_name)
+    item.make_improvised()
 
 
 @then(parsers.parse('the item "{item_name}" should have properties "{properties_str}"'))
@@ -191,7 +191,5 @@ def check_item_damage_type(session_context, item_name, type_name):
 
 @then(parsers.parse('the item "{item_name}" should have a range of "{expected_range}"'))
 def check_item_range(session_context, item_name, expected_range):
-    char = session_context['character']
-    item = char.inventory.get_item(item_name)
-    assert item is not None, f"Item {item_name} not found"
+    item = find_item(session_context, item_name)
     assert item.range == expected_range, f"Expected range '{expected_range}', but got '{item.range}'"
