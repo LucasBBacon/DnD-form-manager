@@ -15,13 +15,6 @@ def normalize_text(raw_input: str) -> str:
     return raw_input.lower().replace(" ", "_").replace("'", "")
 
 
-@given("a new character session is started with default stats")
-def new_character(session_context):
-    # new character instantiated and session context passed in
-    session_context['character'] = Character()
-    session_context['base_stats'] = session_context['character'].stats.copy()
-
-
 @when(parsers.parse('the user selects "{race_name}" as their race'))
 def select_race(session_context, rules_manager, race_name):
     # character is selected and applied through race applicator

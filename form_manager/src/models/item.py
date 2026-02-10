@@ -62,3 +62,25 @@ class Item:
         if 'category' in weapon_data:
             self.category = weapon_data['category']
     
+    def apply_template(self, template_data: Dict) -> None:
+        if 'weight' in template_data:
+            self.weight = template_data['weight']
+        
+        if 'damage_dice' in template_data: 
+            self.damage_dice = template_data['damage_dice']
+            
+        if 'damage_type' in template_data:
+            dtype_str = template_data['damage_type'].lower()
+            try:
+                self.damage_type = DamageType(dtype_str)
+            except ValueError:
+                pass
+            
+        if 'properties' in template_data:
+            self.properties = template_data['properties']
+            
+        if 'range' in template_data:
+            self.range = template_data['range']
+            
+        if 'category' in template_data:
+            self.category = template_data['category']

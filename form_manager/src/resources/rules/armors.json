@@ -1,0 +1,169 @@
+{
+    "padded": {
+        "name": "Padded Armor",
+        "cost": "5 gp",
+        "armor_class": {
+            "base": 11,
+            "dex_bonus": true,
+            "max_dex_bonus": 0
+        },
+        "strength_requirement": 0,
+        "stealth_disadvantage": true,
+        "weight": 8.0,
+        "category": "Light Armor"
+    },
+    "leather": {
+        "name": "Leather Armor",
+        "cost": "10 gp",
+        "armor_class": {
+            "base": 11,
+            "dex_bonus": true,
+            "max_dex_bonus": 0
+        },
+        "strength_requirement": 0,
+        "stealth_disadvantage": false,
+        "weight": 10.0,
+        "category": "Light Armor"
+    },
+    "studded_leather": {
+        "name": "Studded Leather Armor",
+        "cost": "45 gp",
+        "armor_class": {
+            "base": 12,
+            "dex_bonus": true,
+            "max_dex_bonus": 0
+        },
+        "strength_requirement": 0,
+        "stealth_disadvantage": false,
+        "weight": 13.0,
+        "category": "Light Armor"
+    },
+    "hide": {
+        "name": "Hide Armor",
+        "cost": "10 gp",
+        "armor_class": {
+            "base": 12,
+            "dex_bonus": true,
+            "max_dex_bonus": 2
+        },
+        "strength_requirement": 0,
+        "stealth_disadvantage": false,
+        "weight": 12.0,
+        "category": "Medium Armor"
+    },
+    "chain_shirt": {
+        "name": "Chain Shirt Armor",
+        "cost": "50 gp",
+        "armor_class": {
+            "base": 13,
+            "dex_bonus": true,
+            "max_dex_bonus": 2
+        },
+        "strength_requirement": 0,
+        "stealth_disadvantage": false,
+        "weight": 20.0,
+        "category": "Medium Armor"
+    },
+    "scale_mail": {
+        "name": "Scale Mail Armor",
+        "cost": "50 gp",
+        "armor_class": {
+            "base": 14,
+            "dex_bonus": true,
+            "max_dex_bonus": 2
+        },
+        "strength_requirement": 0,
+        "stealth_disadvantage": true,
+        "weight": 45.0,
+        "category": "Medium Armor"
+    },
+    "breastplate": {
+        "name": "Breastplate Armor",
+        "cost": "400 gp",
+        "armor_class": {
+            "base": 14,
+            "dex_bonus": true,
+            "max_dex_bonus": 2
+        },
+        "strength_requirement": 0,
+        "stealth_disadvantage": false,
+        "weight": 20.0,
+        "category": "Medium Armor"
+    },
+    "half_plate": {
+        "name": "Half Plate Armor",
+        "cost": "750 gp",
+        "armor_class": {
+            "base": 15,
+            "dex_bonus": true,
+            "max_dex_bonus": 2
+        },
+        "strength_requirement": 0,
+        "stealth_disadvantage": true,
+        "weight": 40.0,
+        "category": "Medium Armor"
+    },
+    "ring_mail": {
+        "name": "Ring Mail Armor",
+        "cost": "30 gp",
+        "armor_class": {
+            "base": 14,
+            "dex_bonus": false,
+            "max_dex_bonus": 0
+        },
+        "strength_requirement": 0,
+        "stealth_disadvantage": true,
+        "weight": 40.0,
+        "category": "Heavy Armor"
+    },
+    "chain_mail": {
+        "name": "Chain Mail Armor",
+        "cost": "75 gp",
+        "armor_class": {
+            "base": 16,
+            "dex_bonus": false,
+            "max_dex_bonus": 0
+        },
+        "strength_requirement": 13,
+        "stealth_disadvantage": true,
+        "weight": 55.0,
+        "category": "Heavy Armor"
+    },
+    "splint": {
+        "name": "Splint Armor",
+        "cost": "200 gp",
+        "armor_class": {
+            "base": 17,
+            "dex_bonus": false,
+            "max_dex_bonus": 0
+        },
+        "strength_requirement": 15,
+        "stealth_disadvantage": true,
+        "weight": 60.0,
+        "category": "Heavy Armor"
+    },
+    "plate": {
+        "name": "Plate Armor",
+        "cost": "1500 gp",
+        "armor_class": {
+            "base": 18,
+            "dex_bonus": false,
+            "max_dex_bonus": 0
+        },
+        "strength_requirement": 15,
+        "stealth_disadvantage": true,
+        "weight": 65.0,
+        "category": "Heavy Armor"
+    },
+    "shield": {
+        "name": "Shield",
+        "cost": "10 gp",
+        "armor_class": {
+            "bonus": 2
+        },
+        "strength_requirement": 0,
+        "stealth_disadvantage": false,
+        "weight": 6.0,
+        "category": "Shield"
+    }
+}

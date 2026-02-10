@@ -5,11 +5,6 @@ from form_manager.src.models import Character, Item
 
 
 scenarios("../features/inventory_management.feature")
-
-
-@given("a new character session is started")
-def new_character(session_context):
-    session_context['character'] = Character()
     
 
 @given("the user inventory is empty")
@@ -96,3 +91,9 @@ def check_inventory_entries(session_context, entry_count, item_name):
 def check_item_removed(session_context, item_name):
     char = session_context['character']
     assert not char.inventory.has_item(item_name)
+    
+
+@then(parsers.parse('the inventory should not contain "{item_name}"'))
+def check_inventory_does_not_contain(session_context, item_name):
+    char = session_context['character']
+    assert not char.inventory.has_item(item_name), f"Inventory should not contain '{item_name}', but it was found."

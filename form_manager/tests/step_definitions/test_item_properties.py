@@ -1,7 +1,7 @@
 import pytest
 from pytest_bdd import given, scenarios, then, when, parsers
 
-from form_manager.src.models import Character, Item, DamageType
+from form_manager.src.models import Item, DamageType
 
 
 scenarios("../features/item_properties.feature")
@@ -15,11 +15,6 @@ def find_item(context, item_name):
     item = char.inventory.get_item(item_name)
     assert item is not None, f"Item {item_name} not found"
     return item
-
-
-@given("a new character session is started")
-def new_character(session_context):
-    session_context['character'] = Character()
     
     
 @given(parsers.parse('the user has a "{item_name}" in their inventory'))
