@@ -37,7 +37,7 @@ Feature: Item Properties and Usage
         When the user sets the damage die of "Greataxe" to "1d12"
         And the user sets the damage type of "Greataxe" to "Slashing"
         Then the item "Greataxe" should have a damage die of "1d12"
-        And the item "Greataxe" should have a damage type of "Slashing"
+        And the item "Greataxe" should have the damage type of "Slashing"
 
     Scenario: Using an object as a generic Improvised Weapon
         Given a new character session is started
@@ -52,8 +52,8 @@ Feature: Item Properties and Usage
         # The DM decides it's like a Club
         When the user treats "Table Leg" as a "Club"
         Then the item "Table Leg" should have a damage die of "1d4"
-        And the item "Table Leg" should have the damage type "Bludgeoning"
-        And the item "Table Leg" should have the property "Light"
+        And the item "Table Leg" should have the damage type of "Bludgeoning"
+        And the item "Table Leg" should have properties "Light"
 
     Scenario: Throwing a melee weapon that is not designed for throwing
         Given a new character session is started

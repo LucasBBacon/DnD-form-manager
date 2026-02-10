@@ -45,3 +45,7 @@ class RulesManager:
     @property
     def skills(self) -> Dict:
         return self._load_json('rules/skills.json')
+    
+    @property
+    def weapons(self) -> Dict:
+        return self._load_json('rules/weapons.json')
