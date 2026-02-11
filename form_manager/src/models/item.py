@@ -24,6 +24,7 @@ class ArmorClass:
     base: int = 0
     dex_bonus: bool = False
     max_dex_bonus: int = 0
+    bonus: int = 0
 
 
 @dataclass
@@ -49,6 +50,27 @@ class Item:
     
     def __post_init__(self):
         pass
+    
+    @staticmethod
+    def parse_cost(cost_str: str) -> Dict[str, int]:
+        if not cost_str:
+            return {}
+        try:
+            parts = cost_str.strip().split(' ')
+            if len(parts) != 2:
+                return {}
+            
+            amount = int(parts[0])
+            currency = parts[1].lower()
+            
+            valid_currencies = ["cp", "sp", "ep", "gp", "pp"]
+            if currency not in valid_currencies:
+                return {}
+            
+            return {currency: amount}
+        
+        except (IndexError, ValueError):
+            return {}
     
     def make_improvised(self) -> None:
         self.damage_dice = "1d4"
@@ -98,23 +120,20 @@ class Item:
             self.category = template_data['category']
             
         if 'cost' in template_data:
-            self.cost = template_data['cost']
+            if isinstance(template_data['cost'], str):
+                parsed = self.parse_cost(template_data['cost'])
+                self.cost.update(parsed)
+            else:
+                self.cost = template_data['cost']
             
         if 'armor_class' in template_data:
-            armor_class_data = template_data['armor_class']
-            base = 0
-            dex_bonus = False
-            max_dex_bonus = 0
-            if 'base' in armor_class_data:
-                base = armor_class_data['base']
-            if 'dex_bonus' in armor_class_data:
-                dex_bonus = bool(armor_class_data['dex_bonus'])
-            if 'max_dex_bonus' in armor_class_data:
-                max_dex_bonus = armor_class_data['max_dex_bonus']
-            armor_class = ArmorClass(base=base,
-                                     dex_bonus=dex_bonus,
-                                     max_dex_bonus=max_dex_bonus)
-            self.armor_class = armor_class
+            ac_data = template_data['armor_class']
+            self.armor_class = ArmorClass(
+                base=ac_data.get('base', 0),
+                dex_bonus=bool(ac_data.get('dex_bonus', False)),
+                max_dex_bonus=ac_data.get('max_dex_bonus', 0),
+                bonus=ac_data.get('bonus', 0)
+            )
             
         if 'strength_requirement' in template_data:
             self.strength_requirement = template_data['strength_requirement']

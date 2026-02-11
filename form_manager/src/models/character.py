@@ -52,6 +52,9 @@ class Character:
     resistances: List[str] = field(default_factory=list)
     
     inventory: Inventory = field(default_factory=Inventory)
+    purse: Dict[str, int] = field(default_factory=lambda: {
+        "cp": 0, "sp": 0, "ep": 0, "gp": 0, "pp": 0
+    })
     
     spells: Dict[str, List[str]] = field(default_factory=lambda: {
         "0": [], "1": [], "2": [], "3": [], "4": [], 
@@ -113,3 +116,44 @@ class Character:
             self.pending_choices.remove(choice_obj)
         
         return self
+    
+    def _calculate_purse_total_cp(self) -> int:
+        return (
+            self.purse.get('cp', 0) +
+            self.purse.get('sp', 0) * 10 +
+            self.purse.get('ep', 0) * 50 +
+            self.purse.get('gp', 0) * 100 +
+            self.purse.get('pp', 0) * 1000
+        )
+    
+    def pay_cost(self, cost: Dict[str , int]) -> bool:
+        total_cp = self._calculate_purse_total_cp()
+        
+        cost_cp = (
+            cost.get('cp', 0) +
+            cost.get('sp', 0) * 10 +
+            cost.get('ep', 0) * 50 +
+            cost.get('gp', 0) * 100 +
+            cost.get('pp', 0) * 1000
+        )
+        
+        if total_cp < cost_cp:
+            return False
+        
+        remaining_cp = total_cp - cost_cp
+        new_purse = {
+           "cp": 0, "sp": 0, "ep": 0, "gp": 0, "pp": 0
+        }
+        new_purse['pp'] = remaining_cp // 1000
+        remaining_cp %= 1000
+        new_purse['gp'] = remaining_cp // 100
+        remaining_cp %= 100
+        new_purse['sp'] = remaining_cp // 10
+        remaining_cp %= 10
+        new_purse['cp'] = remaining_cp 
+        remaining_cp %= 1000
+        
+        self.purse = new_purse
+        return True
+        
+        

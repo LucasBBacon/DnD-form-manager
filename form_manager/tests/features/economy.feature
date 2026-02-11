@@ -15,14 +15,16 @@ Feature: Economy and Wealth
         Then the total value should be "515 gp"
 
     Scenario: Removing Coinage
-        Given the user has 10 "gold pieces" in their purse
+        Given a new character session is started
+        And the user has 10 "gold pieces" in their purse
         When the user removes 5 "gold pieces"
         Then the character funds should show 5 gp
 
     # Optional: Currency Conversion Scenario
     Scenario: Converting Currency for purchases
-        Given the user has 1 "gold piece" in their purse
-        And the user has 0 "silver pieces"
+        Given a new character session is started
+        And the user has 1 "gold piece" in their purse
+        And the user has 0 "silver pieces" in their purse
         When the user attempts to buy an item costing 5 "silver pieces"
         Then the purchase should be successful
         And the purse should contain 5 "silver pieces"

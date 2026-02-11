@@ -58,3 +58,17 @@ class Inventory:
         
     def get_total_weight(self) -> float:
         return sum(item.weight * item.quantity for item in self.items)
+    
+    def get_total_value_in_cp(self) -> int:
+        total_cp = 0
+        for item in self.items:
+            item_value = 0
+            item_value += item.cost.get('cp', 0)
+            item_value += item.cost.get('sp', 0) * 10
+            item_value += item.cost.get('ep', 0) * 50
+            item_value += item.cost.get('gp', 0) * 100
+            item_value += item.cost.get('pp', 0) * 1000
+
+            total_cp += (item_value * item.quantity)
+        
+        return total_cp
