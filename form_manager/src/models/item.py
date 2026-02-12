@@ -47,6 +47,8 @@ class Item:
     damage_type: Optional[DamageType] = None
     range: Optional[str] = None
     armor_class: Optional[ArmorClass] = None
+    strength_requirement: int = 0
+    stealth_disadvantage: bool = False
     
     def __post_init__(self):
         pass
@@ -75,26 +77,6 @@ class Item:
     def make_improvised(self) -> None:
         self.damage_dice = "1d4"
         self.range = "20/60"
-    
-    def apply_weapon_stats(self, weapon_data: Dict) -> None:
-        if 'damage_dice' in weapon_data: 
-            self.damage_dice = weapon_data['damage_dice']
-            
-        if 'damage_type' in weapon_data:
-            dtype_str = weapon_data['damage_type'].lower()
-            try:
-                self.damage_type = DamageType(dtype_str)
-            except ValueError:
-                pass
-            
-        if 'properties' in weapon_data:
-            self.properties = weapon_data['properties']
-            
-        if 'range' in weapon_data:
-            self.range = weapon_data['range']
-            
-        if 'category' in weapon_data:
-            self.category = weapon_data['category']
     
     def apply_template(self, template_data: Dict) -> None:
         if 'weight' in template_data:

@@ -2,6 +2,7 @@ import pytest
 from pytest_bdd import given, scenarios, parsers, then, when
 
 from form_manager.src.models import Item
+from form_manager.src.services import CurrencyService
 
 
 scenarios("../features/economy.feature")
@@ -61,11 +62,11 @@ def calculate_inventory_value(session_context):
     
 
 @when(parsers.parse('the user attempts to buy an item costing {amount:d} "{currency_name}"'))    
-def buy_item_costing(session_context, amount, currency_name):
+def buy_item_costing(session_context, rules_manager, amount, currency_name):
     char = session_context['character']
     key = get_currency_key(currency_name)
     cost = {key: amount}
-    success = char.pay_cost(cost)
+    success = char.pay_cost(cost, CurrencyService(rules_manager))
     session_context['purchase_success'] = success
 
     

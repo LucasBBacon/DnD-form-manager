@@ -54,6 +54,10 @@ class RulesManager:
     def armor(self) -> Dict:
         return self._load_json('rules/armors.json')
     
+    @property
+    def currency(self) -> Dict:
+        return self._load_json('rules/currency.json')
+    
     def get_item_template(self, name: str) -> Dict:
         key = name.lower().replace(" ", "_").replace("'", "")
         if key in self.weapons:

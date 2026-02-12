@@ -22,7 +22,7 @@ def user_has_specific_item(session_context, rules_manager, item_name):
     item = Item(name=item_name)
     weapon_key = normalize_text(item_name)
     if weapon_data := rules_manager.weapons.get(weapon_key):
-        item.apply_weapon_stats(weapon_data)
+        item.apply_template(weapon_data)
     char.inventory.add_item(item)
 
 

@@ -23,7 +23,7 @@ def user_has_specific_item(session_context, rules_manager, item_name):
     item = Item(name=item_name)
     weapon_key = normalize_text(item_name)
     if weapon_data := rules_manager.weapons.get(weapon_key):
-        item.apply_weapon_stats(weapon_data)
+        item.apply_template(weapon_data)
     char.inventory.add_item(item)
     
     
@@ -127,7 +127,7 @@ def treat_as_weapon(session_context, rules_manager, item_name, weapon_name):
     weapon_stats = rules_manager.weapons.get(weapon_key)
     assert weapon_stats is not None, f"Weapon template '{weapon_name}' not found."
     
-    item.apply_weapon_stats(weapon_stats)
+    item.apply_template(weapon_stats)
     
 
 @when(parsers.parse('the user uses the "{item_name}" as an improvised thrown weapon'))

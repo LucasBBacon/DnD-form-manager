@@ -3,6 +3,7 @@ from enum import Enum
 from typing import Any, Dict, List
 
 from form_manager.src.models.inventory import Inventory
+from form_manager.src.services.currency_service import CurrencyService
 
 
 class TargetType(str, Enum):
@@ -117,43 +118,15 @@ class Character:
         
         return self
     
-    def _calculate_purse_total_cp(self) -> int:
-        return (
-            self.purse.get('cp', 0) +
-            self.purse.get('sp', 0) * 10 +
-            self.purse.get('ep', 0) * 50 +
-            self.purse.get('gp', 0) * 100 +
-            self.purse.get('pp', 0) * 1000
-        )
-    
-    def pay_cost(self, cost: Dict[str , int]) -> bool:
-        total_cp = self._calculate_purse_total_cp()
+    def pay_cost(self, cost: Dict[str , int], currency_service: CurrencyService) -> bool:
+        current_wealth = currency_service.convert_purse_to_cp(self.purse)
+        cost_value = currency_service.convert_purse_to_cp(cost)
         
-        cost_cp = (
-            cost.get('cp', 0) +
-            cost.get('sp', 0) * 10 +
-            cost.get('ep', 0) * 50 +
-            cost.get('gp', 0) * 100 +
-            cost.get('pp', 0) * 1000
-        )
-        
-        if total_cp < cost_cp:
+        if current_wealth < cost_value:
             return False
         
-        remaining_cp = total_cp - cost_cp
-        new_purse = {
-           "cp": 0, "sp": 0, "ep": 0, "gp": 0, "pp": 0
-        }
-        new_purse['pp'] = remaining_cp // 1000
-        remaining_cp %= 1000
-        new_purse['gp'] = remaining_cp // 100
-        remaining_cp %= 100
-        new_purse['sp'] = remaining_cp // 10
-        remaining_cp %= 10
-        new_purse['cp'] = remaining_cp 
-        remaining_cp %= 1000
-        
-        self.purse = new_purse
+        remaining_wealth = current_wealth - cost_value
+        self.purse = currency_service.optimize_purse(remaining_wealth)
         return True
         
         
