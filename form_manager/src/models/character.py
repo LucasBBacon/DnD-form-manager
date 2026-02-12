@@ -63,6 +63,15 @@ class Character:
     })
     breath_weapon: Dict[str, str] = field(default_factory=dict)
     
+    @property
+    def carrying_capacity(self) -> float:
+        strength_score = self.stats.get("strength", 10)
+        return strength_score * 15
+    
+    @property
+    def max_push_drag_lift(self) -> float:
+        return self.carrying_capacity * 2
+    
     def choose(self, choice_label: str, selection: str) -> 'Character':
         choice_obj = next((c for c in self.pending_choices if c.label == choice_label), None)
         print(choice_obj)          
@@ -128,5 +137,3 @@ class Character:
         remaining_wealth = current_wealth - cost_value
         self.purse = currency_service.optimize_purse(remaining_wealth)
         return True
-        
-        
