@@ -104,6 +104,7 @@ class Item:
         if 'cost' in template_data:
             if isinstance(template_data['cost'], str):
                 parsed = self.parse_cost(template_data['cost'])
+                print(parsed)
                 self.cost.update(parsed)
             else:
                 self.cost = template_data['cost']
