@@ -36,6 +36,12 @@ class Character:
         SMALL = "Small"
         MEDIUM = "Medium"
         LARGE = "Large"
+        
+    class Encumbrance(str, Enum):
+        UNENCUMBERED = "Unencumbered"
+        ENCUMBERED = "Encumbered"
+        HEAVILY_ENCUMBERED = "Heavily Encumbered"
+        OVER_CAPACITY = "Over Capacity"
 
     stats: Dict[str, int] = field(default_factory=lambda: {
         "strength": 10, "dexterity": 10, "constitution": 10, 
@@ -63,14 +69,71 @@ class Character:
     })
     breath_weapon: Dict[str, str] = field(default_factory=dict)
     
+    use_variant_encumbrance: bool = False
+    
+    @property
+    def size_multiplier(self) -> float:
+        if self.size == self.Size.LARGE:
+            return 2.0
+        return 1.0
+    
     @property
     def carrying_capacity(self) -> float:
         strength_score = self.stats.get("strength", 10)
-        return strength_score * 15
+        return strength_score * 15 * self.size_multiplier
     
     @property
     def max_push_drag_lift(self) -> float:
         return self.carrying_capacity * 2
+    
+    @property
+    def current_weight(self) -> float:
+        total = self.inventory.get_total_weight()
+        total_coins = sum(self.purse.values())
+        total += (total_coins / 50.0)
+        return total
+    
+    @property
+    def encumbrance_status(self) -> 'Encumbrance':
+        weight = self.current_weight
+        cap = self.carrying_capacity
+        strength = self.stats.get("strength", 10)
+        size_mult = self.size_multiplier
+        
+        print(weight)
+        print(10 * strength * size_mult)
+        print(cap)
+        print(self.use_variant_encumbrance)
+        
+        if weight > cap:
+            return self.Encumbrance.OVER_CAPACITY
+        
+        if not self.use_variant_encumbrance:
+            return self.Encumbrance.UNENCUMBERED
+        
+        if weight > (10 * strength * size_mult):
+            return self.Encumbrance.HEAVILY_ENCUMBERED
+        
+        if weight > (5 * strength * size_mult):
+            return self.Encumbrance.ENCUMBERED
+        
+        return self.Encumbrance.UNENCUMBERED
+    
+    @property
+    def effective_speed(self) -> int:
+        status = self.encumbrance_status
+        base = self.speed
+        
+        if status == self.Encumbrance.OVER_CAPACITY:
+            return 5
+        
+        if status == self.Encumbrance.HEAVILY_ENCUMBERED:
+            return max(0, base - 20)
+        
+        if status == self.Encumbrance.ENCUMBERED:
+            return max(0, base - 10)
+        
+        return base
     
     def choose(self, choice_label: str, selection: str) -> 'Character':
         choice_obj = next((c for c in self.pending_choices if c.label == choice_label), None)

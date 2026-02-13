@@ -20,22 +20,22 @@ Feature: Encumbrance and Capacity
         Given the variant encumbrance rule is enabled
         And the user has items weighing 45 lbs
         Then the encumbrance status should be "Unencumbered"
-        And the speed penalty should be 0 ft
+        And the effective speed should be 30 ft
 
-    Scenario: Encumbered Status (Variant)
+    Scenario: Encumbered Status
         Given the variant encumbrance rule is enabled
         And the user has items weighing 55 lbs
         Then the encumbrance status should be "Encumbered"
-        And the speed penalty should be 10 ft
+        And the effective speed should be 20 ft
 
-    Scenario: Encumbered Status (Variant)
+    Scenario: Heavily Encumbered Status
         Given the variant encumbrance rule is enabled
         And the user has items weighing 105 lbs
         Then the encumbrance status should be "Heavily Encumbered"
-        And the speed penalty should be 20 ft
+        And the effective speed should be 10 ft
 
     Scenario: Exceeding Carrying Capacity
         Given the variant encumbrance rule is enabled
         And the user has items weighing 155 lbs
         Then the encumbrance status should be "Over Capacity"
-        And the speed should be 5 ft
+        And the effective speed should be 5 ft
