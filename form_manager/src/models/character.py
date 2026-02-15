@@ -100,11 +100,6 @@ class Character:
         strength = self.stats.get("strength", 10)
         size_mult = self.size_multiplier
         
-        print(weight)
-        print(10 * strength * size_mult)
-        print(cap)
-        print(self.use_variant_encumbrance)
-        
         if weight > cap:
             return self.Encumbrance.OVER_CAPACITY
         
@@ -137,7 +132,6 @@ class Character:
     
     def choose(self, choice_label: str, selection: str) -> 'Character':
         choice_obj = next((c for c in self.pending_choices if c.label == choice_label), None)
-        print(choice_obj)          
         if not choice_obj:
             raise ValueError(f"No pending choice found for '{choice_label}'")
         

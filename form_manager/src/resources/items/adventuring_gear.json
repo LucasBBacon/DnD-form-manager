@@ -1,0 +1,836 @@
+{
+    "abacus": {
+        "name": "Abacus",
+        "type": "gear",
+        "weight": 2.0,
+        "cost": "2 gp",
+        "properties": [],
+        "description": ""
+    },
+    "acid_vial": {
+        "name": "Acid (Vial)",
+        "type": "consumable",
+        "weight": 1.0,
+        "cost": "50 gp",
+        "return_on_empty": "vial",
+        "properties": ["improvised_weapon", "hazardous"],
+        "description": "As an action, you can splash the contents of this vial onto a creature within 5 feet of you or throw the vial up to 20 feet, shattering it on impact. In either case, make a ranged attack against a creature or object, treating the acid as an improvised weapon. On a hit, the target takes 2d6 acid damage."
+    },
+    "alchemists_fire_flask": {
+        "name": "Alchemist's fire (flask)",
+        "type": "consumable",
+        "weight": 1.0,
+        "cost": "50 gp",
+        "return_on_empty": "flask",
+        "properties": ["improvised_weapon", "hazardous", "flammable"],
+        "description": "This sticky, adhesive fluid ignites when exposed to air. As an action, you can throw this flask up to 20 feet, shattering it on impact. Make a ranged attack against a creature or object, treating the alchemist's tire as an improvised weapon. On a hit, the target takes Id4 tire damage at the start of each of its turns. A creature can end this damage by using its action to make a DC 10 Dexterity check to extinguish the flames."
+    },
+    "arrows": {
+        "name": "Arrows (20)",
+        "type": "ammunition",
+        "weight": 1.0,
+        "cost": "1 gp",
+        "bundle_quantity": 20,
+        "properties": [],
+        "description": ""
+    },
+    "blowgun_needles": {
+        "name": "Blowgun needles (50)",
+        "type": "ammunition",
+        "weight": 1.0,
+        "cost": "1 gp",
+        "bundle_quantity": 50,
+        "properties": [],
+        "description": ""
+    },
+    "crossbow_bolts": {
+        "name": "Crossbow bolts (20)",
+        "type": "ammunition",
+        "weight": 1.5,
+        "cost": "1 gp",
+        "bundle_quantity": 20,
+        "properties": [],
+        "description": ""
+    },
+    "sling_bullets": {
+        "name": "Sling bullets (20)",
+        "type": "ammunition",
+        "weight": 1.5,
+        "cost": "4 cp",
+        "bundle_quantity": 20,
+        "properties": [],
+        "description": ""
+    },
+    "antitoxin_vial": {
+        "name": "Antitoxin (vial)",
+        "type": "consumable",
+        "weight": 0.0,
+        "cost": "50 gp",
+        "return_on_empty": "vial",
+        "properties": [],
+        "description": "A creature that drinks this vial of liquid gains advantage on saving throws against poison for 1 hour. It confers no benefit to undead or constructs."
+    },
+    "crystal": {
+        "name": "Crystal",
+        "type": "arcane_focus",
+        "weight": 1.0,
+        "cost": "10 gp",
+        "properties": ["spell_focus"],
+        "description": ""
+    },
+    "orb": {
+        "name": "Orb",
+        "type": "arcane_focus",
+        "weight": 3.0,
+        "cost": "20 gp",
+        "properties": ["spell_focus"],
+        "description": ""
+    },
+    "rod": {
+        "name": "Rod",
+        "type": "arcane_focus",
+        "weight": 2.0,
+        "cost": "10 gp",
+        "properties": ["spell_focus"],
+        "description": ""
+    },
+    "staff": {
+        "name": "Staff",
+        "type": "arcane_focus",
+        "weight": 4.0,
+        "cost": "5 gp",
+        "properties": ["spell_focus"],
+        "description": ""
+    },
+    "wand": {
+        "name": "Wand",
+        "type": "arcane_focus",
+        "weight": 1.0,
+        "cost": "10 gp",
+        "properties": ["spell_focus"],
+        "description": ""
+    },
+    "backpack": {
+        "name": "Backpack",
+        "type": "container",
+        "weight": 5.0,
+        "cost": "2 gp",
+        "capacity_weight": 30.0,
+        "capacity_volume": 1.0,
+        "properties": ["wearable"],
+        "description": "Carries 1 cubic foot/30 pounds of gear"
+    },
+    "ball_bearings": {
+        "name": "Ball bearings (bag of 1,0000)",
+        "type": "tool",
+        "weight": 2.0,
+        "cost": "1 gp",
+        "properties": ["hazard"],
+        "description": "As an action, you can spill these tiny metal balls from their pouch to cover a level area 10 feet square. A creature moving across the covered area must succeed on a DC 10 Dexterity saving throw or fall prone. A creature moving through the area at half speed doesn't need to make the saving throw."
+    },
+    "barrel": {
+        "name": "Barrel",
+        "type": "container",
+        "weight": 70.0,
+        "cost": "2 gp",
+        "capacity_weight": 0.0,
+        "capacity_volume": 4.0,
+        "capacity_liquid": 5330.0,
+        "properties": [],
+        "description": "Carries 40 gallons liquid, 4 cubic feet solid"
+    },
+    "basket": {
+        "name": "Basket",
+        "type": "container",
+        "weight": 2.0,
+        "cost": "4 sp",
+        "capacity_weight": 40.0,
+        "capacity_volume": 2.0,
+        "properties": [],
+        "description": "Carries 2 cubic feet/40 pounds of gear"
+    },
+    "bedroll": {
+        "name": "Bedroll",
+        "type": "gear",
+        "weight": 7.0,
+        "cost": "1 gp",
+        "properties": [],
+        "description": ""
+    },
+    "bell": {
+        "name": "Bell",
+        "type": "",
+        "weight": 0.0,
+        "cost": "1 gp",
+        "properties": [],
+        "description": ""
+    },
+    "blanket": {
+        "name": "Blanket",
+        "type": "gear",
+        "weight": 3.0,
+        "cost": "5 sp",
+        "properties": [],
+        "description": ""
+    },
+    "block_and_tackle": {
+        "name": "Block and tackle",
+        "type": "tool",
+        "weight": 5.0,
+        "cost": "1 gp",
+        "properties": [],
+        "description": "A set of pulleys with a cable threaded through them and a hook to attach to objects, a block and tackle allows you to hoist up to four times the weight you can normally lift."
+    },
+    "book": {
+        "name": "Book",
+        "type": "gear",
+        "weight": 5.0,
+        "cost": "25 gp",
+        "properties": [],
+        "description": "A book might contain poetry, historical accounts, information pertaining to a particular field of lore, diagrams and notes on gnomish contraptions, or just about anything else that can be represented using text or pictures. A book of spells is a spellbook (described later in this section)."
+    },
+    "bottle": {
+        "name": "Bottle, glass",
+        "type": "container",
+        "weight": 2.0,
+        "cost": "2 gp",
+        "capacity_liquid": 30.0,
+        "properties": [],
+        "description": "Carries 1.5 pints liquid."
+    },
+    "bucket": {
+        "name": "Bucket",
+        "type": "container",
+        "weight": 2.0,
+        "cost": "5 cp",
+        "capacity_volume": 0.5,
+        "capacity_liquid": 400.0,
+        "properties": [],
+        "description": "Carries 3 gallons liquid, 0.5 cubic foot solid."
+    },
+    "caltrops_20": {
+        "name": "Caltrops (bag of 20)",
+        "type": "",
+        "weight": 2.0,
+        "cost": "1 gp",
+        "properties": ["hazard"],
+        "description": "As an action, you can spread a single bag of caltrops to cover a 5-foot-square area. Any creature that enters the area must succeed on a DC 15 Dexterity saving throw or stop moving and take 1 piercing damage. Until the creature regains at least 1 hit point, its walking speed is reduced by 10 feet. A creature moving through the area at half speed doesn't need to make the saving throw."
+    },
+    "candle": {
+        "name": "Candle",
+        "type": "",
+        "weight": 0.0,
+        "cost": "1 cp",
+        "properties": ["light_source", "flammable"],
+        "description": "For 1 hour, a candle sheds bright light in a 5-foot radius and dim light for an additional 5 feet."
+    },
+    "case_crossbow_bolt": {
+        "name": "Case, crossbow bolt",
+        "type": "case",
+        "weight": 1.0,
+        "cost": "1 gp",
+        "capacity": 20,
+        "case_item": "arrows",
+        "properties": ["wearable"],
+        "description": "This wooden case can hold up to twenty crossbow bolts."
+    },
+    "case_map_scroll": {
+        "name": "Case, map or scroll",
+        "type": "case",
+        "weight": 1.0,
+        "cost": "1 gp",
+        "capacity": 10,
+        "case_item": "paper",
+        "properties": ["wearable"],
+        "description": "This cylindrical leather case can hold up to ten rolled-up sheets of paper or five rolled-up sheets of parchment."
+    },
+    "chain_10_ft": {
+        "name": "Chain (10 feet)",
+        "type": "gear",
+        "weight": 10.0,
+        "cost": "5 gp",
+        "properties": [],
+        "description": "A chain has 10 hit points. lt can be burst with a successful DC 20 Strength check."
+    },
+    "chalk_1": {
+        "name": "Chalk (1 piece)",
+        "type": "gear",
+        "weight": 0.0,
+        "cost": "1 cp",
+        "properties": [],
+        "description": ""
+    },
+    "chest": {
+        "name": "Chest",
+        "type": "container",
+        "weight": 25.0,
+        "cost": "5 gp",
+        "capacity_weight": 300.0,
+        "capacity_volume": 12,
+        "properties": [],
+        "description": "Carries 12 cubic feet/300 pounds of gear"
+    },
+    "climbers_kit": {
+        "name": "Climber's kit",
+        "type": "gear",
+        "weight": 12.0,
+        "cost": "25 gp",
+        "properties": ["wearable"],
+        "description": "A climber's kit includes special pitons, boot tips, gloves, and a harness. You can use the climber's kit as an action to anchor yourself; when you do, you can't fall more than 25 feet from the point where you anchored yourself, and you can't climb more than 25 feet away from that point without undoing the anchor."
+    },
+    "clothes_common": {
+        "name": "Clothes, common",
+        "type": "gear",
+        "weight": 3.0,
+        "cost": "5 sp",
+        "properties": ["wearable"],
+        "description": ""
+    },
+    "clothes_costume": {
+        "name": "Clothes, costume",
+        "type": "gear",
+        "weight": 4.0,
+        "cost": "5 gp",
+        "properties": ["wearable"],
+        "description": ""
+    },
+    "clothes_fine": {
+        "name": "Clothes, fine",
+        "type": "gear",
+        "weight": 6.0,
+        "cost": "15 gp",
+        "properties": ["wearable"],
+        "description": ""
+    },
+    "clothes_travelers": {
+        "name": "Clothes, traveler's",
+        "type": "gear",
+        "weight": 4.0,
+        "cost": "2 gp",
+        "properties": ["wearable"],
+        "description": ""
+    },
+    "component_pouch": {
+        "name": "Component pouch",
+        "type": "container",
+        "weight": 2.0,
+        "cost": "25 gp",
+        "capacity_volume": 0.5,
+        "capacity_weight": 6.0,
+        "properties": ["spell_focus", "wearable"],
+        "description": "A component pouch is a small, watertight leather belt pouch that has compartments to hold all the material components and other special items you need to cast your spells, except for those components that have a specific cost (as indicated in a spell's description)."
+    },
+    "crowbar": {
+        "name": "Crowbar",
+        "type": "gear",
+        "weight": 5.0,
+        "cost": "2 gp",
+        "properties": ["advantage_strength"],
+        "description": "Using a crowbar grants advantage to Strength checks where the crowbar's leverage can be applied."
+    },
+    "sprig_of_mistletoe": {
+        "name": "Sprig of Mistletoe",
+        "type": "druidic_focus",
+        "weight": 0.0,
+        "cost": "1 gp",
+        "properties": ["spell_focus"]
+    },
+    "totem": {
+        "name": "Totem",
+        "type": "druidic_focus",
+        "weight": 0.0,
+        "cost": "1 gp",
+        "properties": ["spell_focus"]
+    },
+    "wooden_staff": {
+        "name": "Wooden staff",
+        "type": "druidic_focus",
+        "weight": 4.0,
+        "cost": "5 gp",
+        "properties": ["spell_focus"]
+    },
+    "yew_wand": {
+        "name": "Yew wand",
+        "type": "druidic_focus",
+        "weight": 1.0,
+        "cost": "10 gp",
+        "properties": ["spell_focus"]
+    },
+    "fishing_tackle": {
+        "name": "Fishing tackle",
+        "type": "gear",
+        "weight": 4.0,
+        "cost": "1 gp",
+        "properties": [],
+        "description": "This kit includes a wooden rod, silken line, corkwood bobbers, steel hooks, lead sinkers, velvet lures, and narrow netting."
+    },
+    "flask_tankard": {
+        "name": "Flask or tankard",
+        "type": "",
+        "weight": 1.0,
+        "cost": "2 cp",
+        "capacity_liquid": 20.0,
+        "properties": [],
+        "description": "Carries 1 pint liquid"
+    },
+    "grappling_hook": {
+        "name": "Grappling hook",
+        "type": "gear",
+        "weight": 4.0,
+        "cost": "2 gp",
+        "properties": [],
+        "description": ""
+    },
+    "hammer": {
+        "name": "Hammer",
+        "type": "tool",
+        "weight": 3.0,
+        "cost": "1 gp",
+        "properties": [],
+        "description": ""
+    },
+    "hammer_sledge": {
+        "name": "Hammer, sledge",
+        "type": "tool",
+        "weight": 10.0,
+        "cost": "2 gp",
+        "properties": [],
+        "description": ""
+    },
+    "healers_kit": {
+        "name": "Healer's kit",
+        "type": "tool",
+        "weight": 3.0,
+        "cost": "5 gp",
+        "properties": ["consumable"],
+        "description": "This kit is a leather pouch containing bandages, salves, and splints. The kit has ten uses. As an action, you can expend one use of the kit to stabilize a creature that has O hit points, without needing to make a Wisdom (Medicine) check."
+    },
+    "amulet": {
+        "name": "Amulet",
+        "type": "holy_symbol",
+        "weight": 1.0,
+        "cost": "5 gp",
+        "properties": ["spell_focus", "wearable"],
+        "description": ""
+    },
+    "emblem": {
+        "name": "Emblem",
+        "type": "holy_symbol",
+        "weight": 0.0,
+        "cost": "5 gp",
+        "properties": ["spell_focus", "wearable"],
+        "description": ""
+    },
+    "reliquary": {
+        "name": "Reliquary",
+        "type": "holy_symbol",
+        "weight": 2.0,
+        "cost": "5 gp",
+        "properties": ["spell_focus"],
+        "description": ""
+    },
+    "flask_holy_water": {
+        "name": "Holy water (flask)",
+        "type": "consumable",
+        "weight": 1.0,
+        "cost": "25 gp",
+        "return_on_empty": "flask",
+        "properties": ["improvised_weapon", "hazardous", "radiant"],
+        "description": "As an action, you can splash the contents of this flask onto a creature within 5 feet of you or throw it up to 20 feet, shattering it on impact. In either case, make a ranged attack against a target creature, treating the holy water as an improvised weapon. If the target is a fiend or undead, it takes 2d6 radiant damage. A cleric ar paladin may create holy water by performing a special ritual. The ritual takes 1 hour to perform, uses 25 gp worth of powdered silver, and requires the caster to expend a 1st-level spell slot."
+    },
+    "hourglass": {
+        "name": "Hourglass",
+        "type": "tool",
+        "weight": 1.0,
+        "cost": "25 gp",
+        "properties": [],
+        "description": ""
+    },
+    "hunting_trap": {
+        "name": "Hunting Trap",
+        "type": "gear",
+        "weight": 25.0,
+        "cost": "5 gp",
+        "properties": ["hazard"],
+        "description": "When you use your action to set it, this trap forms a saw-toothed steel ring that snaps shut when a creature steps on a pressure plate in the center. The trap is affixed by a heavy chain to an immobile object, such as a tree ar a spike driven into the ground. A creature that steps on the plate must succeed on a DC 13 Dexterity saving throw ar take 1d4 piercing damage and stop moving. Thereafter, until the creature breaks free of the trap, its movement is limited by the length of the chain (typically 3 feet long). A creature can use its action to make a DC 13 Strength check, freeing itself ar another creature within its reach on a success. Each failed check deals 1 piercing damage to the trapped creature."
+    },
+    "bottle_ink": {
+        "name": "Ink (1 ounce bottle)",
+        "type": "consumable",
+        "weight": 0.0,
+        "cost": "10 gp",
+        "return_on_empty": "bottle",
+        "properties": [],
+        "description": ""
+    },
+    "ink_pen": {
+        "name": "Ink pen",
+        "type": "tool",
+        "weight": 0.0,
+        "cost": "2 cp",
+        "properties": [],
+        "description": ""
+    },
+    "jug": {
+        "name": "Jug or pitcher",
+        "type": "container",
+        "weight": 4.0,
+        "cost": "2 cp",
+        "capacity_liquid": 133.2,
+        "properties": [],
+        "description": "Carries 1 gallon liquid"
+    },
+    "ladder_10_ft": {
+        "name": "Ladder (10-foot)",
+        "type": "gear",
+        "weight": 25.0,
+        "cost": "1 sp",
+        "properties": [],
+        "description": ""
+    },
+    "lamp": {
+        "name": "Lamp",
+        "type": "gear",
+        "weight": 1.0,
+        "cost": "5 sp",
+        "properties": ["light_source"],
+        "description": "A lamp casts bright light in a 15-foot radius and dim light for an additional 30 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil."
+    },
+    "lantern_bullseye": {
+        "name": "Lantern, bullseye",
+        "type": "gear",
+        "weight": 2.0,
+        "cost": "10 gp",
+        "properties": ["light_source"],
+        "description": "A bullseye lantern casts bright light in a 60-foot cone and dim light for an additional 60 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil."
+    },
+    "lantern_hooded": {
+        "name": "Lantern, bullseye",
+        "type": "gear",
+        "weight": 2.0,
+        "cost": "5 gp",
+        "properties": ["light_source"],
+        "description": "A hooded lantern casts bright light in a 30-foot radius and dim light for an additional 30 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil. As an action, you can lower the hood, reducing the light to dim light in a 5-foot radius."
+    },
+    "lock": {
+        "name": "Lock",
+        "type": "gear",
+        "weight": 1.0,
+        "cost": "10 gp",
+        "properties": [],
+        "description": "A key is provided with the lock. Without the key, a creature proficient with thieves' tools can pick this lock with a successful DC 15 Dexterity check. Your DM may decide that better locks are available for higher prices."
+    },
+    "magnifying_glass": {
+        "name": "Magnifying glass",
+        "type": "gear",
+        "weight": 0.0,
+        "cost": "100 gp",
+        "properties": [],
+        "description": "This lens allows a closer look at small objects. It is also useful as a substitute for flint and steel when starting tires. Lighting a fire with a magnifying glass requires light as bright as sunlight to focus, tinder to ignite, and about 5 minutes for the fire to ignite. A magnifying glass grants advantage on any ability check made to appraise ar inspect an item that is small or highly detailed."
+    },
+    "manacles": {
+        "name": "Manacles",
+        "type": "tool",
+        "weight": 6.0,
+        "cost": "2 gp",
+        "properties": [],
+        "description": "These metal restraints can bind a 5mall ar Medium creature. Escaping the manacles requires a successful DC 20 Dexterity check. Breaking them requires a successful DC 20 Strength check. Each set of manacles comes with one key. Without the key, a creature proficient with thieves' tools can pick the manacles' lock with a successful DC 15 Dexterity check. Manacles have 15 hit points."
+    },
+    "mess_kit": {
+        "name": "Mess kit",
+        "type": "gear",
+        "weight": 1.0,
+        "cost": "2 sp",
+        "properties": [],
+        "description": "This tin box contains a cup and simple cutlery. The box clamps together, and one side can be used as a cooking pan and the other as a plate or shallow bowl."
+    },
+    "mirror_steel": {
+        "name": "Mirror, steel",
+        "type": "gear",
+        "weight": 0.5,
+        "cost": "5 gp",
+        "properties": [],
+        "description": ""
+    },
+    "oil_flask": {
+        "name": "Oil (flask)",
+        "type": "consumable",
+        "weight": 1.0,
+        "cost": "1 sp",
+        "return_on_empty": "flask",
+        "properties": ["flammable", "improvised_weapon"],
+        "description": "Oil usually comes in a clay flask that holds 1 pint. As an action, you can splash the oi! in this flask onto a creature within 5 feet of you ao throw it up to 20 feet, shattering it on impact. Make a ranged attack against a target creature ar object, treating the oil as an improvised weapon. On a hit, the target is covered in oil. If the target takes any fire damage before the oil dries (after 1 minute), the target takes an additional 5 fire damage from the burning oil. You can also pour a flask of oil on the ground to cover a 5-foot-square area, provided that the surface is level. If lit, the oil burns for 2 rounds and deals 5 tire damage to any creature that enters the area ar ends its turn in the area, A creature can take this damage only once per turn."
+    },
+    "paper_sheet": {
+        "name": "Paper (one sheet)",
+        "type": "gear",
+        "weight": 0.0,
+        "cost": "2 sp",
+        "properties": ["flammable"],
+        "description": ""
+    },
+    "parchment_sheet": {
+        "name": "Parchment (one sheet)",
+        "type": "",
+        "weight": 0.0,
+        "cost": "1 sp",
+        "properties": ["flammable"],
+        "description": ""
+    },
+    "perfume_vial": {
+        "name": "Perfume (vial)",
+        "type": "consumable",
+        "weight": 0.0,
+        "cost": "5 gp",
+        "return_on_empty": "vial",
+        "properties": [],
+        "description": ""
+    },
+    "pick_miners": {
+        "name": "Pick, miner's",
+        "type": "gear",
+        "weight": 10.0,
+        "cost": "2 gp",
+        "properties": [],
+        "description": ""
+    },
+    "piton": {
+        "name": "Piton",
+        "type": "gear",
+        "weight": 0.25,
+        "cost": "5 cp",
+        "stackable": true,
+        "properties": [], 
+        "description": ""
+    },
+    "poison_basic_vial": {
+        "name": "Poison, basic (vial)",
+        "type": "consumable",
+        "weight": 0.0,
+        "cost": "100 gp",
+        "return_on_empty": "vial",
+        "properties": ["hazardous"],
+        "description": "Vou can use the poison in this vial to coat one slashing or piercing weapon or up to three pieces of ammunition. Applying the poison takes an action. A creature hit by the poisoned weapon or ammunition must make a DC 10 Constitution saving throw or take 1d4 poison damage. Once applied, the poison retains potency for 1 minute before drying."
+    },
+    "pole": {
+        "name": "Pole (10-foot)",
+        "type": "gear",
+        "weight": 7.0,
+        "cost": "5 cp",
+        "properties": [],
+        "description": ""
+    },
+    "pot_iron": {
+        "name": "Pot, iron",
+        "type": "container",
+        "weight": 10.0,
+        "cost": "2 gp",
+        "capacity_liquid": 133.2,
+        "properties": [],
+        "description": "Carries 1 gallon liquid"
+    },
+    "potion_of_healing": {
+        "name": "Potion of healing",
+        "type": "consumable",
+        "weight": 0.5,
+        "cost": "50 gp",
+        "return_on_empty": "vial",
+        "stackable": true,
+        "properties": ["magical"],
+        "description": "A character who drinks the magical red fluid in this vial regains 2d4 + 2 hit points. Drinking or administering a potion takes an action."
+    },
+    "pouch": {
+        "name": "Pouch",
+        "type": "container",
+        "weight": 1.0,
+        "cost": "",
+        "capacity_weight": 6.0,
+        "capacity_volume": 0.5,
+        "properties": [],
+        "description": "A cloth or leather pouch can hold up to 20 sling bullets or 50 blowgun needles, among other things. A compartmentalized pouch for holding spell components is called a component pouch (described earlier in this section)."
+    },
+    "quiver": {
+        "name": "Quiver",
+        "type": "case",
+        "weight": 1.0,
+        "cost": "1 gp",
+        "capacity": 20,
+        "case_item": "arrows",
+        "properties": ["wearable"],
+        "description": "A quiver can hold up to 20 arrows."
+    },
+    "ram_portable": {
+        "name": "Ram, portable",
+        "type": "tool",
+        "weight": 35.0,
+        "cost": "4 gp",
+        "properties": [],
+        "description": "Vou can use a portable ram to break down doors. When doing so, you gain a +4 bonus on the Strength check. One other character can help you use the ram, giving you advantage on this check."
+    },
+    "rations_1_day": {
+        "name": "Rations (1 day)",
+        "type": "consumable",
+        "weight": 2.0,
+        "cost": "5 sp",
+        "return_on_empty": "",
+        "stackable": true,
+        "properties": [],
+        "description": "Rations consist of dry foods suitable for extended travel, including jerky, dried fruit, hardtack, and nuts."
+    },
+    "robes": {
+        "name": "Robes",
+        "type": "gear",
+        "weight": 4.0,
+        "cost": "1 gp",
+        "properties": ["wearable"],
+        "description": ""
+    },
+    "rope_hempen_50": {
+        "name": "Rope, hempen (50 feet)",
+        "type": "tool",
+        "weight": 10.0,
+        "cost": "1 gp",
+        "properties": [],
+        "description": "Rope, whether made of hemp or silk, has 2 hit points and can be burst with a DC 17 Strength check."
+    },
+    "rope_silk_50": {
+        "name": "Rope, silk (50 feet)",
+        "type": "tool",
+        "weight": 5.0,
+        "cost": "10 gp",
+        "properties": [],
+        "description": "Rope, whether made of hemp or silk, has 2 hit points and can be burst with a DC 17 Strength check."
+    },
+    "sack": {
+        "name": "Sack",
+        "type": "container",
+        "weight": 0.5,
+        "cost": "1 cp",
+        "capacity_weight": 30.0,
+        "capacity_volume": 1.0,
+        "properties": [],
+        "description": "Carries 1 cubic foot/30 pounds of gear"
+    },
+    "scale_merchants": {
+        "name": "Scale, merchant's",
+        "type": "gear",
+        "weight": 3.0,
+        "cost": "5 gp",
+        "properties": [],
+        "description": "A scale includes a small balance, pans, and a suitable assortment of weights up to 2 pounds. With it, you can measure the exact weight of small objects, such as raw precious metals or trade goods, to help determine their worth."
+    },
+    "sealing_wax": {
+        "name": "Sealing wax",
+        "type": "gear",
+        "weight": 0.0,
+        "cost": "5 sp",
+        "properties": [],
+        "description": ""
+    },
+    "shovel": {
+        "name": "Shovel",
+        "type": "gear",
+        "weight": 5.0,
+        "cost": "2 gp",
+        "properties": [],
+        "description": ""
+    },
+    "signal_whistle": {
+        "name": "Signal whistle",
+        "type": "gear",
+        "weight": 0.0,
+        "cost": "5 cp",
+        "properties": [],
+        "description": ""
+    },
+    "signet_ring": {
+        "name": "Signet ring",
+        "type": "gear",
+        "weight": 0.0,
+        "cost": "5 gp",
+        "properties": ["wearable"],
+        "description": ""
+    },
+    "soap": {
+        "name": "Soap",
+        "type": "gear",
+        "weight": 0.0,
+        "cost": "2 cp",
+        "properties": [],
+        "description": ""
+    },
+    "spellbook": {
+        "name": "Spellbook",
+        "type": "gear",
+        "weight": 3.0,
+        "cost": "50 gp",
+        "properties": [],
+        "description": "Essential for wizards, a spellbook is a leather-bound tome with 100 blank vellum pages suitable for recording spells."
+    },
+    "spikes_iron_10": {
+        "name": "Spikes, iron (10)",
+        "type": "gear",
+        "weight": 5.0,
+        "cost": "1 gp",
+        "stackable": true,
+        "properties": []
+    },
+    "spyglass": {
+        "name": "Spyglass",
+        "type": "gear",
+        "weight": 1.0,
+        "cost": "1000 gp",
+        "properties": [],
+        "description": "Objects viewed through a spyglass are magnified to twice their size."
+    },
+    "tent_two_person": {
+        "name": "Tent, two-person",
+        "type": "gear",
+        "weight": 20.0,
+        "cost": "2 gp",
+        "properties": [],
+        "description": "A simple and portable canvas shelter, a tent sleeps two"
+    },
+    "tinderbox": {
+        "name": "Tinderbox",
+        "type": "tool",
+        "weight": 1.0,
+        "cost": "5 sp",
+        "properties": ["flammable"],
+        "description": "This small container holds flint, tire steel, and tinder (usually dry cloth soaked in light oil) used to kindle a tire. Using it to light a torch-or anything else with abundant, exposed fuel-takes an action. Lighting any other tire takes 1 minute."
+    },
+    "torch": {
+        "name": "Torch",
+        "type": "gear",
+        "weight": 1.0,
+        "cost": "1 cp",
+        "properties": ["light_source", "flammable"],
+        "description": "A torch burns for 1 hour, providing bright light in a 20-foot radius and dim light for an additional 20 feet. If you make a melee attack with a burning torch and hit, it deals 1 tire damage."
+    },
+    "vial": {
+        "name": "Vial",
+        "type": "container",
+        "weight": 0.0,
+        "cost": "1 gp",
+        "capacity_liquid": 4.0,
+        "properties": [],
+        "description": "Carries 4 ounces liquid"
+    },
+    "waterskin": {
+        "name": "Waterskin",
+        "type": "container",
+        "weight": 5.0,
+        "cost": "2 sp",
+        "capacity_liquid": 80.0,
+        "properties": [],
+        "description": "Carries 4 pints liquid"
+    },
+    "whetstone": {
+        "name": "Whetstone",
+        "type": "gear",
+        "weight": 1.0,
+        "cost": "1 cp",
+        "properties": [],
+        "description": ""
+    }
+}
