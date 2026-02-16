@@ -30,7 +30,7 @@ def enable_variant_rules(session_context):
 @given(parsers.parse('the user has items weighing {weight:d} lbs'))
 def add_weighted_items(session_context, weight):
     char = session_context['character']
-    item = Item(name="Heavy Rock", weight=weight)
+    item = Item(name="Heavy Rock", base_weight=weight)
     char.inventory.add_item(item)
 
 

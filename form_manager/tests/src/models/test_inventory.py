@@ -19,7 +19,7 @@ def test_add_item_non_stackable(inventory):
     assert inventory.get_item_count("Sword") == 1
     
 
-def test_add_item_stakcable(inventory):
+def test_add_item_stackable(inventory):
     potion = Item(name="Potion", stackable=True)
     inventory.add_item(potion, count=5)
     
@@ -53,8 +53,8 @@ def test_remove_missing_item_raises_error(inventory):
 
 def test_get_total_weight(inventory):
     # 2 items @ 5lbs each + 1 item @ 10lbs
-    item1 = Item(name="Heavy Thing", weight=5.0, stackable=True, quantity=2)
-    item2 = Item(name="Big Thing", weight=10.0)
+    item1 = Item(name="Heavy Thing", base_weight=5.0, stackable=True, quantity=2)
+    item2 = Item(name="Big Thing", base_weight=10.0)
     
     inventory.items.append(item1)
     inventory.items.append(item2)

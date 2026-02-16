@@ -39,7 +39,11 @@ class Item:
     
     category: Optional[str] = None
     equipped: bool = False
-    weight: float = 0.0
+    base_weight: float = 0.0
+    
+    is_container: bool = False
+    capacity_weight: float = 0.0
+    contents: List['Item'] = field(default_factory=list)
     
     properties: List[str] = field(default_factory=list)
     
@@ -52,6 +56,35 @@ class Item:
     
     def __post_init__(self):
         pass
+    
+    @property
+    def weight(self) -> float:
+        total = self.base_weight
+        if self.is_container:
+            for item in self.contents:
+                total += (item.weight * item.quantity)
+        return total
+    
+    @weight.setter
+    def weight(self, value: float) -> None:
+        self.base_weight = value
+        
+    @property
+    def content_weight(self) -> float:
+        if not self.is_container:
+            return 0.0
+        return sum(item.weight * item.quantity for item in self.contents)
+    
+    def add_content(self, item: 'Item', count: int = 1) -> None:
+        if not self.is_container:
+            raise ValueError(f"'{self.name}' is not a container.")
+        
+        added_weight = item.weight * item.quantity * count
+        if (self.content_weight + added_weight) > self.capacity_weight:
+            raise ValueError(f"Cannot add '{item.name}': Exceeds capacity of '{self.name}'")
+        
+        for _ in range(count):
+            self.contents.append(item)
     
     @staticmethod
     def parse_cost(cost_str: str) -> Dict[str, int]:

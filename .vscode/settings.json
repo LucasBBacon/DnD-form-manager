@@ -8,6 +8,8 @@
         "Greatsword",
         "Spellbook",
         "stackable",
+        "unequip",
+        "unequips",
         "Waterskin"
     ]
 }

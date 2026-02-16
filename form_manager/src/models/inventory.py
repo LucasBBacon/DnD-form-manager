@@ -32,6 +32,24 @@ class Inventory:
                 self.items.remove(item)
         else:
             self.items.remove(item)
+            
+    def move_item_to_container(self, item_name: str, container_name: str, count: int = 1):
+        item = self.get_item(item_name)
+        if not item:
+            raise ValueError(f"Item '{item_name}' not found in inventory.")
+        
+        container = self.get_item(container_name)
+        if not container:
+            raise ValueError(f"Container '{container_name}' not found.")
+        
+        container.add_content(item)
+        
+        if item.stackable:
+            item.quantity -= count
+            if item.quantity <= 0:
+                self.items.remove(item)
+        else:
+            self.items.remove(item)
         
     def get_item(self, name: str) -> Optional[Item]:
         name_lower = name.lower().lower()

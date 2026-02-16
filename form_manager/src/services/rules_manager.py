@@ -55,6 +55,10 @@ class RulesManager:
         return self._load_json('rules/armors.json')
     
     @property
+    def adventuring_gear(self) -> Dict:
+        return self._load_json('items/adventuring_gear.json')
+    
+    @property
     def currency(self) -> Dict:
         return self._load_json('rules/currency.json')
     

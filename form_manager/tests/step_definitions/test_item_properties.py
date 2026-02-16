@@ -48,7 +48,7 @@ def check_item_is_equipped(session_context, item_name):
 @given(parsers.parse('the user has {count:d} "{item_name}" weighing {weight:f} lbs in their inventory'))
 def user_has_weighted_items(session_context, count, item_name, weight):
     char = session_context['character']
-    item = Item(name=item_name, weight=weight, stackable=True)
+    item = Item(name=item_name, base_weight=weight, stackable=True)
     char.inventory.add_item(item, count)
 
 
@@ -145,7 +145,7 @@ def check_item_properties(session_context, item_name, properties_str):
     expected_props = [p.strip().lower() for p in properties_str.split(',')]
     
     for prop in expected_props:
-        assert prop in item.properties, f"Expecte property '{prop}' not found in {item.properties}"
+        assert prop in item.properties, f"Expected property '{prop}' not found in {item.properties}"
 
 
 @then(parsers.parse('the item "{item_name}" should be marked as equipped'))

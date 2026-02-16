@@ -7,16 +7,16 @@ Feature: Containers and Storage
         And the item "Backpack" is a container with capacity 30.0 lbs and base weight 5.0 lbs
 
     Scenario: Adding Items to a Container
-        Given the user has a "Torch" weighing 1.0 lbs in their inventory
-        When the user moves "Torch" into "Backpack"
+        Given the user has 1 "Torch" weighing 1.0 lbs in their inventory
+        When the user moves 1 "Torch" into "Backpack"
         Then the inventory should not contain "Torch" at the top level
         And the "Backpack" should contain "Torch"
         And the "Backpack" total weight should be 6.0 lbs
 
     Scenario: Calculating Character Weight with Nested Items
         Given the user has 2 "Rations" weighing 2.0 lbs in their inventory
-        And the user moves 2 "Rations" into "Backpack"
-        When the user checks their total inventory weight
+        When the user moves 2 "Rations" into "Backpack"
+        And the user checks their total inventory weight
         Then the total weight should be 9.0 lbs
 
     Scenario: Container Capacity Limits
