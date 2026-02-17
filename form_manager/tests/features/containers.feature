@@ -21,7 +21,7 @@ Feature: Containers and Storage
 
     Scenario: Container Capacity Limits
         Given the "Backpack" contains items weighing 29.0 lbs
-        And the use has a "Greatsword" weighing 6.0 lbs
+        And the user has 1 "Greatsword" weighing 6.0 lbs in their inventory
         When the user attempts to move "Greatsword" into "Backpack"
         Then the action should fail
         And the "Backpack" should not contain "Greatsword"

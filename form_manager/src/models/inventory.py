@@ -50,6 +50,13 @@ class Inventory:
                 self.items.remove(item)
         else:
             self.items.remove(item)
+            
+    def remove_item_from_container(self, item_name: str, container_name, count: int = 1):
+        container = self.get_item(container_name)
+        if not container:
+            raise ValueError(f"Container '{container_name}' not found.")
+        item_removed = container.remove_content(item_name, count)
+        self.add_item(item_removed, count)
         
     def get_item(self, name: str) -> Optional[Item]:
         name_lower = name.lower().lower()

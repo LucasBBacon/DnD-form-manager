@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 
 
 class DamageType(str, Enum):
@@ -85,6 +85,16 @@ class Item:
         
         for _ in range(count):
             self.contents.append(item)
+            
+    def remove_content(self, item_name: str, count: int = 1) -> 'Item':
+        if not self.is_container:
+            raise ValueError(f"'{self.name}' is not a container.")
+        item = next((i for i in self.contents if i.name.strip().lower() == item_name.strip().lower()), None)
+        if not item:
+            raise ValueError(f"'{item_name}' was not found in '{self.name}'.")
+        for _ in range(count):
+            self.contents.remove(item)
+        return item
     
     @staticmethod
     def parse_cost(cost_str: str) -> Dict[str, int]:
