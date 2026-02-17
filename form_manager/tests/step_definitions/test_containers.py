@@ -1,6 +1,6 @@
 from pytest_bdd import given, parsers, scenarios, then, when
 
-from form_manager.src.models import Item
+from form_manager.src.models import Item, Character
 
 
 scenarios('../features/containers.feature')
@@ -52,6 +52,16 @@ def define_container_with_item(session_context, container_name, item_name):
     item = Item(name=item_name)
     char.inventory.add_item(item)
     char.inventory.move_item_to_container(item_name, container_name)
+    
+
+@given(parsers.parse('the user total weight is {weight:f} lbs'))
+def define_total_inventory_weight(session_context, weight):
+    char: Character = session_context['character']
+    missing_weight = weight - char.inventory.get_total_weight()
+    item = Item(name='Heavy rock', base_weight=missing_weight)
+    char.inventory.add_item(item)
+    actual_weight = char.inventory.get_total_weight()
+    assert actual_weight == weight, f"Weight {actual_weight} lbs, does not match expected weight {weight} lbs."
 
 
 @when(parsers.parse('the user moves {item_quantity:d} "{item_name}" into "{container_name}"'))
@@ -80,6 +90,12 @@ def attempt_move_item_to_container(session_context, item_name, container_name):
 def remove_item_from_container(session_context, item_name, container_name):
     char = session_context['character']
     char.inventory.remove_item_from_container(item_name, container_name)
+    
+    
+@when(parsers.parse('the user drops the "{container_name}"'))
+def remove_container_from_inventory(session_context, container_name):
+    char: Character = session_context['character']
+    char.inventory.remove_item(container_name)
 
 
 @then(parsers.parse('the inventory should contain "{item_name}" at the top level'))
@@ -134,4 +150,3 @@ def check_action_failed(session_context):
     error = session_context['last_err']
     assert error is not None, f"Expected action to fail, but it succeeded"
     assert "Exceeds capacity" in error
-    

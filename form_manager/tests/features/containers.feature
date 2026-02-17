@@ -33,8 +33,9 @@ Feature: Containers and Storage
         And the "Backpack" should not contain "Rope"
 
     Scenario: Dropping a Container
-        Given the user has a "Backpack" weighing 35.0 lbs total
+        Given the "Backpack" contains items weighing 30.0 lbs
         And the user total weight is 150.0 lbs
         When the user drops the "Backpack"
-        Then The user total weight should be 115.0 lbs
-        And the inventory should not contain "Backpack"
+        And the user checks their total inventory weight
+        Then the total weight should be 115.0 lbs
+        And the inventory should not contain "Backpack" at the top level
