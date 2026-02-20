@@ -54,13 +54,15 @@ class CurrencyService:
             total += amount * self.get_value_in_cp(currency_node=currency)
         return total
 
-    def optimize_purse(self, total_cp: int) -> Dict[str, int]:
+    def optimize_purse(self, total_cp: int, use_pp: bool = False) -> Dict[str, int]:
         """
         Optimizes a purse to contain the least number of coins 
         for a given total value in copper pieces (cp).
 
         :param total_cp: The total value in copper pieces to optimize into a purse.
         :type total_cp: int
+        :param use_pp: If True, allows auto-conversion into Platinum Pieces (pp).
+        :type use_pp: bool
         :return: A dictionary mapping currency codes to their optimized amounts.
         :rtype: Dict[str, int]
         """
@@ -72,7 +74,7 @@ class CurrencyService:
         remaining = total_cp
 
         for code in sorted_currencies:
-            if code == 'ep':
+            if code == 'ep' or (code == 'pp' and not use_pp):
                 continue
 
             value = self.data[code]['value']
