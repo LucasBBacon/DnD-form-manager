@@ -93,12 +93,12 @@ class RaceService:
                     lang = mod.get('language').title()
                     if lang not in character.languages:
                         character.languages.append(lang)
-                case 'choice':
-                    self.__resolve_choices(character, mod, m_type, fixed_bonuses)
                 case 'sense':
                     target = mod.get('target')
                     if target:
                         character.features.append(target.capitalize())
+            if 'choice' in str(m_type):
+                self.__resolve_choices(character, mod, m_type, fixed_bonuses)
 
     def __resolve_choices(self, character: Character,
                           mod,
