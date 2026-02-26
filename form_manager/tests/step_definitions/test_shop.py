@@ -55,9 +55,11 @@ def user_has_specific_item(session_context, rules_manager, item_name):
     char.inventory.add_item(item)
 
 
-@given(parsers.parse('the user has a "{item_name}" worth "{cost_str}" in their inventory'))
+@given(
+    parsers.parse('the user has a "{item_name}" worth "{cost_str}" in their inventory')
+)
 def given_user_has_item_worth(session_context, item_name, cost_str):
-    char = session_context['character']
+    char = session_context["character"]
     item = Item(name=item_name)
     value = Item.parse_cost(cost_str)
     item.cost.update(value)
@@ -128,38 +130,38 @@ def attempt_buy_items(session_context, rules_manager, item_name):
 
 @when(parsers.parse('the user sells the "{item_name}"'))
 def sell_item_standard(session_context, rules_manager, item_name):
-    char = session_context['character']
+    char = session_context["character"]
     currency_service = CurrencyService(rules_manager)
-    
+
     item = char.inventory.get_item(item_name)
     assert item is not None, f"Cannot sell '{item_name}': Item not found in inventory."
-    
+
     total_cost_cp = currency_service.convert_purse_to_cp(item.cost)
     sell_value_cp = total_cost_cp // 2
-    
+
     currency_wealth_cp = currency_service.convert_purse_to_cp(char.purse)
     new_wealth_cp = currency_wealth_cp + sell_value_cp
-    
+
     char.purse = currency_service.optimize_purse(new_wealth_cp, use_pp=False)
     char.inventory.remove_item(item_name)
 
 
 @when(parsers.parse('the user sells the "{item_name}" for "{cost_str}"'))
 def sell_item_for_specific_value(session_context, rules_manager, item_name, cost_str):
-    char = session_context['character']
+    char = session_context["character"]
     currency_service = CurrencyService(rules_manager)
-    
+
     item = char.inventory.get_item(item_name)
     assert item is not None, f"Cannot sell '{item_name}': Item not found in inventory."
-    
+
     sell_cost_dict = Item.parse_cost(cost_str)
     sell_value_cp = currency_service.convert_purse_to_cp(sell_cost_dict)
     current_wealth_cp = currency_service.convert_purse_to_cp(char.purse)
-    
+
     new_wealth_cp = current_wealth_cp + sell_value_cp
-    
+
     char.purse = currency_service.optimize_purse(new_wealth_cp, use_pp=False)
-    
+
     char.inventory.remove_item(item_name)
 
 

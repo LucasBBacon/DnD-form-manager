@@ -6,8 +6,11 @@
     "python.testing.pytestEnabled": true,
     "cSpell.words": [
         "Greatsword",
+        "Longsword",
         "Spellbook",
         "stackable",
+        "unattunes",
+        "Unattuning",
         "unequip",
         "unequips",
         "Waterskin"
