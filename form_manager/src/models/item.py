@@ -202,6 +202,9 @@ class Item:
 
         if 'properties' in template_data:
             self.properties = template_data['properties']
+            
+        if 'stackable' in template_data:
+            self.stackable = template_data['stackable']
 
         if 'range' in template_data:
             self.range = template_data['range']
