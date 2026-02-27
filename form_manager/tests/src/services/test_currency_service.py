@@ -4,7 +4,7 @@ from form_manager.src.services.currency_service import CurrencyService
 from form_manager.src.services.rules_manager import RulesManager
 
 
-@pytest.fixture(name='rules_manager')
+@pytest.fixture(name="rules_manager")
 def mock_rules_manager():
     manager = Mock(spec=RulesManager)
     manager.currency = {
@@ -12,12 +12,12 @@ def mock_rules_manager():
         "sp": {"value": 10, "aliases": ["silver", "sp"]},
         "ep": {"value": 50, "aliases": ["electrum", "ep"]},
         "gp": {"value": 100, "aliases": ["gold", "gp"]},
-        "pp": {"value": 1000, "aliases": ["platinum", "pp"]}
+        "pp": {"value": 1000, "aliases": ["platinum", "pp"]},
     }
     return manager
 
 
-@pytest.fixture(name='currency_service')
+@pytest.fixture(name="currency_service")
 def service(rules_manager):
     return CurrencyService(rules_manager)
 
@@ -30,11 +30,7 @@ def test_normalize_currency(currency_service):
 
 
 def test_convert_purse_to_cp(currency_service):
-    purse = {
-        "gp": 1,  # 100 cp
-        "sp": 5,  # 50 cp
-        "cp": 3   # 3 cp
-    }
+    purse = {"gp": 1, "sp": 5, "cp": 3}  # 100 cp  # 50 cp  # 3 cp
     assert currency_service.convert_purse_to_cp(purse) == 153
 
 

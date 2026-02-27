@@ -305,11 +305,16 @@ class Character:
 
     def attune_item(self, item_name: str) -> None:
         """Attempts to attune to an item. Raises ValueError if rules violated."""
-        matching_items = [i for i in self.inventory.items if i.name.lower() == item_name.lower()]
+        matching_items = [
+            i for i in self.inventory.items if i.name.lower() == item_name.lower()
+        ]
         if not matching_items:
             raise ValueError(f"Cannot attune: '{item_name}' not found in inventory.")
 
-        item = next((i for i in matching_items if not getattr(i, 'is_attuned', False)), matching_items[0])
+        item = next(
+            (i for i in matching_items if not getattr(i, "is_attuned", False)),
+            matching_items[0],
+        )
 
         if not getattr(item, "requires_attunement", False):
             raise ValueError(f"'{item_name}' does not require attunement.")
@@ -324,10 +329,10 @@ class Character:
             raise ValueError("No attunement slots remaining.")
 
         item.is_attuned = True
-        
+
     def unattune_item(self, item_name: str) -> None:
         item = self.inventory.get_item(item_name)
         if not item:
             raise ValueError(f"Cannot unattune: '{item_name}' not found in inventory.")
-        
+
         item.is_attuned = False

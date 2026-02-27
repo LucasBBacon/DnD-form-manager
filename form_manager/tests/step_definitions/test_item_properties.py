@@ -10,26 +10,27 @@ scenarios("../features/item_properties.feature")
 def normalize_text(raw_input: str) -> str:
     return raw_input.lower().replace(" ", "_").replace("'", "")
 
+
 def find_item(context, item_name):
-    char = context['character']
+    char = context["character"]
     item = char.inventory.get_item(item_name)
     assert item is not None, f"Item {item_name} not found"
     return item
-    
-    
+
+
 @given(parsers.parse('the user has a "{item_name}" in their inventory'))
 def user_has_specific_item(session_context, rules_manager, item_name):
-    char = session_context['character']
+    char = session_context["character"]
     item = Item(name=item_name)
     weapon_key = normalize_text(item_name)
     if weapon_data := rules_manager.weapons.get(weapon_key):
         item.apply_template(weapon_data)
     char.inventory.add_item(item)
-    
-    
+
+
 @given(parsers.parse('the item "{item_name}" is currently unequipped'))
 def check_item_is_unequipped(session_context, item_name):
-    char = session_context['character']
+    char = session_context["character"]
     item = char.inventory.get_item(item_name)
     assert item is not None
     item.equipped = False
@@ -38,70 +39,78 @@ def check_item_is_unequipped(session_context, item_name):
 
 @given(parsers.parse('the item "{item_name}" is currently equipped'))
 def check_item_is_equipped(session_context, item_name):
-    char = session_context['character']
+    char = session_context["character"]
     item = char.inventory.get_item(item_name)
     assert item is not None
     item.equipped = True
     assert item.equipped is True
 
 
-@given(parsers.parse('the user has {count:d} "{item_name}" weighing {weight:f} lbs in their inventory'))
+@given(
+    parsers.parse(
+        'the user has {count:d} "{item_name}" weighing {weight:f} lbs in their inventory'
+    )
+)
 def user_has_weighted_items(session_context, count, item_name, weight):
-    char = session_context['character']
+    char = session_context["character"]
     item = Item(name=item_name, base_weight=weight, stackable=True)
     char.inventory.add_item(item, count)
 
 
-@given(parsers.parse('the item "{item_name}" does not have the property "{property_name}"'))
+@given(
+    parsers.parse('the item "{item_name}" does not have the property "{property_name}"')
+)
 def check_item_missing_property(session_context, item_name, property_name):
     item = find_item(session_context, item_name)
-    assert property_name not in item.properties, f"Item '{item_name}' unexpectedly has property '{property_name}'"
+    assert (
+        property_name not in item.properties
+    ), f"Item '{item_name}' unexpectedly has property '{property_name}'"
 
 
 @when(parsers.parse('the user creates a custom item named "{item_name}"'))
 def create_custom_item(session_context, item_name):
     item = Item(name=item_name)
-    session_context['custom_item'] = item
-    session_context['character'].inventory.add_item(item)
-    
+    session_context["custom_item"] = item
+    session_context["character"].inventory.add_item(item)
+
 
 @when(parsers.parse('the user sets the item category to "{category}"'))
 def set_item_category(session_context, category):
-    item = session_context.get('custom_item')
+    item = session_context.get("custom_item")
     assert item is not None, "No custom item found in context to modify"
     item.category = category
-    
+
 
 @when(parsers.parse('the user adds the property "{property_name}" to the item'))
 def add_item_property(session_context, property_name):
-    item = session_context.get('custom_item')
+    item = session_context.get("custom_item")
     assert item is not None, "No custom item found in context to modify"
     item.properties.append(property_name.lower())
-    
+
 
 @when(parsers.parse('the user equips the "{item_name}"'))
 def user_equips_item(session_context, item_name):
-    char = session_context['character']
+    char = session_context["character"]
     char.inventory.equip_item(item_name)
-    
+
 
 @when(parsers.parse('the user unequips the "{item_name}"'))
 def user_unequips_item(session_context, item_name):
-    char = session_context['character']
+    char = session_context["character"]
     char.inventory.unequip_item(item_name)
-    
-    
-@when(parsers.parse('the user checks their total inventory weight'))
+
+
+@when(parsers.parse("the user checks their total inventory weight"))
 def check_inventory_weight(session_context):
-    char = session_context['character']
-    session_context['calculated_weight'] = char.inventory.get_total_weight()
+    char = session_context["character"]
+    session_context["calculated_weight"] = char.inventory.get_total_weight()
 
 
 @when(parsers.parse('the user sets the damage die of "{item_name}" to "{dice}"'))
 def set_item_damage_die(session_context, item_name, dice):
     item = find_item(session_context, item_name)
     item.damage_dice = dice
-    
+
 
 @when(parsers.parse('the user sets the damage type of "{item_name}" to "{type_name}"'))
 def set_item_damage_type(session_context, item_name, type_name):
@@ -111,8 +120,8 @@ def set_item_damage_type(session_context, item_name, type_name):
         item.damage_type = damage_enum
     except ValueError:
         pytest.fail(f"Invalid damage type provided: {type_name}")
-        
-        
+
+
 @when(parsers.parse('the user treats "{item_name}" as an improvised weapon'))
 def treat_as_improvised(session_context, item_name):
     item = find_item(session_context, item_name)
@@ -126,9 +135,9 @@ def treat_as_weapon(session_context, rules_manager, item_name, weapon_name):
     weapon_key = normalize_text(weapon_name)
     weapon_stats = rules_manager.weapons.get(weapon_key)
     assert weapon_stats is not None, f"Weapon template '{weapon_name}' not found."
-    
+
     item.apply_template(weapon_stats)
-    
+
 
 @when(parsers.parse('the user uses the "{item_name}" as an improvised thrown weapon'))
 def use_as_improvised_thrown(session_context, item_name):
@@ -138,46 +147,54 @@ def use_as_improvised_thrown(session_context, item_name):
 
 @then(parsers.parse('the item "{item_name}" should have properties "{properties_str}"'))
 def check_item_properties(session_context, item_name, properties_str):
-    char = session_context['character']
+    char = session_context["character"]
     item = char.inventory.get_item(item_name)
     assert item is not None, f"Item {item_name} not found in inventory"
-    
-    expected_props = [p.strip().lower() for p in properties_str.split(',')]
-    
+
+    expected_props = [p.strip().lower() for p in properties_str.split(",")]
+
     for prop in expected_props:
-        assert prop in item.properties, f"Expected property '{prop}' not found in {item.properties}"
+        assert (
+            prop in item.properties
+        ), f"Expected property '{prop}' not found in {item.properties}"
 
 
 @then(parsers.parse('the item "{item_name}" should be marked as equipped'))
 def assert_item_equipped(session_context, item_name):
-    char = session_context['character']
+    char = session_context["character"]
     item = char.inventory.get_item(item_name)
     assert item.equipped is True, f"Item {item_name} should be equipped"
-    
-    
+
+
 @then(parsers.parse('the item "{item_name}" should be marked as unequipped'))
 def assert_item_unequipped(session_context, item_name):
-    char = session_context['character']
+    char = session_context["character"]
     item = char.inventory.get_item(item_name)
     assert item.equipped is False, f"Item {item_name} should be unequipped"
 
 
-@then(parsers.parse('the total weight should be {expected_weight:f} lbs'))
+@then(parsers.parse("the total weight should be {expected_weight:f} lbs"))
 def assert_total_weight(session_context, expected_weight):
-    actual_weight = session_context['calculated_weight']
-    assert actual_weight == expected_weight, f"Expected weight {expected_weight} lbs, but calculated {actual_weight} lbs"
+    actual_weight = session_context["calculated_weight"]
+    assert (
+        actual_weight == expected_weight
+    ), f"Expected weight {expected_weight} lbs, but calculated {actual_weight} lbs"
 
 
 @then(parsers.parse('the item "{item_name}" should have a damage die of "{dice}"'))
 def check_item_damage_die(session_context, item_name, dice):
-    char = session_context['character']
+    char = session_context["character"]
     item = char.inventory.get_item(item_name)
-    assert item.damage_dice == dice, f"Expected damage die {dice}, but got {item.damage_dice}"
-    
+    assert (
+        item.damage_dice == dice
+    ), f"Expected damage die {dice}, but got {item.damage_dice}"
 
-@then(parsers.parse('the item "{item_name}" should have the damage type of "{type_name}"'))
+
+@then(
+    parsers.parse('the item "{item_name}" should have the damage type of "{type_name}"')
+)
 def check_item_damage_type(session_context, item_name, type_name):
-    char = session_context['character']
+    char = session_context["character"]
     item = char.inventory.get_item(item_name)
     expected = type_name.lower()
     actual = item.damage_type.value if item.damage_type else None
@@ -187,4 +204,6 @@ def check_item_damage_type(session_context, item_name, type_name):
 @then(parsers.parse('the item "{item_name}" should have a range of "{expected_range}"'))
 def check_item_range(session_context, item_name, expected_range):
     item = find_item(session_context, item_name)
-    assert item.range == expected_range, f"Expected range '{expected_range}', but got '{item.range}'"
+    assert (
+        item.range == expected_range
+    ), f"Expected range '{expected_range}', but got '{item.range}'"

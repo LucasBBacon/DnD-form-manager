@@ -1,5 +1,5 @@
 """
-Defines the Inventory class, which manages a character's inventory of items, 
+Defines the Inventory class, which manages a character's inventory of items,
 including adding, removing, equipping, and calculating total weight and value.
 """
 
@@ -18,7 +18,7 @@ class Inventory:
     def add_item(self, item: Item, count: int = 1) -> None:
         """
         Adds an item to the inventory, handling stackable items and quantities appropriately.
-        
+
         :param item: The item to be added to the inventory.
         :type item: Item
         :param count: The number of items to be added (default is 1).
@@ -39,7 +39,7 @@ class Inventory:
     def remove_item(self, item_name: str, count: int = 1) -> None:
         """
         Removes an item from the inventory, handling stackable items and quantities appropriately.
-        
+
         :param item_name: The name of the item to be removed from the inventory.
         :type item_name: str
         :param count: The number of items to be removed (default is 1).
@@ -56,11 +56,13 @@ class Inventory:
         else:
             self.items.remove(item)
 
-    def move_item_to_container(self, item_name: str, container_name: str, count: int = 1) -> None:
+    def move_item_to_container(
+        self, item_name: str, container_name: str, count: int = 1
+    ) -> None:
         """
-        Moves an item from the top-level inventory into a specified container, 
+        Moves an item from the top-level inventory into a specified container,
         handling stackable items and quantities appropriately.
-        
+
         :param item_name: The name of the item to be moved.
         :type item_name: str
         :param container_name: The name of the container to move the item into.
@@ -85,11 +87,13 @@ class Inventory:
         else:
             self.items.remove(item)
 
-    def remove_item_from_container(self, item_name: str, container_name: str, count: int = 1):
+    def remove_item_from_container(
+        self, item_name: str, container_name: str, count: int = 1
+    ):
         """
-        Removes an item from a container in the inventory, 
+        Removes an item from a container in the inventory,
         handling stackable items and quantities appropriately.
-        
+
         :param item_name: The name of the item to be removed from the container.
         :type item_name: str
         :param container_name: The name of the container from which the item is to be removed.
@@ -106,19 +110,21 @@ class Inventory:
     def get_item(self, name: str) -> Optional[Item]:
         """
         Gets an item from the inventory by name, case-insensitively.
-        
+
         :param name: The name of the item to retrieve.
         :type name: str
         :return: The item if found, otherwise None.
         :rtype: Item | None
         """
         name_lower = name.lower().strip()
-        return next((i for i in self.items if i.name.strip().lower() == name_lower), None)
+        return next(
+            (i for i in self.items if i.name.strip().lower() == name_lower), None
+        )
 
     def has_item(self, name: str) -> bool:
         """
         Checks if an item exists in the inventory by name, case-insensitively.
-        
+
         :param name: The name of the item to check for.
         :type name: str
         :return: True if the item exists, otherwise False.
@@ -128,9 +134,9 @@ class Inventory:
 
     def get_item_count(self, name: str) -> int:
         """
-        Gets the quantity of a specified item in the inventory, 
+        Gets the quantity of a specified item in the inventory,
         handling stackable items appropriately.
-        
+
         :param name: The name of the item to count.
         :type name: str
         :return: The quantity of the item if found, otherwise 0.
@@ -142,7 +148,7 @@ class Inventory:
     def equip_item(self, item_name: str) -> None:
         """
         Equips an item in the inventory.
-        
+
         :param item_name: The name of the item to equip.
         :type item_name: str
         """
@@ -154,7 +160,7 @@ class Inventory:
     def unequip_item(self, item_name: str) -> None:
         """
         Unequips an item in the inventory.
-        
+
         :param item_name: The name of the item to unequip.
         :type item_name: str
         """
@@ -166,7 +172,7 @@ class Inventory:
     def get_total_weight(self) -> float:
         """
         Gets the total weight of all items in the inventory.
-        
+
         :return: The total weight of all items in the inventory.
         :rtype: float
         """
@@ -174,21 +180,21 @@ class Inventory:
 
     def get_total_value_in_cp(self) -> int:
         """
-        Calculates the total value of all items in the inventory, 
+        Calculates the total value of all items in the inventory,
         converting all currency types to copper pieces (cp) for a unified total.
-        
+
         :return: The total value of all items in the inventory, in copper pieces.
         :rtype: int
         """
         total_cp = 0
         for item in self.items:
             item_value = 0
-            item_value += item.cost.get('cp', 0)
-            item_value += item.cost.get('sp', 0) * 10
-            item_value += item.cost.get('ep', 0) * 50
-            item_value += item.cost.get('gp', 0) * 100
-            item_value += item.cost.get('pp', 0) * 1000
+            item_value += item.cost.get("cp", 0)
+            item_value += item.cost.get("sp", 0) * 10
+            item_value += item.cost.get("ep", 0) * 50
+            item_value += item.cost.get("gp", 0) * 100
+            item_value += item.cost.get("pp", 0) * 1000
 
-            total_cp += (item_value * item.quantity)
+            total_cp += item_value * item.quantity
 
         return total_cp

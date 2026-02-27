@@ -1,5 +1,5 @@
 """
-CurrencyService is responsible for handling currency-related operations, 
+CurrencyService is responsible for handling currency-related operations,
 such as normalization, conversion, and optimization of purses.
 """
 
@@ -15,7 +15,7 @@ class CurrencyService:
         self.data = rules_manager.currency
         self._alias_map = {}
         for code, info in self.data.items():
-            for alias in info.get('aliases', []):
+            for alias in info.get("aliases", []):
                 self._alias_map[alias.lower()] = code
 
     def normalize_currency(self, name: str) -> Optional[str]:
@@ -38,7 +38,7 @@ class CurrencyService:
         :return: The value of the currency in copper pieces.
         :rtype: int
         """
-        return self.data.get(currency_node, {}).get('value', 0)
+        return self.data.get(currency_node, {}).get("value", 0)
 
     def convert_purse_to_cp(self, purse: Dict[str, int]) -> int:
         """
@@ -56,7 +56,7 @@ class CurrencyService:
 
     def optimize_purse(self, total_cp: int, use_pp: bool = False) -> Dict[str, int]:
         """
-        Optimizes a purse to contain the least number of coins 
+        Optimizes a purse to contain the least number of coins
         for a given total value in copper pieces (cp).
 
         :param total_cp: The total value in copper pieces to optimize into a purse.
@@ -66,18 +66,18 @@ class CurrencyService:
         :return: A dictionary mapping currency codes to their optimized amounts.
         :rtype: Dict[str, int]
         """
-        sorted_currencies = sorted(self.data.keys(),
-                                   key=lambda k: self.data[k]['value'],
-                                   reverse=True)
+        sorted_currencies = sorted(
+            self.data.keys(), key=lambda k: self.data[k]["value"], reverse=True
+        )
 
         new_purse = {k: 0 for k in self.data}
         remaining = total_cp
 
         for code in sorted_currencies:
-            if code == 'ep' or (code == 'pp' and not use_pp):
+            if code == "ep" or (code == "pp" and not use_pp):
                 continue
 
-            value = self.data[code]['value']
+            value = self.data[code]["value"]
             if value > 0:
                 count = remaining // value
                 new_purse[code] = count
