@@ -19,15 +19,17 @@ Feature: Character Inventory Management
         And the user has 5 "Torches" in their inventory
         When the user adds 5 "Torches" to their inventory
         Then the inventory should contain 10 "Torches"
-        And the inveotry should still have only 1 entry for "Torches"
+        And the inventory should still have only 1 entry for "Torches"
 
     Scenario: Removing Items from a Stack
-        Given the user has 10 "Arrows" in their inventory
+        Given a new character session is started
+        And the user has 10 "Arrows" in their inventory
         When the user removes 3 "Arrows"
         Then the inventory should contain 7 "Arrows"
 
     Scenario: Removing the Last Item from a Stack
-        Given the user has 1 "Potion of Healing" in their inventory
+        Given a new character session is started
+        And the user has 1 "Potion of Healing" in their inventory
         When the user removes 1 "Potion of Healing"
         Then "Potion of Healing" should be removed from the inventory list
 

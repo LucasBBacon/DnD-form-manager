@@ -1,0 +1,2 @@
+import form_manager.tests.step_definitions.test_inventory_management
+import form_manager.tests.step_definitions.test_item_properties

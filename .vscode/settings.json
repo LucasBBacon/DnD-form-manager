@@ -3,5 +3,17 @@
         "form_manager"
     ],
     "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
+    "python.testing.pytestEnabled": true,
+    "cSpell.words": [
+        "Greatsword",
+        "Longsword",
+        "Spellbook",
+        "stackable",
+        "unattune",
+        "unattunes",
+        "Unattuning",
+        "unequip",
+        "unequips",
+        "Waterskin"
+    ]
 }
