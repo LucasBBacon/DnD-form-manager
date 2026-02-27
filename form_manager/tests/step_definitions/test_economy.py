@@ -37,10 +37,10 @@ def get_currency_key(name: str) -> str:
 @given(
     parsers.parse('the user adds a "{item_name}" worth "{cost_str}" to their inventory')
 )
-def add_item_worth_cost(session_context, item_name, cost_str):
+def add_item_worth_cost(session_context, item_name, cost_str, rules_manager):
     char = session_context["character"]
     item = Item(name=item_name)
-    value = Item.parse_cost(cost_str)
+    value = rules_manager._parse_cost_string(cost_str)
     item.cost.update(value)
     char.inventory.add_item(item)
 
@@ -105,9 +105,9 @@ def check_single_fund(session_context, amount, currency_key):
 
 
 @then(parsers.parse('the total value should be "{expected_value_str}"'))
-def check_inventory_value(session_context, expected_value_str):
+def check_inventory_value(session_context, expected_value_str, rules_manager):
     actual_cp = session_context["inventory_value"]
-    parsed_expected = Item.parse_cost(expected_value_str)
+    parsed_expected = rules_manager._parse_cost_string(expected_value_str)
 
     expected_cp = 0
     expected_cp += parsed_expected.get("cp", 0)

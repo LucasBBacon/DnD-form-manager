@@ -104,32 +104,6 @@ class Item:
         """
         self.base_weight = value
 
-    @staticmethod
-    def parse_cost(cost_str: str) -> Dict[str, int]:
-        """
-        Parses a cost string into a dictionary of currency types and their amounts.
-
-        :param cost_str: The cost string to be parsed (e.g., "10 gp").
-        :type cost_str: str
-        :return: A dictionary mapping currency types to their amounts.
-        :rtype: Dict[str, int]
-        """
-        if not cost_str:
-            return {}
-        try:
-            parts = cost_str.strip().split(" ")
-            if len(parts) != 2:
-                return {}
-
-            amount = int(parts[0])
-            currency = parts[1].lower()
-            valid_currencies = ["cp", "sp", "ep", "gp", "pp"]
-            if currency not in valid_currencies:
-                return {}
-            return {currency: amount}
-        except (IndexError, ValueError):
-            return {}
-
     def make_improvised(self) -> None:
         """Converts the item into an improvised thrown weapon, setting appropriate properties."""
         self.damage_dice = "1d4"
@@ -168,13 +142,8 @@ class Item:
         if "category" in template_data:
             self.category = template_data["category"]
 
-        if "cost" in template_data:
-            if isinstance(template_data["cost"], str):
-                parsed = self.parse_cost(template_data["cost"])
-                print(parsed)
-                self.cost.update(parsed)
-            else:
-                self.cost = template_data["cost"]
+        if "cost" in template_data and isinstance(template_data["cost"], dict):
+            self.cost.update(template_data["cost"])
 
         if "armor_class" in template_data:
             ac_data = template_data["armor_class"]

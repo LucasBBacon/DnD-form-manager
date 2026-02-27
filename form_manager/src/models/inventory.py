@@ -138,12 +138,25 @@ class Inventory:
             self.get_item_total_weight(cid) for cid in container.content_ids
         )
         added_weight = self.get_item_total_weight(item.id)
-
         if (current_contents_weight + added_weight) > container.capacity_weight:
             raise ValueError(f"Exceeds capacity of '{container.name}'.")
 
         if item.id in self.top_level_ids:
             self.top_level_ids.remove(item.id)
+
+        if item.stackable:
+            existing_id = next(
+                (
+                    c_id
+                    for c_id in container.content_ids
+                    if self.items[c_id].name.lower() == item.name.lower()
+                ),
+                None,
+            )
+            if existing_id:
+                self.items[existing_id].quantity += item.quantity
+                del self.items[item.id]
+                return
 
         container.content_ids.append(item.id)
 

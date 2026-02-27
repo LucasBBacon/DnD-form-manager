@@ -58,10 +58,10 @@ def user_has_specific_item(session_context, rules_manager, item_name):
 @given(
     parsers.parse('the user has a "{item_name}" worth "{cost_str}" in their inventory')
 )
-def given_user_has_item_worth(session_context, item_name, cost_str):
+def given_user_has_item_worth(session_context, rules_manager, item_name, cost_str):
     char = session_context["character"]
     item = Item(name=item_name)
-    value = Item.parse_cost(cost_str)
+    value = rules_manager._parse_cost_string(cost_str)
     item.cost.update(value)
     char.inventory.add_item(item)
 
@@ -154,7 +154,7 @@ def sell_item_for_specific_value(session_context, rules_manager, item_name, cost
     item = char.inventory.get_item(item_name)
     assert item is not None, f"Cannot sell '{item_name}': Item not found in inventory."
 
-    sell_cost_dict = Item.parse_cost(cost_str)
+    sell_cost_dict = rules_manager._parse_cost_string(cost_str)
     sell_value_cp = currency_service.convert_purse_to_cp(sell_cost_dict)
     current_wealth_cp = currency_service.convert_purse_to_cp(char.purse)
 

@@ -94,13 +94,30 @@ class RulesManager:
         :rtype: Dict[Any, Any]
         """
         key = name.lower().replace(" ", "_").replace("'", "")
-        if key in self.weapons:
-            return self.weapons[key]
+        sources = [self.weapons, self.armor, self.adventuring_gear]
+        
+        for source in sources:
+            if key in source:
+                template = dict(source[key])
+                if 'cost' in template and isinstance(template['cost'], str):
+                    print(self._parse_cost_string(template['cost']))
+                    template['cost'] = self._parse_cost_string(template['cost'])
+                return template
+        return {}
 
-        if key in self.armor:
-            return self.armor[key]
+    def _parse_cost_string(self, cost_str: str) -> Dict[str, int]:
+        if not cost_str:
+            return {}
 
-        if key in self.adventuring_gear:
-            return self.adventuring_gear[key]
-
+        try:
+            parts = cost_str.strip().split(" ")
+            if len(parts) != 2:
+                return {}
+            amount = int(parts[0])
+            currency_code = parts[1].lower()
+            valid_currencies = [code.lower() for code in self.currency.keys()]
+            if currency_code in valid_currencies:
+                return {currency_code: amount}
+        except (IndexError, ValueError):
+            pass
         return {}
