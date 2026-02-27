@@ -4,7 +4,7 @@ including adding, removing, equipping, and calculating total weight and value.
 """
 
 from dataclasses import dataclass, field
-from typing import List, Optional
+from typing import Dict, List, Optional
 
 from form_manager.src.models.item import Item
 
@@ -13,9 +13,27 @@ from form_manager.src.models.item import Item
 class Inventory:
     """Represents a character's inventory, managing items and their interactions."""
 
-    items: List[Item] = field(default_factory=list)
+    items: Dict[str, Item] = field(default_factory=dict)
+    top_level_ids: List[str] = field(default_factory=list)
 
-    def add_item(self, item: Item, count: int = 1) -> None:
+    def get_item(self, name_or_id: str) -> Optional[Item]:
+        """
+        Deep search. Finds an item by UUID first, fallback to Name.
+
+        :param name_or_id: The name of the item to retrieve.
+        :type name_or_id: str
+        :return: The item if found, otherwise None.
+        :rtype: Item | None
+        """
+        if name_or_id in self.items:
+            return self.items[name_or_id]
+        name_lower = name_or_id.lower()
+        for item in self.items.values():
+            if item.name.lower() == name_lower:
+                return item
+        return None
+
+    def add_item(self, item: Item, count: int = 1) -> str:
         """
         Adds an item to the inventory, handling stackable items and quantities appropriately.
 
@@ -28,36 +46,72 @@ class Inventory:
             item.quantity = count
 
         if item.stackable:
-            existing_item = self.get_item(item.name)
-            if existing_item:
-                existing_item.quantity += count
-                return
+            existing_id = next(
+                (
+                    i_id
+                    for i_id in self.top_level_ids
+                    if self.items[i_id].name.lower() == item.name.lower()
+                ),
+                None,
+            )
+            if existing_id:
+                self.items[existing_id].quantity += item.quantity
+                return existing_id
 
-        item.quantity = count
-        self.items.append(item)
+        self.items[item.id] = item
+        self.top_level_ids.append(item.id)
+        return item.id
 
-    def remove_item(self, item_name: str, count: int = 1) -> None:
+    def remove_item(self, name_or_id: str, count: int = 1) -> None:
         """
         Removes an item from the inventory, handling stackable items and quantities appropriately.
 
-        :param item_name: The name of the item to be removed from the inventory.
-        :type item_name: str
+        :param name_or_id: The name of the item to be removed from the inventory.
+        :type name_or_id: str
         :param count: The number of items to be removed (default is 1).
         :type count: int
         """
-        item = self.get_item(item_name)
+        item = self.get_item(name_or_id)
         if not item:
-            raise ValueError(f"Item '{item_name}' not found in inventory.")
+            raise ValueError(f"Item '{name_or_id}' not found in inventory.")
 
-        if item.stackable:
+        if item.stackable and item.quantity > count:
             item.quantity -= count
-            if item.quantity <= 0:
-                self.items.remove(item)
-        else:
-            self.items.remove(item)
+            return
+
+        if item.id in self.top_level_ids:
+            self.top_level_ids.remove(item.id)
+
+        for parent in self.items.values():
+            if item.id in parent.content_ids:
+                parent.content_ids.remove(item.id)
+
+        del self.items[item.id]
+
+    def get_item_total_weight(self, item_id: str) -> float:
+        item = self.items.get(item_id)
+        if not item:
+            return 0.0
+
+        total = item.weight
+        if item.is_container:
+            for child_id in item.content_ids:
+                total += self.get_item_total_weight(child_id)
+        return total
+
+    def unpack_container(self, container_name: str) -> None:
+        """Dumps container contents to the top-level inventory."""
+        container = self.get_item(container_name)
+        if not container:
+            raise ValueError("Container not found.")
+        if not container.is_container:
+            raise ValueError(f"'{container.name}' is not a container.")
+        for child_id in list(container.content_ids):
+            container.content_ids.remove(child_id)
+            self.top_level_ids.append(child_id)
 
     def move_item_to_container(
-        self, item_name: str, container_name: str, count: int = 1
+        self, item_name_or_id: str, container_name_or_id: str, count: int = 1
     ) -> None:
         """
         Moves an item from the top-level inventory into a specified container,
@@ -70,25 +124,31 @@ class Inventory:
         :param count: The number of items to be moved (default is 1).
         :type count: int
         """
-        item = self.get_item(item_name)
+        item = self.get_item(item_name_or_id)
+        container = self.get_item(container_name_or_id)
+
         if not item:
-            raise ValueError(f"Item '{item_name}' not found in inventory.")
-
-        container = self.get_item(container_name)
+            raise ValueError("Item not found.")
         if not container:
-            raise ValueError(f"Container '{container_name}' not found.")
+            raise ValueError("Container not found.")
+        if not container.is_container:
+            raise ValueError(f"'{container.name}' is not a container.")
 
-        container.add_content(item)
+        current_contents_weight = sum(
+            self.get_item_total_weight(cid) for cid in container.content_ids
+        )
+        added_weight = self.get_item_total_weight(item.id)
 
-        if item.stackable:
-            item.quantity -= count
-            if item.quantity <= 0:
-                self.items.remove(item)
-        else:
-            self.items.remove(item)
+        if (current_contents_weight + added_weight) > container.capacity_weight:
+            raise ValueError(f"Exceeds capacity of '{container.name}'.")
+
+        if item.id in self.top_level_ids:
+            self.top_level_ids.remove(item.id)
+
+        container.content_ids.append(item.id)
 
     def remove_item_from_container(
-        self, item_name: str, container_name: str, count: int = 1
+        self, item_name_or_id: str, container_name_or_id: str, count: int = 1
     ):
         """
         Removes an item from a container in the inventory,
@@ -101,25 +161,19 @@ class Inventory:
         :param count: The number of items to be removed (default is 1).
         :type count: int
         """
-        container = self.get_item(container_name)
+
+        item = self.get_item(item_name_or_id)
+        container = self.get_item(container_name_or_id)
+
+        if not item:
+            raise ValueError("Item not found.")
         if not container:
-            raise ValueError(f"Container '{container_name}' not found.")
-        item_removed = container.remove_content(item_name, count)
-        self.add_item(item_removed, count)
+            raise ValueError("Container not found.")
+        if not container.is_container:
+            raise ValueError(f"'{container.name}' is not a container.")
 
-    def get_item(self, name: str) -> Optional[Item]:
-        """
-        Gets an item from the inventory by name, case-insensitively.
-
-        :param name: The name of the item to retrieve.
-        :type name: str
-        :return: The item if found, otherwise None.
-        :rtype: Item | None
-        """
-        name_lower = name.lower().strip()
-        return next(
-            (i for i in self.items if i.name.strip().lower() == name_lower), None
-        )
+        container.content_ids.remove(item.id)
+        self.add_item(item, count)
 
     def has_item(self, name: str) -> bool:
         """
@@ -145,6 +199,15 @@ class Inventory:
         item = self.get_item(name)
         return item.quantity if item else 0
 
+    def get_total_weight(self) -> float:
+        """
+        Gets the total weight of all items in the inventory.
+
+        :return: The total weight of all items in the inventory.
+        :rtype: float
+        """
+        return sum(self.get_item_total_weight(i_id) for i_id in self.top_level_ids)
+
     def equip_item(self, item_name: str) -> None:
         """
         Equips an item in the inventory.
@@ -168,33 +231,3 @@ class Inventory:
         if not item:
             raise ValueError(f"Cannot unequip: Item '{item_name}' not found.")
         item.equipped = False
-
-    def get_total_weight(self) -> float:
-        """
-        Gets the total weight of all items in the inventory.
-
-        :return: The total weight of all items in the inventory.
-        :rtype: float
-        """
-        return sum(item.weight * item.quantity for item in self.items)
-
-    def get_total_value_in_cp(self) -> int:
-        """
-        Calculates the total value of all items in the inventory,
-        converting all currency types to copper pieces (cp) for a unified total.
-
-        :return: The total value of all items in the inventory, in copper pieces.
-        :rtype: int
-        """
-        total_cp = 0
-        for item in self.items:
-            item_value = 0
-            item_value += item.cost.get("cp", 0)
-            item_value += item.cost.get("sp", 0) * 10
-            item_value += item.cost.get("ep", 0) * 50
-            item_value += item.cost.get("gp", 0) * 100
-            item_value += item.cost.get("pp", 0) * 1000
-
-            total_cp += item_value * item.quantity
-
-        return total_cp

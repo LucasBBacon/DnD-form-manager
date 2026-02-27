@@ -85,7 +85,7 @@ def check_stackable(session_context, item_name):
 )
 def check_inventory_entries(session_context, entry_count, item_name):
     char = session_context["character"]
-    entries = [i for i in char.inventory.items if i.name == item_name]
+    entries = [c_id for c_id in char.inventory.top_level_ids if char.inventory.items[c_id].name == item_name]
     assert len(entries) == entry_count
 
 

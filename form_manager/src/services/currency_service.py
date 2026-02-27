@@ -5,6 +5,7 @@ such as normalization, conversion, and optimization of purses.
 
 from typing import Dict, Optional
 
+from form_manager.src.models.inventory import Inventory
 from form_manager.src.services.rules_manager import RulesManager
 
 
@@ -84,3 +85,11 @@ class CurrencyService:
                 remaining %= value
 
         return new_purse
+    
+    def calculate_inventory_value(self, inventory: 'Inventory') -> int:
+        """Calculates the total value of all items in the inventory in CP."""
+        total_cp = 0
+        for item in inventory.items.values():
+            item_cp = self.convert_purse_to_cp(item.cost)
+            total_cp += (item_cp * item.quantity)
+        return total_cp

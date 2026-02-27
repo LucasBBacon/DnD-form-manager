@@ -69,9 +69,12 @@ def remove_coinage(session_context, amount, currency_name):
 
 
 @when("the user checks their total inventory value")
-def calculate_inventory_value(session_context):
+def calculate_inventory_value(session_context, rules_manager):
     char = session_context["character"]
-    session_context["inventory_value"] = char.inventory.get_total_value_in_cp()
+    currency_service = CurrencyService(rules_manager)
+    session_context["inventory_value"] = currency_service.calculate_inventory_value(
+        char.inventory
+    )
 
 
 @when(

@@ -137,7 +137,7 @@ def remove_container_from_inventory(session_context, container_name):
 def check_item_in_top_level(session_context, item_name):
     """Checks that the specified item exists at the top level of the inventory (not inside a container)."""
     char = session_context["character"]
-    found = any(i.name == item_name for i in char.inventory.items)
+    found = any(char.inventory.items[c_id].name == item_name for c_id in char.inventory.top_level_ids)
     assert found, f"Item '{item_name}' not found at top level of inventory."
 
 
@@ -146,7 +146,7 @@ def check_missing_top_level(session_context, item_name):
     """Checks that the specified item does not exist at the top level of the inventory
     (it may be inside a container)."""
     char = session_context["character"]
-    found = any(i.name == item_name for i in char.inventory.items)
+    found = any(char.inventory.items[c_id].name == item_name for c_id in char.inventory.top_level_ids)
     assert not found, f"Item '{item_name}' found at top level of inventory."
 
 
@@ -157,7 +157,7 @@ def check_container_content(session_context, container_name, item_name):
     container = char.inventory.get_item(container_name)
     assert container is not None
 
-    found = any(i.name == item_name for i in container.contents)
+    found = any(char.inventory.items[c_id].name == item_name for c_id in container.content_ids)
     assert found, f"Container '{container_name}' does not contain '{item_name}'"
 
 
@@ -168,7 +168,7 @@ def check_container_content_missing(session_context, container_name, item_name):
     container = char.inventory.get_item(container_name)
     assert container is not None
 
-    found = any(i.name == item_name for i in container.contents)
+    found = any(char.inventory.items[c_id].name == item_name for c_id in container.content_ids)
     assert not found, f"Container '{container_name}' contains '{item_name}'"
 
 
@@ -178,7 +178,8 @@ def check_container_weight(session_context, container_name, weight):
     (including its contents) matches the expected value."""
     char = session_context["character"]
     container = char.inventory.get_item(container_name)
-    assert container.weight == weight
+    actual_weight = char.inventory.get_item_total_weight(container.id)
+    assert actual_weight == weight, f"Expected {weight} lbs, got {actual_weight} lbs."
 
 
 @then(parsers.parse("the total weight should be {weight:f} lbs"))

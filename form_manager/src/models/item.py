@@ -8,6 +8,7 @@ applying templates, and handling container contents.
 from dataclasses import dataclass, field
 from enum import Enum
 from typing import Dict, List, Optional
+import uuid
 
 
 class DamageType(str, Enum):
@@ -50,7 +51,10 @@ class Item:
     weight, cost, and any special attributes.
     """
 
+    # ID
     name: str
+    id: str = field(default_factory=lambda: str(uuid.uuid4()))
+
     stackable: bool = False
     quantity: int = 1
 
@@ -60,23 +64,27 @@ class Item:
 
     category: Optional[str] = None
     equipped: bool = False
+
+    # Core stats
     base_weight: float = 0.0
 
+    # Attunement
+    requires_attunement: bool = False
+    is_attuned: bool = False
+
+    # Container Logic
     is_container: bool = False
     capacity_weight: float = 0.0
-    contents: List["Item"] = field(default_factory=list)
+    content_ids: List[str] = field(default_factory=list)
 
+    # Combat stats
     properties: List[str] = field(default_factory=list)
-
     damage_dice: Optional[str] = None
     damage_type: Optional[DamageType] = None
     range: Optional[str] = None
     armor_class: Optional[ArmorClass] = None
     strength_requirement: int = 0
     stealth_disadvantage: bool = False
-
-    requires_attunement: bool = False
-    is_attuned: bool = False
 
     def __post_init__(self):
         pass
@@ -86,11 +94,7 @@ class Item:
         """
         Calculates the total weight of the item, including any contents if it is a container.
         """
-        total = self.base_weight
-        if self.is_container:
-            for item in self.contents:
-                total += item.weight * item.quantity
-        return total
+        return self.base_weight * self.quantity
 
     @weight.setter
     def weight(self, value: float) -> None:
@@ -99,64 +103,6 @@ class Item:
         For containers, the total weight will be calculated dynamically based on contents.
         """
         self.base_weight = value
-
-    @property
-    def content_weight(self) -> float:
-        """Calculates the total weight of the contents if this item is a container."""
-        if not self.is_container:
-            return 0.0
-        return sum(item.weight * item.quantity for item in self.contents)
-
-    def add_content(self, item: "Item", count: int = 1) -> None:
-        """
-        Adds an item to the container, ensuring that the total weight does not exceed capacity.
-
-        :param item: The item to be added to the container.
-        :type item: 'Item'
-        :param count: The number of items to be added (default is 1).
-        :type count: int
-        """
-        if not self.is_container:
-            raise ValueError(f"'{self.name}' is not a container.")
-
-        added_weight = item.weight * item.quantity * count
-        if (self.content_weight + added_weight) > self.capacity_weight:
-            raise ValueError(
-                f"Cannot add '{item.name}': Exceeds capacity of '{self.name}'"
-            )
-
-        for _ in range(count):
-            self.contents.append(item)
-
-    def remove_content(self, item_name: str, count: int = 1) -> "Item":
-        """
-        Removes an item from the container,
-        ensuring that the item exists and handling quantities appropriately.
-
-        :param item_name: The name of the item to be removed from the container.
-        :type item_name: str
-        :param count: The number of items to be removed (default is 1).
-        :type count: int
-        :return: The item that was removed from the container.
-        :rtype: Item
-        """
-        if not self.is_container:
-            raise ValueError(f"'{self.name}' is not a container.")
-
-        item = next(
-            (
-                i
-                for i in self.contents
-                if i.name.strip().lower() == item_name.strip().lower()
-            ),
-            None,
-        )
-        if not item:
-            raise ValueError(f"'{item_name}' was not found in '{self.name}'.")
-
-        for _ in range(count):
-            self.contents.remove(item)
-        return item
 
     @staticmethod
     def parse_cost(cost_str: str) -> Dict[str, int]:
@@ -177,13 +123,10 @@ class Item:
 
             amount = int(parts[0])
             currency = parts[1].lower()
-
             valid_currencies = ["cp", "sp", "ep", "gp", "pp"]
             if currency not in valid_currencies:
                 return {}
-
             return {currency: amount}
-
         except (IndexError, ValueError):
             return {}
 

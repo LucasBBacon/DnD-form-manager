@@ -206,7 +206,9 @@ class Character:
     def attuned_items(self) -> List["Item"]:
         """Returns a list of all currently attuned items in teh inventory."""
         return [
-            item for item in self.inventory.items if getattr(item, "is_attuned", False)
+            item
+            for item in self.inventory.items.values()
+            if getattr(item, "is_attuned", False)
         ]
 
     @property
@@ -306,7 +308,9 @@ class Character:
     def attune_item(self, item_name: str) -> None:
         """Attempts to attune to an item. Raises ValueError if rules violated."""
         matching_items = [
-            i for i in self.inventory.items if i.name.lower() == item_name.lower()
+            i
+            for i in self.inventory.items.values()
+            if i.name.lower() == item_name.lower()
         ]
         if not matching_items:
             raise ValueError(f"Cannot attune: '{item_name}' not found in inventory.")
