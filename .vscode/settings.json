@@ -5,15 +5,52 @@
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
     "cSpell.words": [
+        "countercharm",
+        "darkvision",
+        "debuff",
+        "dwarven",
+        "dwarvish",
+        "greataxe",
         "Greatsword",
+        "handaxe",
         "Longsword",
+        "longswords",
+        "multiclass",
+        "regen",
+        "shortswords",
         "Spellbook",
+        "spellcasting",
         "stackable",
+        "stormborn",
         "unattune",
         "unattunes",
         "Unattuning",
         "unequip",
         "unequips",
+        "warhammer",
         "Waterskin"
+    ],
+    "json.schemas": [
+
+
+        {
+            "fileMatch": [
+                "spells/*_data.json",
+                "spells/*_spell.json"
+            ],
+            "url": "./form_manager/src/resources/schemas/spell_data_schema.json"
+        },
+        {
+            "fileMatch": [
+                "races/*_race.json"
+            ],
+            "url": "./form_manager/src/resources/schemas/race_data_schema.json"
+        },
+        {
+            "fileMatch": [
+                "traits/*_trait.json"
+            ],
+            "url": "./form_manager/src/resources/schemas/trait_data_schema.json"
+        }
     ]
 }

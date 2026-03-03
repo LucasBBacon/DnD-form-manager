@@ -1,0 +1,96 @@
+{
+    "spell_alter_self": {
+        "name": "Alter Self",
+        "level": 2,
+        "school": "Transmutation",
+        "is_ritual": false,
+        "classes": [
+            "Artificer",
+            "Sorcerer",
+            "Wizard"
+        ],
+        "casting_time": {
+            "action_type": "action",
+            "value": 1
+        },
+        "range": {
+            "type": "self"
+        },
+        "components": {
+            "v": true,
+            "s": true,
+            "m": false
+        },
+        "duration": {
+            "type": "timed",
+            "value": 1,
+            "unit": "hour",
+            "concentration": true
+        },
+        "mechanics": {
+            "casting_options": [
+                {
+                    "option_name": "casting_form",
+                    "choices": [
+                        "alter_self_aquatic_adaptation",
+                        "alter_self_change_appearance",
+                        "alter_self_natural_weapons"
+                    ]
+                }
+            ],
+            "targeting": {
+                "target_type": "self"
+            },
+            "resolution": {
+                "type": "automatic"
+            },
+            "effects": [
+                {
+                    "required_choice": "alter_self_aquatic_adaptation",
+                    "effect_type": "condition",
+                    "condition_applied": "water_breathing"
+                },
+                {
+                    "required_choice": "alter_self_aquatic_adaptation",
+                    "effect_type": "attribute_modification",
+                    "attributes_affected": [
+                        "swim_speed"
+                    ],
+                    "modifier_value": "walk_speed"
+                },
+                {
+                    "required_choice": "alter_self_change_appearance",
+                    "effect_type": "utility",
+                    "utility_action": "open_ui",
+                    "description": "Opens the character customization UI for temporary appearance change."
+                },
+                {
+                    "required_choice": "alter_self_natural_weapons",
+                    "effect_type": "utility",
+                    "utility_action": "create_item",
+                    "description": "Equips a temporary magical natural weapon (1d6 damage, +1 attack/damage)."
+                },
+                {
+                    "effect_type": "grant_action",
+                    "granted_action": {
+                        "name": "Alter Self: Change Form",
+                        "action_type": "action",
+                        "effects": [
+                            {
+                                "effect_type": "utility",
+                                "utility_action": "dispel",
+                                "description": "Strips the previous Alter Self effects from the character."
+                            },
+                            {
+                                "effect_type": "utility",
+                                "utility_action": "open_ui",
+                                "description": "Re-opens the ALter Self casting options UI to pick a new form."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "description": "You assume a different form. When you cast the spell, choose one of the following options, the effects of which last for the duration of the spell. While the spell lasts, you can end one option as an action to gain the benefits of a different one.\nAquatic Adaptation. You adapt your body to an aquatic environment, sprouting gills and growing webbing between your fingers. you can breath underwater and gain a swimming speed equal to your walking speed.\nChange Appearance. You transform your appearance. You decide what you look like, including your height, weight, facial features, sound of your voice, hair length, coloration, and distinguishing characteristics, if any. You can make yourself appear as a member of another race, though none of your statistics change. You also can't appear as a creature of a different size than you, and your basic shape stays the same: if you're bipedal, you can't use this spell to become quadrupedal, for instance. At any time for the duration of the spell, you can use your action to change your appearance in this way again.\nNatural Weapons. You grow claws, fangs, spines, horns, or a different natural weapon of your choice. Your unarmed strikes deal 1d6 bludgeoning, piercing, or slashing damage, as appropriate to the natural weapon you choose, and you are proficient with your unarmed strikes. Finally, the natural weapon is magic and you have a +1 bonus to the attack damage rolls you make using it."
+    }
+}

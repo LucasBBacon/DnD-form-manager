@@ -1,0 +1,14 @@
+{
+    "trait_darkvision_60": {
+        "name": "Darkvision",
+        "is_active": false,
+        "description": "",
+        "effects": [
+            {
+                "type": "sense",
+                "target": "darkvision",
+                "value": 60
+            }
+        ]
+    }
+}

@@ -1,0 +1,91 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "title": "DnD Trait",
+    "type": "object",
+    "patternProperties": {
+        "^trait_[a-z0-9_]+$": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Display name of the trait."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Full text description fo the UI."
+                },
+                "is_active": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "True if the trait grants an action/bonus action (e.g., Dragon Breath), False if purely passive."
+                },
+                "effects": {
+                    "type": "array",
+                    "description": "The discrete mechanical changes applied to the character sheet.",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "enum": [
+                                    "sense",
+                                    "proficiency",
+                                    "resistance",
+                                    "advantage",
+                                    "spell_grant",
+                                    "stat_modifier"
+                                ]
+                            },
+                            "target": {
+                                "type": "string",
+                                "description": "What is being modified (e.g., 'darkvision', 'poison', 'hp_max')"
+                            },
+                            "value": {
+                                "type": [
+                                    "integer",
+                                    "string",
+                                    "boolean"
+                                ],
+                                "description": "The magnitude of the effect."
+                            },
+                            "condition": {
+                                "type": "string",
+                                "description": "Context required for the effect (e.g., 'against_poison', 'in_direct_sunlight')"
+                            },
+                            "choice": {
+                                "type": "object",
+                                "description": "Used when the trait requires the player to make a selection.",
+                                "properties": {
+                                    "count": {
+                                        "type": "integer"
+                                    },
+                                    "category": {
+                                        "type": "string",
+                                        "enum": [
+                                            "skill",
+                                            "tool",
+                                            "weapon",
+                                            "spell"
+                                        ]
+                                    },
+                                    "pool": {
+                                        "type": "string",
+                                        "description": "Identifier for the list of valid options (e.g., 'any_skill', 'wizard_cantrips', 'artisan_tools'"
+                                    }
+                                }
+                            }
+                        },
+                        "required": [
+                            "type"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "name",
+                "description",
+                "effects"
+            ]
+        }
+    }
+}

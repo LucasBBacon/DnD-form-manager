@@ -18,13 +18,24 @@
             {
                 "type": "resource_grant",
                 "resource": "rage",
-                "count": 2,
-                "recharge": "long_rest"
+                "recharge": "long_rest",
+                "count_scaling": {
+                    "1": 2,
+                    "3": 3,
+                    "6": 4,
+                    "12": 5,
+                    "17": 6,
+                    "20": 999
+                }
             },
             {
                 "type": "rule_override",
                 "rule": "rage_damage",
-                "value": 2
+                "value_scaling": {
+                    "1": 2,
+                    "9": 3,
+                    "16": 4
+                }
             },
             {
                 "type": "action",
@@ -82,7 +93,7 @@
             {
                 "type": "subclass_choice",
                 "source": "Primal Path",
-                "options": ["paht_of_beserker", "path_of_totem_warrior"]
+                "options": ["path_of_berserker", "path_of_totem_warrior"]
             }
         ]
     },
@@ -231,7 +242,7 @@
             {
                 "type": "immunity",
                 "target": "condition",
-                "conditions": ["charmed", "frigtened"],
+                "conditions": ["charmed", "frightened"],
                 "context": "while_raging"
             }
         ]
@@ -446,6 +457,21 @@
             }
         ]
     },
+    "bard_hit_points": {
+        "label": "Hit Points",
+        "description": "Hit Dice: 1d8 per fighter level.",
+        "tags": ["core"],
+        "modifiers": [
+            {
+                "type": "hit_die",
+                "die": "d8"
+            }
+        ]
+    },
+    "bardic_inspiration": {
+        "label": "Bardic Inspiration",
+        "description": "You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6.\nOnce within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide before the DM says whether the roll succeeds or fails. Once the Bardic inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.\nYou can use this feature a number of times equal to your charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest.\nYour Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level."
+    },
     "fighter_hit_points": {
         "label": "Hit Points",
         "description": "Hit Dice: 1d10 per fighter level.",
@@ -629,7 +655,7 @@
                 "trigger": "saving_throw_roll",
                 "conditions": {
                     "die_result": "saving_throw_roll_failure",
-                    "resouce_available": "indomitable"
+                    "resource_available": "indomitable"
                 },
                 "effect": "reroll_die_must_use"
             }
@@ -698,7 +724,7 @@
     },
     "combat_superiority": {
         "label": "Combat Superiority",
-        "description": "When you choose this archetype at 3rd level, you learn manoeuvres that are fuelled by special dice called superiority dice.",
+        "description": "When you choose this archetype at 3rd level, you learn maneuvers that are fuelled by special dice called superiority dice.",
         "tags": ["combat", "subclass"],
         "modifiers": [
             {

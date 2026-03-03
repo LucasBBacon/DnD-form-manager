@@ -1,0 +1,28 @@
+{
+    "race_dwarf_mountain": {
+        "name": "Mountain Dwarf",
+        "parent_race_id": "race_dwarf",
+        "size": "medium",
+        "speed": {
+            "walk": 25
+        },
+        "ability_bonuses": {
+            "fixed": {
+                "str": 2,
+                "con": 2
+            }
+        },
+        "languages": {
+            "known": ["lang_common", "lang_dwarvish"],
+            "choices": 0
+        },
+        "traits": [
+            "trait_darkvision_60",
+            "trait_dwarven_resilience",
+            "trait_dwarven_combat_training",
+            "trait_stonecutting",
+            "trait_dwarven_armor_training"
+        ],
+        "description": ""
+    }
+}

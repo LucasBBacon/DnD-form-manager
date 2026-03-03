@@ -1,0 +1,19 @@
+{
+    "trait_dwarven_resilience": {
+        "name": "Dwarven Resilience",
+        "is_active": false,
+        "description": "",
+        "effects": [
+            {
+                "type": "advantage",
+                "target": "saving_throw",
+                "condition": "against_poison"
+            },
+            {
+                "type": "resistance",
+                "target": "damage_type_poison",
+                "value": "half_damage"
+            }
+        ]
+    }
+}

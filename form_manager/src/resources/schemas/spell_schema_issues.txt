@@ -1,0 +1,8 @@
+Acid Splash - 
+    From description: "This spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6)". How do we defined incremental increases at arbitrary levels?
+    From description: "..., or choose two creatures within range that are within 5 feet of each other". How doe we define distances between targets?
+Aid - 
+    From description: "Each target's hit point maximum and current hit points increases by 5 for the duration." How do we define an increase in both of these attributes in a single "condition_applied" property?
+    From description: "When you cast this spell using a spell slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd." How do we define an increase in this "condition_applied"?
+Alarm - 
+    Should we further define the utility of the spell within its effects? Currently there's no way if saying 'if a condition (creature within area) is met, then do thing (sound alarm)'
