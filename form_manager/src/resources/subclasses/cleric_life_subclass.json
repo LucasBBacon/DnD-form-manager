@@ -1,0 +1,63 @@
+{
+    "subclass_cleric_life": {
+        "name": "Life Domain",
+        "parent_class_id": "class_cleric",
+        "spellcasting_override": null,
+        "progression": [
+            {
+                "level": 1,
+                "features": [
+                    "trait_proficiency_heavy_armor",
+                    "trait_disciple_of_life"
+                ],
+                "bonus_spells": [
+                    "spell_bless",
+                    "spell_cure_wounds"
+                ],
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 2,
+                "features": [
+                    "trait_channel_divinity_preserve_life"
+                ],
+                "bonus_spells": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 3,
+                "features": [],
+                "bonus_spells": [
+                    "spell_lesser_restoration",
+                    "spell_ritual_weapon"
+                ],
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 5,
+                "features": [],
+                "bonus_spells": [
+                    "spell_beacon_of_hope",
+                    "spell_revivify"
+                ],
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 6,
+                "features": [
+                    "trait_blessed_healer"
+                ],
+                "bonus_spells": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 8,
+                "features": [
+                    "trait_divine_strike_radiant"
+                ],
+                "bonus_spells": null,
+                "spellcasting_progression_additions": null
+            }
+        ]
+    }
+}

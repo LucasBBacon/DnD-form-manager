@@ -1,0 +1,106 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "title": "DnD Subclass",
+    "description": "",
+    "type": "object",
+    "patternProperties": {
+        "^subclass_[a-z0-9_]+$": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "parent_class_id": {
+                    "type": "string",
+                    "description": "The Id of the base class this belongs to (e.g., 'class_rogue')"
+                },
+                "spellcasting_override": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "description": "Used if the subclass introduces spellcasting to a martial class, or changes the base class casting rules.",
+                    "properties": {
+                        "ability": {
+                            "type": "string",
+                            "enum": [
+                                "int",
+                                "wis",
+                                "cha"
+                            ]
+                        },
+                        "preparation_type": {
+                            "type": "string",
+                            "enum": [
+                                "known",
+                                "prepared",
+                                "pact"
+                            ]
+                        }
+                    }
+                },
+                "progression": {
+                    "type": "array",
+                    "description": "Only contains objects for the specific levels where this subclass grants features.",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "level": {
+                                "type": "integer",
+                                "minimum": 1,
+                                "maximum": 20
+                            },
+                            "features": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "description": "Trait IDs granted at this specific level."
+                            },
+                            "bonus_spells": {
+                                "type": [
+                                    "array",
+                                    "null"
+                                ],
+                                "items": {
+                                    "type": "string"
+                                },
+                                "description": "Spell IDs automatically learned/prepared at this level (e.g., Cleric Domain spells, Warlock Patron spells)."
+                            },
+                            "spellcasting_progression_additions": {
+                                "type": [
+                                    "object",
+                                    "null"
+                                ],
+                                "description": "Used for 'third-casters' (Like Eldritch Knight) to add spell slots, or Warlocks to expand their specific slot logic.",
+                                "properties": {
+                                    "cantrips_known": {
+                                        "type": "integer"
+                                    },
+                                    "spells_known": {
+                                        "type": "integer"
+                                    },
+                                    "spell_slots": {
+                                        "type": "object",
+                                        "additionalProperties": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "required": [
+                            "level",
+                            "features"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "name",
+                "parent_class_id",
+                "progression"
+            ]
+        }
+    }
+}

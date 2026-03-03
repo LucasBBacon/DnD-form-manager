@@ -23,6 +23,7 @@
         "spellcasting",
         "stackable",
         "stormborn",
+        "thiefs",
         "unattune",
         "unattunes",
         "Unattuning",
@@ -58,6 +59,12 @@
                 "classes/*_class.json"
             ],
             "url": "./form_manager/src/resources/schemas/class_data_schema.json"
+        },
+        {
+            "fileMatch": [
+                "subclasses/*_subclass.json"
+            ],
+            "url": "./form_manager/src/resources/schemas/subclass_data_schema.json"
         }
     ]
 }
