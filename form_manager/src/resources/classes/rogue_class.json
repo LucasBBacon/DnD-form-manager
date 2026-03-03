@@ -1,0 +1,79 @@
+{
+    "class_rogue": {
+        "name": "Rogue",
+        "hit_die": 8,
+        "proficiencies": {
+            "armor": [
+                "armor_light"
+            ],
+            "weapons": [
+                "weapon_simple",
+                "weapon_hand_crossbow",
+                "weapon_longsword",
+                "weapon_rapier",
+                "weapon_shortsword"
+            ],
+            "tools": [
+                "tool_thieves_tools"
+            ],
+            "saving_throws": [
+                "dex",
+                "int"
+            ],
+            "skills": {
+                "count": 4,
+                "pool": [
+                    "skill_acrobatics",
+                    "skill_athletics",
+                    "skill_deception",
+                    "skill_insight",
+                    "skill_intimidation",
+                    "skill_investigation",
+                    "skill_perception",
+                    "skill_performance",
+                    "skill_persuasion",
+                    "skill_slight_of_hand",
+                    "skill_stealth"
+                ]
+            }
+        },
+        "spellcasting_base": null,
+        "subclass_info": {
+            "choice_level": 3,
+            "options_pool": "subclasses_rogue"
+        },
+        "progression": [
+            {
+                "level": 1,
+                "features": [
+                    "trait_expertise",
+                    "trait_sneak_attack",
+                    "trait_thieves_cant"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "1d6"
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 2,
+                "features": [
+                    "trait_cunning_action"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "1d6"
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 3,
+                "features": [
+                    "trait_roguish_archetype"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "2d6"
+                }
+            }
+        ]
+    }
+}

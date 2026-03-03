@@ -1,0 +1,86 @@
+{
+    "class_wizard": {
+        "name": "Wizard",
+        "hit_die": 6,
+        "proficiencies": {
+            "armor": [],
+            "weapons": [
+                "weapon_dagger",
+                "weapon_dart",
+                "weapon_sling",
+                "weapon_quarterstaff",
+                "weapon_light_crossbow"
+            ],
+            "tools": [],
+            "saving_throws": [
+                "int",
+                "wis"
+            ],
+            "skills": {
+                "count": 2,
+                "pool": [
+                    "skill_arcana",
+                    "skill_history",
+                    "skill_insight",
+                    "skill_investigation",
+                    "skill_medicine",
+                    "skill_religion"
+                ]
+            }
+        },
+        "spellcasting_base": {
+            "ability": "int",
+            "preparation_type": "prepared",
+            "ritual_casting": true
+        },
+        "subclass_info": {
+            "choice_level": 2,
+            "options_pool": "subclasses_wizard"
+        },
+        "progression": [
+            {
+                "level": 1,
+                "features": [
+                    "trait_arcane_recovery"
+                ],
+                "class_specific_scaling": {},
+                "spellcasting_progression": {
+                    "cantrips_known": 3,
+                    "spells_known": 6,
+                    "spell_slots": {
+                        "1": 2
+                    }
+                }
+            },
+            {
+                "level": 2,
+                "features": [
+                    "trait_arcane_tradition"
+                ],
+                "class_specific_scaling": {},
+                "spellcasting_progression": {
+                    "cantrips_known": 3,
+                    "spells_known": 6,
+                    "spell_slots": {
+                        "1": 2
+                    }
+                }
+            },
+            {
+                "level": 3,
+                "features": [
+                    "trait_cantrip_formulas"
+                ],
+                "class_specific_scaling": {},
+                "spellcasting_progression": {
+                    "cantrips_known": 3,
+                    "spells_known": 10,
+                    "spell_slots": {
+                        "1": 4,
+                        "2": 2
+                    }
+                }
+            }
+        ]
+    }
+}
