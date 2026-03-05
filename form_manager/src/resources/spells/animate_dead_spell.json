@@ -1,0 +1,99 @@
+{
+    "spell_animate_dead": {
+        "name": "Animate Dead",
+        "level": 3,
+        "school": "Necromancy",
+        "is_ritual": false,
+        "classes": [
+            "Cleric",
+            "Wizard"
+        ],
+        "casting_time": {
+            "action_type": "minute",
+            "value": 1
+        },
+        "range": {
+            "type": "ranged",
+            "distance": 10,
+            "unit": "feet"
+        },
+        "components": {
+            "v": true,
+            "s": true,
+            "m": true,
+            "materials": "A drop of blood, a piece of flesh, and a pinch of bone dust",
+            "consumed": true
+        },
+        "duration": {
+            "type": "instantaneous",
+            "concentration": false
+        },
+        "mechanics": {
+            "casting_options": [
+                {
+                    "option_name": "animate_dead_mode",
+                    "choices": [
+                        "animate_skeleton",
+                        "animate_zombie",
+                        "reassert_control"
+                    ]
+                }
+            ],
+            "targeting": {
+                "target_type": "area",
+                "aoe_shape": "sphere",
+                "aoe_size": 10
+            },
+            "resolution": {
+                "type": "automatic"
+            },
+            "effects": [
+                {
+                    "required_choice": "animate_skeleton",
+                    "effect_type": "utility",
+                    "utility_action": "summon",
+                    "description": "Opens UI to select 1 pile of bones in the area. Transforms it into a Skeleton under the caster's control for 24 hours.",
+                    "scaling": {
+                        "scaling_type": "slot_level",
+                        "increment_targets": 2
+                    }
+                },
+                {
+                    "required_choice": "animate_zombie",
+                    "effect_type": "utility",
+                    "utility_action": "summon",
+                    "description": "Opens UI to select 1 corpse in the area. Transforms it into a Zombie under the caster's control for 24 hours.",
+                    "scaling": {
+                        "scaling_type": "slot_level",
+                        "increment_targets": 2
+                    }
+                },
+                {
+                    "required_choice": "reassert_control",
+                    "effect_type": "condition",
+                    "condition_applied": "controlled_undead",
+                    "description": "Opens UI to select up to 4 existing Skeletons/Zombies. Resets their 24-hour control timer.",
+                    "scaling": {
+                        "scaling_type": "slot_level",
+                        "increment_targets": 2
+                    }
+                },
+                {
+                    "effect_type": "grant_action",
+                    "granted_action": {
+                        "name": "Command Undead",
+                        "action_type": "bonus_action",
+                        "effects": [
+                            {
+                                "effect_type": "utility",
+                                "utility_action": "open_ui",
+                                "description": "Select any number of controlled undead within 60 feet and issue movement/action commands."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "description": "This spell creates an undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. Your spell imbues the target with a foul mimicry of life, raising it as an undead creature. The target becomes a skeleton if you chose bones or a zombie if you chose a corpse.\nOn each of your turns you can sue a bonus action to mentally command any creature you made with this spell if the creature is within 60 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.\nThe creature is under your control for 24 hours, after which it stops obeying any command you've given to it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature again before the current 24-hour period ends. This use of the spell reasserts your control over up to four creatures you have animated with this spell, rather than animating a new one.\nAt Higher Levels. When you cast this spell using a spell slot of 4th level or higher, you animate or reassert control over two additional undead creatures for each slot level above 3rd. Each of the creatures must come from a different corpse or pile of bones."
+    }
+}

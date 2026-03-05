@@ -1,0 +1,45 @@
+{
+    "subclass_wizard_divination": {
+        "name": "School of Divination",
+        "parent_class_id": "class_wizard",
+        "spellcasting_override": null,
+        "progression": [
+            {
+                "level": 2,
+                "features": [
+                    "trait_divination_savant",
+                    "trait_portent"
+                ],
+                "bonus_spells": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 6,
+                "features": [
+                    "trait_expert_divination"
+                ],
+                "bonus_spells": null,
+                "spellcasting_progression_additions": null
+                
+            },
+            {
+                "level": 10,
+                "features": [
+                    "trait_the_third_eye"
+                ],
+                "bonus_spells": null,
+                "spellcasting_progression_additions": null
+                
+            },
+            {
+                "level": 14,
+                "features": [
+                    "trait_greater_portent"
+                ],
+                "bonus_spells": null,
+                "spellcasting_progression_additions": null
+                
+            }
+        ]
+    }
+}

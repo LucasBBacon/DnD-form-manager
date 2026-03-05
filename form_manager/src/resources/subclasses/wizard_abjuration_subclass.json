@@ -1,0 +1,42 @@
+{
+    "subclass_wizard_abjuration": {
+        "name": "School of Abjuration",
+        "parent_class_id": "class_wizard",
+        "spellcasting_override": null,
+        "progression": [
+            {
+                "level": 2,
+                "features": [
+                    "trait_abjuration_savant",
+                    "trait_arcane_ward"
+                ],
+                "bonus_spells": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 6,
+                "features": [
+                    "trait_projected_ward"
+                ],
+                "bonus_spells": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 10,
+                "features": [
+                    "trait_improved_abjuration"
+                ],
+                "bonus_spells": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 14,
+                "features": [
+                    "trait_spell_resistance"
+                ],
+                "bonus_spells": null,
+                "spellcasting_progression_additions": null
+            }
+        ]
+    }
+}

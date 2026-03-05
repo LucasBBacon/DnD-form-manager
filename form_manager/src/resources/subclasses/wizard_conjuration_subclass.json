@@ -1,0 +1,45 @@
+{
+    "subclass_wizard_conjuration": {
+        "name": "School of Conjuration",
+        "parent_class_id": "class_wizard",
+        "spellcasting_override": null,
+        "progression": [
+            {
+                "level": 2,
+                "features": [
+                    "trait_conjuration_savant",
+                    "trait_minor_conjuration"
+                ],
+                "bonus_spells": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 6,
+                "features": [
+                    "trait_benign_transposition"
+                ],
+                "bonus_spells": null,
+                "spellcasting_progression_additions": null
+                
+            },
+            {
+                "level": 10,
+                "features": [
+                    "trait_focused_conjuration"
+                ],
+                "bonus_spells": null,
+                "spellcasting_progression_additions": null
+                
+            },
+            {
+                "level": 14,
+                "features": [
+                    "trait_durable_summons"
+                ],
+                "bonus_spells": null,
+                "spellcasting_progression_additions": null
+                
+            }
+        ]
+    }
+}

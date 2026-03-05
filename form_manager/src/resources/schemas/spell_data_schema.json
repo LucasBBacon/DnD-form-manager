@@ -176,6 +176,22 @@
                                 "max_targets": {
                                     "type": "integer"
                                 },
+                                "distribution": {
+                                    "type": "object",
+                                    "properties": {
+                                        "pool_size": {
+                                            "type": "integer",
+                                            "description": "the number of projectiles/attacks to distribute."
+                                        },
+                                        "allow_multiple_hits_per_target": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "required": [
+                                        "pool_size",
+                                        "allow_multiple_hits_per_target"
+                                    ]
+                                },
                                 "aoe_shape": {
                                     "type": "string",
                                     "enum": [
@@ -199,7 +215,11 @@
                                                 "type": "string"
                                             },
                                             "value": {
-                                                "type": "integer"
+                                                "type": [
+                                                    "string",
+                                                    "integer",
+                                                    "boolean"
+                                                ]
                                             },
                                             "unit": {
                                                 "type": "string"
@@ -354,6 +374,12 @@
                                                 "type": "integer"
                                             },
                                             "increment_modifier": {
+                                                "type": "integer"
+                                            },
+                                            "increment_duration_value": {
+                                                "type": "integer"
+                                            },
+                                            "increment_pool_size": {
                                                 "type": "integer"
                                             },
                                             "breakpoints": {
