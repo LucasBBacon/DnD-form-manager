@@ -1,0 +1,89 @@
+{
+    "subclass_warlock_great_old_one": {
+        "name": "The Great Old One",
+        "parent_class_id": "class_warlock",
+        "spellcasting_override": null,
+        "progression": [
+            {
+                "level": 1,
+                "features": [
+                    "trait_expanded_spell_list",
+                    "trait_awakened_mind"
+                ],
+                "bonus_spells": null,
+                "spells_added_to_list": [
+                    "spell_dissonant_whispers",
+                    "spell_tashas_hideous_laughter"
+                ],
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 3,
+                "features": [],
+                "bonus_spells": null,
+                "spells_added_to_list": [
+                    "spell_detect_thoughts",
+                    "spell_phantasmal_force"
+                ],
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 5,
+                "features": [],
+                "bonus_spells": null,
+                "spells_added_to_list": [
+                    "spell_clairvoyance",
+                    "spell_sending"
+                ],
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 6,
+                "features": [
+                    "trait_entropic_ward"
+                ],
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 7,
+                "features": [],
+                "bonus_spells": null,
+                "spells_added_to_list": [
+                    "spell_dominate_beast",
+                    "spell_evards_black_tentacles"
+                ],
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 9,
+                "features": [],
+                "bonus_spells": null,
+                "spells_added_to_list": [
+                    "spell_dominate_person",
+                    "spell_telekinesis"
+                ],
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 10,
+                "features": [
+                    "trait_thought_shield"
+                ],
+                "bonus_spells": null,
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 14,
+                "features": [
+                    "trait_create_thrall"
+                ],
+                "bonus_spells": null,
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": null
+            }
+        ]
+    }
+}

@@ -67,6 +67,16 @@
                                 },
                                 "description": "Spell IDs automatically learned/prepared at this level (e.g., Cleric Domain spells, Warlock Patron spells)."
                             },
+                            "spells_added_to_list": {
+                                "type": [
+                                    "array",
+                                    "null"
+                                ],
+                                "items": {
+                                    "type": "string"
+                                },
+                                "description": "Spell IDs added to the class's valid spell list to choose from. rather than automatically learned."
+                            },
                             "spellcasting_progression_additions": {
                                 "type": [
                                     "object",
