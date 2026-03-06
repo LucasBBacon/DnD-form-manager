@@ -1,11 +1,12 @@
 {
-    "class_ranger": {
-        "name": "Ranger",
+    "class_paladin": {
+        "name": "Paladin",
         "hit_die": 10,
         "proficiencies": {
             "armor": [
                 "category_armor_light",
                 "category_armor_medium",
+                "category_armor_heavy",
                 "category_armor_shield"
             ],
             "weapons": [
@@ -14,35 +15,29 @@
             ],
             "tools": [],
             "saving_throws": [
-                "str",
-                "dex"
+                "wis",
+                "cha"
             ],
             "skills": {
-                "count": 3,
+                "count": 2,
                 "pool": [
-                    "skill_animal_handling",
                     "skill_athletics",
                     "skill_insight",
-                    "skill_investigation",
-                    "skill_nature",
-                    "skill_perception",
-                    "skill_stealth",
-                    "skill_survival"
+                    "skill_intimidation",
+                    "skill_medicine",
+                    "skill_persuasion",
+                    "skill_religion"
                 ]
             }
         },
         "starting_equipment": {
             "given": [
                 {
-                    "item_id": "weapon_longbow",
+                    "item_id": "armor_chain_mail",
                     "quantity": 1
                 },
                 {
-                    "item_id": "weapon_arrow",
-                    "quantity": 20
-                },
-                {
-                    "item_id": "pack_quiver",
+                    "item_id": "category_holy_symbol",
                     "quantity": 1
                 }
             ],
@@ -52,30 +47,17 @@
                     "options": [
                         [
                             {
-                                "item_id": "armor_scale",
+                                "item_id": "category_weapon_martial",
+                                "quantity": 1
+                            },
+                            {
+                                "item_id": "category_armor_shield",
                                 "quantity": 1
                             }
                         ],
                         [
                             {
-                                "item_id": "armor_leather",
-                                "quantity": 1
-                            }
-                        ]
-                    ]
-                },
-                {
-                    "choose": 1,
-                    "options": [
-                        [
-                            {
-                                "item_id": "weapon_shortsword",
-                                "quantity": 2
-                            }
-                        ],
-                        [
-                            {
-                                "item_id": "category_weapon_simple",
+                                "item_id": "category_weapon_martial",
                                 "quantity": 2
                             }
                         ]
@@ -86,7 +68,24 @@
                     "options": [
                         [
                             {
-                                "item_id": "pack_dungeoneers",
+                                "item_id": "weapon_javelin",
+                                "quantity": 5
+                            }
+                        ],
+                        [
+                            {
+                                "item_id": "category_weapon_simple_melee",
+                                "quantity": 1
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "choose": 1,
+                    "options": [
+                        [
+                            {
+                                "item_id": "pack_priests",
                                 "quantity": 1
                             }
                         ],
@@ -101,38 +100,32 @@
             ]
         },
         "spellcasting_base": {
-            "ability": "wis",
-            "preparation_type": "known",
+            "ability": "cha",
+            "preparation_type": "prepared",
             "ritual_casting": false
         },
         "subclass_info": {
             "choice_level": 3,
-            "options_pool": "subclasses_ranger"
+            "options_pool": "subclasses_paladin"
         },
         "progression": [
             {
                 "level": 1,
                 "features": [
-                    "trait_favored_enemy",
-                    "trait_natural_explorer"
+                    "trait_divine_sense",
+                    "trait_lay_on_hands"
                 ],
                 "class_specific_scaling": {},
-                "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 0,
-                    "spell_slots": {}
-                }
+                "spellcasting_progression": {}
             },
             {
                 "level": 2,
                 "features": [
                     "trait_fighting_style",
-                    "trait_spellcasting_ranger"
+                    "trait_divine_smite"
                 ],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 2,
                     "spell_slots": {
                         "1": 2
                     }
@@ -141,13 +134,11 @@
             {
                 "level": 3,
                 "features": [
-                    "trait_ranger_archetype",
-                    "trait_primeval_awareness"
+                    "trait_divine_health",
+                    "trait_sacred_oath"
                 ],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 3,
                     "spell_slots": {
                         "1": 3
                     }
@@ -160,8 +151,6 @@
                 ],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 3,
                     "spell_slots": {
                         "1": 3
                     }
@@ -174,8 +163,6 @@
                 ],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 4,
                     "spell_slots": {
                         "1": 4,
                         "2": 2
@@ -185,13 +172,10 @@
             {
                 "level": 6,
                 "features": [
-                    "trait_favored_enemy_improvement",
-                    "trait_natural_explorer_improvement"
+                    "trait_aura_of_protection"
                 ],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 4,
                     "spell_slots": {
                         "1": 4,
                         "2": 2
@@ -201,12 +185,10 @@
             {
                 "level": 7,
                 "features": [
-                    "trait_ranger_archetype_feature"
+                    "trait_sacred_oath_feature"
                 ],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 5,
                     "spell_slots": {
                         "1": 4,
                         "2": 3
@@ -216,13 +198,10 @@
             {
                 "level": 8,
                 "features": [
-                    "trait_ability_score_improvement",
-                    "trait_lands_stride"
+                    "trait_ability_score_improvement"
                 ],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 5,
                     "spell_slots": {
                         "1": 4,
                         "2": 3
@@ -234,8 +213,6 @@
                 "features": [],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 6,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -246,13 +223,10 @@
             {
                 "level": 10,
                 "features": [
-                    "trait_natural_explorer_improvement",
-                    "trait_hide_in_plain_sight"
+                    "trait_aura_of_courage"
                 ],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 6,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -263,12 +237,10 @@
             {
                 "level": 11,
                 "features": [
-                    "trait_ranger_archetype_feature"
+                    "trait_improved_divine_strike"
                 ],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 7,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -283,8 +255,6 @@
                 ],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 7,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -297,8 +267,6 @@
                 "features": [],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 8,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -310,13 +278,10 @@
             {
                 "level": 14,
                 "features": [
-                    "trait_favored_enemy_improvement",
-                    "trait_vanish"
+                    "trait_cleansing_touch"
                 ],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 8,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -328,12 +293,10 @@
             {
                 "level": 15,
                 "features": [
-                    "trait_ranger_archetype_feature"
+                    "trait_sacred_oath_feature"
                 ],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 9,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -349,8 +312,6 @@
                 ],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 9,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -364,8 +325,6 @@
                 "features": [],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 10,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -378,12 +337,10 @@
             {
                 "level": 18,
                 "features": [
-                    "trait_feral_senses"
+                    "trait_aura_improvements"
                 ],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 10,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -400,8 +357,6 @@
                 ],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 11,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -414,12 +369,10 @@
             {
                 "level": 20,
                 "features": [
-                    "trait_foe_slayer"
+                    "trait_sacred_oath_feature"
                 ],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 0,
-                    "spells_known": 11,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,

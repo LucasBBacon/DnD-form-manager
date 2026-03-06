@@ -1,0 +1,105 @@
+{
+    "subclass_paladin_devotion": {
+        "name": "Oath of Devotion",
+        "parent_class_id": "class_paladin",
+        "spellcasting_override": null,
+        "progression": [
+            {
+                "level": 3,
+                "features": [
+                    "trait_tenets_of_devotion",
+                    "trait_oath_spells_devotion",
+                    "trait_channel_divinity_devotion"
+                ],
+                "bonus_spells": [
+                    "spell_protection_from_evil_and_good",
+                    "spell_sanctuary"
+                ],
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 5,
+                "features": [],
+                "bonus_spells": [
+                    "spell_lesser_restoration",
+                    "spell_zone_of_truth"
+                ],
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 7,
+                "features": [
+                    "trait_aura_of_devotion"
+                ],
+                "subclass_specific_scaling": {
+                    "aura_scale": 10
+                },
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 9,
+                "features": [],
+                "bonus_spells": [
+                    "spell_beacon_of_hope",
+                    "spell_dispel_magic"
+                ],
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 13,
+                "features": [],
+                "bonus_spells": [
+                    "spell_freedom_of_movement",
+                    "trait_guardian_of_faith"
+                ],
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 15,
+                "features": [
+                    "trait_purity_of_spirit"
+                ],
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 17,
+                "features": [],
+                "bonus_spells": [
+                    "spell_commune",
+                    "spell_flame_strike"
+                ],
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 18,
+                "features": [
+                    "trait_aura_of_devotion"
+                ],
+                "subclass_specific_scaling": {
+                    "aura_scale": 30
+                },
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 20,
+                "features": [
+                    "trait_holy_nimbus"
+                ],
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            }
+        ]
+    }
+}

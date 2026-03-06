@@ -57,6 +57,16 @@
                                 },
                                 "description": "Trait IDs granted at this specific level."
                             },
+                            "subclass_specific_scaling": {
+                                "type": "object",
+                                "description": "Custom key-value pairs for class-specific resources (e.g., Sneak Attack damage, Ki points).",
+                                "additionalProperties": {
+                                    "type": [
+                                        "string",
+                                        "integer"
+                                    ]
+                                }
+                            },
                             "bonus_spells": {
                                 "type": [
                                     "array",
