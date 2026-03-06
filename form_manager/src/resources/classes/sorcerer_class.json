@@ -1,6 +1,6 @@
 {
-    "class_wizard": {
-        "name": "Wizard",
+    "class_sorcerer": {
+        "name": "Sorcerer",
         "hit_die": 6,
         "proficiencies": {
             "armor": [],
@@ -13,17 +13,17 @@
             ],
             "tools": [],
             "saving_throws": [
-                "int",
-                "wis"
+                "con",
+                "cha"
             ],
             "skills": {
                 "count": 2,
                 "pool": [
                     "skill_arcana",
-                    "skill_history",
+                    "skill_deception",
                     "skill_insight",
-                    "skill_investigation",
-                    "skill_medicine",
+                    "skill_intimidation",
+                    "skill_persuasion",
                     "skill_religion"
                 ]
             }
@@ -31,8 +31,8 @@
         "starting_equipment": {
             "given": [
                 {
-                    "item_id": "magicitem_spellbook",
-                    "quantity": 1
+                    "item_id": "weapon_dagger",
+                    "quantity": 2
                 }
             ],
             "choices": [
@@ -41,13 +41,17 @@
                     "options": [
                         [
                             {
-                                "item_id": "weapon_quarterstaff",
+                                "item_id": "weapon_light_crossbow",
                                 "quantity": 1
+                            },
+                            {
+                                "item_id": "weapon_crossbow_bolt",
+                                "quantity": 20
                             }
                         ],
                         [
                             {
-                                "item_id": "weapon_dagger",
+                                "item_id": "category_weapon_simple",
                                 "quantity": 1
                             }
                         ]
@@ -75,7 +79,7 @@
                     "options": [
                         [
                             {
-                                "item_id": "pack_scholars",
+                                "item_id": "pack_dungeoneers",
                                 "quantity": 1
                             }
                         ],
@@ -90,25 +94,25 @@
             ]
         },
         "spellcasting_base": {
-            "ability": "int",
-            "preparation_type": "prepared",
-            "ritual_casting": true
+            "ability": "cha",
+            "preparation_type": "known",
+            "ritual_casting": false
         },
         "subclass_info": {
-            "choice_level": 2,
-            "options_pool": "subclasses_wizard"
+            "choice_level": 1,
+            "options_pool": "subclasses_sorcerer"
         },
         "progression": [
             {
                 "level": 1,
                 "features": [
                     "trait_spellcasting",
-                    "trait_arcane_recovery"
+                    "trait_sorcerous_origin"
                 ],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
-                    "cantrips_known": 3,
-                    "spells_known": 6,
+                    "cantrips_known": 4,
+                    "spells_known": 2,
                     "spell_slots": {
                         "1": 2
                     }
@@ -117,24 +121,30 @@
             {
                 "level": 2,
                 "features": [
-                    "trait_arcane_tradition"
+                    "trait_font_of_magic"
                 ],
-                "class_specific_scaling": {},
+                "class_specific_scaling": {
+                    "sorcery_points": 2
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 3,
-                    "spells_known": 8,
+                    "cantrips_known": 4,
+                    "spells_known": 3,
                     "spell_slots": {
-                        "1": 2
+                        "1": 3
                     }
                 }
             },
             {
                 "level": 3,
-                "features": [],
-                "class_specific_scaling": {},
+                "features": [
+                    "trait_metamagic"
+                ],
+                "class_specific_scaling": {
+                    "sorcery_points": 3
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 3,
-                    "spells_known": 10,
+                    "cantrips_known": 4,
+                    "spells_known": 4,
                     "spell_slots": {
                         "1": 4,
                         "2": 2
@@ -146,23 +156,27 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
+                "class_specific_scaling": {
+                    "sorcery_points": 4
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 4,
-                    "spells_known": 12,
+                    "cantrips_known": 5,
+                    "spells_known": 5,
                     "spell_slots": {
                         "1": 4,
-                        "2": 3
+                        "2": 2
                     }
                 }
             },
             {
                 "level": 5,
                 "features": [],
-                "class_specific_scaling": {},
+                "class_specific_scaling": {
+                    "sorcery_points": 5
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 4,
-                    "spells_known": 14,
+                    "cantrips_known": 5,
+                    "spells_known": 6,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -173,12 +187,14 @@
             {
                 "level": 6,
                 "features": [
-                    "trait_arcane_tradition_feature"
+                    "trait_sorcerous_origin_feature"
                 ],
-                "class_specific_scaling": {},
+                "class_specific_scaling": {
+                    "sorcery_points": 6
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 4,
-                    "spells_known": 16,
+                    "cantrips_known": 5,
+                    "spells_known": 7,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -189,10 +205,12 @@
             {
                 "level": 7,
                 "features": [],
-                "class_specific_scaling": {},
+                "class_specific_scaling": {
+                    "sorcery_points": 7
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 4,
-                    "spells_known": 18,
+                    "cantrips_known": 5,
+                    "spells_known": 8,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -206,10 +224,12 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
+                "class_specific_scaling": {
+                    "sorcery_points": 8
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 4,
-                    "spells_known": 20,
+                    "cantrips_known": 5,
+                    "spells_known": 9,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -221,10 +241,12 @@
             {
                 "level": 9,
                 "features": [],
-                "class_specific_scaling": {},
+                "class_specific_scaling": {
+                    "sorcery_points": 9
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 4,
-                    "spells_known": 22,
+                    "cantrips_known": 5,
+                    "spells_known": 10,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -237,12 +259,14 @@
             {
                 "level": 10,
                 "features": [
-                    "trait_arcane_tradition_feature"
+                    "trait_metamagic"
                 ],
-                "class_specific_scaling": {},
+                "class_specific_scaling": {
+                    "sorcery_points": 10
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 5,
-                    "spells_known": 24,
+                    "cantrips_known": 6,
+                    "spells_known": 11,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -255,10 +279,12 @@
             {
                 "level": 11,
                 "features": [],
-                "class_specific_scaling": {},
+                "class_specific_scaling": {
+                    "sorcery_points": 11
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 5,
-                    "spells_known": 26,
+                    "cantrips_known": 6,
+                    "spells_known": 12,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -274,10 +300,12 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
+                "class_specific_scaling": {
+                    "sorcery_points": 12
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 5,
-                    "spells_known": 26,
+                    "cantrips_known": 6,
+                    "spells_known": 12,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -291,10 +319,12 @@
             {
                 "level": 13,
                 "features": [],
-                "class_specific_scaling": {},
+                "class_specific_scaling": {
+                    "sorcery_points": 13
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 5,
-                    "spells_known": 28,
+                    "cantrips_known": 6,
+                    "spells_known": 13,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -309,12 +339,14 @@
             {
                 "level": 14,
                 "features": [
-                    "trait_arcane_tradition_feature"
+                    "trait_sorcerous_origin_feature"
                 ],
-                "class_specific_scaling": {},
+                "class_specific_scaling": {
+                    "sorcery_points": 14
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 5,
-                    "spells_known": 30,
+                    "cantrips_known": 6,
+                    "spells_known": 13,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -329,10 +361,12 @@
             {
                 "level": 15,
                 "features": [],
-                "class_specific_scaling": {},
+                "class_specific_scaling": {
+                    "sorcery_points": 15
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 5,
-                    "spells_known": 32,
+                    "cantrips_known": 6,
+                    "spells_known": 14,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -350,10 +384,12 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
+                "class_specific_scaling": {
+                    "sorcery_points": 16
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 5,
-                    "spells_known": 34,
+                    "cantrips_known": 6,
+                    "spells_known": 14,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -368,11 +404,15 @@
             },
             {
                 "level": 17,
-                "features": [],
-                "class_specific_scaling": {},
+                "features": [
+                    "trait_metamagic"
+                ],
+                "class_specific_scaling": {
+                    "sorcery_points": 17
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 5,
-                    "spells_known": 36,
+                    "cantrips_known": 6,
+                    "spells_known": 15,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -389,12 +429,14 @@
             {
                 "level": 18,
                 "features": [
-                    "trait_spell_mastery"
+                    "trait_sorcerous_origin_feature"
                 ],
-                "class_specific_scaling": {},
+                "class_specific_scaling": {
+                    "sorcery_points": 18
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 5,
-                    "spells_known": 38,
+                    "cantrips_known": 6,
+                    "spells_known": 15,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -413,10 +455,12 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
+                "class_specific_scaling": {
+                    "sorcery_points": 19
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 5,
-                    "spells_known": 40,
+                    "cantrips_known": 6,
+                    "spells_known": 15,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,
@@ -433,12 +477,14 @@
             {
                 "level": 20,
                 "features": [
-                    "trait_signature_spell"
+                    "trait_sorcerous_restoration"
                 ],
-                "class_specific_scaling": {},
+                "class_specific_scaling": {
+                    "sorcery_points": 20
+                },
                 "spellcasting_progression": {
-                    "cantrips_known": 5,
-                    "spells_known": 42,
+                    "cantrips_known": 6,
+                    "spells_known": 15,
                     "spell_slots": {
                         "1": 4,
                         "2": 3,

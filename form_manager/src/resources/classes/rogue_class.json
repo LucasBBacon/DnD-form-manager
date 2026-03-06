@@ -7,7 +7,7 @@
                 "armor_light"
             ],
             "weapons": [
-                "weapon_simple",
+                "category_weapon_simple",
                 "weapon_hand_crossbow",
                 "weapon_longsword",
                 "weapon_rapier",

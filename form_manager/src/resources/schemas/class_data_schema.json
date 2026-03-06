@@ -72,6 +72,72 @@
                         }
                     }
                 },
+                "starting_equipment": {
+                    "type": "object",
+                    "properties": {
+                        "given": {
+                            "type": "array",
+                            "description": "Items the class always starts with.",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "item_id": {
+                                        "type": "string",
+                                        "description": "Id of the specific item or item category pool."
+                                    },
+                                    "quantity": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    }
+                                },
+                                "required": [
+                                    "item_id",
+                                    "quantity"
+                                ]
+                            }
+                        },
+                        "choices": {
+                            "type": "array",
+                            "description": "An array of choice groups (e.g., Bullet point 1, Bullet point 2).",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "choose": {
+                                        "type": "integer",
+                                        "description": "How many options the user can pick from this group (typically 1)."
+                                    },
+                                    "options": {
+                                        "type": "array",
+                                        "description": "The mutually exclusive options. Each option is an array of items, allowing for bundles.",
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "item_id": {
+                                                        "type": "string"
+                                                    },
+                                                    "quantity": {
+                                                        "type": "integer",
+                                                        "minimum": 1
+                                                    }
+                                                },
+                                                "required": [
+                                                    "item_id",
+                                                    "quantity"
+                                                ]
+                                            }
+                                        }
+                                    }
+                                },
+                                "required": [
+                                    "choose",
+                                    "options"
+                                ]
+                            }
+                        }
+                    }
+                },
                 "spellcasting_base": {
                     "type": [
                         "object",

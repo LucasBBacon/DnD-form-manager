@@ -4,10 +4,10 @@
         "hit_die": 8,
         "proficiencies": {
             "armor": [
-                "armor_light"
+                "category_armor_light"
             ],
             "weapons": [
-                "weapon_simple"
+                "category_weapon_simple"
             ],
             "tools": [],
             "saving_throws": [
@@ -27,6 +27,79 @@
                     "skill_religion"
                 ]
             }
+        },
+        "starting_equipment": {
+            "given": [
+                {
+                    "item_id": "armor_leather",
+                    "quantity": 1
+                },
+                {
+                    "item_id": "weapon_dagger",
+                    "quantity": 2
+                },
+                {
+                    "item_id": "category_weapon_simple",
+                    "quantity": 1
+                }
+            ],
+            "choices": [
+                {
+                    "choose": 1,
+                    "options": [
+                        [
+                            {
+                                "item_id": "weapon_light_crossbow",
+                                "quantity": 1
+                            },
+                            {
+                                "item_id": "weapon_crossbow_bolt",
+                                "quantity": 20
+                            }
+                        ],
+                        [
+                            {
+                                "item_id": "category_weapon_simple",
+                                "quantity": 1
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "choose": 1,
+                    "options": [
+                        [
+                            {
+                                "item_id": "gear_component_pouch",
+                                "quantity": 1
+                            }
+                        ],
+                        [
+                            {
+                                "item_id": "category_arcane_focus",
+                                "quantity": 1
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "choose": 1,
+                    "options": [
+                        [
+                            {
+                                "item_id": "pack_scholars",
+                                "quantity": 1
+                            }
+                        ],
+                        [
+                            {
+                                "item_id": "pack_dungeoneers",
+                                "quantity": 1
+                            }
+                        ]
+                    ]
+                }
+            ]
         },
         "spellcasting_base": {
             "ability": "cha",
