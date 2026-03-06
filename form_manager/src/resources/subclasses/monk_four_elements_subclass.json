@@ -1,0 +1,83 @@
+{
+    "subclass_four_elements": {
+        "name": "Way of the Four Elements",
+        "parent_class_id": "class_monk",
+        "spellcasting_override": null,
+        "progression": [
+            {
+                "level": 3,
+                "features": [
+                    "trait_disciple_of_the_elements"
+                ],
+                "subclass_specific_scaling": {
+                    "max_ki_for_spell": 2
+                },
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 5,
+                "features": [],
+                "subclass_specific_scaling": {
+                    "max_ki_for_spell": 3
+                },
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 6,
+                "features": [
+                    "trait_elemental_discipline_additional"
+                ],
+                "subclass_specific_scaling": {},
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 9,
+                "features": [],
+                "subclass_specific_scaling": {
+                    "max_ki_for_spell": 4
+                },
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 11,
+                "features": [
+                    "trait_elemental_discipline_additional"
+                ],
+                "subclass_specific_scaling": {},
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 13,
+                "features": [],
+                "subclass_specific_scaling": {
+                    "max_ki_for_spell": 5
+                },
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 17,
+                "features": [
+                    "trait_elemental_discipline_additional"
+                ],
+                "subclass_specific_scaling": {
+                    "max_ki_for_spell": 6
+                },
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            }
+        ]
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "subclass_monk_open_hand": {
+        "name": "Way of the Open Hand",
+        "parent_class_id": "class_monk",
+        "spellcasting_override": null,
+        "progression": [
+            {
+                "level": 3,
+                "features": [
+                    "trait_open_hand_technique"
+                ],
+                "subclass_specific_scaling": {},
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 6,
+                "features": [
+                    "trait_wholeness_of_body"
+                ],
+                "subclass_specific_scaling": {},
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 11,
+                "features": [
+                    "trait_tranquility"
+                ],
+                "subclass_specific_scaling": {},
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 17,
+                "features": [
+                    "trait_quivering_palm"
+                ],
+                "subclass_specific_scaling": {},
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            }
+        ]
+    }
+}

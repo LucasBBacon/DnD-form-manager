@@ -1,0 +1,49 @@
+{
+    "subclass_monk_shadow": {
+        "name": "Way of Shadow",
+        "parent_class_id": "class_monk",
+        "spellcasting_override": null,
+        "progression": [
+            {
+                "level": 3,
+                "features": [
+                    "trait_shadow_arts"
+                ],
+                "subclass_specific_scaling": {},
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 6,
+                "features": [
+                    "trait_shadow_step"
+                ],
+                "subclass_specific_scaling": {},
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 11,
+                "features": [
+                    "trait_cloak_of_shadows"
+                ],
+                "subclass_specific_scaling": {},
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 17,
+                "features": [
+                    "trait_opportunist"
+                ],
+                "subclass_specific_scaling": {},
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            }
+        ]
+    }
+}

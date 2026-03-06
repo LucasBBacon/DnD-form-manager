@@ -1,38 +1,29 @@
 {
-    "class_rogue": {
-        "name": "Rogue",
+    "class_monk": {
+        "name": "Monk",
         "hit_die": 8,
         "proficiencies": {
-            "armor": [
-                "armor_light"
-            ],
+            "armor": [],
             "weapons": [
                 "category_weapon_simple",
-                "weapon_hand_crossbow",
-                "weapon_longsword",
-                "weapon_rapier",
                 "weapon_shortsword"
             ],
             "tools": [
-                "tool_thieves_tools"
+                "category_artisans_tools",
+                "category_musical_instrument"
             ],
             "saving_throws": [
-                "dex",
-                "int"
+                "str",
+                "dex"
             ],
             "skills": {
-                "count": 4,
+                "count": 2,
                 "pool": [
                     "skill_acrobatics",
                     "skill_athletics",
-                    "skill_deception",
+                    "skill_history",
                     "skill_insight",
-                    "skill_intimidation",
-                    "skill_investigation",
-                    "skill_perception",
-                    "skill_performance",
-                    "skill_persuasion",
-                    "skill_slight_of_hand",
+                    "skill_religion",
                     "skill_stealth"
                 ]
             }
@@ -40,16 +31,8 @@
         "starting_equipment": {
             "given": [
                 {
-                    "item_id": "armor_leather",
-                    "quantity": 1
-                },
-                {
-                    "item_id": "weapon_dagger",
-                    "quantity": 2
-                },
-                {
-                    "item_id": "tool_thieves_tools",
-                    "quantity": 1
+                    "item_id": "weapon_dart",
+                    "quantity": 10
                 }
             ],
             "choices": [
@@ -58,13 +41,13 @@
                     "options": [
                         [
                             {
-                                "item_id": "weapon_rapier",
+                                "item_id": "weapon_shortsword",
                                 "quantity": 1
                             }
                         ],
                         [
                             {
-                                "item_id": "weapon_shortsword",
+                                "item_id": "category_weapon_simple",
                                 "quantity": 1
                             }
                         ]
@@ -73,37 +56,6 @@
                 {
                     "choose": 1,
                     "options": [
-                        [
-                            {
-                                "item_id": "weapon_shortbow",
-                                "quantity": 1
-                            },
-                            {
-                                "item_id": "weapon_arrow",
-                                "quantity": 20
-                            },
-                            {
-                                "item_id": "pack_quiver",
-                                "quantity": 1
-                            }
-                        ],
-                        [
-                            {
-                                "item_id": "weapon_shortsword",
-                                "quantity": 1
-                            }
-                        ]
-                    ]
-                },
-                {
-                    "choose": 1,
-                    "options": [
-                        [
-                            {
-                                "item_id": "pack_burglars",
-                                "quantity": 1
-                            }
-                        ],
                         [
                             {
                                 "item_id": "pack_dungeoneers",
@@ -123,78 +75,97 @@
         "spellcasting_base": null,
         "subclass_info": {
             "choice_level": 3,
-            "options_pool": "subclasses_rogue"
+            "options_pool": "subclasses_monk"
         },
         "progression": [
             {
                 "level": 1,
                 "features": [
-                    "trait_expertise",
-                    "trait_sneak_attack",
-                    "trait_thieves_cant"
+                    "trait_unarmored_defense_monk",
+                    "trait_martial_arts"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "1d6"
+                    "martial_arts_dice": "1d4",
+                    "ki_points": 0,
+                    "unarmored_movement_bonus": 0
                 },
                 "spellcasting_progression": null
             },
             {
                 "level": 2,
                 "features": [
-                    "trait_cunning_action"
+                    "trait_ki",
+                    "trait_unarmored_movement"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "1d6"
+                    "martial_arts_dice": "1d4",
+                    "ki_points": 2,
+                    "unarmored_movement_bonus": 10
                 },
                 "spellcasting_progression": null
             },
             {
                 "level": 3,
                 "features": [
-                    "trait_roguish_archetype"
+                    "trait_monastic_tradition",
+                    "trait_deflect_missiles"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "2d6"
+                    "martial_arts_dice": "1d4",
+                    "ki_points": 3,
+                    "unarmored_movement_bonus": 10
                 },
                 "spellcasting_progression": null
             },
             {
                 "level": 4,
                 "features": [
-                    "trait_ability_score_improvement"
+                    "trait_ability_score_improvement",
+                    "trait_slow_fall"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "2d6"
+                    "martial_arts_dice": "1d4",
+                    "ki_points": 4,
+                    "unarmored_movement_bonus": 10
                 },
                 "spellcasting_progression": null
             },
             {
                 "level": 5,
                 "features": [
-                    "trait_uncanny_dodge"
+                    "trait_extra_attack",
+                    "trait_stunning_strike"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "3d6"
+                    "martial_arts_dice": "1d6",
+                    "ki_points": 5,
+                    "unarmored_movement_bonus": 10
                 },
                 "spellcasting_progression": null
             },
             {
                 "level": 6,
                 "features": [
-                    "trait_expertise"
+                    "trait_ki_empowered_strikes",
+                    "trait_monastic_tradition_feature"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "3d6"
+                    "martial_arts_dice": "1d6",
+                    "ki_points": 6,
+                    "unarmored_movement_bonus": 15
                 },
                 "spellcasting_progression": null
             },
             {
                 "level": 7,
                 "features": [
-                    "trait_evasion_rogue"
+                    "trait_evasion_monk",
+                    "trait_stillness_of_mind"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "4d6"
+                    "martial_arts_dice": "1d6",
+                    "ki_points": 7,
+                    "unarmored_movement_bonus": 15
                 },
                 "spellcasting_progression": null
             },
@@ -204,37 +175,45 @@
                     "trait_ability_score_improvement"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "4d6"
+                    "martial_arts_dice": "1d6",
+                    "ki_points": 8,
+                    "unarmored_movement_bonus": 15
                 },
                 "spellcasting_progression": null
             },
             {
                 "level": 9,
                 "features": [
-                    "trait_roguish_archetype_feature"
+                    "trait_unarmored_movement_improvement"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "5d6"
+                    "martial_arts_dice": "1d6",
+                    "ki_points": 9,
+                    "unarmored_movement_bonus": 15
                 },
                 "spellcasting_progression": null
             },
             {
                 "level": 10,
                 "features": [
-                    "trait_ability_score_improvement"
+                    "trait_purity_of_body"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "5d6"
+                    "martial_arts_dice": "1d6",
+                    "ki_points": 10,
+                    "unarmored_movement_bonus": 20
                 },
                 "spellcasting_progression": null
             },
             {
                 "level": 11,
                 "features": [
-                    "trait_reliable_talent"
+                    "trait_monastic_tradition_feature"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "6d6"
+                    "martial_arts_dice": "1d8",
+                    "ki_points": 11,
+                    "unarmored_movement_bonus": 20
                 },
                 "spellcasting_progression": null
             },
@@ -244,37 +223,45 @@
                     "trait_ability_score_improvement"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "6d6"
+                    "martial_arts_dice": "1d8",
+                    "ki_points": 12,
+                    "unarmored_movement_bonus": 20
                 },
                 "spellcasting_progression": null
             },
             {
                 "level": 13,
                 "features": [
-                    "trait_roguish_archetype_feature"
+                    "trait_tongue_of_the_sun_and_moon"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "7d6"
+                    "martial_arts_dice": "1d8",
+                    "ki_points": 13,
+                    "unarmored_movement_bonus": 20
                 },
                 "spellcasting_progression": null
             },
             {
                 "level": 14,
                 "features": [
-                    "trait_blindsense"
+                    "trait_diamond_soul"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "7d6"
+                    "martial_arts_dice": "1d8",
+                    "ki_points": 14,
+                    "unarmored_movement_bonus": 25
                 },
                 "spellcasting_progression": null
             },
             {
                 "level": 15,
                 "features": [
-                    "trait_slippery_mind"
+                    "trait_timeless_body"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "8d6"
+                    "martial_arts_dice": "1d8",
+                    "ki_points": 15,
+                    "unarmored_movement_bonus": 25
                 },
                 "spellcasting_progression": null
             },
@@ -284,27 +271,33 @@
                     "trait_ability_score_improvement"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "8d6"
+                    "martial_arts_dice": "1d8",
+                    "ki_points": 16,
+                    "unarmored_movement_bonus": 25
                 },
                 "spellcasting_progression": null
             },
             {
                 "level": 17,
                 "features": [
-                    "trait_roguish_archetype_feature"
+                    "trait_monastic_tradition_feature"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "9d6"
+                    "martial_arts_dice": "1d10",
+                    "ki_points": 17,
+                    "unarmored_movement_bonus": 25
                 },
                 "spellcasting_progression": null
             },
             {
                 "level": 18,
                 "features": [
-                    "trait_elusive"
+                    "trait_empty_body"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "9d6"
+                    "martial_arts_dice": "1d10",
+                    "ki_points": 18,
+                    "unarmored_movement_bonus": 30
                 },
                 "spellcasting_progression": null
             },
@@ -314,17 +307,21 @@
                     "trait_ability_score_improvement"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "10d6"
+                    "martial_arts_dice": "1d10",
+                    "ki_points": 19,
+                    "unarmored_movement_bonus": 30
                 },
                 "spellcasting_progression": null
             },
             {
                 "level": 20,
                 "features": [
-                    "trait_stroke_of_luck"
+                    "trait_perfect_self"
                 ],
                 "class_specific_scaling": {
-                    "sneak_attack_dice": "10d6"
+                    "martial_arts_dice": "1d10",
+                    "ki_points": 20,
+                    "unarmored_movement_bonus": 30
                 },
                 "spellcasting_progression": null
             }
