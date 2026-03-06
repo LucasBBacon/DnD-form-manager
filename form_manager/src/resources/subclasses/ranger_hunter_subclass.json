@@ -1,0 +1,45 @@
+{
+    "subclass_ranger_hunter": {
+        "name": "Hunter",
+        "parent_class_id": "class_ranger",
+        "spellcasting_override": null,
+        "progression": [
+            {
+                "level": 3,
+                "features": [
+                    "trait_hunters_prey"
+                ],
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 7,
+                "features": [
+                    "trait_defensive_tactics"
+                ],
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 11,
+                "features": [
+                    "trait_multiattack"
+                ],
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 15,
+                "features": [
+                    "trait_superior_hunters_defense"
+                ],
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            }
+        ]
+    }
+}

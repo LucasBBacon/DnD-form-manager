@@ -1,0 +1,45 @@
+{
+    "subclass_ranger_beast_master": {
+        "name": "Beast Master",
+        "parent_class_id": "class_ranger",
+        "spellcasting_override": null,
+        "progression": [
+            {
+                "level": 3,
+                "features": [
+                    "trait_rangers_companion"
+                ],
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 7,
+                "features": [
+                    "trait_exceptional_training"
+                ],
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 11,
+                "features": [
+                    "trait_bestial_fury"
+                ],
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            },
+            {
+                "level": 15,
+                "features": [
+                    "trait_share_spells"
+                ],
+                "bonus_spells": null,
+                "spells_added_to_list": null,
+                "spellcasting_progression_additions": null
+            }
+        ]
+    }
+}
