@@ -37,6 +37,89 @@
                 ]
             }
         },
+        "starting_equipment": {
+            "given": [
+                {
+                    "item_id": "armor_leather",
+                    "quantity": 1
+                },
+                {
+                    "item_id": "weapon_dagger",
+                    "quantity": 2
+                },
+                {
+                    "item_id": "tool_thieves_tools",
+                    "quantity": 1
+                }
+            ],
+            "choices": [
+                {
+                    "choose": 1,
+                    "options": [
+                        [
+                            {
+                                "item_id": "weapon_rapier",
+                                "quantity": 1
+                            }
+                        ],
+                        [
+                            {
+                                "item_id": "weapon_shortsword",
+                                "quantity": 1
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "choose": 1,
+                    "options": [
+                        [
+                            {
+                                "item_id": "weapon_shortbow",
+                                "quantity": 1
+                            },
+                            {
+                                "item_id": "weapon_arrow",
+                                "quantity": 20
+                            },
+                            {
+                                "item_id": "pack_quiver",
+                                "quantity": 1
+                            }
+                        ],
+                        [
+                            {
+                                "item_id": "weapon_shortsword",
+                                "quantity": 1
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "choose": 1,
+                    "options": [
+                        [
+                            {
+                                "item_id": "pack_burglars",
+                                "quantity": 1
+                            }
+                        ],
+                        [
+                            {
+                                "item_id": "pack_dungeoneers",
+                                "quantity": 1
+                            }
+                        ],
+                        [
+                            {
+                                "item_id": "pack_explorers",
+                                "quantity": 1
+                            }
+                        ]
+                    ]
+                }
+            ]
+        },
         "spellcasting_base": null,
         "subclass_info": {
             "choice_level": 3,
@@ -72,7 +155,178 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "2d6"
-                }
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 4,
+                "features": [
+                    "trait_ability_score_improvement"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "2d6"
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 5,
+                "features": [
+                    "trait_uncanny_dodge"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "3d6"
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 6,
+                "features": [
+                    "trait_expertise"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "3d6"
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 7,
+                "features": [
+                    "trait_evasion"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "4d6"
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 8,
+                "features": [
+                    "trait_ability_score_improvement"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "4d6"
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 9,
+                "features": [
+                    "trait_roguish_archetype_feature"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "5d6"
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 10,
+                "features": [
+                    "trait_ability_score_improvement"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "5d6"
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 11,
+                "features": [
+                    "trait_reliable_talent"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "6d6"
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 12,
+                "features": [
+                    "trait_ability_score_improvement"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "6d6"
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 13,
+                "features": [
+                    "trait_roguish_archetype_feature"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "7d6"
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 14,
+                "features": [
+                    "trait_blindsense"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "7d6"
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 15,
+                "features": [
+                    "trait_slippery_mind"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "8d6"
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 16,
+                "features": [
+                    "trait_ability_score_improvement"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "8d6"
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 17,
+                "features": [
+                    "trait_roguish_archetype_feature"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "9d6"
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 18,
+                "features": [
+                    "trait_elusive"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "9d6"
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 19,
+                "features": [
+                    "trait_ability_score_improvement"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "10d6"
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 20,
+                "features": [
+                    "trait_stroke_of_luck"
+                ],
+                "class_specific_scaling": {
+                    "sneak_attack_dice": "10d6"
+                },
+                "spellcasting_progression": null
             }
         ]
     }

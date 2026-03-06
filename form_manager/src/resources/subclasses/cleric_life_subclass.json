@@ -7,7 +7,7 @@
             {
                 "level": 1,
                 "features": [
-                    "trait_proficiency_heavy_armor",
+                    "trait_proficiency_armor_heavy",
                     "trait_disciple_of_life"
                 ],
                 "bonus_spells": [

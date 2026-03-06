@@ -1,14 +1,15 @@
 {
-    "subclass_rogue_thief": {
-        "name": "Thief",
+    "subclass_rogue_assassin": {
+        "name": "Assassin",
         "parent_class_id": "class_rogue",
         "spellcasting_override": null,
         "progression": [
             {
                 "level": 3,
                 "features": [
-                    "trait_fast_hands",
-                    "trait_second_story_work"
+                    "trait_proficiency_kit_disguise",
+                    "trait_proficiency_kit_prisoners",
+                    "trait_assassinate"
                 ],
                 "bonus_spells": null,
                 "spells_added_to_list": null,
@@ -17,7 +18,7 @@
             {
                 "level": 9,
                 "features": [
-                    "trait_supreme_sneak"
+                    "trait_infiltration_expertise"
                 ],
                 "bonus_spells": null,
                 "spells_added_to_list": null,
@@ -26,7 +27,7 @@
             {
                 "level": 13,
                 "features": [
-                    "trait_use_magic_device"
+                    "trait_impostor"
                 ],
                 "bonus_spells": null,
                 "spells_added_to_list": null,
@@ -35,7 +36,7 @@
             {
                 "level": 17,
                 "features": [
-                    "trait_thiefs_reflexes"
+                    "trait_death_strike"
                 ],
                 "bonus_spells": null,
                 "spells_added_to_list": null,
