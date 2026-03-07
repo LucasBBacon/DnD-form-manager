@@ -202,8 +202,10 @@
                                 "description": "Custom key-value pairs for class-specific resources (e.g., Sneak Attack damage, Ki points).",
                                 "additionalProperties": {
                                     "type": [
+                                        "array",
                                         "string",
-                                        "integer"
+                                        "integer",
+                                        "number"
                                     ]
                                 }
                             },
