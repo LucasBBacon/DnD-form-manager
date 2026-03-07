@@ -1,0 +1,309 @@
+{
+    "class_fighter": {
+        "name": "Fighter",
+        "hit_die": 10,
+        "proficiencies": {
+            "armor": [
+                "category_armor_light",
+                "category_armor_medium",
+                "category_armor_heavy",
+                "category_armor_shield"
+            ],
+            "weapons": [
+                "category_weapon_simple",
+                "category_weapon_martial"
+            ],
+            "tools": [],
+            "saving_throws": [
+                "str",
+                "con"
+            ],
+            "skills": {
+                "count": 2,
+                "pool": [
+                    "skill_acrobatics",
+                    "skill_animal_handling",
+                    "skill_athletics",
+                    "skill_history",
+                    "skill_insight",
+                    "skill_intimidation",
+                    "skill_perception",
+                    "skill_survival"
+                ]
+            }
+        },
+        "starting_equipment": {
+            "given": [],
+            "choices": [
+                {
+                    "choose": 1,
+                    "options": [
+                        [
+                            {
+                                "item_id": "armor_chain_mail",
+                                "quantity": 1
+                            }
+                        ],
+                        [
+                            {
+                                "item_id": "armor_leather",
+                                "quantity": 1
+                            },
+                            {
+                                "item_id": "weapon_longbow",
+                                "quantity": 1
+                            },
+                            {
+                                "item_id": "weapon_arrow",
+                                "quantity": 20
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "choose": 1,
+                    "options": [
+                        [
+                            {
+                                "item_id": "category_weapon_martial",
+                                "quantity": 1
+                            },
+                            {
+                                "item_id": "category_armor_shield",
+                                "quantity": 1
+                            }
+                        ],
+                        [
+                            {
+                                "item_id": "category_weapon_martial",
+                                "quantity": 2
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "choose": 1,
+                    "options": [
+                        [
+                            {
+                                "item_id": "weapon_light_crossbow",
+                                "quantity": 1
+                            },
+                            {
+                                "item_id": "weapon_crossbow_bolt",
+                                "quantity": 20
+                            }
+                        ],
+                        [
+                            {
+                                "item_id": "weapon_handaxe",
+                                "quantity": 2
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "choose": 1,
+                    "options": [
+                        [
+                            {
+                                "item_id": "pack_dungeoneers",
+                                "quantity": 1
+                            }
+                        ],
+                        [
+                            {
+                                "item_id": "pack_explorers",
+                                "quantity": 1
+                            }
+                        ]
+                    ]
+                }
+            ]
+        },
+        "spellcasting_base": null,
+        "subclass_info": {
+            "choice_level": 3,
+            "options_pool": "subclasses_fighter"
+        },
+        "progression": [
+            {
+                "level": 1,
+                "features": [
+                    "trait_fighting_style",
+                    "trait_second_wind"
+                ],
+                "class_specific_scaling": {},
+                "spellcasting_progression": null
+            },
+            {
+                "level": 2,
+                "features": [
+                    "trait_action_surge"
+                ],
+                "class_specific_scaling": {
+                    "action_surge_use_count": 1
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 3,
+                "features": [
+                    "trait_martial_archetype"
+                ],
+                "class_specific_scaling": {},
+                "spellcasting_progression": null
+            },
+            {
+                "level": 4,
+                "features": [
+                    "trait_ability_score_improvement"
+                ],
+                "class_specific_scaling": {},
+                "spellcasting_progression": null
+            },
+            {
+                "level": 5,
+                "features": [
+                    "trait_extra_attack"
+                ],
+                "class_specific_scaling": {
+                    "extra_attack_count": 1
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 6,
+                "features": [
+                    "trait_ability_score_improvement"
+                ],
+                "class_specific_scaling": {},
+                "spellcasting_progression": null
+            },
+            {
+                "level": 7,
+                "features": [
+                    "trait_martial_archetype_feature"
+                ],
+                "class_specific_scaling": {},
+                "spellcasting_progression": null
+            },
+            {
+                "level": 8,
+                "features": [
+                    "trait_ability_score_improvement"
+                ],
+                "class_specific_scaling": {},
+                "spellcasting_progression": null
+            },
+            {
+                "level": 9,
+                "features": [
+                    "trait_indomitable"
+                ],
+                "class_specific_scaling": {
+                    "indomitable_use_count": 1
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 10,
+                "features": [
+                    "trait_martial_archetype_feature"
+                ],
+                "class_specific_scaling": {},
+                "spellcasting_progression": null
+            },
+            {
+                "level": 11,
+                "features": [
+                    "trait_extra_attack"
+                ],
+                "class_specific_scaling": {
+                    "extra_attack_count": 2
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 12,
+                "features": [
+                    "trait_ability_score_improvement"
+                ],
+                "class_specific_scaling": {},
+                "spellcasting_progression": null
+            },
+            {
+                "level": 13,
+                "features": [
+                    "trait_indomitable"
+                ],
+                "class_specific_scaling": {
+                    "indomitable_use_count": 2
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 14,
+                "features": [
+                    "trait_ability_score_improvement"
+                ],
+                "class_specific_scaling": {},
+                "spellcasting_progression": null
+            },
+            {
+                "level": 15,
+                "features": [
+                    "trait_martial_archetype_feature"
+                ],
+                "class_specific_scaling": {},
+                "spellcasting_progression": null
+            },
+            {
+                "level": 16,
+                "features": [
+                    "trait_ability_score_improvement"
+                ],
+                "class_specific_scaling": {},
+                "spellcasting_progression": null
+            },
+            {
+                "level": 17,
+                "features": [
+                    "trait_action_surge",
+                    "trait_indomitable"
+                ],
+                "class_specific_scaling": {
+                    "action_surge_use_count": 2,
+                    "indomitable_use_count": 3
+                },
+                "spellcasting_progression": null
+            },
+            {
+                "level": 18,
+                "features": [
+                    "trait_martial_archetype_feature"
+                ],
+                "class_specific_scaling": {},
+                "spellcasting_progression": null
+            },
+            {
+                "level": 19,
+                "features": [
+                    "trait_ability_score_improvement"
+                ],
+                "class_specific_scaling": {},
+                "spellcasting_progression": null
+            },
+            {
+                "level": 20,
+                "features": [
+                    "trait_extra_attack"
+                ],
+                "class_specific_scaling": {
+                    "extra_attack_count": 3
+                },
+                "spellcasting_progression": null
+            }
+        ]
+    }
+}
