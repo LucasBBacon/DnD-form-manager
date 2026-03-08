@@ -1,19 +1,19 @@
 {
-    "subclass_cleric_life": {
-        "name": "Life Domain",
+    "subclass_cleric_nature": {
+        "name": "Nature Domain",
         "parent_class_id": "class_cleric",
         "spellcasting_override": null,
         "progression": [
             {
                 "level": 1,
                 "features": [
-                    "trait_proficiency_armor_heavy",
-                    "trait_disciple_of_life"
+                    "trait_acolyte_of_nature",
+                    "trait_proficiency_armor_heavy"
                 ],
                 "subclass_specific_scaling": null,
                 "bonus_spells": [
-                    "spell_bless",
-                    "spell_cure_wounds"
+                    "spell_animal_friendship",
+                    "spell_speak_with_animals"
                 ],
                 "spells_added_to_list": null,
                 "spellcasting_progression_additions": null
@@ -21,7 +21,7 @@
             {
                 "level": 2,
                 "features": [
-                    "trait_channel_divinity_preserve_life"
+                    "trait_channel_divinity_charm_animals_and_plants"
                 ],
                 "subclass_specific_scaling": null,
                 "bonus_spells": null,
@@ -33,8 +33,8 @@
                 "features": [],
                 "subclass_specific_scaling": null,
                 "bonus_spells": [
-                    "spell_lesser_restoration",
-                    "spell_ritual_weapon"
+                    "spell_barkskin",
+                    "spell_spike_growth"
                 ],
                 "spells_added_to_list": null,
                 "spellcasting_progression_additions": null
@@ -44,8 +44,8 @@
                 "features": [],
                 "subclass_specific_scaling": null,
                 "bonus_spells": [
-                    "spell_beacon_of_hope",
-                    "spell_revivify"
+                    "spell_plant_growth",
+                    "spell_wind_wall"
                 ],
                 "spells_added_to_list": null,
                 "spellcasting_progression_additions": null
@@ -53,7 +53,7 @@
             {
                 "level": 6,
                 "features": [
-                    "trait_blessed_healer"
+                    "trait_dampen_elements"
                 ],
                 "subclass_specific_scaling": null,
                 "bonus_spells": null,
@@ -65,8 +65,8 @@
                 "features": [],
                 "subclass_specific_scaling": null,
                 "bonus_spells": [
-                    "spell_death_ward",
-                    "spell_guardian_of_faith"
+                    "spell_dominate_beast",
+                    "spell_grasping_vine"
                 ],
                 "spells_added_to_list": null,
                 "spellcasting_progression_additions": null
@@ -74,7 +74,7 @@
             {
                 "level": 8,
                 "features": [
-                    "trait_divine_strike_radiant"
+                    "trait_divine_strike_nature"
                 ],
                 "subclass_specific_scaling": null,
                 "bonus_spells": null,
@@ -86,8 +86,8 @@
                 "features": [],
                 "subclass_specific_scaling": null,
                 "bonus_spells": [
-                    "spell_mass_cure_wounds",
-                    "spell_raise_dead"
+                    "spell_insect_plague",
+                    "spell_tree_stride"
                 ],
                 "spells_added_to_list": null,
                 "spellcasting_progression_additions": null
@@ -95,7 +95,7 @@
             {
                 "level": 14,
                 "features": [
-                    "trait_divine_strike_radiant"
+                    "trait_divine_strike_nature"
                 ],
                 "subclass_specific_scaling": {
                     "divine_strike_extra_damage": "2d8"
@@ -107,7 +107,7 @@
             {
                 "level": 17,
                 "features": [
-                    "trait_supreme_healing"
+                    "trait_master_of_nature"
                 ],
                 "subclass_specific_scaling": null,
                 "bonus_spells": null,
