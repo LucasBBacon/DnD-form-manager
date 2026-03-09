@@ -2,89 +2,89 @@
     "subclass_paladin_vengeance": {
         "name": "Oath of the Vengeance",
         "parent_class_id": "class_paladin",
-        "spellcasting_override": null,
-        "progression": [
-            {
-                "level": 3,
+        "spellcasting_override": {},
+        "progression": {
+            "3": {
                 "features": [
                     "trait_tenets_of_vengeance",
                     "trait_oath_spells_vengeance",
                     "trait_channel_divinity_vengeance"
                 ],
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_bane",
                     "spell_hunters_mark"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 5,
+            "5": {
                 "features": [],
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_hold_person",
                     "spell_misty_step"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 7,
+            "7": {
                 "features": [
                     "trait_relentless_avenger"
                 ],
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 9,
+            "9": {
                 "features": [],
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_haste",
                     "spell_protection_from_energy"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 13,
+            "13": {
                 "features": [],
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_banishment",
                     "spell_dimension_door"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 15,
+            "15": {
                 "features": [
                     "trait_soul_of_vengeance"
                 ],
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 17,
+            "17": {
                 "features": [],
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_hold_monster",
                     "spell_scrying"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 20,
+            "20": {
                 "features": [
                     "trait_avenging_angel"
                 ],
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             }
-        ]
+        }
     }
 }
