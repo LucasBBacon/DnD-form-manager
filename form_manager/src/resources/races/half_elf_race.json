@@ -24,9 +24,9 @@
         "languages": {
             "known": [
                 "lang_common",
-                "lang_elvish",
-                "category_language"
-            ]
+                "lang_elvish"
+            ],
+            "choices": 1
         },
         "traits": [
             "trait_darkvision_60",

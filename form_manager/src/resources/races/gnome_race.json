@@ -1,0 +1,27 @@
+{
+    "race_gnome": {
+        "name": "Gnome",
+        "size": "small",
+        "speed": {
+            "walk": 25
+        },
+        "ability_bonuses": {
+            "fixed": {
+                "int": 2
+            }
+        },
+        "languages": {
+            "known": [
+                "lang_common",
+                "lang_gnomish"
+            ]
+        },
+        "traits": [
+            "trait_darkvision_60",
+            "trait_gnome_cunning"
+        ],
+        "subrace_info": {
+            "options_pool": "subraces_gnome"
+        }
+    }
+}

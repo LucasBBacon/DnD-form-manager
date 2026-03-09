@@ -1,0 +1,14 @@
+{
+    "subrace_gnome_rock": {
+        "name": "Rock Gnome",
+        "parent_race_id": "race_gnome",
+        "ability_bonuses_additions": {
+            "con": 1
+        },
+        "traits_added": [
+            "trait_artificers_lore",
+            "trait_tinker"
+        ],
+        "languages_added": []
+    }
+}
