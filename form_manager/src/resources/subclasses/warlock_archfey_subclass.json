@@ -2,88 +2,88 @@
     "subclass_warlock_archfey": {
         "name": "The Archfey",
         "parent_class_id": "class_warlock",
-        "spellcasting_override": null,
-        "progression": [
-            {
-                "level": 1,
+        "spellcasting_override": {},
+        "progression": {
+            "1": {
                 "features": [
                     "trait_expanded_spell_list",
                     "trait_fey_presence"
                 ],
-                "bonus_spells": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
                 "spells_added_to_list": [
                     "spell_faerie_fire",
                     "spell_sleep"
                 ],
-                "spellcasting_progression_additions": null
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 3,
+            "3": {
                 "features": [],
-                "bonus_spells": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
                 "spells_added_to_list": [
                     "spell_calm_emotions",
                     "spell_phantasmal_force"
                 ],
-                "spellcasting_progression_additions": null
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 5,
+            "5": {
                 "features": [],
-                "bonus_spells": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
                 "spells_added_to_list": [
                     "spell_blink",
                     "spell_plant_growth"
                 ],
-                "spellcasting_progression_additions": null
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 6,
+            "6": {
                 "features": [
                     "trait_misty_escape"
                 ],
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 7,
+            "7": {
                 "features": [],
-                "bonus_spells": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
                 "spells_added_to_list": [
                     "spell_dominate_beast",
                     "spell_greater_invisibility"
                 ],
-                "spellcasting_progression_additions": null
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 9,
+            "9": {
                 "features": [],
-                "bonus_spells": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
                 "spells_added_to_list": [
                     "spell_dominate_person",
                     "spell_seeming"
                 ],
-                "spellcasting_progression_additions": null
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 10,
+            "10": {
                 "features": [
                     "trait_beguiling_defenses"
                 ],
-                "bonus_spells": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
                 "spells_added_to_list": [],
-                "spellcasting_progression_additions": null
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 14,
+            "14": {
                 "features": [
                     "trait_dark_delirium"
                 ],
-                "bonus_spells": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
                 "spells_added_to_list": [],
                 "spellcasting_progression_additions": null
             }
-        ]
+        }
     }
 }
