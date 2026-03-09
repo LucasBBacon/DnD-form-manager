@@ -2,48 +2,44 @@
     "subclass_monk_shadow": {
         "name": "Way of Shadow",
         "parent_class_id": "class_monk",
-        "spellcasting_override": null,
-        "progression": [
-            {
-                "level": 3,
+        "spellcasting_override": {},
+        "progression": {
+            "3": {
                 "features": [
                     "trait_shadow_arts"
                 ],
                 "subclass_specific_scaling": {},
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 6,
+            "6": {
                 "features": [
                     "trait_shadow_step"
                 ],
                 "subclass_specific_scaling": {},
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 11,
+            "11": {
                 "features": [
                     "trait_cloak_of_shadows"
                 ],
                 "subclass_specific_scaling": {},
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 17,
+            "17": {
                 "features": [
                     "trait_opportunist"
                 ],
                 "subclass_specific_scaling": {},
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             }
-        ]
+        }
     }
 }
