@@ -3,9 +3,8 @@
         "name": "Path of the Berserker",
         "parent_class_id": "class_barbarian",
         "spellcasting_override": {},
-        "progression": [
-            {
-                "level": 3,
+        "progression": {
+            "3": {
                 "features": [
                     "trait_frenzy"
                 ],
@@ -14,8 +13,7 @@
                 "spells_added_to_list": [],
                 "spellcasting_progression_additions": {}
             },
-            {
-                "level": 6,
+            "6": {
                 "features": [
                     "trait_mindless_rage"
                 ],
@@ -24,8 +22,7 @@
                 "spells_added_to_list": [],
                 "spellcasting_progression_additions": {}
             },
-            {
-                "level": 10,
+            "10": {
                 "features": [
                     "trait_intimidating_presence"
                 ],
@@ -34,8 +31,7 @@
                 "spells_added_to_list": [],
                 "spellcasting_progression_additions": {}
             },
-            {
-                "level": 14,
+            "14": {
                 "features": [
                     "trait_retaliation"
                 ],
@@ -44,6 +40,6 @@
                 "spells_added_to_list": [],
                 "spellcasting_progression_additions": {}
             }
-        ]
+        }
     }
 }

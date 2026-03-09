@@ -3,9 +3,8 @@
         "name": "Path of the Totem Warrior",
         "parent_class_id": "class_barbarian",
         "spellcasting_override": {},
-        "progression": [
-            {
-                "level": 3,
+        "progression": {
+            "3": {
                 "features": [
                     "trait_spirit_seeker",
                     "trait_totem_spirit"
@@ -15,8 +14,7 @@
                 "spells_added_to_list": [],
                 "spellcasting_progression_additions": {}
             },
-            {
-                "level": 6,
+            "6": {
                 "features": [
                     "trait_aspect_of_the_beast"
                 ],
@@ -25,8 +23,7 @@
                 "spells_added_to_list": [],
                 "spellcasting_progression_additions": {}
             },
-            {
-                "level": 10,
+            "10": {
                 "features": [
                     "trait_spirit_walker"
                 ],
@@ -35,8 +32,7 @@
                 "spells_added_to_list": [],
                 "spellcasting_progression_additions": {}
             },
-            {
-                "level": 14,
+            "14": {
                 "features": [
                     "trait_totemic_attunement"
                 ],
@@ -45,6 +41,6 @@
                 "spells_added_to_list": [],
                 "spellcasting_progression_additions": {}
             }
-        ]
+        }
     }
 }
