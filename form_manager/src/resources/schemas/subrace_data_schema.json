@@ -1,0 +1,58 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "title": "DnD Subrace",
+    "type": "object",
+    "patternProperties": {
+        "^subrace_[a-z0-9_]+$": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Display name of the subrace"
+                },
+                "parent_race_id": {
+                    "type": "string",
+                    "description": "REQUIRED. Links back to the parent class."
+                },
+                "ability_bonuses_additions": {
+                    "type": "object",
+                    "description": "Stats appended to the base race's ASI",
+                    "additionalProperties": {
+                        "type": "integer"
+                    }
+                },
+                "traits_added": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "languages_added": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "overrides": {
+                    "type": "object",
+                    "description": "Omit if the subrace does not change base physics.",
+                    "properties": {
+                        "speed": {
+                            "type": "integer"
+                        },
+                        "size": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "required": [
+                "name",
+                "parent_race_id",
+                "ability_bonuses_additions",
+                "traits_added",
+                "languages_added"
+            ]
+        }
+    }
+}

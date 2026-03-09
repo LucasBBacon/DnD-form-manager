@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft-07/schema#",
-    "title": "DnD Race",
+    "title": "DnD Base Race",
     "type": "object",
     "patternProperties": {
         "^race_[a-z0-9_]+$": {
@@ -9,13 +9,6 @@
                 "name": {
                     "type": "string",
                     "description": "Display name of the race"
-                },
-                "parent_race_id": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
-                    "description": "If this is a subrace, the ID of the parent race it inherits from. Null for base races."
                 },
                 "size": {
                     "type": "string",
@@ -54,57 +47,23 @@
                 "ability_bonuses": {
                     "type": "object",
                     "properties": {
-                        "fixed": {
-                            "type": "object",
-                            "properties": {
-                                "str": {
-                                    "type": "integer"
-                                },
-                                "dex": {
-                                    "type": "integer"
-                                },
-                                "con": {
-                                    "type": "integer"
-                                },
-                                "int": {
-                                    "type": "integer"
-                                },
-                                "wis": {
-                                    "type": "integer"
-                                },
-                                "cha": {
-                                    "type": "integer"
-                                }
-                            },
-                            "additionalProperties": false
+                        "str": {
+                            "type": "integer"
                         },
-                        "choices": {
-                            "type": "object",
-                            "properties": {
-                                "count": {
-                                    "type": "integer",
-                                    "description": "Number of different abilities the player can choose to increase."
-                                },
-                                "bonus": {
-                                    "type": "integer",
-                                    "description": "The modifier added to the chosen abilities."
-                                },
-                                "options": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string",
-                                        "enum": [
-                                            "str",
-                                            "dex",
-                                            "con",
-                                            "int",
-                                            "wis",
-                                            "cha"
-                                        ]
-                                    },
-                                    "description": "The pool of abilities the player can choose from."
-                                }
-                            }
+                        "dex": {
+                            "type": "integer"
+                        },
+                        "con": {
+                            "type": "integer"
+                        },
+                        "int": {
+                            "type": "integer"
+                        },
+                        "wis": {
+                            "type": "integer"
+                        },
+                        "cha": {
+                            "type": "integer"
                         }
                     }
                 },
@@ -133,6 +92,19 @@
                         "type": "string"
                     },
                     "description": "Array of Trait IDs referencing the external traits file (e.g., 'trait_fey_ancestry')."
+                },
+                "subrace_info": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "description": "If null, this race has no subraces. If present, forces a choice.",
+                    "properties": {
+                        "options_pool": {
+                            "type": "string",
+                            "description": "e.g., 'subraces_elf'"
+                        }
+                    }
                 },
                 "description": {
                     "type": "string"
