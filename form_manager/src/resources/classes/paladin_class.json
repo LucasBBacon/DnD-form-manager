@@ -108,9 +108,8 @@
             "choice_level": 3,
             "options_pool": "subclasses_paladin"
         },
-        "progression": [
-            {
-                "level": 1,
+        "progression": {
+            "1": {
                 "features": [
                     "trait_divine_sense",
                     "trait_lay_on_hands"
@@ -118,8 +117,7 @@
                 "class_specific_scaling": {},
                 "spellcasting_progression": {}
             },
-            {
-                "level": 2,
+            "2": {
                 "features": [
                     "trait_fighting_style",
                     "trait_divine_smite"
@@ -131,8 +129,7 @@
                     }
                 }
             },
-            {
-                "level": 3,
+            "3": {
                 "features": [
                     "trait_divine_health",
                     "trait_sacred_oath"
@@ -144,8 +141,7 @@
                     }
                 }
             },
-            {
-                "level": 4,
+            "4": {
                 "features": [
                     "trait_ability_score_improvement"
                 ],
@@ -156,8 +152,7 @@
                     }
                 }
             },
-            {
-                "level": 5,
+            "5": {
                 "features": [
                     "trait_extra_attack"
                 ],
@@ -169,8 +164,7 @@
                     }
                 }
             },
-            {
-                "level": 6,
+            "6": {
                 "features": [
                     "trait_aura_of_protection"
                 ],
@@ -182,8 +176,7 @@
                     }
                 }
             },
-            {
-                "level": 7,
+            "7": {
                 "features": [
                     "trait_sacred_oath_feature"
                 ],
@@ -195,8 +188,7 @@
                     }
                 }
             },
-            {
-                "level": 8,
+            "8": {
                 "features": [
                     "trait_ability_score_improvement"
                 ],
@@ -208,8 +200,7 @@
                     }
                 }
             },
-            {
-                "level": 9,
+            "9": {
                 "features": [],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
@@ -220,8 +211,7 @@
                     }
                 }
             },
-            {
-                "level": 10,
+            "10": {
                 "features": [
                     "trait_aura_of_courage"
                 ],
@@ -234,8 +224,7 @@
                     }
                 }
             },
-            {
-                "level": 11,
+            "11": {
                 "features": [
                     "trait_improved_divine_strike"
                 ],
@@ -248,8 +237,7 @@
                     }
                 }
             },
-            {
-                "level": 12,
+            "12": {
                 "features": [
                     "trait_ability_score_improvement"
                 ],
@@ -262,8 +250,7 @@
                     }
                 }
             },
-            {
-                "level": 13,
+            "13": {
                 "features": [],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
@@ -275,8 +262,7 @@
                     }
                 }
             },
-            {
-                "level": 14,
+            "14": {
                 "features": [
                     "trait_cleansing_touch"
                 ],
@@ -290,8 +276,7 @@
                     }
                 }
             },
-            {
-                "level": 15,
+            "15": {
                 "features": [
                     "trait_sacred_oath_feature"
                 ],
@@ -305,8 +290,7 @@
                     }
                 }
             },
-            {
-                "level": 16,
+            "16": {
                 "features": [
                     "trait_ability_score_improvement"
                 ],
@@ -320,8 +304,7 @@
                     }
                 }
             },
-            {
-                "level": 17,
+            "17": {
                 "features": [],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
@@ -334,8 +317,7 @@
                     }
                 }
             },
-            {
-                "level": 18,
+            "18": {
                 "features": [
                     "trait_aura_improvements"
                 ],
@@ -350,8 +332,7 @@
                     }
                 }
             },
-            {
-                "level": 19,
+            "19": {
                 "features": [
                     "trait_ability_score_improvement"
                 ],
@@ -366,8 +347,7 @@
                     }
                 }
             },
-            {
-                "level": 20,
+            "20": {
                 "features": [
                     "trait_sacred_oath_feature"
                 ],
@@ -382,6 +362,6 @@
                     }
                 }
             }
-        ]
+        }
     }
 }

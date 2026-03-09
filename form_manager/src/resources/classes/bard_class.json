@@ -126,9 +126,8 @@
             "choice_level": 3,
             "options_pool": "subclasses_bard"
         },
-        "progression": [
-            {
-                "level": 1,
+        "progression": {
+            "1": {
                 "features": [
                     "trait_spellcasting_bard",
                     "trait_bardic_inspiration"
@@ -144,8 +143,7 @@
                     }
                 }
             },
-            {
-                "level": 2,
+            "2": {
                 "features": [
                     "trait_jack_of_all_trades",
                     "trait_song_of_rest"
@@ -161,8 +159,7 @@
                     }
                 }
             },
-            {
-                "level": 3,
+            "3": {
                 "features": [
                     "trait_bard_college",
                     "trait_expertise"
@@ -177,8 +174,7 @@
                     }
                 }
             },
-            {
-                "level": 4,
+            "4": {
                 "features": [
                     "trait_ability_score_improvement"
                 ],
@@ -192,23 +188,7 @@
                     }
                 }
             },
-            {
-                "level": 4,
-                "features": [
-                    "trait_ability_score_improvement"
-                ],
-                "class_specific_scaling": {},
-                "spellcasting_progression": {
-                    "cantrips_known": 3,
-                    "spells_known": 7,
-                    "spell_slots": {
-                        "1": 4,
-                        "2": 3
-                    }
-                }
-            },
-            {
-                "level": 5,
+            "5": {
                 "features": [
                     "trait_bardic_inspiration",
                     "trait_font_of_inspiration"
@@ -226,8 +206,7 @@
                     }
                 }
             },
-            {
-                "level": 6,
+            "6": {
                 "features": [
                     "trait_countercharm",
                     "trait_bard_college_feature"
@@ -243,8 +222,7 @@
                     }
                 }
             },
-            {
-                "level": 7,
+            "7": {
                 "features": [],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
@@ -258,8 +236,7 @@
                     }
                 }
             },
-            {
-                "level": 8,
+            "8": {
                 "features": [
                     "trait_ability_score_improvement"
                 ],
@@ -275,8 +252,7 @@
                     }
                 }
             },
-            {
-                "level": 9,
+            "9": {
                 "features": [
                     "trait_song_of_rest"
                 ],
@@ -295,8 +271,7 @@
                     }
                 }
             },
-            {
-                "level": 10,
+            "10": {
                 "features": [
                     "trait_bardic_inspiration",
                     "trait_expertise",
@@ -317,8 +292,7 @@
                     }
                 }
             },
-            {
-                "level": 11,
+            "11": {
                 "features": [],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
@@ -334,8 +308,7 @@
                     }
                 }
             },
-            {
-                "level": 12,
+            "12": {
                 "features": [
                     "trait_ability_score_improvement"
                 ],
@@ -353,8 +326,7 @@
                     }
                 }
             },
-            {
-                "level": 13,
+            "13": {
                 "features": [
                     "trait_song_of_rest"
                 ],
@@ -375,8 +347,7 @@
                     }
                 }
             },
-            {
-                "level": 14,
+            "14": {
                 "features": [
                     "trait_magical_secrets",
                     "trait_bard_college_feature"
@@ -396,8 +367,7 @@
                     }
                 }
             },
-            {
-                "level": 15,
+            "15": {
                 "features": [
                     "trait_bardic_inspiration"
                 ],
@@ -419,8 +389,7 @@
                     }
                 }
             },
-            {
-                "level": 16,
+            "16": {
                 "features": [
                     "trait_ability_score_improvement"
                 ],
@@ -440,8 +409,7 @@
                     }
                 }
             },
-            {
-                "level": 17,
+            "17": {
                 "features": [
                     "trait_song_of_rest"
                 ],
@@ -464,8 +432,7 @@
                     }
                 }
             },
-            {
-                "level": 18,
+            "18": {
                 "features": [
                     "trait_magical_secrets"
                 ],
@@ -486,8 +453,7 @@
                     }
                 }
             },
-            {
-                "level": 19,
+            "19": {
                 "features": [
                     "trait_ability_score_improvement"
                 ],
@@ -508,8 +474,7 @@
                     }
                 }
             },
-            {
-                "level": 20,
+            "20": {
                 "features": [
                     "trait_superior_inspiration"
                 ],
@@ -530,6 +495,6 @@
                     }
                 }
             }
-        ]
+        }
     }
 }

@@ -128,9 +128,8 @@
             "choice_level": 1,
             "options_pool": "subclasses_cleric"
         },
-        "progression": [
-            {
-                "level": 1,
+        "progression": {
+            "1": {
                 "features": [
                     "trait_spellcasting_cleric",
                     "trait_divine_domain"
@@ -143,8 +142,7 @@
                     }
                 }
             },
-            {
-                "level": 2,
+            "2": {
                 "features": [
                     "trait_channel_divinity",
                     "trait_divine_domain_feature"
@@ -159,8 +157,7 @@
                     }
                 }
             },
-            {
-                "level": 3,
+            "3": {
                 "features": [],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
@@ -171,8 +168,7 @@
                     }
                 }
             },
-            {
-                "level": 4,
+            "4": {
                 "features": [
                     "trait_ability_score_improvement"
                 ],
@@ -185,8 +181,7 @@
                     }
                 }
             },
-            {
-                "level": 5,
+            "5": {
                 "features": [
                     "trait_destroy_undead"
                 ],
@@ -202,8 +197,7 @@
                     }
                 }
             },
-            {
-                "level": 6,
+            "6": {
                 "features": [
                     "trait_channel_divinity",
                     "trait_divine_domain_feature"
@@ -220,8 +214,7 @@
                     }
                 }
             },
-            {
-                "level": 7,
+            "7": {
                 "features": [],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
@@ -234,8 +227,7 @@
                     }
                 }
             },
-            {
-                "level": 8,
+            "8": {
                 "features": [
                     "trait_ability_score_improvement",
                     "trait_destroy_undead",
@@ -254,8 +246,7 @@
                     }
                 }
             },
-            {
-                "level": 9,
+            "9": {
                 "features": [],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
@@ -269,8 +260,7 @@
                     }
                 }
             },
-            {
-                "level": 10,
+            "10": {
                 "features": [
                     "trait_divine_intervention"
                 ],
@@ -286,8 +276,7 @@
                     }
                 }
             },
-            {
-                "level": 11,
+            "11": {
                 "features": [
                     "trait_destroy_undead"
                 ],
@@ -306,8 +295,7 @@
                     }
                 }
             },
-            {
-                "level": 12,
+            "12": {
                 "features": [
                     "trait_ability_score_improvement"
                 ],
@@ -324,8 +312,7 @@
                     }
                 }
             },
-            {
-                "level": 13,
+            "13": {
                 "features": [],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
@@ -341,8 +328,7 @@
                     }
                 }
             },
-            {
-                "level": 14,
+            "14": {
                 "features": [
                     "trait_destroy_undead"
                 ],
@@ -362,8 +348,7 @@
                     }
                 }
             },
-            {
-                "level": 15,
+            "15": {
                 "features": [],
                 "class_specific_scaling": {},
                 "spellcasting_progression": {
@@ -380,8 +365,7 @@
                     }
                 }
             },
-            {
-                "level": 16,
+            "16": {
                 "features": [
                     "trait_ability_score_improvement"
                 ],
@@ -400,8 +384,7 @@
                     }
                 }
             },
-            {
-                "level": 17,
+            "17": {
                 "features": [
                     "trait_destroy_undead",
                     "trait_divine_domain_feature"
@@ -424,8 +407,7 @@
                     }
                 }
             },
-            {
-                "level": 18,
+            "18": {
                 "features": [
                     "trait_channel_divinity"
                 ],
@@ -447,8 +429,7 @@
                     }
                 }
             },
-            {
-                "level": 19,
+            "19": {
                 "features": [
                     "trait_ability_score_improvement"
                 ],
@@ -468,8 +449,7 @@
                     }
                 }
             },
-            {
-                "level": 20,
+            "20": {
                 "features": [
                     "trait_divine_intervention_improvement"
                 ],
@@ -489,6 +469,6 @@
                     }
                 }
             }
-        ]
+        }
     }
 }

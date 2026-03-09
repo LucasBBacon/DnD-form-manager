@@ -180,61 +180,57 @@
                     }
                 },
                 "progression": {
-                    "type": "array",
+                    "type": "object",
                     "description": "An array of 20 objects, representing levels 1 through 20.",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "level": {
-                                "type": "integer",
-                                "minimum": 1,
-                                "maximum": 20
-                            },
-                            "features": {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
+                    "patternProperties": {
+                        "^(1[0-9]|20|[1-9)$": {
+                            "type": "object",
+                            "properties": {
+                                "features": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "description": "Trait IDs granted at this level (e.g. 'trait_action_surge')."
                                 },
-                                "description": "Trait IDs granted at this level (e.g. 'trait_action_surge')."
-                            },
-                            "class_specific_scaling": {
-                                "type": "object",
-                                "description": "Custom key-value pairs for class-specific resources (e.g., Sneak Attack damage, Ki points).",
-                                "additionalProperties": {
+                                "class_specific_scaling": {
+                                    "type": "object",
+                                    "description": "Custom key-value pairs for class-specific resources (e.g., Sneak Attack damage, Ki points).",
+                                    "additionalProperties": {
+                                        "type": [
+                                            "array",
+                                            "string",
+                                            "integer",
+                                            "number"
+                                        ]
+                                    }
+                                },
+                                "spellcasting_progression": {
                                     "type": [
-                                        "array",
-                                        "string",
-                                        "integer",
-                                        "number"
-                                    ]
-                                }
-                            },
-                            "spellcasting_progression": {
-                                "type": [
-                                    "object",
-                                    "null"
-                                ],
-                                "properties": {
-                                    "cantrips_known": {
-                                        "type": "integer"
-                                    },
-                                    "spells_known": {
-                                        "type": "integer"
-                                    },
-                                    "spell_slots": {
-                                        "type": "object",
-                                        "description": "Mapping of spell level (1-9) to number of slots available.",
-                                        "additionalProperties": {
+                                        "object",
+                                        "null"
+                                    ],
+                                    "properties": {
+                                        "cantrips_known": {
                                             "type": "integer"
+                                        },
+                                        "spells_known": {
+                                            "type": "integer"
+                                        },
+                                        "spell_slots": {
+                                            "type": "object",
+                                            "description": "Mapping of spell level (1-9) to number of slots available.",
+                                            "additionalProperties": {
+                                                "type": "integer"
+                                            }
                                         }
                                     }
                                 }
-                            }
-                        },
-                        "required": [
-                            "level",
-                            "features"
-                        ]
+                            },
+                            "required": [
+                                "features"
+                            ]
+                        }
                     }
                 }
             },
