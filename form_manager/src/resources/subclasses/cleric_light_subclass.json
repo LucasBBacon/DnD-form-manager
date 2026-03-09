@@ -2,106 +2,97 @@
     "subclass_cleric_light": {
         "name": "Light Domain",
         "parent_class_id": "class_cleric",
-        "spellcasting_override": null,
-        "progression": [
-            {
-                "level": 1,
+        "spellcasting_override": {},
+        "progression": {
+            "1": {
                 "features": [
                     "trait_bonus_cantrip",
                     "trait_warding_flare"
                 ],
-                "subclass_specific_scaling": null,
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_burning_hands",
                     "spell_faerie_fire"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 2,
+            "2": {
                 "features": [
                     "trait_channel_divinity_radiance_of_the_dawn"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 3,
+            "3": {
                 "features": [],
-                "subclass_specific_scaling": null,
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_flaming_sphere",
                     "spell_scorching_ray"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 5,
+            "5": {
                 "features": [],
-                "subclass_specific_scaling": null,
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_daylight",
                     "spell_fireball"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 6,
+            "6": {
                 "features": [
                     "trait_improved_flare"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 7,
+            "7": {
                 "features": [],
-                "subclass_specific_scaling": null,
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_guardian_of_faith",
                     "spell_wall_of_fire"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 8,
+            "8": {
                 "features": [
                     "trait_potent_spellcasting"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 9,
+            "9": {
                 "features": [],
-                "subclass_specific_scaling": null,
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_flame_strike",
                     "spell_scrying"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 17,
+            "17": {
                 "features": [
                     "trait_corona_of_light"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             }
-        ]
+        }
     }
 }

@@ -2,118 +2,108 @@
     "subclass_cleric_nature": {
         "name": "Nature Domain",
         "parent_class_id": "class_cleric",
-        "spellcasting_override": null,
-        "progression": [
-            {
-                "level": 1,
+        "spellcasting_override": {},
+        "progression": {
+            "1": {
                 "features": [
                     "trait_acolyte_of_nature",
                     "trait_proficiency_armor_heavy"
                 ],
-                "subclass_specific_scaling": null,
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_animal_friendship",
                     "spell_speak_with_animals"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 2,
+            "2": {
                 "features": [
                     "trait_channel_divinity_charm_animals_and_plants"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 3,
+            "3": {
                 "features": [],
-                "subclass_specific_scaling": null,
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_barkskin",
                     "spell_spike_growth"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 5,
+            "5": {
                 "features": [],
-                "subclass_specific_scaling": null,
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_plant_growth",
                     "spell_wind_wall"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 6,
+            "6": {
                 "features": [
                     "trait_dampen_elements"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 7,
+            "7": {
                 "features": [],
-                "subclass_specific_scaling": null,
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_dominate_beast",
                     "spell_grasping_vine"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 8,
+            "8": {
                 "features": [
                     "trait_divine_strike_nature"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 9,
+            "9": {
                 "features": [],
-                "subclass_specific_scaling": null,
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_insect_plague",
                     "spell_tree_stride"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 14,
+            "14": {
                 "features": [
                     "trait_divine_strike_nature"
                 ],
                 "subclass_specific_scaling": {
                     "divine_strike_extra_damage": "2d8"
                 },
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 17,
+            "17": {
                 "features": [
                     "trait_master_of_nature"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             }
-        ]
+        }
     }
 }

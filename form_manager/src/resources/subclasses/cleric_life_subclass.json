@@ -2,118 +2,108 @@
     "subclass_cleric_life": {
         "name": "Life Domain",
         "parent_class_id": "class_cleric",
-        "spellcasting_override": null,
-        "progression": [
-            {
-                "level": 1,
+        "spellcasting_override": {},
+        "progression": {
+            "1": {
                 "features": [
                     "trait_proficiency_armor_heavy",
                     "trait_disciple_of_life"
                 ],
-                "subclass_specific_scaling": null,
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_bless",
                     "spell_cure_wounds"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 2,
+            "2": {
                 "features": [
                     "trait_channel_divinity_preserve_life"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 3,
+            "3": {
                 "features": [],
-                "subclass_specific_scaling": null,
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_lesser_restoration",
                     "spell_ritual_weapon"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 5,
+            "5": {
                 "features": [],
-                "subclass_specific_scaling": null,
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_beacon_of_hope",
                     "spell_revivify"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 6,
+            "6": {
                 "features": [
                     "trait_blessed_healer"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 7,
+            "7": {
                 "features": [],
-                "subclass_specific_scaling": null,
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_death_ward",
                     "spell_guardian_of_faith"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 8,
+            "8": {
                 "features": [
                     "trait_divine_strike_radiant"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 9,
+            "9": {
                 "features": [],
-                "subclass_specific_scaling": null,
+                "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_mass_cure_wounds",
                     "spell_raise_dead"
                 ],
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 14,
+            "14": {
                 "features": [
                     "trait_divine_strike_radiant"
                 ],
                 "subclass_specific_scaling": {
                     "divine_strike_extra_damage": "2d8"
                 },
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 17,
+            "17": {
                 "features": [
                     "trait_supreme_healing"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             }
-        ]
+        }
     }
 }
