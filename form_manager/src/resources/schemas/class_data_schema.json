@@ -183,7 +183,7 @@
                     "type": "object",
                     "description": "An array of 20 objects, representing levels 1 through 20.",
                     "patternProperties": {
-                        "^(1[0-9]|20|[1-9)$": {
+                        "^(1[0-9]|20|[1-9])$": {
                             "type": "object",
                             "properties": {
                                 "features": {

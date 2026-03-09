@@ -2,44 +2,45 @@
     "subclass_wizard_necromancy": {
         "name": "School of Necromancy",
         "parent_class_id": "class_wizard",
-        "spellcasting_override": null,
-        "progression": [
-            {
-                "level": 2,
+        "spellcasting_override": {},
+        "progression": {
+            "2": {
                 "features": [
                     "trait_necromancy_savant",
                     "trait_grim_harvest"
                 ],
-                "bonus_spells": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 6,
+            "6": {
                 "features": [
                     "trait_undead_thralls"
                 ],
-                "bonus_spells": null,
-                "spellcasting_progression_additions": null
-                
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 10,
+            "10": {
                 "features": [
                     "trait_inured_undeath"
                 ],
-                "bonus_spells": null,
-                "spellcasting_progression_additions": null
-                
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 14,
+            "14": {
                 "features": [
                     "trait_command_undead"
                 ],
-                "bonus_spells": null,
-                "spellcasting_progression_additions": null
-                
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             }
-        ]
+        }
     }
 }

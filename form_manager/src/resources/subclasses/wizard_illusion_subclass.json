@@ -2,44 +2,45 @@
     "subclass_wizard_illusion": {
         "name": "School of Illusion",
         "parent_class_id": "class_wizard",
-        "spellcasting_override": null,
-        "progression": [
-            {
-                "level": 2,
+        "spellcasting_override": {},
+        "progression": {
+            "2": {
                 "features": [
                     "trait_illusion_savant",
                     "trait_improved_minor_illusion"
                 ],
-                "bonus_spells": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 6,
+            "6": {
                 "features": [
                     "trait_malleable_illusions"
                 ],
-                "bonus_spells": null,
-                "spellcasting_progression_additions": null
-                
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 10,
+            "10": {
                 "features": [
                     "trait_illusory_self"
                 ],
-                "bonus_spells": null,
-                "spellcasting_progression_additions": null
-                
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 14,
+            "14": {
                 "features": [
                     "trait_illusory_reality"
                 ],
-                "bonus_spells": null,
-                "spellcasting_progression_additions": null
-                
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             }
-        ]
+        }
     }
 }

@@ -40,82 +40,78 @@
                     }
                 },
                 "progression": {
-                    "type": "array",
+                    "type": "object",
                     "description": "Only contains objects for the specific levels where this subclass grants features.",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "level": {
-                                "type": "integer",
-                                "minimum": 1,
-                                "maximum": 20
-                            },
-                            "features": {
-                                "type": "array",
-                                "items": {
-                                    "type": "string"
+                    "patternProperties": {
+                        "^(1[0-9]|20|[1-9])$": {
+                            "type": "object",
+                            "properties": {
+                                "features": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "description": "Trait IDs granted at this specific level."
                                 },
-                                "description": "Trait IDs granted at this specific level."
-                            },
-                            "subclass_specific_scaling": {
-                                "type": [
-                                    "object",
-                                    "null"
-                                ],
-                                "description": "Custom key-value pairs for class-specific resources (e.g., Sneak Attack damage, Ki points).",
-                                "additionalProperties": {
+                                "subclass_specific_scaling": {
                                     "type": [
-                                        "string",
-                                        "integer"
-                                    ]
-                                }
-                            },
-                            "bonus_spells": {
-                                "type": [
-                                    "array",
-                                    "null"
-                                ],
-                                "items": {
-                                    "type": "string"
+                                        "object",
+                                        "null"
+                                    ],
+                                    "description": "Custom key-value pairs for class-specific resources (e.g., Sneak Attack damage, Ki points).",
+                                    "additionalProperties": {
+                                        "type": [
+                                            "string",
+                                            "integer"
+                                        ]
+                                    }
                                 },
-                                "description": "Spell IDs automatically learned/prepared at this level (e.g., Cleric Domain spells, Warlock Patron spells)."
-                            },
-                            "spells_added_to_list": {
-                                "type": [
-                                    "array",
-                                    "null"
-                                ],
-                                "items": {
-                                    "type": "string"
+                                "bonus_spells": {
+                                    "type": [
+                                        "array",
+                                        "null"
+                                    ],
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "description": "Spell IDs automatically learned/prepared at this level (e.g., Cleric Domain spells, Warlock Patron spells)."
                                 },
-                                "description": "Spell IDs added to the class's valid spell list to choose from. rather than automatically learned."
-                            },
-                            "spellcasting_progression_additions": {
-                                "type": [
-                                    "object",
-                                    "null"
-                                ],
-                                "description": "Used for 'third-casters' (Like Eldritch Knight) to add spell slots, or Warlocks to expand their specific slot logic.",
-                                "properties": {
-                                    "cantrips_known": {
-                                        "type": "integer"
+                                "spells_added_to_list": {
+                                    "type": [
+                                        "array",
+                                        "null"
+                                    ],
+                                    "items": {
+                                        "type": "string"
                                     },
-                                    "spells_known": {
-                                        "type": "integer"
-                                    },
-                                    "spell_slots": {
-                                        "type": "object",
-                                        "additionalProperties": {
+                                    "description": "Spell IDs added to the class's valid spell list to choose from. rather than automatically learned."
+                                },
+                                "spellcasting_progression_additions": {
+                                    "type": [
+                                        "object",
+                                        "null"
+                                    ],
+                                    "description": "Used for 'third-casters' (Like Eldritch Knight) to add spell slots, or Warlocks to expand their specific slot logic.",
+                                    "properties": {
+                                        "cantrips_known": {
                                             "type": "integer"
+                                        },
+                                        "spells_known": {
+                                            "type": "integer"
+                                        },
+                                        "spell_slots": {
+                                            "type": "object",
+                                            "additionalProperties": {
+                                                "type": "integer"
+                                            }
                                         }
                                     }
                                 }
-                            }
-                        },
-                        "required": [
-                            "level",
-                            "features"
-                        ]
+                            },
+                            "required": [
+                                "features"
+                            ]
+                        }
                     }
                 }
             },
