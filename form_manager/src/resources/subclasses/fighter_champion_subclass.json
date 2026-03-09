@@ -2,58 +2,53 @@
     "subclass_fighter_champion": {
         "name": "Champion",
         "parent_class_id": "class_fighter",
-        "spellcasting_override": null,
-        "progression": [
-            {
-                "level": 3,
+        "spellcasting_override": {},
+        "progression": {
+            "3": {
                 "features": [
                     "trait_improved_critical"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 7,
+            "7": {
                 "features": [
                     "trait_remarkable_athlete"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 10,
+            "10": {
                 "features": [
                     "trait_additional_fighting_style"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 15,
+            "15": {
                 "features": [
                     "trait_superior_critical"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 18,
+            "18": {
                 "features": [
                     "trait_survivor"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             }
-        ]
+        }
     }
 }

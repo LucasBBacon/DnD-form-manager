@@ -6,16 +6,15 @@
             "ability": "int",
             "preparation_type": "known"
         },
-        "progression": [
-            {
-                "level": 3,
+        "progression": {
+            "3": {
                 "features": [
                     "trait_spellcasting_eldritch_knight",
                     "trait_weapon_bond"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
                 "spellcasting_progression_additions": {
                     "cantrips_known": 2,
                     "spells_known": 3,
@@ -24,12 +23,11 @@
                     }
                 }
             },
-            {
-                "level": 4,
+            "4": {
                 "features": [],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
                 "spellcasting_progression_additions": {
                     "cantrips_known": 2,
                     "spells_known": 4,
@@ -38,14 +36,13 @@
                     }
                 }
             },
-            {
-                "level": 7,
+            "7": {
                 "features": [
                     "trait_war_magic"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
                 "spellcasting_progression_additions": {
                     "cantrips_known": 2,
                     "spells_known": 5,
@@ -55,12 +52,11 @@
                     }
                 }
             },
-            {
-                "level": 8,
+            "8": {
                 "features": [],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
                 "spellcasting_progression_additions": {
                     "cantrips_known": 2,
                     "spells_known": 6,
@@ -70,14 +66,13 @@
                     }
                 }
             },
-            {
-                "level": 10,
+            "9": {
                 "features": [
                     "trait_eldritch_strike"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
                 "spellcasting_progression_additions": {
                     "cantrips_known": 3,
                     "spells_known": 7,
@@ -87,12 +82,11 @@
                     }
                 }
             },
-            {
-                "level": 11,
+            "11": {
                 "features": [],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
                 "spellcasting_progression_additions": {
                     "cantrips_known": 3,
                     "spells_known": 8,
@@ -102,12 +96,11 @@
                     }
                 }
             },
-            {
-                "level": 13,
+            "12": {
                 "features": [],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
                 "spellcasting_progression_additions": {
                     "cantrips_known": 3,
                     "spells_known": 9,
@@ -118,12 +111,11 @@
                     }
                 }
             },
-            {
-                "level": 14,
+            "14": {
                 "features": [],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
                 "spellcasting_progression_additions": {
                     "cantrips_known": 3,
                     "spells_known": 10,
@@ -134,14 +126,13 @@
                     }
                 }
             },
-            {
-                "level": 15,
+            "15": {
                 "features": [
                     "trait_arcane_charge"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
                 "spellcasting_progression_additions": {
                     "cantrips_known": 3,
                     "spells_known": 10,
@@ -152,12 +143,11 @@
                     }
                 }
             },
-            {
-                "level": 16,
+            "16": {
                 "features": [],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
                 "spellcasting_progression_additions": {
                     "cantrips_known": 3,
                     "spells_known": 11,
@@ -168,14 +158,13 @@
                     }
                 }
             },
-            {
-                "level": 18,
+            "18": {
                 "features": [
                     "trait_improved_war_magic"
                 ],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
                 "spellcasting_progression_additions": {
                     "cantrips_known": 3,
                     "spells_known": 11,
@@ -186,12 +175,11 @@
                     }
                 }
             },
-            {
-                "level": 19,
+            "19": {
                 "features": [],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
                 "spellcasting_progression_additions": {
                     "cantrips_known": 3,
                     "spells_known": 12,
@@ -203,12 +191,11 @@
                     }
                 }
             },
-            {
-                "level": 20,
+            "20": {
                 "features": [],
-                "subclass_specific_scaling": null,
-                "bonus_spells": null,
-                "spells_added_to_list": null,
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
                 "spellcasting_progression_additions": {
                     "cantrips_known": 3,
                     "spells_known": 13,
@@ -220,6 +207,6 @@
                     }
                 }
             }
-        ]
+        }
     }
 }
