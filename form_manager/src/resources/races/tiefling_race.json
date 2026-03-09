@@ -6,8 +6,10 @@
             "walk": 30
         },
         "ability_bonuses": {
-            "int": 1,
-            "cha": 2
+            "fixed": {
+                "int": 1,
+                "cha": 2
+            }
         },
         "languages": {
             "known": [
@@ -20,8 +22,6 @@
             "trait_hellish_resistance",
             "trait_infernal_legacy"
         ],
-        "subrace_info": {
-            "options_pool": "subraces_tiefling"
-        }
+        "subrace_info": {}
     }
 }

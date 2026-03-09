@@ -6,8 +6,10 @@
             "walk": 30
         },
         "ability_bonuses": {
-            "str": 2,
-            "con": 1
+            "fixed": {
+                "str": 2,
+                "con": 1
+            }
         },
         "languages": {
             "known": [
@@ -20,6 +22,7 @@
             "trait_menacing",
             "trait_relentless_endurance",
             "trait_savage_attacks"
-        ]
+        ],
+        "subrace_info": {}
     }
 }

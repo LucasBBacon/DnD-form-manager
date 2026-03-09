@@ -1,0 +1,38 @@
+{
+    "race_half_elf": {
+        "name": "Half-Elf",
+        "size": "medium",
+        "speed": {
+            "walk": 30
+        },
+        "ability_bonuses": {
+            "fixed": {
+                "cha": 2
+            },
+            "choices": {
+                "count": 2,
+                "bonus": 1,
+                "options": [
+                    "str",
+                    "dex",
+                    "con",
+                    "int",
+                    "wis"
+                ]
+            }
+        },
+        "languages": {
+            "known": [
+                "lang_common",
+                "lang_elvish",
+                "category_language"
+            ]
+        },
+        "traits": [
+            "trait_darkvision_60",
+            "trait_fey_ancestry",
+            "trait_skill_versatility"
+        ],
+        "subrace_info": {}
+    }
+}
