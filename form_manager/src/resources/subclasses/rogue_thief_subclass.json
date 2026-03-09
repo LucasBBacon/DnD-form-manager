@@ -2,45 +2,45 @@
     "subclass_rogue_thief": {
         "name": "Thief",
         "parent_class_id": "class_rogue",
-        "spellcasting_override": null,
-        "progression": [
-            {
-                "level": 3,
+        "spellcasting_override": {},
+        "progression": {
+            "3": {
                 "features": [
                     "trait_fast_hands",
                     "trait_second_story_work"
                 ],
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 9,
+            "9": {
                 "features": [
                     "trait_supreme_sneak"
                 ],
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 13,
+            "13": {
                 "features": [
                     "trait_use_magic_device"
                 ],
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             },
-            {
-                "level": 17,
+            "17": {
                 "features": [
                     "trait_thiefs_reflexes"
                 ],
-                "bonus_spells": null,
-                "spells_added_to_list": null,
-                "spellcasting_progression_additions": null
+                "subclass_specific_scaling": {},
+                "bonus_spells": [],
+                "spells_added_to_list": [],
+                "spellcasting_progression_additions": {}
             }
-        ]
+        }
     }
 }
