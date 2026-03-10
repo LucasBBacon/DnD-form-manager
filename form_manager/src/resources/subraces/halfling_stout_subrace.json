@@ -1,0 +1,13 @@
+{
+    "subrace_halfling_stout": {
+        "name": "Stout",
+        "parent_race_id": "race_halfling",
+        "ability_bonuses_additions": {
+            "con": 1
+        },
+        "traits_added": [
+            "trait_stout_resilience"
+        ],
+        "languages_added": []
+    }
+}

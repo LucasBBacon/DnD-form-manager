@@ -1,0 +1,13 @@
+{
+    "subrace_halfling_lightfoot": {
+        "name": "Lightfoot",
+        "parent_race_id": "race_halfling",
+        "ability_bonuses_additions": {
+            "cha": 1
+        },
+        "traits_added": [
+            "trait_naturally_stealthy"
+        ],
+        "languages_added": []
+    }
+}

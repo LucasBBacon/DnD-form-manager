@@ -1,0 +1,28 @@
+{
+    "race_halfling": {
+        "name": "Halfling",
+        "size": "small",
+        "speed": {
+            "walk": 25
+        },
+        "ability_bonuses": {
+            "fixed": {
+                "dex": 2
+            }
+        },
+        "languages": {
+            "known": [
+                "lang_common",
+                "lang_halfling"
+            ]
+        },
+        "traits": [
+            "trait_lucky",
+            "trait_brave",
+            "trait_halfling_nimbleness"
+        ],
+        "subrace_info": {
+            "options_pool": "subraces_halfling"
+        }
+    }
+}
