@@ -1,0 +1,17 @@
+{
+    "item_armor_chain_mail": {
+        "name": "Chain Mail",
+        "category": "armor",
+        "weight": 85,
+        "cost": 75000,
+        "weapon_data": {},
+        "armor_data": {
+            "armor_category": "heavy",
+            "base_ac": 16,
+            "dex_bonus": "none",
+            "str_requirement": 13,
+            "stealth_disadvantage": true
+        },
+        "description": ""
+    }
+}

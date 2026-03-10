@@ -1,0 +1,22 @@
+{
+    "item_gear_alchemists_fire": {
+        "name": "Alchemist's Fire (flask)",
+        "category": "gear",
+        "weight": 1,
+        "cost": 50000,
+        "weapon_data": {
+            "weapon_category": "simple",
+            "weapon_range": "ranged",
+            "damage": {
+                "dice": "1d4",
+                "type": "fire"
+            },
+            "properties": [
+                "prop_improvised_weapon",
+                "prop_thrown_20"
+            ]
+        },
+        "armor_data": {},
+        "description": ""
+    }
+}

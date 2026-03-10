@@ -19,6 +19,7 @@
         "dungeoneers",
         "dwarven",
         "dwarvish",
+        "equippable",
         "evards",
         "greataxe",
         "Greatsword",
@@ -57,12 +58,10 @@
         "unequip",
         "unequips",
         "warhammer",
-        "Waterskin"
+        "Waterskin",
+        "wieldable"
     ],
     "json.schemas": [
-
-
-
         {
             "fileMatch": [
                 "spells/*_data.json",
@@ -99,6 +98,12 @@
                 "subraces/*_subrace.json"
             ],
             "url": "./form_manager/src/resources/schemas/subrace_data_schema.json"
+        },
+        {
+            "fileMatch": [
+                "items/*_item.json"
+            ],
+            "url": "./form_manager/src/resources/schemas/item_data_schema.json"
         }
     ]
 }

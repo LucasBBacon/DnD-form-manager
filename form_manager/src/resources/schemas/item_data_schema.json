@@ -1,0 +1,136 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "title": "DnD Item",
+    "type": "object",
+    "patternProperties": {
+        "^item_[a-z0-9_]+$": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Display name of the item."
+                },
+                "category": {
+                    "type": "string",
+                    "enum": [
+                        "weapon",
+                        "armor",
+                        "gear",
+                        "tool",
+                        "magic_item"
+                    ],
+                    "description": "The primary categorization for UI filtering."
+                },
+                "weight": {
+                    "type": "number",
+                    "description": "Weight in pounds."
+                },
+                "cost": {
+                    "type": "integer",
+                    "description": "Cost of item in copper pieces."
+                },
+                "rarity": {
+                    "type": "string",
+                    "enum": [
+                        "common",
+                        "uncommon",
+                        "rare",
+                        "very_rare",
+                        "legendary",
+                        "artifact"
+                    ],
+                    "default": "common",
+                    "description": "The rarity of the item, used for loot generation and sorting."
+                },
+                "requires_attunement": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Whether the item requires attunement to function."
+                },
+                "weapon_data": {
+                    "type": "object",
+                    "description": "If present, the engine treats this item as wieldable in combat.",
+                    "properties": {
+                        "weapon_category": {
+                            "type": "string",
+                            "enum": [
+                                "simple",
+                                "martial"
+                            ]
+                        },
+                        "weapon_range": {
+                            "type": "string",
+                            "enum": [
+                                "melee",
+                                "ranged"
+                            ]
+                        },
+                        "damage": {
+                            "type": "object",
+                            "properties": {
+                                "dice": {
+                                    "type": "string",
+                                    "description": "e.g., '1d8'"
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "description": "e.g., 'slashing'"
+                                }
+                            }
+                        },
+                        "properties": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Array of property IDs like 'prop_finesse'."
+                        }
+                    }
+                },
+                "armor_data": {
+                    "type": "object",
+                    "description": "If present, the game engine treats this item as equippable for AC calculation.",
+                    "properties": {
+                        "armor_category": {
+                            "type": "string",
+                            "enum": [
+                                "light",
+                                "medium",
+                                "heavy",
+                                "shield"
+                            ]
+                        },
+                        "base_ac": {
+                            "type": "integer"
+                        },
+                        "dex_bonus": {
+                            "type": "string",
+                            "enum": [
+                                "full",
+                                "max_2",
+                                "none"
+                            ]
+                        },
+                        "str_requirement": {
+                            "type": "integer",
+                            "default": 0
+                        },
+                        "stealth_disadvantage": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "category",
+                "weight",
+                "cost"
+            ]
+        }
+    }
+}
