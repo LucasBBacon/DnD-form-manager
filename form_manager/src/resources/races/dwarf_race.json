@@ -1,5 +1,31 @@
 {
     "race_dwarf": {
-        "name": "Dwarf"
+        "name": "Dwarf",
+        "size": "medium",
+        "speed": {
+            "walk": 25
+        },
+        "ability_bonuses": {
+            "fixed": {
+                "con": 2
+            }
+        },
+        "languages": {
+            "known": [
+                "lang_common",
+                "lang_dwarvish"
+            ]
+        },
+        "traits": [
+            "trait_no_speed_reduction_heavy_armor",
+            "trait_darkvision_60",
+            "trait_dwarven_resilience",
+            "trait_dwarven_combat_training",
+            "trait_tool_proficiency",
+            "trait_stonecutting"
+        ],
+        "subrace_info": {
+            "options_pool": "subraces_dwarf"
+        }
     }
 }
