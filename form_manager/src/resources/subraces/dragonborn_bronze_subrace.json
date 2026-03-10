@@ -1,0 +1,12 @@
+{
+    "subrace_dragonborn_bronze": {
+        "name": "Bronze Draconic Ancestry",
+        "parent_race_id": "race_dragonborn",
+        "ability_bonuses_additions": {},
+        "traits_added": [
+            "trait_breath_weapon_lightning_5_30_line",
+            "trait_damage_resistance_lightning"
+        ],
+        "languages_added": []
+    }
+}
