@@ -1,0 +1,27 @@
+{
+    "race_human": {
+        "name": "Human",
+        "size": "medium",
+        "speed": {
+            "walk": 30
+        },
+        "ability_bonuses": {
+            "fixed": {
+                "cha": 1,
+                "con": 1,
+                "dex": 1,
+                "int": 1,
+                "str": 1,
+                "wis": 1
+            }
+        },
+        "languages": {
+            "known": [
+                "lang_common"
+            ],
+            "choices": 1
+        },
+        "traits": [],
+        "subrace_info": {}
+    }
+}

@@ -17,7 +17,9 @@
                 "lang_draconic"
             ]
         },
-        "traits": [],
+        "traits": [
+            "trait_draconic_ancestry"
+        ],
         "subrace_info": {
             "options_pool": "subraces_dragonborn"
         }
