@@ -1,0 +1,30 @@
+{
+    "item_gear_acid_vial": {
+        "name": "Acid (vial)",
+        "category": "gear",
+        "weight": 1,
+        "cost": 2500,
+        "weapon_data": {
+            "weapon_category": "improvised",
+            "weapon_range": "ranged",
+            "range_normal": 20,
+            "damage": {
+                "dice": "2d6",
+                "type": "acid"
+            },
+            "properties": [
+                "prop_thrown"
+            ]
+        },
+        "mechanics": {
+            "granted_actions": [
+                "action_throw_acid_vial"
+            ]
+        },
+        "yields_on_consume": "item_gear_vial",
+        "lore": {
+            "short_description": "A volatile vial of corrosive acid.",
+            "full_text": "As an action, you can splash the contents of this vial onto a creature within 5 feet of you or throw the vial up to 20 feet, shattering it on impact. In either case, make a ranged attack against a creature or object, treating the acid as an improvised weapon. On a hit, the target takes 2d6 acid damage."
+        }
+    }
+}

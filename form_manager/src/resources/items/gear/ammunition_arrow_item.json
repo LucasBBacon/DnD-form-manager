@@ -1,0 +1,14 @@
+{
+    "item_ammunition_arrow": {
+        "name": "Arrow",
+        "category": "ammunition",
+        "weight": 0.05,
+        "cost": 5,
+        "ammunition_data": {
+            "type": "arrow"
+        },
+        "lore": {
+            "short_description": "Standard wooden arrow with a steel tip."
+        }
+    }
+}

@@ -4,7 +4,6 @@
         "category": "armor",
         "weight": 6,
         "cost": 1000,
-        "weapon_data": {},
         "armor_data": {
             "armor_category": "shield",
             "base_ac": 2,

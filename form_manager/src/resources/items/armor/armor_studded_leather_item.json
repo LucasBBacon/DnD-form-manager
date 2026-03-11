@@ -4,7 +4,6 @@
         "category": "armor",
         "weight": 13,
         "cost": 4500,
-        "weapon_data": {},
         "armor_data": {
             "armor_category": "light",
             "base_ac": 12,

@@ -17,7 +17,8 @@
                         "armor",
                         "gear",
                         "tool",
-                        "magic_item"
+                        "magic_item",
+                        "ammunition"
                     ],
                     "description": "The primary categorization for UI filtering."
                 },
@@ -26,7 +27,7 @@
                     "description": "Weight in pounds."
                 },
                 "cost": {
-                    "type": "integer",
+                    "type": "number",
                     "description": "Cost of item in copper pieces."
                 },
                 "rarity": {
@@ -55,7 +56,8 @@
                             "type": "string",
                             "enum": [
                                 "simple",
-                                "martial"
+                                "martial",
+                                "improvised"
                             ]
                         },
                         "weapon_range": {
@@ -64,6 +66,14 @@
                                 "melee",
                                 "ranged"
                             ]
+                        },
+                        "range_normal": {
+                            "type": "integer",
+                            "description": "Normal range in feet. Required for ranged/thrown weapons."
+                        },
+                        "range_long": {
+                            "type": "integer",
+                            "description": "Long range in feet (attacks have disadvantage). Omit if no long range exists."
                         },
                         "damage": {
                             "type": "object",
@@ -84,6 +94,20 @@
                                 "type": "string"
                             },
                             "description": "Array of property IDs like 'prop_finesse'."
+                        }
+                    }
+                },
+                "ammunition_data": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "arrow",
+                                "needle",
+                                "bolt",
+                                "bullet"
+                            ]
                         }
                     }
                 },
@@ -120,6 +144,40 @@
                             "default": false
                         }
                     }
+                },
+                "container_data": {
+                    "type": "object",
+                    "description": "If present, engine treats this as a functional storage container.",
+                    "properties": {
+                        "weight_limit_lbs": {
+                            "type": "number",
+                            "description": "Maximum weight it can hold."
+                        },
+                        "volume_limit_cubic_ft": {
+                            "type": "number",
+                            "description": "Maximum physical space."
+                        },
+                        "liquid_limit_ounces": {
+                            "type": "number",
+                            "description": "For flasks, vials, and barrels."
+                        }
+                    }
+                },
+                "mechanics": {
+                    "type": "object",
+                    "description": "Pointers to active combat abilities granted by holding/using this item.",
+                    "properties": {
+                        "granted_actions": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "yields_on_consume": {
+                    "type": "string",
+                    "description": "Item ID of byproduct left behind after use. Omit if the item is completely destroyed (like a torch)."
                 },
                 "lore": {
                     "type": "object",

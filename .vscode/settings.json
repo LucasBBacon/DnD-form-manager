@@ -101,7 +101,9 @@
         },
         {
             "fileMatch": [
-                "items/*_item.json"
+                "items/*_item.json",
+                "gear/*_item.json",
+                "armor/*_item.json"
             ],
             "url": "./form_manager/src/resources/schemas/item_data_schema.json"
         }

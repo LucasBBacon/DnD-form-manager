@@ -1,0 +1,14 @@
+{
+    "item_ammunition_blowgun_needle": {
+        "name": "Blowgun needle",
+        "category": "ammunition",
+        "weight": 0.05,
+        "cost": 5,
+        "ammunition_data": {
+            "type": "needle"
+        },
+        "lore": {
+            "short_description": "A small, sharp needle used with a blowgun."
+        }
+    }
+}

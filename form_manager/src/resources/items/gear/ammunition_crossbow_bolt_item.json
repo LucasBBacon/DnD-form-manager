@@ -1,0 +1,14 @@
+{
+    "item_ammunition_crossbow_bolt": {
+        "name": "Crossbow bolt",
+        "category": "ammunition",
+        "weight": 0.075,
+        "cost": 5,
+        "ammunition_data": {
+            "type": "bolt"
+        },
+        "lore": {
+            "short_description": "A slender bolt designed for use in crossbows, featuring a sharp point and fletched tail for accurate flight."
+        }
+    }
+}

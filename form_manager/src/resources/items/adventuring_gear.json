@@ -1,30 +1,4 @@
 {
-    "abacus": {
-        "name": "Abacus",
-        "type": "gear",
-        "weight": 2.0,
-        "cost": "2 gp",
-        "properties": [],
-        "description": ""
-    },
-    "acid_vial": {
-        "name": "Acid (Vial)",
-        "type": "consumable",
-        "weight": 1.0,
-        "cost": "50 gp",
-        "return_on_empty": "vial",
-        "properties": ["improvised_weapon", "hazardous"],
-        "description": "As an action, you can splash the contents of this vial onto a creature within 5 feet of you or throw the vial up to 20 feet, shattering it on impact. In either case, make a ranged attack against a creature or object, treating the acid as an improvised weapon. On a hit, the target takes 2d6 acid damage."
-    },
-    "alchemists_fire_flask": {
-        "name": "Alchemist's fire (flask)",
-        "type": "consumable",
-        "weight": 1.0,
-        "cost": "50 gp",
-        "return_on_empty": "flask",
-        "properties": ["improvised_weapon", "hazardous", "flammable"],
-        "description": "This sticky, adhesive fluid ignites when exposed to air. As an action, you can throw this flask up to 20 feet, shattering it on impact. Make a ranged attack against a creature or object, treating the alchemist's tire as an improvised weapon. On a hit, the target takes Id4 tire damage at the start of each of its turns. A creature can end this damage by using its action to make a DC 10 Dexterity check to extinguish the flames."
-    },
     "arrows": {
         "name": "Arrows (20)",
         "type": "ammunition",

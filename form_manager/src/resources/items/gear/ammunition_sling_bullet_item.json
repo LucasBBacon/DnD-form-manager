@@ -1,0 +1,14 @@
+{
+    "item_ammunition_sling_bullet": {
+        "name": "Sling bullet",
+        "category": "ammunition",
+        "weight": 0.075,
+        "cost": 0.2,
+        "ammunition_data": {
+            "type": "bullet"
+        },
+        "lore": {
+            "short_description": "A small stone or lead projectile designed to be fired from a sling. A common and affordable ammunition choice for adventurers."
+        }
+    }
+}
