@@ -3,7 +3,7 @@
         "name": "Alchemist's Fire (flask)",
         "category": "gear",
         "weight": 1,
-        "cost": 50000,
+        "cost": 5000,
         "weapon_data": {
             "weapon_category": "simple",
             "weapon_range": "ranged",
@@ -17,6 +17,8 @@
             ]
         },
         "armor_data": {},
-        "description": ""
+        "lore": {
+            "short_description": ""
+        }
     }
 }

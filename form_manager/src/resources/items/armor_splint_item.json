@@ -1,0 +1,21 @@
+{
+    "item_armor_splint": {
+        "name": "Splint",
+        "category": "armor",
+        "weight": 60,
+        "cost": 20000,
+        "weapon_data": {},
+        "armor_data": {
+            "armor_category": "heavy",
+            "base_ac": 17,
+            "dex_bonus": "none",
+            "str_requirement": 15,
+            "stealth_disadvantage": true
+        },
+        "lore": {
+            "short_description": "Armor made of narrow vertical strips of metal riveted to leather.",
+            "full_text": "This armor is made of narrow vertical strips of metal riveted to a backing of leather tha is worn over cloth padding. Flexible chain mail protects the joints."
+        }
+
+    }
+}

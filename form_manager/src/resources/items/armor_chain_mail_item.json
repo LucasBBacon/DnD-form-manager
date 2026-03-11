@@ -3,7 +3,7 @@
         "name": "Chain Mail",
         "category": "armor",
         "weight": 85,
-        "cost": 75000,
+        "cost": 7500,
         "weapon_data": {},
         "armor_data": {
             "armor_category": "heavy",
@@ -12,6 +12,9 @@
             "str_requirement": 13,
             "stealth_disadvantage": true
         },
-        "description": ""
+        "lore": {
+            "short_description": "A suit of interlocking metal rings providing substantial protection.",
+            "full_text": "Made of interlocking metal rings, chain mail includes a layer of quilted fabric worn underneath the mail to prevent chafing and to cushion the impact of blows. The suit includes gauntlets."
+        }
     }
 }

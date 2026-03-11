@@ -1,0 +1,20 @@
+{
+    "item_armor_plate": {
+        "name": "Plate",
+        "category": "armor",
+        "weight": 65,
+        "cost": 150000,
+        "weapon_data": {},
+        "armor_data": {
+            "armor_category": "heavy",
+            "base_ac": 18,
+            "dex_bonus": "none",
+            "str_requirement": 15,
+            "stealth_disadvantage": true
+        },
+        "lore": {
+            "short_description": "Heavy armor made of interlocking metal plates.",
+            "full_text": "Plate consists of shaped, interlocking metal plates to cover the entire body. A suit of plate includes gauntlets, heavy leather boots, a visored helmet, and thick layers of padding underneath the armor. Buckles and straps distribute the weight over the body."
+        }
+    }
+}

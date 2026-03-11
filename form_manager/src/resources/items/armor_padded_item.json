@@ -1,0 +1,19 @@
+{
+    "item_armor_padded": {
+        "name": "Padded",
+        "category": "armor",
+        "weight": 8,
+        "cost": 500,
+        "weapon_data": {},
+        "armor_data": {
+            "armor_category": "light",
+            "base_ac": 11,
+            "dex_bonus": "full",
+            "stealth_disadvantage": true
+        },
+        "lore": {
+            "short_description": "A suit of quilted cloth providing basic protection.",
+            "full_text": "Padded armor consists of quilted layers of cloth and batting."
+        }
+    }
+}

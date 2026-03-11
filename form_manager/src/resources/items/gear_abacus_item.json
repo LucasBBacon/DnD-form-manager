@@ -1,0 +1,13 @@
+{
+    "item_gear_abacus": {
+        "name": "Abacus",
+        "category": "gear",
+        "weight": 2,
+        "cost": 200,
+        "weapon_data": {},
+        "armor_data": {},
+        "lore": {
+            "short_description": "A simple counting tool used for arithmetic operations."
+        }
+    }
+}

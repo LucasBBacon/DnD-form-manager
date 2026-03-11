@@ -1,0 +1,18 @@
+{
+    "item_armor_scale_mail": {
+        "name": "Scale Mail",
+        "category": "armor",
+        "weight": 45,
+        "cost": 5000,
+        "weapon_data": {},
+        "armor_data": {
+            "armor_category": "medium",
+            "base_ac": 14,
+            "dex_bonus": "max_2"
+        },
+        "lore": {
+            "short_description": "A suit of overlapping metal plates providing substantial protection.",
+            "full_text": "This armor consists of a coat and leggings (and perhaps a separate skirt) of leather covered with overlapping pieces of metal, much like the scales of a fish. The suit includes gauntlets."
+        }
+    }
+}

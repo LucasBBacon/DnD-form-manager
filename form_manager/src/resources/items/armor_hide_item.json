@@ -1,0 +1,18 @@
+{
+    "item_armor_hide": {
+        "name": "Hide",
+        "category": "armor",
+        "weight": 12,
+        "cost": 1000,
+        "weapon_data": {},
+        "armor_data": {
+            "armor_category": "medium",
+            "base_ac": 12,
+            "dex_bonus": "max_2"
+        },
+        "lore": {
+            "short_description": "A suit of armor made from tough animal hide.",
+            "full_text": "This crude armor consists of thick furs and pelts. It is commonly worn by barbarian tribes, evil humanoids, and other folk who lack access to the tools and materials needed to create better armor."
+        }
+    }
+}

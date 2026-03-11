@@ -1,0 +1,18 @@
+{
+    "item_armor_leather": {
+        "name": "Leather",
+        "category": "armor",
+        "weight": 10,
+        "cost": 1000,
+        "weapon_data": {},
+        "armor_data": {
+            "armor_category": "light",
+            "base_ac": 11,
+            "dex_bonus": "full"
+        },
+        "lore": {
+            "short_description": "A suit of leather providing basic protection.",
+            "full_text": "The breastplate and shoulder protectors of this armor are made of leather that has been stiffened by being boiled in oil. The rest of the armor is made of softer and more flexible materials."
+        }
+    }
+}

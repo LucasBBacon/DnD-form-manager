@@ -1,0 +1,17 @@
+{
+    "item_armor_shield": {
+        "name": "Shield",
+        "category": "armor",
+        "weight": 6,
+        "cost": 1000,
+        "weapon_data": {},
+        "armor_data": {
+            "armor_category": "shield",
+            "base_ac": 2,
+            "dex_bonus": "none"
+        },
+        "lore": {
+            "short_description": "A protective barrier of wood and metal, reinforced to deflect blows in combat."
+        }
+    }
+}

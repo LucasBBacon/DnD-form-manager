@@ -1,0 +1,18 @@
+{
+    "item_armor_chain_shirt": {
+        "name": "Chain shirt",
+        "category": "armor",
+        "weight": 20,
+        "cost": 5000,
+        "weapon_data": {},
+        "armor_data": {
+            "armor_category": "medium",
+            "base_ac": 13,
+            "dex_bonus": "max_2"
+        },
+        "lore": {
+            "short_description": "A suit of interlocking metal rings providing modest protection.",
+            "full_text": "Made of interlocking metal rings, a chain shirt is worn between layers of clothing or leather. This armor offers modest protection to the wearer's upper body and allows the sound of the rings rubbing against one another tobe muffled by outer layers."
+        }
+    }
+}
