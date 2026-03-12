@@ -1,0 +1,21 @@
+{
+    "item_weapon_light_hammer": {
+        "name": "Light hammer",
+        "category": "weapon",
+        "weight": 2,
+        "cost": 200,
+        "weapon_data": {
+            "weapon_category": "simple",
+            "weapon_range": "melee",
+            "range_normal": 20,
+            "range_long": 60,
+            "damage": {
+                "dice": "1d4",
+                "type": "bludgeoning"
+            }
+        },
+        "lore": {
+            "short_description": "A versatile melee weapon favored for both combat and utility, this lightweight hammer deals modest bludgeoning damage and can be thrown in a pinch."
+        }
+    }
+}

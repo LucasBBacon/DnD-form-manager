@@ -22,6 +22,7 @@
         "equippable",
         "evards",
         "greataxe",
+        "greatclub",
         "Greatsword",
         "Halfling",
         "handaxe",
@@ -35,6 +36,7 @@
         "nondetection",
         "nonmagical",
         "pathing",
+        "polearm",
         "regen",
         "scrying",
         "shapechanger",
@@ -103,7 +105,8 @@
             "fileMatch": [
                 "items/*_item.json",
                 "gear/*_item.json",
-                "armor/*_item.json"
+                "armor/*_item.json",
+                "weapon/*_item.json"
             ],
             "url": "./form_manager/src/resources/schemas/item_data_schema.json"
         }

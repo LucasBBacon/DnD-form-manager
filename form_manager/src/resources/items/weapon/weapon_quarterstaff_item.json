@@ -1,0 +1,22 @@
+{
+    "item_weapon_quarterstaff": {
+        "name": "Quarterstaff",
+        "category": "weapon",
+        "weight": 4,
+        "cost": 20,
+        "weapon_data": {
+            "weapon_category": "simple",
+            "weapon_range": "melee",
+            "damage": {
+                "dice": "1d6",
+                "type": "bludgeoning"
+            },
+            "properties": [
+                "prop_versatile_1d8"
+            ]
+        },
+        "lore": {
+            "short_description": "A simple wooden staff, typically 6-8 feet long, used as a melee weapon by commoners and adventurers alike. Can be wielded with one or both hands."
+        }
+    }
+}

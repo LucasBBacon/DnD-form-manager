@@ -1,0 +1,26 @@
+{
+    "item_weapon_dagger": {
+        "name": "Dagger",
+        "category": "weapon",
+        "weight": 1,
+        "cost": 20,
+        "weapon_data": {
+            "weapon_category": "simple",
+            "weapon_range": "melee",
+            "range_long": 20,
+            "range_normal": 60,
+            "damage": {
+                "dice": "1d4",
+                "type": "piercing"
+            },
+            "properties": [
+                "prop_finesse",
+                "prop_light",
+                "prop_thrown"
+            ]
+        },
+        "lore": {
+            "short_description": "A short blade, ideal for close combat or throwing. Often used as a backup weapon or tool."
+        }
+    }
+}

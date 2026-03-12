@@ -1,0 +1,22 @@
+{
+    "item_weapon_club": {
+        "name": "Club",
+        "category": "weapon",
+        "weight": 2,
+        "cost": 10,
+        "weapon_data": {
+            "weapon_category": "simple",
+            "weapon_range": "melee",
+            "damage": {
+                "dice": "1d4",
+                "type": "bludgeoning"
+            },
+            "properties": [
+                "prop_light"
+            ]
+        },
+        "lore": {
+            "short_description": "A simple wooden staff, often wielded by commoners and adventurers alike. Despite its humble appearance, a club can deliver surprisingly effective blows in the hands of a skilled fighter."
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "item_weapon_unarmed_strike": {
+        "name": "Unarmed strike",
+        "category": "weapon",
+        "weight": 0,
+        "cost": 0,
+        "weapon_data": {
+            "weapon_category": "simple",
+            "weapon_range": "melee",
+            "damage": {
+                "dice": "1",
+                "type": "bludgeoning"
+            }
+        },
+        "lore": {
+            "short_description": "A basic melee attack using fists, kicks, or headbutts."
+        }
+    }
+}

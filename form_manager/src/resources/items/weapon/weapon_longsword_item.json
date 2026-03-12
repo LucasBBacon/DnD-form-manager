@@ -15,7 +15,8 @@
                 "prop_versatile_1d10"
             ]
         },
-        "armor_data": {},
-        "description": ""
+        "lore": {
+            "short_description": "A versatile martial weapon with a straight blade, suitable for both one-handed and two-handed combat. A staple of knights and adventurers across the realms."
+        }
     }
 }

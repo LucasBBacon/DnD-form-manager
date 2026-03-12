@@ -1,0 +1,21 @@
+{
+    "item_weapon_spear": {
+        "name": "Spear",
+        "category": "weapon",
+        "weight": 3,
+        "cost": 100,
+        "weapon_data": {
+            "weapon_category": "simple",
+            "weapon_range": "melee",
+            "range_normal": 20,
+            "range_long": 60,
+            "damage": {
+                "dice": "1d6",
+                "type": "piercing"
+            }
+        },
+        "lore": {
+            "short_description": "A versatile polearm with a sharp point, effective for both melee combat and ranged throwing."
+        }
+    }
+}

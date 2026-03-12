@@ -1,0 +1,22 @@
+{
+    "item_weapon_sickle": {
+        "name": "Sickle",
+        "category": "weapon",
+        "weight": 2,
+        "cost": 100,
+        "weapon_data": {
+            "weapon_category": "simple",
+            "weapon_range": "melee",
+            "damage": {
+                "dice": "1d4",
+                "type": "slashing"
+            },
+            "properties": [
+                "prop_light"
+            ]
+        },
+        "lore": {
+            "short_description": "A crescent-shaped blade on a short handle, favored by commoners and soldiers alike for both harvesting and combat."
+        }
+    }
+}

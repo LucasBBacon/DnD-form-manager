@@ -1,40 +1,4 @@
 {
-    "arrows": {
-        "name": "Arrows (20)",
-        "type": "ammunition",
-        "weight": 1.0,
-        "cost": "1 gp",
-        "bundle_quantity": 20,
-        "properties": [],
-        "description": ""
-    },
-    "blowgun_needles": {
-        "name": "Blowgun needles (50)",
-        "type": "ammunition",
-        "weight": 1.0,
-        "cost": "1 gp",
-        "bundle_quantity": 50,
-        "properties": [],
-        "description": ""
-    },
-    "crossbow_bolts": {
-        "name": "Crossbow bolts (20)",
-        "type": "ammunition",
-        "weight": 1.5,
-        "cost": "1 gp",
-        "bundle_quantity": 20,
-        "properties": [],
-        "description": ""
-    },
-    "sling_bullets": {
-        "name": "Sling bullets (20)",
-        "type": "ammunition",
-        "weight": 1.5,
-        "cost": "4 cp",
-        "bundle_quantity": 20,
-        "properties": [],
-        "description": ""
-    },
     "antitoxin_vial": {
         "name": "Antitoxin (vial)",
         "type": "consumable",

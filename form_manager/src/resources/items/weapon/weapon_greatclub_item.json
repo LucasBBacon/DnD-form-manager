@@ -1,0 +1,22 @@
+{
+    "item_weapon_greatclub": {
+        "name": "Greatclub",
+        "category": "weapon",
+        "weight": 10,
+        "cost": 20,
+        "weapon_data": {
+            "weapon_category": "simple",
+            "weapon_range": "melee",
+            "damage": {
+                "dice": "1d8",
+                "type": "bludgeoning"
+            },
+            "properties": [
+                "prop_two_handed"
+            ]
+        },
+        "lore": {
+            "short_description": "A simple but effective melee weapon consisting of a sturdy wooden club, often favored by those lacking formal combat training."
+        }
+    }
+}

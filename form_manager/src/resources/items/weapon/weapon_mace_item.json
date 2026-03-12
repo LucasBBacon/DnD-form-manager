@@ -1,0 +1,19 @@
+{
+    "item_weapon_mace": {
+        "name": "Mace",
+        "category": "weapon",
+        "weight": 3,
+        "cost": 500,
+        "weapon_data": {
+            "weapon_category": "simple",
+            "weapon_range": "melee",
+            "damage": {
+                "dice": "1d6",
+                "type": "bludgeoning"
+            }
+        },
+        "lore": {
+            "short_description": "A simple blunt weapon consisting of a heavy metal head mounted on a wooden handle, effective for crushing armor and bone."
+        }
+    }
+}

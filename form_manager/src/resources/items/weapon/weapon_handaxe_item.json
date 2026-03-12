@@ -1,0 +1,25 @@
+{
+    "item_weapon_handaxe": {
+        "name": "Handaxe",
+        "category": "weapon",
+        "weight": 2,
+        "cost": 500,
+        "weapon_data": {
+            "weapon_category": "simple",
+            "weapon_range": "melee",
+            "range_normal": 20,
+            "range_long": 60,
+            "damage": {
+                "dice": "1d6",
+                "type": "slashing"
+            },
+            "properties": [
+                "prop_light",
+                "prop_thrown"
+            ]
+        },
+        "lore": {
+            "short_description": "A versatile one-handed axe designed for both melee combat and throwing, favored by warriors and adventurers alike."
+        }
+    }
+}

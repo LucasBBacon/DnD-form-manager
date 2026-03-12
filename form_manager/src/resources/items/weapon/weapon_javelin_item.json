@@ -1,0 +1,24 @@
+{
+    "item_weapon_javelin": {
+        "name": "Javelin",
+        "category": "weapon",
+        "weight": 2,
+        "cost": 50,
+        "weapon_data": {
+            "weapon_category": "simple",
+            "weapon_range": "melee",
+            "range_normal": 30,
+            "range_long": 120,
+            "damage": {
+                "dice": "1d6",
+                "type": "piercing"
+            },
+            "properties": [
+                "prop_thrown"
+            ]
+        },
+        "lore": {
+            "short_description": "A light spear designed for throwing, effective at both close and distant range."
+        }
+    }
+}
