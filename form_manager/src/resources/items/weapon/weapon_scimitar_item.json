@@ -1,0 +1,23 @@
+{
+    "item_weapon_scimitar": {
+        "name": "Scimitar",
+        "category": "weapon",
+        "weight": 3,
+        "cost": 2500,
+        "weapon_data": {
+            "weapon_category": "martial",
+            "weapon_range": "melee",
+            "damage": {
+                "dice": "1d6",
+                "type": "slashing"
+            },
+            "properties": [
+                "prop_finesse",
+                "prop_light"
+            ]
+        },
+        "lore": {
+            "short_description": "A curved, single-edged sword favored for its speed and finesse, ideal for swift, slashing attacks."
+        }
+    }
+}

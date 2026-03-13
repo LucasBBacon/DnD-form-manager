@@ -1,0 +1,19 @@
+{
+    "item_weapon_war_pick": {
+        "name": "War Pick",
+        "category": "weapon",
+        "weight": 2,
+        "cost": 500,
+        "weapon_data": {
+            "weapon_category": "martial",
+            "weapon_range": "melee",
+            "damage": {
+                "dice": "1d8",
+                "type": "piercing"
+            }
+        },
+        "lore": {
+            "short_description": "A sturdy, one-handed pickaxe designed for piercing armor and delivering powerful, focused strikes."
+        }
+    }
+}

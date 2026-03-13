@@ -1,0 +1,22 @@
+{
+    "item_weapon_rapier": {
+        "name": "Rapier",
+        "category": "weapon",
+        "weight": 2,
+        "cost": 2500,
+        "weapon_data": {
+            "weapon_category": "martial",
+            "weapon_range": "melee",
+            "damage": {
+                "dice": "1d8",
+                "type": "piercing"
+            },
+            "properties": [
+                "prop_finesse"
+            ]
+        },
+        "lore": {
+            "short_description": "A slender, sharply pointed sword favored for its precision and agility in combat."
+        }
+    }
+}

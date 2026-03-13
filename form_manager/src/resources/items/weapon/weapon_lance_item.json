@@ -1,0 +1,23 @@
+{
+    "item_weapon_lance": {
+        "name": "Lance",
+        "category": "weapon",
+        "weight": 6,
+        "cost": 1000,
+        "weapon_data": {
+            "weapon_category": "martial",
+            "weapon_range": "melee",
+            "damage": {
+                "dice": "1d12",
+                "type": "piercing"
+            },
+            "properties": [
+                "prop_reach",
+                "prop_special"
+            ]
+        },
+        "lore": {
+            "short_description": "A long, heavy weapon designed for mounted combat, the lance deals powerful piercing damage but is unwieldy on foot."
+        }
+    }
+}

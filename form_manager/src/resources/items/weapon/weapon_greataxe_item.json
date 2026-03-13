@@ -1,0 +1,23 @@
+{
+    "item_weapon_greataxe": {
+        "name": "Greataxe",
+        "category": "weapon",
+        "weight": 7,
+        "cost": 3000,
+        "weapon_data": {
+            "weapon_category": "martial",
+            "weapon_range": "melee",
+            "damage": {
+                "dice": "1d12",
+                "type": "slashing"
+            },
+            "properties": [
+                "prop_heavy",
+                "prop_two_handed"
+            ]
+        },
+        "lore": {
+            "short_description": "A massive, double-bladed axe favored for its devastating power, capable of delivering heavy slashing blows in combat."
+        }
+    }
+}

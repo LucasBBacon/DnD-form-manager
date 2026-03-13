@@ -1,9 +1,9 @@
 {
-    "item_weapon_longsword": {
-        "name": "Longsword",
+    "item_weapon_battleaxe": {
+        "name": "Battleaxe",
         "category": "weapon",
-        "weight": 3,
-        "cost": 1500,
+        "weight": 4,
+        "cost": 1000,
         "weapon_data": {
             "weapon_category": "martial",
             "weapon_range": "melee",
@@ -16,7 +16,7 @@
             ]
         },
         "lore": {
-            "short_description": "A versatile martial weapon with a straight blade, suitable for both one-handed and two-handed combat. A staple of knights and adventurers across the realms."
+            "short_description": "A sturdy axe favored by warriors, the battleaxe delivers powerful slashing blows and can be wielded with one or both hands."
         }
     }
 }

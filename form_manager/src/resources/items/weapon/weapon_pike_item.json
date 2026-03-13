@@ -1,0 +1,24 @@
+{
+    "item_weapon_pike": {
+        "name": "Pike",
+        "category": "weapon",
+        "weight": 18,
+        "cost": 500,
+        "weapon_data": {
+            "weapon_category": "martial",
+            "weapon_range": "melee",
+            "damage": {
+                "dice": "1d10",
+                "type": "piercing"
+            },
+            "properties": [
+                "prop_heavy",
+                "prop_reach",
+                "prop_two_handed"
+            ]
+        },
+        "lore": {
+            "short_description": "A long, heavy polearm with a steel tip, the pike is designed for reach and powerful thrusts in battle."
+        }
+    }
+}

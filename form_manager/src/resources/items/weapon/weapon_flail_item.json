@@ -1,0 +1,19 @@
+{
+    "item_weapon_flail": {
+        "name": "Flail",
+        "category": "weapon",
+        "weight": 2,
+        "cost": 1000,
+        "weapon_data": {
+            "weapon_category": "martial",
+            "weapon_range": "melee",
+            "damage": {
+                "dice": "1d8",
+                "type": "bludgeoning"
+            }
+        },
+        "lore": {
+            "short_description": "A weapon with a spiked head attached to a handle by a chain, the flail is designed to strike around shields and armor."
+        }
+    }
+}

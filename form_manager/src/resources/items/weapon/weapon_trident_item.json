@@ -1,0 +1,25 @@
+{
+    "item_weapon_trident": {
+        "name": "Trident",
+        "category": "weapon",
+        "weight": 4,
+        "cost": 500,
+        "weapon_data": {
+            "weapon_category": "martial",
+            "weapon_range": "melee",
+            "range_normal": 20,
+            "range_long": 60,
+            "damage": {
+                "dice": "1d6",
+                "type": "piercing"
+            },
+            "properties": [
+                "prop_thrown",
+                "prop_versatile_1d8"
+            ]
+        },
+        "lore": {
+            "short_description": "A three-pronged spear favored by warriors, the trident can be wielded in melee or thrown at distant foes."
+        }
+    }
+}

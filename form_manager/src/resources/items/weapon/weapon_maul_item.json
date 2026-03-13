@@ -1,0 +1,23 @@
+{
+    "item_weapon_maul": {
+        "name": "Maul",
+        "category": "weapon",
+        "weight": 10,
+        "cost": 1000,
+        "weapon_data": {
+            "weapon_category": "martial",
+            "weapon_range": "melee",
+            "damage": {
+                "dice": "2d6",
+                "type": "bludgeoning"
+            },
+            "properties": [
+                "prop_heavy",
+                "prop_two_handed"
+            ]
+        },
+        "lore": {
+            "short_description": "A massive two-handed hammer designed to deliver powerful, crushing blows."
+        }
+    }
+}

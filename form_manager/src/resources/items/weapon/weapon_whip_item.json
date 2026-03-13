@@ -1,0 +1,23 @@
+{
+    "item_weapon_whip": {
+        "name": "Whip",
+        "category": "weapon",
+        "weight": 3,
+        "cost": 200,
+        "weapon_data": {
+            "weapon_category": "martial",
+            "weapon_range": "melee",
+            "damage": {
+                "dice": "1d4",
+                "type": "slashing"
+            },
+            "properties": [
+                "prop_finesse",
+                "prop_reach"
+            ]
+        },
+        "lore": {
+            "short_description": "A long, flexible weapon capable of striking foes at a distance, favored for its finesse and reach."
+        }
+    }
+}

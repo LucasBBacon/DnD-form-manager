@@ -1,0 +1,23 @@
+{
+    "item_weapon_shortsword": {
+        "name": "Shortsword",
+        "category": "weapon",
+        "weight": 2,
+        "cost": 1000,
+        "weapon_data": {
+            "weapon_category": "martial",
+            "weapon_range": "melee",
+            "damage": {
+                "dice": "1d6",
+                "type": "piercing"
+            },
+            "properties": [
+                "prop_finesse",
+                "prop_light"
+            ]
+        },
+        "lore": {
+            "short_description": "A versatile, lightweight blade favored for its balance and precision, ideal for swift melee attacks."
+        }
+    }
+}

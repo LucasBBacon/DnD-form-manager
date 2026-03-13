@@ -1,0 +1,24 @@
+{
+    "item_weapon_glaive": {
+        "name": "Glaive",
+        "category": "weapon",
+        "weight": 6,
+        "cost": 2000,
+        "weapon_data": {
+            "weapon_category": "martial",
+            "weapon_range": "melee",
+            "damage": {
+                "dice": "1d10",
+                "type": "slashing"
+            },
+            "properties": [
+                "prop_heavy",
+                "prop_reach",
+                "prop_two_handed"
+            ]
+        },
+        "lore": {
+            "short_description": "A glaive is a long polearm with a heavy, single-edged blade, capable of striking foes at reach and delivering powerful slashing attacks."
+        }
+    }
+}

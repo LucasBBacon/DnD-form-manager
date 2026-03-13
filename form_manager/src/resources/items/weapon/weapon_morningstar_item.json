@@ -1,0 +1,19 @@
+{
+    "item_weapon_morningstar": {
+        "name": "Morningstar",
+        "category": "weapon",
+        "weight": 4,
+        "cost": 1500,
+        "weapon_data": {
+            "weapon_category": "martial",
+            "weapon_range": "melee",
+            "damage": {
+                "dice": "1d8",
+                "type": "piercing"
+            }
+        },
+        "lore": {
+            "short_description": "A spiked club combining the features of a mace and flail, designed to deal heavy piercing damage in close combat."
+        }
+    }
+}
