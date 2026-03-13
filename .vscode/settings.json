@@ -19,8 +19,10 @@
         "dungeoneers",
         "dwarven",
         "dwarvish",
+        "equippable",
         "evards",
         "greataxe",
+        "greatclub",
         "Greatsword",
         "Halfling",
         "handaxe",
@@ -34,6 +36,7 @@
         "nondetection",
         "nonmagical",
         "pathing",
+        "polearm",
         "regen",
         "scrying",
         "shapechanger",
@@ -57,12 +60,10 @@
         "unequip",
         "unequips",
         "warhammer",
-        "Waterskin"
+        "Waterskin",
+        "wieldable"
     ],
     "json.schemas": [
-
-
-
         {
             "fileMatch": [
                 "spells/*_data.json",
@@ -99,6 +100,15 @@
                 "subraces/*_subrace.json"
             ],
             "url": "./form_manager/src/resources/schemas/subrace_data_schema.json"
+        },
+        {
+            "fileMatch": [
+                "items/*_item.json",
+                "gear/*_item.json",
+                "armor/*_item.json",
+                "weapon/*_item.json"
+            ],
+            "url": "./form_manager/src/resources/schemas/item_data_schema.json"
         }
     ]
 }
