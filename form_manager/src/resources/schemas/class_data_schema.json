@@ -232,6 +232,41 @@
                             ]
                         }
                     }
+                },
+                "lore": {
+                    "type": "object",
+                    "properties": {
+                        "short_description": {
+                            "type": "string",
+                            "description": "A quick 1-2 sentence summary for tooltips."
+                        },
+                        "full_text": {
+                            "type": "string",
+                            "description": "The main body of text for the entity."
+                        },
+                        "sections": {
+                            "type": "array",
+                            "description": "Flexible key-value pairs for categorized flavor text (Age, Alignment, Lore, etc.).",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "body": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "title",
+                                    "body"
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "short_description"
+                    ]
                 }
             },
             "required": [
