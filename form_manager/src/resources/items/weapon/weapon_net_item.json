@@ -1,0 +1,21 @@
+{
+    "item_weapon_net": {
+        "name": "Net",
+        "category": "weapon",
+        "weight": 3,
+        "cost": 100,
+        "weapon_data": {
+            "weapon_category": "martial",
+            "weapon_range": "ranged",
+            "range_normal": 5,
+            "range_long": 15,
+            "properties": [
+                "prop_special",
+                "prop_thrown"
+            ]
+        },
+        "lore": {
+            "short_description": "A thrown net used to restrain creatures, limiting their movement until freed."
+        }
+    }
+}

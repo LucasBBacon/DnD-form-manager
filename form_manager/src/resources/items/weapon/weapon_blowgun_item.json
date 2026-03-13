@@ -1,0 +1,25 @@
+{
+    "item_weapon_blowgun": {
+        "name": "Blowgun",
+        "category": "weapon",
+        "weight": 1,
+        "cost": 1000,
+        "weapon_data": {
+            "weapon_category": "martial",
+            "weapon_range": "ranged",
+            "range_normal": 25,
+            "range_long": 100,
+            "damage": {
+                "dice": "1",
+                "type": "piercing"
+            },
+            "properties": [
+                "prop_ammunition_needle",
+                "prop_loading"
+            ]
+        },
+        "lore": {
+            "short_description": "A lightweight tube used to fire small darts or needles, the blowgun is a stealthy ranged weapon favored for its silence and precision."
+        }
+    }
+}

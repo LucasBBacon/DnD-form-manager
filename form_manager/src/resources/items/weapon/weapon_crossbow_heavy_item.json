@@ -1,0 +1,27 @@
+{
+    "item_weapon_crossbow_heavy": {
+        "name": "Crossbow, heavy",
+        "category": "weapon",
+        "weight": 18,
+        "cost": 5000,
+        "weapon_data": {
+            "weapon_category": "martial",
+            "weapon_range": "ranged",
+            "range_normal": 100,
+            "range_long": 400,
+            "damage": {
+                "dice": "1d10",
+                "type": "piercing"
+            },
+            "properties": [
+                "prop_ammunition_bolt",
+                "prop_heavy",
+                "prop_loading",
+                "prop_two_handed"
+            ]
+        },
+        "lore": {
+            "short_description": "A powerful ranged weapon requiring two hands to use, the heavy crossbow deals significant piercing damage but must be reloaded after each shot."
+        }
+    }
+}

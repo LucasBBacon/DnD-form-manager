@@ -1,0 +1,26 @@
+{
+    "item_weapon_longbow": {
+        "name": "Longbow",
+        "category": "weapon",
+        "weight": 2,
+        "cost": 5000,
+        "weapon_data": {
+            "weapon_category": "martial",
+            "weapon_range": "ranged",
+            "range_normal": 150,
+            "range_long": 600,
+            "damage": {
+                "dice": "1d8",
+                "type": "piercing"
+            },
+            "properties": [
+                "prop_ammunition_arrow",
+                "prop_heavy",
+                "prop_two_handed"
+            ]
+        },
+        "lore": {
+            "short_description": "A powerful ranged weapon favored by archers, the longbow excels at striking distant targets with precision and force."
+        }
+    }
+}

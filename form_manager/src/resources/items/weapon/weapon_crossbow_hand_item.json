@@ -1,0 +1,26 @@
+{
+    "item_weapon_crossbow_hand": {
+        "name": "Crossbow, hand",
+        "category": "weapon",
+        "weight": 3,
+        "cost": 7500,
+        "weapon_data": {
+            "weapon_category": "martial",
+            "weapon_range": "ranged",
+            "range_normal": 30,
+            "range_long": 120,
+            "damage": {
+                "dice": "1d6",
+                "type": "piercing"
+            },
+            "properties": [
+                "prop_ammunition_bolt",
+                "prop_light",
+                "prop_loading"
+            ]
+        },
+        "lore": {
+            "short_description": "A compact, easily concealed ranged weapon favored for its quick draw and versatility in close quarters."
+        }
+    }
+}
