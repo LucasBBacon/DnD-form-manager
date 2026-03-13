@@ -1,0 +1,26 @@
+{
+    "item_weapon_crossbow_light": {
+        "name": "Crossbow, light",
+        "category": "weapon",
+        "weight": 5,
+        "cost": 2500,
+        "weapon_data": {
+            "weapon_category": "simple",
+            "weapon_range": "ranged",
+            "range_normal": 80,
+            "range_long": 320,
+            "damage": {
+                "dice": "1d8",
+                "type": "piercing"
+            },
+            "properties": [
+                "prop_ammunition_bolt",
+                "prop_loading",
+                "prop_two_handed"
+            ]
+        },
+        "lore": {
+            "short_description": "A ranged weapon favored for its accuracy and ease of use, the light crossbow fires bolts and requires two hands to load and shoot."
+        }
+    }
+}

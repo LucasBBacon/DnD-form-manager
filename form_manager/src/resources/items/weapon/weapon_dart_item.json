@@ -1,0 +1,25 @@
+{
+    "item_weapon_dart": {
+        "name": "Dart",
+        "category": "weapon",
+        "weight": 0.25,
+        "cost": 5,
+        "weapon_data": {
+            "weapon_category": "simple",
+            "weapon_range": "ranged",
+            "range_normal": 20,
+            "range_long": 60,
+            "damage": {
+                "dice": "1d4",
+                "type": "piercing"
+            },
+            "properties": [
+                "prop_finesse",
+                "prop_thrown"
+            ]
+        },
+        "lore": {
+            "short_description": "A small, lightweight throwing weapon, the dart is designed for accuracy and quick attacks at range."
+        }
+    }
+}

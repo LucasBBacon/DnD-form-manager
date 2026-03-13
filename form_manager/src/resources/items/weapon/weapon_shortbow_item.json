@@ -1,0 +1,25 @@
+{
+    "item_weapon_shortbow": {
+        "name": "Shortbow",
+        "category": "weapon",
+        "weight": 2,
+        "cost": 2500,
+        "weapon_data": {
+            "weapon_category": "simple",
+            "weapon_range": "ranged",
+            "range_normal": 80,
+            "range_long": 320,
+            "damage": {
+                "dice": "1d6",
+                "type": "piercing"
+            },
+            "properties": [
+                "prop_ammunition_arrow",
+                "prop_two_handed"
+            ]
+        },
+        "lore": {
+            "short_description": "A lightweight ranged weapon, the shortbow is easy to use and ideal for quick, precise shots at distant targets."
+        }
+    }
+}

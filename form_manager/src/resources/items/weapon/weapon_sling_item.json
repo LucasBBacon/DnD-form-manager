@@ -1,0 +1,24 @@
+{
+    "item_weapon_sling": {
+        "name": "Sling",
+        "category": "weapon",
+        "weight": 0,
+        "cost": 10,
+        "weapon_data": {
+            "weapon_category": "simple",
+            "weapon_range": "ranged",
+            "range_normal": 30,
+            "range_long": 120,
+            "damage": {
+                "dice": "1d4",
+                "type": "bludgeoning"
+            },
+            "properties": [
+                "prop_ammunition_bullet"
+            ]
+        },
+        "lore": {
+            "short_description": "A simple ranged weapon that hurls small stones or bullets, effective at short distances."
+        }
+    }
+}
