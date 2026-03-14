@@ -2,7 +2,6 @@
     "trait_skill_versatility": {
         "name": "Skill Versatility",
         "is_active": false,
-        "description": "",
         "effects": [
             {
                 "type": "proficiency",

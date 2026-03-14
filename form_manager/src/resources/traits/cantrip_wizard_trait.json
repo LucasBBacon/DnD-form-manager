@@ -2,15 +2,14 @@
     "trait_cantrip_wizard": {
         "name": "Cantrip",
         "is_active": true,
-        "description": "",
         "effects": [
             {
                 "type": "spell_grant",
-                "target": "spellcasting_ability_int",
+                "spellcasting_ability": "int",
                 "choice": {
                     "count": 1,
                     "category": "spell",
-                    "pool": "wizard_cantrips"
+                    "pool": "spell_cantrips_wizard"
                 }
             }
         ]

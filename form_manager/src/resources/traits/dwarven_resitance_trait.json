@@ -2,7 +2,6 @@
     "trait_dwarven_resilience": {
         "name": "Dwarven Resilience",
         "is_active": false,
-        "description": "",
         "effects": [
             {
                 "type": "advantage",
