@@ -111,8 +111,17 @@
                             "description": "Array of language IDs granted automatically."
                         },
                         "choices": {
-                            "type": "integer",
-                            "description": "Number of additional languages the player can choose."
+                            "type": "object",
+                            "properties": {
+                                "count": {
+                                    "type": "integer",
+                                    "description": "Number of additional languages the player can choose."
+                                },
+                                "unique_choices": {
+                                    "type": "boolean",
+                                    "default": true
+                                }
+                            }
                         }
                     },
                     "required": [
@@ -127,20 +136,54 @@
                     "description": "Array of Trait IDs referencing the external traits file (e.g., 'trait_fey_ancestry')."
                 },
                 "subrace_info": {
-                    "type": [
-                        "object",
-                        "null"
-                    ],
+                    "type": "object",
                     "description": "If null, this race has no subraces. If present, forces a choice.",
                     "properties": {
                         "options_pool": {
                             "type": "string",
                             "description": "e.g., 'subraces_elf'"
+                        },
+                        "display_label": {
+                            "type": "string",
+                            "description": "e.g., 'Draconic Ancestry'",
+                            "default": "Subraces"
                         }
                     }
                 },
-                "description": {
-                    "type": "string"
+                "lore": {
+                    "type": "object",
+                    "properties": {
+                        "short_description": {
+                            "type": "string",
+                            "description": "A quick 1-2 sentence summary for tooltips."
+                        },
+                        "full_text": {
+                            "type": "string",
+                            "description": "The main body of text for the entity."
+                        },
+                        "sections": {
+                            "type": "array",
+                            "description": "Flexible key-value pairs for categorized flavor text (Age, Alignment, Lore, etc.).",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "body": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "title",
+                                    "body"
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "short_description"
+                    ]
                 }
             },
             "required": [
@@ -148,8 +191,7 @@
                 "size",
                 "speed",
                 "ability_bonuses",
-                "languages",
-                "traits"
+                "languages"
             ]
         }
     }

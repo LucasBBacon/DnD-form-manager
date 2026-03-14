@@ -6,7 +6,9 @@
             "walk": 30
         },
         "ability_bonuses": {
-            "dex": 2
+            "fixed": {
+                "dex": 2
+            }
         },
         "languages": {
             "known": [

@@ -19,9 +19,10 @@
             "known": [
                 "lang_common"
             ],
-            "choices": 1
-        },
-        "traits": [],
-        "subrace_info": {}
+            "choices": {
+                "count": 1,
+                "unique_choices": true
+            }
+        }
     }
 }

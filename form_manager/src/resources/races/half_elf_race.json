@@ -26,13 +26,15 @@
                 "lang_common",
                 "lang_elvish"
             ],
-            "choices": 1
+            "choices": {
+                "count": 1,
+                "unique_choices": true
+            }
         },
         "traits": [
             "trait_darkvision_60",
             "trait_fey_ancestry",
             "trait_skill_versatility"
-        ],
-        "subrace_info": {}
+        ]
     }
 }
