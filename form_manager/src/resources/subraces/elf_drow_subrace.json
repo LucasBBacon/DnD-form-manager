@@ -3,15 +3,12 @@
         "name": "Dark Elf (Drow)",
         "parent_race_id": "race_elf",
         "ability_bonuses_additions": {
-            "wis": 1
+            "cha": 1
         },
         "traits_added": [
-            "trait_ability_score_increase_cha",
             "trait_superior_darkvision",
             "trait_drow_magic",
             "trait_drow_weapon_training"
-        ],
-        "languages_added": [],
-        "overrides": {}
+        ]
     }
 }

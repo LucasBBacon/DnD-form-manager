@@ -6,14 +6,15 @@
             "int": 1
         },
         "traits_added": [
-            "trait_ability_score_increase_int",
             "trait_elf_weapon_training",
             "trait_cantrip_high_elf",
             "trait_extra_language"
         ],
-        "languages_added": [
-            "category_languages"
-        ],
-        "overrides": {}
+        "languages_added": {
+            "choices": {
+                "count": 1,
+                "unique_choices": true
+            }
+        }
     }
 }

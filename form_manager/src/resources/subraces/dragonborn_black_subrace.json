@@ -2,11 +2,9 @@
     "subrace_dragonborn_black": {
         "name": "Black Draconic Ancestry",
         "parent_race_id": "race_dragonborn",
-        "ability_bonuses_additions": {},
         "traits_added": [
             "trait_breath_weapon_acid_5_30_line",
             "trait_damage_resistance_acid"
-        ],
-        "languages_added": []
+        ]
     }
 }

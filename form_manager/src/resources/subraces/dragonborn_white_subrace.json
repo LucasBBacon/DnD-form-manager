@@ -2,11 +2,9 @@
     "subrace_dragonborn_white": {
         "name": "White Draconic Ancestry",
         "parent_race_id": "race_dragonborn",
-        "ability_bonuses_additions": {},
         "traits_added": [
             "trait_breath_weapon_cold_15_cone",
             "trait_damage_resistance_cold"
-        ],
-        "languages_added": []
+        ]
     }
 }

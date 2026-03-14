@@ -6,14 +6,14 @@
             "wis": 1
         },
         "traits_added": [
-            "trait_ability_score_increase_wis",
             "trait_elf_weapon_training",
             "trait_mask_of_the_wild",
             "trait_fleet_of_foot"
         ],
-        "languages_added": [],
         "overrides": {
-            "speed": 35
+            "speed": {
+                "walk": 35
+            }
         }
     }
 }
