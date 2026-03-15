@@ -13,6 +13,10 @@
                 "target": "damage_type_poison",
                 "value": "half_damage"
             }
-        ]
+        ],
+        "lore": {
+            "short_description": "Vou have advantage on saving throws against poison, and you have resistance against poison damage.",
+            "full_text": "Vou have advantage on saving throws against poison, and you have resistance against poison damage."
+        }
     }
 }

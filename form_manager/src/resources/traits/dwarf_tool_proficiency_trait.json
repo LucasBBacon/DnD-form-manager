@@ -1,0 +1,20 @@
+{
+    "trait_dwarf_tool_proficiency": {
+        "name": "Tool Proficiency",
+        "effects": [
+            {
+                "type": "proficiency",
+                "target": "tool",
+                "choice": {
+                    "count": 1,
+                    "category": "tool",
+                    "pool": "category_dwarf_artisans_tools"
+                }
+            }
+        ],
+        "lore": {
+            "short_description": "Proficiency with smith's tools, brewer's supplies, or mason's tools.",
+            "full_text": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools."
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "trait_dwarven_combat_training": {
+        "name": "Dwarven Combat Training",
+        "effects": [
+            {
+                "type": "proficiency",
+                "target": "weapon_battleaxe"
+            },
+            {
+                "type": "proficiency",
+                "target": "weapon_handaxe"
+            },
+            {
+                "type": "proficiency",
+                "target": "weapon_throwing_hammer"
+            },
+            {
+                "type": "proficiency",
+                "target": "weapon_warhammer"
+            }
+        ],
+        "lore": {
+            "short_description": "Vou have proficiency with the battleaxe, handaxe, throwing hammer, and warhammer.",
+            "full_text": "Vou have proficiency with the battleaxe, handaxe, throwing hammer, and warhammer."
+        }
+    }
+}

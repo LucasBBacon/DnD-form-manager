@@ -1,0 +1,21 @@
+{
+    "trait_dwarf_speed": {
+        "name": "Speed",
+        "effects": [
+            {
+                "type": "speed",
+                "target": "base_walking",
+                "value": 25
+            },
+            {
+                "type": "rule_bypass",
+                "target": "heavy_armor_speed_penalty",
+                "value": true
+            }
+        ],
+        "lore": {
+            "short_description": "Your base walking speed is 25 feet. Your speed is not reduced by wearing heavy armor.",
+            "full_text": "Your base walking speed is 25 feet. Your speed is not reduced by wearing heavy armor."
+        }
+    }
+}

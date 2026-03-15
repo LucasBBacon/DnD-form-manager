@@ -17,11 +17,11 @@
             ]
         },
         "traits": [
-            "trait_no_speed_reduction_heavy_armor",
+            "trait_dwarf_speed_resilience",
             "trait_darkvision_60",
             "trait_dwarven_resilience",
             "trait_dwarven_combat_training",
-            "trait_tool_proficiency",
+            "trait_dwarf_tool_proficiency",
             "trait_stonecutting"
         ],
         "subrace_info": {

@@ -65,7 +65,8 @@
                                     "spell_grant",
                                     "stat_modifier",
                                     "speed",
-                                    "ac_calc"
+                                    "ac_calc",
+                                    "rule_bypass"
                                 ]
                             },
                             "level_available": {

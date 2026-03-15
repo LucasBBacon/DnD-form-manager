@@ -1,0 +1,18 @@
+{
+    "trait_stonecutting": {
+        "name": "Stonecutting",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "proficiency",
+                "target": "skill_history",
+                "value": "expertise",
+                "condition": "origin_of_stonework"
+            }
+        ],
+        "lore": {
+            "short_description": "Add double your proficiency bonus to History checks related to stonework.",
+            "full_text": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."
+        }
+    }
+}
