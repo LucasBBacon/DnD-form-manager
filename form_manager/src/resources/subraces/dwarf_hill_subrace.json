@@ -7,6 +7,16 @@
         },
         "traits_added": [
             "trait_dwarven_toughness"
-        ]
+        ],
+        "lore": {
+            "short_description": "As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience.",
+            "full_text": "As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience. The gold dwarves of Faerûn in their mighty southern kingdom are hill dwarves, as are the exiled Neidar and the debased Klar of Krynn in the Dragonlance setting.",
+            "sections": [
+                {
+                    "title": "Ability Score Increase",
+                    "body": "Your Wisdom score increases by 1."
+                }
+            ]
+        }
     }
 }

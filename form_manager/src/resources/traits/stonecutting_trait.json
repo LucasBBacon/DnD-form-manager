@@ -1,7 +1,6 @@
 {
     "trait_stonecutting": {
         "name": "Stonecutting",
-        "is_active": false,
         "effects": [
             {
                 "type": "proficiency",

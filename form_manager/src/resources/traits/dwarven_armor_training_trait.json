@@ -1,0 +1,17 @@
+{
+    "trait_dwarven_armor_training": {
+        "name": "Dwarven Armor Training",
+        "effects": [
+            {
+                "type": "proficiency",
+                "target": "category_armor_light",
+                "value": true
+            },
+            {
+                "type": "proficiency",
+                "target": "category_armor_medium",
+                "value": true
+            }
+        ]
+    }
+}
