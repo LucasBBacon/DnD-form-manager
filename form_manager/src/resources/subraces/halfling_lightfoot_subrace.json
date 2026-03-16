@@ -7,6 +7,16 @@
         },
         "traits_added": [
             "trait_naturally_stealthy"
-        ]
+        ],
+        "lore": {
+            "short_description": "Lightfoot halflings are the most common and wandering of their kind; remarkably stealthy, naturally charming, and able to hide behind creatures larger than themselves with ease.",
+            "full_text": "As a lightfoot halfling, you can easily hide from notice, even using other people as cover. You're inclined to be affable and get along well with others. In the Forgotten Realms, lightfoot halflings have spread the farthest and thus are the most common variety. Lightfoots are more prone to wanderlust than other halflings. and often dwell alongside other races or take up a nomadic life. In the world of Greyhawk. these halflings are called hairfeet or tallfellows.",
+            "sections": [
+                {
+                    "title": "Ability Score Increase",
+                    "body": "Your Charisma score increases by 1."
+                }
+            ]
+        }
     }
 }

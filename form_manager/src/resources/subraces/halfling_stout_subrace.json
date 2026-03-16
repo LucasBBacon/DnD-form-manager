@@ -7,6 +7,16 @@
         },
         "traits_added": [
             "trait_stout_resilience"
-        ]
+        ],
+        "lore": {
+            "short_description": "Stout halflings are hardier than their kin, with a resilience that borders on dwarven; tough-constitutioned, resistant to poison, and steadfast in the face of hardship.",
+            "full_text": "As a stout halfling. you're hardier than average and have some resistance to poison. Some say that stouts have dwarven blood. In the Forgotten Realms, these halflings are called stronghearts. and they're most common in the south.",
+            "sections": [
+                {
+                    "title": "Ability Score Increase",
+                    "body": "Your Constitution score increases by 1."
+                }
+            ]
+        }
     }
 }

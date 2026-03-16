@@ -1,0 +1,22 @@
+{
+    "trait_stout_resilience": {
+        "name": "Stout Resilience",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "advantage",
+                "target": "saving_throw",
+                "condition": "against_poison"
+            },
+            {
+                "type": "resistance",
+                "target": "damage_type_poison",
+                "value": "half_damage"
+            }
+        ],
+        "lore": {
+            "short_description": "You have advantage on saving throws against poison, and you have resistance against poison damage.",
+            "full_text": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+        }
+    }
+}

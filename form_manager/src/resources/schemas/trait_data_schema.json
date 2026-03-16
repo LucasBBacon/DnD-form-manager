@@ -62,6 +62,7 @@
                                     "resistance",
                                     "immunity",
                                     "advantage",
+                                    "disadvantage",
                                     "spell_grant",
                                     "stat_modifier",
                                     "speed",

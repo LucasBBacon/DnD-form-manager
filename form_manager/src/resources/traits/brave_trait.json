@@ -1,0 +1,17 @@
+{
+    "trait_brave": {
+        "name": "Brave",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "advantage",
+                "target": "saving_throw",
+                "condition": "against_frighten"
+            }
+        ],
+        "lore": {
+            "short_description": "Vou have advantage on saving throws against being frightened.",
+            "full_text": "Vou have advantage on saving throws against being frightened."
+        }
+    }
+}

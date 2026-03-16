@@ -1,0 +1,18 @@
+{
+    "trait_halfling_nimbleness": {
+        "name": "Halfling Nimbleness",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "rule_bypass",
+                "target": "movement_occupied_space",
+                "value": true,
+                "condition": "target_size_larger"
+            }
+        ],
+        "lore": {
+            "short_description": "You can move through the space of any creature that is of a size larger than yours.",
+            "full_text": "You can move through the space of any creature that is of a size larger than yours."
+        }
+    }
+}

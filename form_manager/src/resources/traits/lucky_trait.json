@@ -1,0 +1,30 @@
+{
+    "trait_lucky": {
+        "name": "Lucky",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "rule_bypass",
+                "target": "natural_1_reroll",
+                "value": true,
+                "condition": "on_attack_roll"
+            },
+            {
+                "type": "rule_bypass",
+                "target": "natural_1_reroll",
+                "value": true,
+                "condition": "on_ability_check"
+            },
+            {
+                "type": "rule_bypass",
+                "target": "natural_1_reroll",
+                "value": true,
+                "condition": "on_saving_throw"
+            }
+        ],
+        "lore": {
+            "short_description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.",
+            "full_text": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
+        }
+    }
+}

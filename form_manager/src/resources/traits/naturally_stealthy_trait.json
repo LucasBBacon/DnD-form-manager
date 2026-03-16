@@ -1,0 +1,18 @@
+{
+    "trait_naturally_stealthy": {
+        "name": "Naturally Stealthy",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "rule_bypass",
+                "target": "hide_obscurement_requirement",
+                "condition": "behind_larger_creature",
+                "value": true
+            }
+        ],
+        "lore": {
+            "short_description": "You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.",
+            "full_text": "You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you."
+        }
+    }
+}
