@@ -1,0 +1,17 @@
+{
+    "trait_breath_weapon_poison_cone": {
+        "name": "Breath Weapon (Poison, cone)",
+        "is_active": true,
+        "activation_type": "action",
+        "effects": [],
+        "mechanics": {
+            "granted_actions": [
+                "action_breath_weapon_poison_cone"
+            ]
+        },
+        "uses": {
+            "count": 1,
+            "reset": "long_rest"
+        }
+    }
+}

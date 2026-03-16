@@ -3,7 +3,7 @@
         "name": "Black Draconic Ancestry",
         "parent_race_id": "race_dragonborn",
         "traits_added": [
-            "trait_breath_weapon_acid_5_30_line",
+            "trait_breath_weapon_acid_line",
             "trait_damage_resistance_acid"
         ]
     }

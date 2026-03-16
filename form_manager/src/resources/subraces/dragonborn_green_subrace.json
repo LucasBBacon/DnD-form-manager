@@ -3,7 +3,7 @@
         "name": "Green Draconic Ancestry",
         "parent_race_id": "race_dragonborn",
         "traits_added": [
-            "trait_breath_weapon_poison_15_cone",
+            "trait_breath_weapon_poison_cone",
             "trait_damage_resistance_poison"
         ]
     }

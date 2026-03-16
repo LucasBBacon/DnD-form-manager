@@ -1,0 +1,13 @@
+{
+    "trait_damage_resistance_cold": {
+        "name": "Damage Resistance (Cold)",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "resistance",
+                "target": "against_cold",
+                "value": "half_damage"
+            }
+        ]
+    }
+}

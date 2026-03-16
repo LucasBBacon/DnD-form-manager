@@ -1,0 +1,13 @@
+{
+    "trait_damage_resistance_lightning": {
+        "name": "Damage Resistance (Acid)",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "resistance",
+                "target": "against_acid",
+                "value": "half_damage"
+            }
+        ]
+    }
+}

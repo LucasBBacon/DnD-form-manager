@@ -1,0 +1,17 @@
+{
+    "trait_breath_weapon_acid_line": {
+        "name": "Breath Weapon (Acid, line)",
+        "is_active": true,
+        "activation_type": "action",
+        "effects": [],
+        "mechanics": {
+            "granted_actions": [
+                "action_breath_weapon_acid_line"
+            ]
+        },
+        "uses": {
+            "count": 1,
+            "reset": "long_rest"
+        }
+    }
+}

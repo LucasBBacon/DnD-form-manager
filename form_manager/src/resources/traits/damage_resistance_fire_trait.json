@@ -1,0 +1,13 @@
+{
+    "trait_damage_resistance_fire": {
+        "name": "Damage Resistance (Fire)",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "resistance",
+                "target": "against_fire",
+                "value": "half_damage"
+            }
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "trait_damage_resistance_acid": {
+        "name": "Damage Resistance (Acid)",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "resistance",
+                "target": "against_acid",
+                "value": "half_damage"
+            }
+        ]
+    }
+}

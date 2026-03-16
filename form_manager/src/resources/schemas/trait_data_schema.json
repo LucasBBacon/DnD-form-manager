@@ -48,6 +48,18 @@
                         }
                     }
                 },
+                "mechanics": {
+                    "type": "object",
+                    "description": "Pointers to active combat abilities granted by this trait.",
+                    "properties": {
+                        "granted_actions": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
                 "effects": {
                     "type": "array",
                     "description": "The discrete mechanical changes applied to the character sheet.",
