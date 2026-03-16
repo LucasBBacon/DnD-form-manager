@@ -12,6 +12,10 @@
                 "target": "category_armor_medium",
                 "value": true
             }
-        ]
+        ],
+        "lore": {
+            "short_description": "You have proficiency with light and medium armor.",
+            "full_text": "You have proficiency with light and medium armor."
+        }
     }
 }

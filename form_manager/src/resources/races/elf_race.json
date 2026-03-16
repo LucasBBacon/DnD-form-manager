@@ -18,6 +18,7 @@
         },
         "traits": [
             "trait_darkvision_60",
+            "trait_keen_senses",
             "trait_fey_ancestry",
             "trait_trance"
         ],

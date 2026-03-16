@@ -9,7 +9,7 @@
                 "choice": {
                     "count": 1,
                     "category": "spell",
-                    "pool": "spell_cantrips_wizard"
+                    "pool": "category_spells_cantrip_wizard"
                 }
             }
         ]

@@ -1,0 +1,38 @@
+{
+    "trait_drow_magic": {
+        "name": "Drow Magic",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "spell_grant",
+                "target": "spell_dancing_lights",
+                "level_available": 1,
+                "spellcasting_ability": "cha"
+            },
+            {
+                "type": "spell_grant",
+                "target": "spell_faerie_fire",
+                "level_available": 3,
+                "spellcasting_ability": "cha",
+                "uses": {
+                    "count": 1,
+                    "reset": "long_rest"
+                }
+            },
+            {
+                "type": "spell_grant",
+                "target": "spell_darkness",
+                "level_available": 5,
+                "spellcasting_ability": "cha",
+                "uses": {
+                    "count": 1,
+                    "reset": "long_rest"
+                }
+            }
+        ],
+        "lore": {
+            "short_description": "You know the Dancing Lights cantrip, and can cast Faerie Fire and Darkness innately once per long rest at higher levels.",
+            "full_text": "You know the dancing lights cantrip. When you reach 3rd level, you can cast the faerie fire spell once per day. When you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells."
+        }
+    }
+}

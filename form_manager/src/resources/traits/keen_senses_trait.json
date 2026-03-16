@@ -1,0 +1,16 @@
+{
+    "trait_keen_senses": {
+        "name": "Keen Senses",
+        "effects": [
+            {
+                "type": "proficiency",
+                "target": "skill_perception",
+                "value": true
+            }
+        ],
+        "lore": {
+            "short_description": "You have proficiency in the Perception skill.",
+            "full_text": "You have proficiency in the Perception skill."
+        }
+    }
+}

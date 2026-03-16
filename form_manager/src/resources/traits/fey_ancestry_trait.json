@@ -1,0 +1,21 @@
+{
+    "trait_fey_ancestry": {
+        "name": "Fey Ancestry",
+        "effects": [
+            {
+                "type": "advantage",
+                "target": "saving_throw",
+                "condition": "against_charmed"
+            },
+            {
+                "type": "immunity",
+                "target": "magic_sleep",
+                "value": "no_effect"
+            }
+        ],
+        "lore": {
+            "short_description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep.",
+            "full_text": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+        }
+    }
+}

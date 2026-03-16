@@ -1,0 +1,27 @@
+{
+    "trait_elf_weapon_training": {
+        "name": "Drow Weapon Training",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "proficiency",
+                "target": "weapon_rapier",
+                "value": true
+            },
+            {
+                "type": "proficiency",
+                "target": "weapon_shortsword",
+                "value": true
+            },
+            {
+                "type": "proficiency",
+                "target": "weapon_crossbow_hand",
+                "value": true
+            }
+        ],
+        "lore": {
+            "short_description": "You have proficiency with rapiers, shortswords, and hand crossbows.",
+            "full_text": "You have proficiency with rapiers, shortswords, and hand crossbows."
+        }
+    }
+}

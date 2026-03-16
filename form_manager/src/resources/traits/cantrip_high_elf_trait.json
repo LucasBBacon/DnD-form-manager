@@ -1,0 +1,20 @@
+{
+    "trait_cantrip_high_elf": {
+        "name": "Cantrip",
+        "effects": [
+            {
+                "type": "spell_grant",
+                "spellcasting_ability": "int",
+                "choice": {
+                    "count": 1,
+                    "category": "spell",
+                    "pool": "category_spells_cantrip_wizard"
+                }
+            }
+        ],
+        "lore": {
+            "short_description": "Vou know one Cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.",
+            "full_text": "Vou know one Cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it."
+        }
+    }
+}

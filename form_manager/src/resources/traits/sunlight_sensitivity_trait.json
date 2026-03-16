@@ -1,0 +1,24 @@
+{
+    "trait_sunlight_sensitivity": {
+        "name": "Sunlight Sensitivity",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "advantage",
+                "target": "attack_roll",
+                "value": false,
+                "condition": "in_direct_sunlight_target"
+            },
+            {
+                "type": "advantage",
+                "target": "skill_perception",
+                "value": false,
+                "condition": "relies_on_sight_and_in_direct_sunlight"
+            }
+        ],
+        "lore": {
+            "short_description": "You have disadvantage on attack rolls and sight-based Wisdom (Perception) checks in direct sunlight.",
+            "full_text": "You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight."
+        }
+    }
+}

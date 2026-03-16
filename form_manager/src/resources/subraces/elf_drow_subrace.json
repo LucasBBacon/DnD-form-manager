@@ -7,8 +7,19 @@
         },
         "traits_added": [
             "trait_superior_darkvision",
+            "trait_sunlight_sensitivity",
             "trait_drow_magic",
             "trait_drow_weapon_training"
-        ]
+        ],
+        "lore": {
+            "short_description": "Drow are dark elves from the Underdark, known for keen senses, graceful agility, and a mysterious heritage tied to shadow and magic.",
+            "full_text": "Descended from an earlier subrace of dark-skinned elves; the drow were banished from lhe surface world for following lhe goddess Lolth down lhe path to evil and corruption. Now they have built their own civilization in lhe depths of lhe Underdark, patterned after the Way of Lolth. Also called dark elves. The drow have black skin that resembles polished obsidian and stark while ar pale yellow hair. They commonly have very pale eyes (so pale as to be mistaken for white) in shades of lilac, silver, pink, red, and blue. They tend to be smaller and thinner than most elves.\nDrow adventurers are rare, and the race does not exist in all worlds. Check with your Dungeon Master to see if you can play a drow character.",
+            "sections": [
+                {
+                    "title": "Ability Score Increase",
+                    "body": "Your Charisma score increases by 1."
+                }
+            ]
+        }
     }
 }

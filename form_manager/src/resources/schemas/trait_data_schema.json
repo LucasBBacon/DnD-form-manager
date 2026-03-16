@@ -102,6 +102,29 @@
                                 ],
                                 "description": "The ability score used for DCs/Attack Rolls when type is 'spell_grant'."
                             },
+                            "uses": {
+                                "type": "object",
+                                "description": "Defines how many times an active trait can be used and when it resets.",
+                                "properties": {
+                                    "count": {
+                                        "type": [
+                                            "integer",
+                                            "string"
+                                        ],
+                                        "description": "Number of uses (can be a string if tied to a scaling  stat like 'proficiency_bonus')."
+                                    },
+                                    "reset": {
+                                        "type": "string",
+                                        "enum": [
+                                            "short_rest",
+                                            "long_rest",
+                                            "turn",
+                                            "initiative",
+                                            "other"
+                                        ]
+                                    }
+                                }
+                            },
                             "choice": {
                                 "type": "object",
                                 "description": "Used when the trait requires the player to make a selection.",
