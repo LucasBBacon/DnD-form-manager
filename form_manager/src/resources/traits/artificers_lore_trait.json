@@ -1,0 +1,29 @@
+{
+    "trait_artificers_lore": {
+        "name": "Artificers Lore",
+        "effects": [
+            {
+                "type": "proficiency",
+                "target": "skill_history",
+                "value": "expertise",
+                "condition": "category_magic_item"
+            },
+            {
+                "type": "proficiency",
+                "target": "skill_history",
+                "value": "expertise",
+                "condition": "category_alchemical_object"
+            },
+            {
+                "type": "proficiency",
+                "target": "skill_history",
+                "value": "expertise",
+                "condition": "category_technology_device"
+            }
+        ],
+        "lore": {
+            "short_description": "Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.",
+            "full_text": "Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply."
+        }
+    }
+}

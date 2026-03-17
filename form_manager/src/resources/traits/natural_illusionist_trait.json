@@ -1,0 +1,17 @@
+{
+    "trait_natural_illusionist": {
+        "name": "Natural Illusionist",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "spell_grant",
+                "target": "spell_minor_illusion",
+                "spellcasting_ability": "int"
+            }
+        ],
+        "lore": {
+            "short_description": "Vou know the minor illusion cantrip. Intelligence is your spellcasting ability for it.",
+            "full_text": "Vou know the minor illusion cantrip. Intelligence is your spellcasting ability for it."
+        }
+    }
+}

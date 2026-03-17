@@ -8,6 +8,16 @@
         "traits_added": [
             "trait_artificers_lore",
             "trait_tinker"
-        ]
+        ],
+        "lore": {
+            "short_description": "Rock gnomes are inventive and practical tinkerers, known for sharp intellect, sturdy resilience, and a natural talent for crafting clever mechanical devices.",
+            "full_text": "As a rock gnome, you have a natural inventiveness and hardiness beyond that of other gnomes. Most gnomes in the worlds of D&D are rock gnomes, including the tinker gnomes of the Dragonlance setting.",
+            "sections": [
+                {
+                    "title": "Ability Score Increase",
+                    "body": "Your Constitution score increases by 1."
+                }
+            ]
+        }
     }
 }

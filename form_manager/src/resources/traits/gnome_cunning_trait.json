@@ -1,0 +1,27 @@
+{
+    "trait_gnome_cunning": {
+        "name": "Gnome Cunning",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "advantage",
+                "target": "save_int",
+                "condition": "against_magic"
+            },
+            {
+                "type": "advantage",
+                "target": "save_wis",
+                "condition": "against_magic"
+            },
+            {
+                "type": "advantage",
+                "target": "save_cha",
+                "condition": "against_magic"
+            }
+        ],
+        "lore": {
+            "short_description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic.",
+            "full_text": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic."
+        }
+    }
+}
