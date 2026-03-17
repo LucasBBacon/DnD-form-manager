@@ -21,6 +21,16 @@
             "trait_darkvision_60",
             "trait_hellish_resistance",
             "trait_infernal_legacy"
-        ]
+        ],
+        "lore": {
+            "short_description": "",
+            "full_text": "",
+            "sections": [
+                {
+                    "title": "Ability Score Increase",
+                    "body": "Your Intelligence score increases by 1, and your Charisma score increases by 2."
+                }
+            ]
+        }
     }
 }

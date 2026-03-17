@@ -1,0 +1,38 @@
+{
+    "trait_infernal_legacy": {
+        "name": "Infernal Legacy",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "spell_grant",
+                "target": "spell_thaumaturgy",
+                "level_available": 1,
+                "spellcasting_ability": "cha"
+            },
+            {
+                "type": "spell_grant",
+                "target": "spell_hellish_rebuke",
+                "level_available": 3,
+                "spellcasting_ability": "cha",
+                "uses": {
+                    "count": 1,
+                    "reset": "long_rest"
+                }
+            },
+            {
+                "type": "spell_grant",
+                "target": "spell_darkness",
+                "level_available": 5,
+                "spellcasting_ability": "cha",
+                "uses": {
+                    "count": 1,
+                    "reset": "long_rest"
+                }
+            }
+        ],
+        "lore": {
+            "short_description": "You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells.",
+            "full_text": "You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells."
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "trait_hellish_resistance": {
+        "name": "Hellish Resistance",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "resistance",
+                "target": "against_fire",
+                "value": "half_damage"
+            }
+        ],
+        "lore": {
+            "short_description": "You have resistance to fire damage.",
+            "full_text": "You have resistance to fire damage."
+        }
+    }
+}
