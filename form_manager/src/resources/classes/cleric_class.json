@@ -1,7 +1,7 @@
 {
     "class_cleric": {
         "name": "Cleric",
-        "hit_die": 8,
+        "hit_die": "1d8",
         "proficiencies": {
             "armor": [
                 "category_armor_light",
@@ -26,6 +26,16 @@
                     "skill_religion"
                 ]
             }
+        },
+        "multiclass_proficiencies": {
+            "armor": [
+                "category_armor_light",
+                "category_armor_medium",
+                "category_armor_shield"
+            ],
+            "weapons": [],
+            "tools": [],
+            "skills": {}
         },
         "starting_equipment": {
             "given": [
@@ -74,7 +84,8 @@
                         [
                             {
                                 "item_id": "armor_chain_mail",
-                                "quantity": 1
+                                "quantity": 1,
+                                "condition": "proficiency_category_armor_heavy"
                             }
                         ]
                     ]
@@ -134,7 +145,6 @@
                     "trait_spellcasting_cleric",
                     "trait_divine_domain"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 3,
                     "spell_slots": {
@@ -159,7 +169,6 @@
             },
             "3": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 3,
                     "spell_slots": {
@@ -172,7 +181,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spell_slots": {
@@ -216,7 +224,6 @@
             },
             "7": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spell_slots": {
@@ -248,7 +255,6 @@
             },
             "9": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spell_slots": {
@@ -264,7 +270,6 @@
                 "features": [
                     "trait_divine_intervention"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 5,
                     "spell_slots": {
@@ -299,7 +304,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 5,
                     "spell_slots": {
@@ -314,7 +318,6 @@
             },
             "13": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 5,
                     "spell_slots": {
@@ -350,7 +353,6 @@
             },
             "15": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 5,
                     "spell_slots": {
@@ -369,7 +371,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 5,
                     "spell_slots": {
@@ -453,7 +454,6 @@
                 "features": [
                     "trait_divine_intervention_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 5,
                     "spell_slots": {

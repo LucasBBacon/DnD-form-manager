@@ -1,7 +1,7 @@
 {
     "class_bard": {
         "name": "Bard",
-        "hit_die": 8,
+        "hit_die": "1d8",
         "proficiencies": {
             "armor": [
                 "category_armor_light"
@@ -40,7 +40,39 @@
                     "skill_performance",
                     "skill_persuasion",
                     "skill_religion",
-                    "skill_slight_of_hand",
+                    "skill_sleight_of_hand",
+                    "skill_stealth",
+                    "skill_survival"
+                ]
+            }
+        },
+        "multiclass_proficiencies": {
+            "armor": [
+                "category_armor_light"
+            ],
+            "weapons": [],
+            "tools": [
+                "category_musical_instrument"
+            ],
+            "skills": {
+                "count": 1,
+                "pool": [
+                    "skill_acrobatics",
+                    "skill_animal_handling",
+                    "skill_arcana",
+                    "skill_athletics",
+                    "skill_deception",
+                    "skill_history",
+                    "skill_insight",
+                    "skill_intimidation",
+                    "skill_investigation",
+                    "skill_medicine",
+                    "skill_nature",
+                    "skill_perception",
+                    "skill_performance",
+                    "skill_persuasion",
+                    "skill_religion",
+                    "skill_sleight_of_hand",
                     "skill_stealth",
                     "skill_survival"
                 ]
@@ -133,7 +165,7 @@
                     "trait_bardic_inspiration"
                 ],
                 "class_specific_scaling": {
-                    "bardic_inspiration_die": 6
+                    "bardic_inspiration_die": "1d6"
                 },
                 "spellcasting_progression": {
                     "cantrips_known": 2,
@@ -164,7 +196,6 @@
                     "trait_bard_college",
                     "trait_expertise"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 2,
                     "spells_known": 6,
@@ -178,7 +209,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 3,
                     "spells_known": 7,
@@ -194,7 +224,7 @@
                     "trait_font_of_inspiration"
                 ],
                 "class_specific_scaling": {
-                    "bardic_inspiration_die": 8
+                    "bardic_inspiration_die": "1d8"
                 },
                 "spellcasting_progression": {
                     "cantrips_known": 3,
@@ -211,7 +241,6 @@
                     "trait_countercharm",
                     "trait_bard_college_feature"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 3,
                     "spells_known": 9,
@@ -224,7 +253,6 @@
             },
             "7": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 3,
                     "spells_known": 10,
@@ -240,7 +268,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 3,
                     "spells_known": 11,
@@ -278,7 +305,7 @@
                     "trait_magical_secrets"
                 ],
                 "class_specific_scaling": {
-                    "bardic_inspiration_die": 10
+                    "bardic_inspiration_die": "1d10"
                 },
                 "spellcasting_progression": {
                     "cantrips_known": 4,
@@ -294,7 +321,6 @@
             },
             "11": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 15,
@@ -312,7 +338,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 15,
@@ -352,7 +377,6 @@
                     "trait_magical_secrets",
                     "trait_bard_college_feature"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 18,
@@ -372,7 +396,7 @@
                     "trait_bardic_inspiration"
                 ],
                 "class_specific_scaling": {
-                    "bardic_inspiration_die": 12
+                    "bardic_inspiration_die": "1d12"
                 },
                 "spellcasting_progression": {
                     "cantrips_known": 4,
@@ -393,7 +417,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 19,
@@ -436,7 +459,6 @@
                 "features": [
                     "trait_magical_secrets"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 22,
@@ -457,7 +479,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 22,
@@ -478,7 +499,6 @@
                 "features": [
                     "trait_superior_inspiration"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 22,

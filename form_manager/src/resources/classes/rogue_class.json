@@ -1,10 +1,10 @@
 {
     "class_rogue": {
         "name": "Rogue",
-        "hit_die": 8,
+        "hit_die": "1d8",
         "proficiencies": {
             "armor": [
-                "armor_light"
+                "category_armor_light"
             ],
             "weapons": [
                 "category_weapon_simple",
@@ -32,7 +32,32 @@
                     "skill_perception",
                     "skill_performance",
                     "skill_persuasion",
-                    "skill_slight_of_hand",
+                    "skill_sleight_of_hand",
+                    "skill_stealth"
+                ]
+            }
+        },
+        "multiclass_proficiencies": {
+            "armor": [
+                "category_armor_light"
+            ],
+            "weapons": [],
+            "tools": [
+                "tool_thieves_tools"
+            ],
+            "skills": {
+                "count": 1,
+                "pool": [
+                    "skill_acrobatics",
+                    "skill_athletics",
+                    "skill_deception",
+                    "skill_insight",
+                    "skill_intimidation",
+                    "skill_investigation",
+                    "skill_perception",
+                    "skill_performance",
+                    "skill_persuasion",
+                    "skill_sleight_of_hand",
                     "skill_stealth"
                 ]
             }
@@ -120,7 +145,6 @@
                 }
             ]
         },
-        "spellcasting_base": {},
         "subclass_info": {
             "choice_level": 3,
             "options_pool": "subclasses_rogue"
@@ -134,8 +158,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "1d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "2": {
                 "features": [
@@ -143,8 +166,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "1d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "3": {
                 "features": [
@@ -152,8 +174,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "2d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "4": {
                 "features": [
@@ -161,8 +182,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "2d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "5": {
                 "features": [
@@ -170,8 +190,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "3d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "6": {
                 "features": [
@@ -179,8 +198,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "3d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "7": {
                 "features": [
@@ -188,8 +206,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "4d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "8": {
                 "features": [
@@ -197,8 +214,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "4d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "9": {
                 "features": [
@@ -206,8 +222,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "5d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "10": {
                 "features": [
@@ -215,8 +230,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "5d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "11": {
                 "features": [
@@ -224,8 +238,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "6d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "12": {
                 "features": [
@@ -233,8 +246,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "6d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "13": {
                 "features": [
@@ -242,8 +254,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "7d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "14": {
                 "features": [
@@ -251,8 +262,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "7d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "15": {
                 "features": [
@@ -260,8 +270,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "8d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "16": {
                 "features": [
@@ -269,8 +278,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "8d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "17": {
                 "features": [
@@ -278,8 +286,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "9d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "18": {
                 "features": [
@@ -287,8 +294,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "9d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "19": {
                 "features": [
@@ -296,8 +302,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "10d6"
-                },
-                "spellcasting_progression": {}
+                }
             },
             "20": {
                 "features": [
@@ -305,8 +310,7 @@
                 ],
                 "class_specific_scaling": {
                     "sneak_attack_dice": "10d6"
-                },
-                "spellcasting_progression": {}
+                }
             }
         }
     }

@@ -1,7 +1,7 @@
 {
     "class_ranger": {
         "name": "Ranger",
-        "hit_die": 10,
+        "hit_die": "1d10",
         "proficiencies": {
             "armor": [
                 "category_armor_light",
@@ -19,6 +19,31 @@
             ],
             "skills": {
                 "count": 3,
+                "pool": [
+                    "skill_animal_handling",
+                    "skill_athletics",
+                    "skill_insight",
+                    "skill_investigation",
+                    "skill_nature",
+                    "skill_perception",
+                    "skill_stealth",
+                    "skill_survival"
+                ]
+            }
+        },
+        "multiclass_proficiencies": {
+            "armor": [
+                "category_armor_light",
+                "category_armor_medium",
+                "category_armor_shield"
+            ],
+            "weapons": [
+                "category_weapon_simple",
+                "category_weapon_martial"
+            ],
+            "tools": [],
+            "skills": {
+                "count": 1,
                 "pool": [
                     "skill_animal_handling",
                     "skill_athletics",
@@ -115,7 +140,6 @@
                     "trait_favored_enemy",
                     "trait_natural_explorer"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 0,
@@ -127,7 +151,6 @@
                     "trait_fighting_style",
                     "trait_spellcasting_ranger"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 2,
@@ -141,7 +164,6 @@
                     "trait_ranger_archetype",
                     "trait_primeval_awareness"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 3,
@@ -154,7 +176,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 3,
@@ -167,7 +188,6 @@
                 "features": [
                     "trait_extra_attack"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 4,
@@ -182,7 +202,6 @@
                     "trait_favored_enemy_improvement",
                     "trait_natural_explorer_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 4,
@@ -196,7 +215,6 @@
                 "features": [
                     "trait_ranger_archetype_feature"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 5,
@@ -211,7 +229,6 @@
                     "trait_ability_score_improvement",
                     "trait_lands_stride"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 5,
@@ -223,7 +240,6 @@
             },
             "9": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 6,
@@ -239,7 +255,6 @@
                     "trait_natural_explorer_improvement",
                     "trait_hide_in_plain_sight"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 6,
@@ -254,7 +269,6 @@
                 "features": [
                     "trait_ranger_archetype_feature"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 7,
@@ -269,7 +283,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 7,
@@ -282,7 +295,6 @@
             },
             "13": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 8,
@@ -299,7 +311,6 @@
                     "trait_favored_enemy_improvement",
                     "trait_vanish"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 8,
@@ -315,7 +326,6 @@
                 "features": [
                     "trait_ranger_archetype_feature"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 9,
@@ -331,7 +341,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 9,
@@ -345,7 +354,6 @@
             },
             "17": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 10,
@@ -362,7 +370,6 @@
                 "features": [
                     "trait_feral_senses"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 10,
@@ -379,7 +386,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 11,
@@ -396,7 +402,6 @@
                 "features": [
                     "trait_foe_slayer"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 0,
                     "spells_known": 11,

@@ -1,7 +1,7 @@
 {
     "class_warlock": {
         "name": "Warlock",
-        "hit_die": 8,
+        "hit_die": "1d8",
         "proficiencies": {
             "armor": [
                 "category_armor_light"
@@ -27,6 +27,12 @@
                     "skill_religion"
                 ]
             }
+        },
+        "multiclass_proficiencies": {
+            "armor": ["category_armor_light"],
+            "weapons": ["category_weapon_simple"],
+            "tools": [],
+            "skills": {}
         },
         "starting_equipment": {
             "given": [
@@ -190,7 +196,6 @@
             },
             "7": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 3,
                     "spells_known": 8,
@@ -203,7 +208,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 3,
                     "spells_known": 9,
@@ -214,7 +218,6 @@
             },
             "9": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 3,
                     "spells_known": 10,
@@ -227,7 +230,6 @@
                 "features": [
                     "trait_otherworldly_patron_feature"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 10,
@@ -240,7 +242,6 @@
                 "features": [
                     "trait_mystic_arcanum_6"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 11,
@@ -253,7 +254,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 11,
@@ -266,7 +266,6 @@
                 "features": [
                     "trait_mystic_arcanum_7"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 12,
@@ -279,7 +278,6 @@
                 "features": [
                     "trait_otherworldly_patron_feature"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 12,
@@ -292,7 +290,6 @@
                 "features": [
                     "trait_mystic_arcanum_8"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 13,
@@ -305,7 +302,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 13,
@@ -318,7 +314,6 @@
                 "features": [
                     "trait_mystic_arcanum_9"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 14,
@@ -329,7 +324,6 @@
             },
             "18": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 14,
@@ -342,7 +336,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 15,
@@ -355,7 +348,6 @@
                 "features": [
                     "trait_eldritch_master"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 15,

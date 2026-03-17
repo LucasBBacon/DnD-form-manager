@@ -1,7 +1,7 @@
 {
     "class_paladin": {
         "name": "Paladin",
-        "hit_die": 10,
+        "hit_die": "1d10",
         "proficiencies": {
             "armor": [
                 "category_armor_light",
@@ -29,6 +29,19 @@
                     "skill_religion"
                 ]
             }
+        },
+        "multiclass_proficiencies": {
+            "armor": [
+                "category_armor_light",
+                "category_armor_medium",
+                "category_armor_shield"
+            ],
+            "weapons": [
+                "category_weapon_simple",
+                "category_weapon_martial"
+            ],
+            "tools": [],
+            "skills": {}
         },
         "starting_equipment": {
             "given": [
@@ -113,16 +126,13 @@
                 "features": [
                     "trait_divine_sense",
                     "trait_lay_on_hands"
-                ],
-                "class_specific_scaling": {},
-                "spellcasting_progression": {}
+                ]
             },
             "2": {
                 "features": [
                     "trait_fighting_style",
                     "trait_divine_smite"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "spell_slots": {
                         "1": 2
@@ -134,7 +144,6 @@
                     "trait_divine_health",
                     "trait_sacred_oath"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "spell_slots": {
                         "1": 3
@@ -145,7 +154,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "spell_slots": {
                         "1": 3
@@ -156,7 +164,6 @@
                 "features": [
                     "trait_extra_attack"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "spell_slots": {
                         "1": 4,
@@ -168,7 +175,6 @@
                 "features": [
                     "trait_aura_of_protection"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "spell_slots": {
                         "1": 4,
@@ -180,7 +186,6 @@
                 "features": [
                     "trait_sacred_oath_feature"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "spell_slots": {
                         "1": 4,
@@ -192,7 +197,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "spell_slots": {
                         "1": 4,
@@ -202,7 +206,6 @@
             },
             "9": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "spell_slots": {
                         "1": 4,
@@ -228,7 +231,6 @@
                 "features": [
                     "trait_improved_divine_strike"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "spell_slots": {
                         "1": 4,
@@ -241,7 +243,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "spell_slots": {
                         "1": 4,
@@ -252,7 +253,6 @@
             },
             "13": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "spell_slots": {
                         "1": 4,
@@ -266,7 +266,6 @@
                 "features": [
                     "trait_cleansing_touch"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "spell_slots": {
                         "1": 4,
@@ -280,7 +279,6 @@
                 "features": [
                     "trait_sacred_oath_feature"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "spell_slots": {
                         "1": 4,
@@ -294,7 +292,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "spell_slots": {
                         "1": 4,
@@ -306,7 +303,6 @@
             },
             "17": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "spell_slots": {
                         "1": 4,
@@ -321,7 +317,6 @@
                 "features": [
                     "trait_aura_improvements"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "spell_slots": {
                         "1": 4,
@@ -336,7 +331,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "spell_slots": {
                         "1": 4,
@@ -351,7 +345,6 @@
                 "features": [
                     "trait_sacred_oath_feature"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "spell_slots": {
                         "1": 4,

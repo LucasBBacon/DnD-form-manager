@@ -1,7 +1,7 @@
 {
     "class_druid": {
         "name": "Druid",
-        "hit_die": 8,
+        "hit_die": "1d8",
         "proficiencies": {
             "armor": [
                 "category_armor_light_no_metal",
@@ -40,6 +40,16 @@
                     "skill_survival"
                 ]
             }
+        },
+        "multiclass_proficiencies": {
+            "armor": [
+                "category_armor_light_no_metal",
+                "category_armor_medium_no_metal",
+                "category_armor_shield_no_metal"
+            ],
+            "weapons": [],
+            "tools": [],
+            "skills": {}
         },
         "starting_equipment": {
             "given": [
@@ -108,7 +118,6 @@
                     "trait_druidic",
                     "trait_spellcasting_druid"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 2,
                     "spell_slots": {
@@ -121,7 +130,6 @@
                     "trait_wild_shape",
                     "trait_druid_circle"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 2,
                     "spell_slots": {
@@ -131,7 +139,6 @@
             },
             "3": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 2,
                     "spell_slots": {
@@ -161,7 +168,6 @@
             },
             "5": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 3,
                     "spell_slots": {
@@ -175,7 +181,6 @@
                 "features": [
                     "trait_druid_circle_feature"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 3,
                     "spell_slots": {
@@ -187,7 +192,6 @@
             },
             "7": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 3,
                     "spell_slots": {
@@ -219,7 +223,6 @@
             },
             "9": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 3,
                     "spell_slots": {
@@ -235,7 +238,6 @@
                 "features": [
                     "trait_druid_circle_feature"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spell_slots": {
@@ -249,7 +251,6 @@
             },
             "11": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spell_slots": {
@@ -266,7 +267,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spell_slots": {
@@ -281,7 +281,6 @@
             },
             "13": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spell_slots": {
@@ -299,7 +298,6 @@
                 "features": [
                     "trait_druid_circle_feature"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spell_slots": {
@@ -315,7 +313,6 @@
             },
             "15": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spell_slots": {
@@ -334,7 +331,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spell_slots": {
@@ -351,7 +347,6 @@
             },
             "17": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spell_slots": {
@@ -372,7 +367,6 @@
                     "trait_timeless_body",
                     "trait_beast_spells"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spell_slots": {
@@ -392,7 +386,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spell_slots": {
@@ -412,7 +405,6 @@
                 "features": [
                     "trait_archdruid"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spell_slots": {

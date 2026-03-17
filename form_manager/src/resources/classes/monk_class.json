@@ -1,7 +1,7 @@
 {
     "class_monk": {
         "name": "Monk",
-        "hit_die": 8,
+        "hit_die": "1d8",
         "proficiencies": {
             "armor": [],
             "weapons": [
@@ -27,6 +27,15 @@
                     "skill_stealth"
                 ]
             }
+        },
+        "multiclass_proficiencies": {
+            "armor": [],
+            "weapons": [
+                "category_weapon_simple",
+                "weapon_shortsword"
+            ],
+            "tools": [],
+            "skills": {}
         },
         "starting_equipment": {
             "given": [
@@ -72,7 +81,6 @@
                 }
             ]
         },
-        "spellcasting_base": {},
         "subclass_info": {
             "choice_level": 3,
             "options_pool": "subclasses_monk"
@@ -87,8 +95,7 @@
                     "martial_arts_dice": "1d4",
                     "ki_points": 0,
                     "unarmored_movement_bonus": 0
-                },
-                "spellcasting_progression": {}
+                }
             },
             "2": {
                 "features": [
@@ -99,8 +106,7 @@
                     "martial_arts_dice": "1d4",
                     "ki_points": 2,
                     "unarmored_movement_bonus": 10
-                },
-                "spellcasting_progression": {}
+                }
             },
             "3": {
                 "features": [
@@ -111,8 +117,7 @@
                     "martial_arts_dice": "1d4",
                     "ki_points": 3,
                     "unarmored_movement_bonus": 10
-                },
-                "spellcasting_progression": {}
+                }
             },
             "4": {
                 "features": [
@@ -123,8 +128,7 @@
                     "martial_arts_dice": "1d4",
                     "ki_points": 4,
                     "unarmored_movement_bonus": 10
-                },
-                "spellcasting_progression": {}
+                }
             },
             "5": {
                 "features": [
@@ -135,8 +139,7 @@
                     "martial_arts_dice": "1d6",
                     "ki_points": 5,
                     "unarmored_movement_bonus": 10
-                },
-                "spellcasting_progression": {}
+                }
             },
             "6": {
                 "features": [
@@ -147,8 +150,7 @@
                     "martial_arts_dice": "1d6",
                     "ki_points": 6,
                     "unarmored_movement_bonus": 15
-                },
-                "spellcasting_progression": {}
+                }
             },
             "7": {
                 "features": [
@@ -159,8 +161,7 @@
                     "martial_arts_dice": "1d6",
                     "ki_points": 7,
                     "unarmored_movement_bonus": 15
-                },
-                "spellcasting_progression": {}
+                }
             },
             "8": {
                 "features": [
@@ -170,8 +171,7 @@
                     "martial_arts_dice": "1d6",
                     "ki_points": 8,
                     "unarmored_movement_bonus": 15
-                },
-                "spellcasting_progression": {}
+                }
             },
             "9": {
                 "features": [
@@ -181,8 +181,7 @@
                     "martial_arts_dice": "1d6",
                     "ki_points": 9,
                     "unarmored_movement_bonus": 15
-                },
-                "spellcasting_progression": {}
+                }
             },
             "10": {
                 "features": [
@@ -192,8 +191,7 @@
                     "martial_arts_dice": "1d6",
                     "ki_points": 10,
                     "unarmored_movement_bonus": 20
-                },
-                "spellcasting_progression": {}
+                }
             },
             "11": {
                 "features": [
@@ -203,8 +201,7 @@
                     "martial_arts_dice": "1d8",
                     "ki_points": 11,
                     "unarmored_movement_bonus": 20
-                },
-                "spellcasting_progression": {}
+                }
             },
             "12": {
                 "features": [
@@ -214,8 +211,7 @@
                     "martial_arts_dice": "1d8",
                     "ki_points": 12,
                     "unarmored_movement_bonus": 20
-                },
-                "spellcasting_progression": {}
+                }
             },
             "13": {
                 "features": [
@@ -225,8 +221,7 @@
                     "martial_arts_dice": "1d8",
                     "ki_points": 13,
                     "unarmored_movement_bonus": 20
-                },
-                "spellcasting_progression": {}
+                }
             },
             "14": {
                 "features": [
@@ -236,8 +231,7 @@
                     "martial_arts_dice": "1d8",
                     "ki_points": 14,
                     "unarmored_movement_bonus": 25
-                },
-                "spellcasting_progression": {}
+                }
             },
             "15": {
                 "features": [
@@ -247,8 +241,7 @@
                     "martial_arts_dice": "1d8",
                     "ki_points": 15,
                     "unarmored_movement_bonus": 25
-                },
-                "spellcasting_progression": {}
+                }
             },
             "16": {
                 "features": [
@@ -258,8 +251,7 @@
                     "martial_arts_dice": "1d8",
                     "ki_points": 16,
                     "unarmored_movement_bonus": 25
-                },
-                "spellcasting_progression": {}
+                }
             },
             "17": {
                 "features": [
@@ -269,8 +261,7 @@
                     "martial_arts_dice": "1d10",
                     "ki_points": 17,
                     "unarmored_movement_bonus": 25
-                },
-                "spellcasting_progression": {}
+                }
             },
             "18": {
                 "features": [
@@ -280,8 +271,7 @@
                     "martial_arts_dice": "1d10",
                     "ki_points": 18,
                     "unarmored_movement_bonus": 30
-                },
-                "spellcasting_progression": {}
+                }
             },
             "19": {
                 "features": [
@@ -291,8 +281,7 @@
                     "martial_arts_dice": "1d10",
                     "ki_points": 19,
                     "unarmored_movement_bonus": 30
-                },
-                "spellcasting_progression": {}
+                }
             },
             "20": {
                 "features": [
@@ -302,8 +291,7 @@
                     "martial_arts_dice": "1d10",
                     "ki_points": 20,
                     "unarmored_movement_bonus": 30
-                },
-                "spellcasting_progression": {}
+                }
             }
         }
     }

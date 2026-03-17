@@ -1,7 +1,7 @@
 {
     "class_wizard": {
         "name": "Wizard",
-        "hit_die": 6,
+        "hit_die": "1d6",
         "proficiencies": {
             "armor": [],
             "weapons": [
@@ -27,6 +27,12 @@
                     "skill_religion"
                 ]
             }
+        },
+        "multiclass_proficiencies": {
+            "armor": [],
+            "weapons": [],
+            "tools": [],
+            "skills": {}
         },
         "starting_equipment": {
             "given": [
@@ -104,7 +110,6 @@
                     "trait_spellcasting_wizard",
                     "trait_arcane_recovery"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 3,
                     "spells_known": 6,
@@ -117,7 +122,6 @@
                 "features": [
                     "trait_arcane_tradition"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 3,
                     "spells_known": 8,
@@ -128,7 +132,6 @@
             },
             "3": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 3,
                     "spells_known": 10,
@@ -142,7 +145,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 12,
@@ -154,7 +156,6 @@
             },
             "5": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 14,
@@ -169,7 +170,6 @@
                 "features": [
                     "trait_arcane_tradition_feature"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 16,
@@ -182,7 +182,6 @@
             },
             "7": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 18,
@@ -198,7 +197,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 20,
@@ -212,7 +210,6 @@
             },
             "9": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 4,
                     "spells_known": 22,
@@ -229,7 +226,6 @@
                 "features": [
                     "trait_arcane_tradition_feature"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 5,
                     "spells_known": 24,
@@ -244,7 +240,6 @@
             },
             "11": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 5,
                     "spells_known": 26,
@@ -262,7 +257,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 5,
                     "spells_known": 26,
@@ -278,7 +272,6 @@
             },
             "13": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 5,
                     "spells_known": 28,
@@ -297,7 +290,6 @@
                 "features": [
                     "trait_arcane_tradition_feature"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 5,
                     "spells_known": 30,
@@ -314,7 +306,6 @@
             },
             "15": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 5,
                     "spells_known": 32,
@@ -334,7 +325,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 5,
                     "spells_known": 34,
@@ -352,7 +342,6 @@
             },
             "17": {
                 "features": [],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 5,
                     "spells_known": 36,
@@ -373,7 +362,6 @@
                 "features": [
                     "trait_spell_mastery"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 5,
                     "spells_known": 38,
@@ -394,7 +382,6 @@
                 "features": [
                     "trait_ability_score_improvement"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 5,
                     "spells_known": 40,
@@ -415,7 +402,6 @@
                 "features": [
                     "trait_signature_spell"
                 ],
-                "class_specific_scaling": {},
                 "spellcasting_progression": {
                     "cantrips_known": 5,
                     "spells_known": 42,

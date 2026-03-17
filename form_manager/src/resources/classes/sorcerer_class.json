@@ -1,7 +1,7 @@
 {
     "class_sorcerer": {
         "name": "Sorcerer",
-        "hit_die": 6,
+        "hit_die": "1d6",
         "proficiencies": {
             "armor": [],
             "weapons": [
@@ -27,6 +27,12 @@
                     "skill_religion"
                 ]
             }
+        },
+        "multiclass_proficiencies": {
+            "armor": [],
+            "weapons": [],
+            "tools": [],
+            "skills": {}
         },
         "starting_equipment": {
             "given": [

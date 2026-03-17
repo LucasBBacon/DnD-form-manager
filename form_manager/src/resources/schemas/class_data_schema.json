@@ -11,12 +11,12 @@
                     "type": "string"
                 },
                 "hit_die": {
-                    "type": "integer",
+                    "type": "string",
                     "enum": [
-                        6,
-                        8,
-                        10,
-                        12
+                        "1d6",
+                        "1d8",
+                        "1d10",
+                        "1d12"
                     ],
                     "description": "Faces of the hit die (e.g., 8 for d8)."
                 },
@@ -72,6 +72,44 @@
                         }
                     }
                 },
+                "multiclass_proficiencies": {
+                    "type": "object",
+                    "properties": {
+                        "armor": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "weapons": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "tools": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "skills": {
+                            "type": "object",
+                            "properties": {
+                                "count": {
+                                    "type": "integer"
+                                },
+                                "pool": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "description": "Array of valid skill IDs to choose from."
+                                }
+                            }
+                        }
+                    }
+                },
                 "starting_equipment": {
                     "type": "object",
                     "properties": {
@@ -88,6 +126,10 @@
                                     "quantity": {
                                         "type": "integer",
                                         "minimum": 1
+                                    },
+                                    "condition": {
+                                        "type": "string",
+                                        "description": "If the equipment requires any specific condition to be met in order to be received."
                                     }
                                 },
                                 "required": [
@@ -273,6 +315,7 @@
                 "name",
                 "hit_die",
                 "proficiencies",
+                "multiclass_proficiencies",
                 "subclass_info",
                 "progression"
             ]

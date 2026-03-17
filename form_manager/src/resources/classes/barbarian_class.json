@@ -1,7 +1,7 @@
 {
     "class_barbarian": {
         "name": "Barbarian",
-        "hit_die": 12,
+        "hit_die": "1d12",
         "proficiencies": {
             "armor": [
                 "category_armor_light",
@@ -28,6 +28,17 @@
                     "skill_survival"
                 ]
             }
+        },
+        "multiclass_proficiencies": {
+            "armor": [
+                "category_armor_shield"
+            ],
+            "weapons": [
+                "category_weapon_simple",
+                "category_weapon_martial"
+            ],
+            "tools": [],
+            "skills": {}
         },
         "starting_equipment": {
             "given": [
@@ -77,7 +88,6 @@
                 }
             ]
         },
-        "spellcasting_base": {},
         "subclass_info": {
             "choice_level": 3,
             "options_pool": "subclasses_barbarian"
@@ -91,16 +101,13 @@
                 "class_specific_scaling": {
                     "rage_number_of_rages": 2,
                     "rage_damage_bonus": 2
-                },
-                "spellcasting_progression": {}
+                }
             },
             "2": {
                 "features": [
                     "trait_reckless_attack",
                     "trait_danger_sense"
-                ],
-                "class_specific_scaling": {},
-                "spellcasting_progression": {}
+                ]
             },
             "3": {
                 "features": [
@@ -109,24 +116,19 @@
                 ],
                 "class_specific_scaling": {
                     "rage_number_of_rages": 3
-                },
-                "spellcasting_progression": {}
+                }
             },
             "4": {
                 "level": 4,
                 "features": [
                     "trait_ability_score_improvement"
-                ],
-                "class_specific_scaling": {},
-                "spellcasting_progression": {}
+                ]
             },
             "5": {
                 "features": [
                     "trait_extra_attack",
                     "trait_fast_movement"
-                ],
-                "class_specific_scaling": {},
-                "spellcasting_progression": {}
+                ]
             },
             "6": {
                 "features": [
@@ -134,22 +136,17 @@
                 ],
                 "class_specific_scaling": {
                     "rage_number_of_rages": 4
-                },
-                "spellcasting_progression": {}
+                }
             },
             "7": {
                 "features": [
                     "trait_feral_instinct"
-                ],
-                "class_specific_scaling": {},
-                "spellcasting_progression": {}
+                ]
             },
             "8": {
                 "features": [
                     "trait_ability_score_improvement"
-                ],
-                "class_specific_scaling": {},
-                "spellcasting_progression": {}
+                ]
             },
             "9": {
                 "features": [
@@ -159,22 +156,17 @@
                 "class_specific_scaling": {
                     "rage_damage_bonus": 3,
                     "brutal_critical_extra_die_count": 1
-                },
-                "spellcasting_progression": {}
+                }
             },
             "10": {
                 "features": [
                     "trait_primal_path_feature"
-                ],
-                "class_specific_scaling": {},
-                "spellcasting_progression": {}
+                ]
             },
             "11": {
                 "features": [
                     "trait_relentless_rage"
-                ],
-                "class_specific_scaling": {},
-                "spellcasting_progression": {}
+                ]
             },
             "12": {
                 "features": [
@@ -183,8 +175,7 @@
                 ],
                 "class_specific_scaling": {
                     "rage_number_of_rages": 5
-                },
-                "spellcasting_progression": {}
+                }
             },
             "13": {
                 "features": [
@@ -192,22 +183,17 @@
                 ],
                 "class_specific_scaling": {
                     "brutal_critical_extra_die_count": 2
-                },
-                "spellcasting_progression": {}
+                }
             },
             "14": {
                 "features": [
                     "trait_primal_path_feature"
-                ],
-                "class_specific_scaling": {},
-                "spellcasting_progression": {}
+                ]
             },
             "15": {
                 "features": [
                     "trait_persistent_rage"
-                ],
-                "class_specific_scaling": {},
-                "spellcasting_progression": {}
+                ]
             },
             "16": {
                 "features": [
@@ -216,8 +202,7 @@
                 ],
                 "class_specific_scaling": {
                     "rage_damage_bonus": 4
-                },
-                "spellcasting_progression": {}
+                }
             },
             "17": {
                 "features": [
@@ -227,22 +212,17 @@
                 "class_specific_scaling": {
                     "rage_number_of_rages": 6,
                     "brutal_critical_extra_die_count": 3
-                },
-                "spellcasting_progression": {}
+                }
             },
             "18": {
                 "features": [
                     "trait_indomitable_might"
-                ],
-                "class_specific_scaling": {},
-                "spellcasting_progression": {}
+                ]
             },
             "19": {
                 "features": [
                     "trait_ability_score_improvement"
-                ],
-                "class_specific_scaling": {},
-                "spellcasting_progression": {}
+                ]
             },
             "20": {
                 "features": [
@@ -251,8 +231,7 @@
                 ],
                 "class_specific_scaling": {
                     "rage_number_of_rages": -1
-                },
-                "spellcasting_progression": {}
+                }
             }
         }
     }
