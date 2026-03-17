@@ -15,10 +15,7 @@
                     "description": "The Id of the base class this belongs to (e.g., 'class_rogue')"
                 },
                 "spellcasting_override": {
-                    "type": [
-                        "object",
-                        "null"
-                    ],
+                    "type": "object",
                     "description": "Used if the subclass introduces spellcasting to a martial class, or changes the base class casting rules.",
                     "properties": {
                         "ability": {
@@ -36,6 +33,23 @@
                                 "prepared",
                                 "pact"
                             ]
+                        },
+                        "school_restrictions": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "abjuration",
+                                    "conjuration",
+                                    "divination",
+                                    "enchantment",
+                                    "evocation",
+                                    "illusion",
+                                    "necromancy",
+                                    "transmutation"
+                                ]
+                            },
+                            "description": "Array of valid spell schools for 1/3 casters. Leave empty if no restrictions apply."
                         }
                     }
                 },
@@ -54,10 +68,7 @@
                                     "description": "Trait IDs granted at this specific level."
                                 },
                                 "subclass_specific_scaling": {
-                                    "type": [
-                                        "object",
-                                        "null"
-                                    ],
+                                    "type": "object",
                                     "description": "Custom key-value pairs for class-specific resources (e.g., Sneak Attack damage, Ki points).",
                                     "additionalProperties": {
                                         "type": [
@@ -67,30 +78,21 @@
                                     }
                                 },
                                 "bonus_spells": {
-                                    "type": [
-                                        "array",
-                                        "null"
-                                    ],
+                                    "type": "array",
                                     "items": {
                                         "type": "string"
                                     },
                                     "description": "Spell IDs automatically learned/prepared at this level (e.g., Cleric Domain spells, Warlock Patron spells)."
                                 },
                                 "spells_added_to_list": {
-                                    "type": [
-                                        "array",
-                                        "null"
-                                    ],
+                                    "type": "array",
                                     "items": {
                                         "type": "string"
                                     },
                                     "description": "Spell IDs added to the class's valid spell list to choose from. rather than automatically learned."
                                 },
                                 "spellcasting_progression_additions": {
-                                    "type": [
-                                        "object",
-                                        "null"
-                                    ],
+                                    "type": "object",
                                     "description": "Used for 'third-casters' (Like Eldritch Knight) to add spell slots, or Warlocks to expand their specific slot logic.",
                                     "properties": {
                                         "cantrips_known": {
@@ -113,6 +115,41 @@
                             ]
                         }
                     }
+                },
+                "lore": {
+                    "type": "object",
+                    "properties": {
+                        "short_description": {
+                            "type": "string",
+                            "description": "A quick 1-2 sentence summary for tooltips."
+                        },
+                        "full_text": {
+                            "type": "string",
+                            "description": "The main body of text for the entity."
+                        },
+                        "sections": {
+                            "type": "array",
+                            "description": "Flexible key-value pairs for categorized flavor text (Age, Alignment, Lore, etc.).",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "body": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "title",
+                                    "body"
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "short_description"
+                    ]
                 }
             },
             "required": [

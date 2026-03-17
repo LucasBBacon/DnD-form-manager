@@ -4,7 +4,11 @@
         "parent_class_id": "class_rogue",
         "spellcasting_override": {
             "ability": "int",
-            "preparation_type": "known"
+            "preparation_type": "known",
+            "school_restrictions": [
+                "enchantment",
+                "illusion"
+            ]
         },
         "progression": {
             "3": {

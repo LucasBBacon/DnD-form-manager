@@ -20,7 +20,7 @@
                     "trait_circle_forms"
                 ],
                 "subclass_specific_scaling": {
-                    "circle_forms_cr": "druid_level_div_3"
+                    "circle_forms_cr": 3
                 },
                 "bonus_spells": [],
                 "spells_added_to_list": [],

@@ -54,7 +54,7 @@
                 "subclass_specific_scaling": {},
                 "bonus_spells": [
                     "spell_freedom_of_movement",
-                    "trait_guardian_of_faith"
+                    "spell_guardian_of_faith"
                 ],
                 "spells_added_to_list": [],
                 "spellcasting_progression_additions": {}

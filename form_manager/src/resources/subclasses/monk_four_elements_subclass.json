@@ -1,5 +1,5 @@
 {
-    "subclass_four_elements": {
+    "subclass_monk_four_elements": {
         "name": "Way of the Four Elements",
         "parent_class_id": "class_monk",
         "spellcasting_override": {},
