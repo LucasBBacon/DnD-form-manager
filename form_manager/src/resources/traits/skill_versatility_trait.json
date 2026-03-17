@@ -5,12 +5,17 @@
         "effects": [
             {
                 "type": "proficiency",
+                "target": "skill",
                 "choice": {
                     "count": 2,
                     "category": "skill",
                     "pool": "any_skill"
                 }
             }
-        ]
+        ],
+        "lore": {
+            "short_description": "You gain proficiency in two skills of your choice.",
+            "full_text": "You gain proficiency in two skills of your choice."
+        }
     }
 }
