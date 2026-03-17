@@ -1,0 +1,17 @@
+{
+    "trait_menacing": {
+        "name": "Menacing",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "proficiency",
+                "target": "skill_intimidation",
+                "value": true
+            }
+        ],
+        "lore": {
+            "short_description": "You gain proficiency in the Intimidation skill.",
+            "full_text": "You gain proficiency in the Intimidation skill."
+        }
+    }
+}

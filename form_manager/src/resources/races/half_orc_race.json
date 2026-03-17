@@ -22,6 +22,16 @@
             "trait_menacing",
             "trait_relentless_endurance",
             "trait_savage_attacks"
-        ]
+        ],
+        "lore": {
+            "short_description": "",
+            "full_text": "",
+            "sections": [
+                {
+                    "title": "Ability Score Increase",
+                    "body": "Your Strength score increases by 2, and your Constitution score increases by 1."
+                }
+            ]
+        }
     }
 }

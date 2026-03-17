@@ -1,0 +1,23 @@
+{
+    "trait_relentless_endurance": {
+        "name": "Relentless Endurance",
+        "is_active": true,
+        "activation_type": "special",
+        "effects": [
+            {
+                "type": "rule_bypass",
+                "target": "drop_to_1_hp_instead_of_0",
+                "value": true,
+                "condition": "reduced_to_0_hp_not_killed_outright"
+            }
+        ],
+        "uses": {
+            "count": 1,
+            "reset": "long_rest"
+        },
+        "lore": {
+            "short_description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead once per long rest.",
+            "full_text": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."
+        }
+    }
+}

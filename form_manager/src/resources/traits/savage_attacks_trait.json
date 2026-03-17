@@ -1,0 +1,18 @@
+{
+    "trait_savage_attacks": {
+        "name": "Savage Attacks",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "rule_bypass",
+                "target": "extra_critical_hit_damage_die",
+                "value": true,
+                "condition": "on_melee_weapon_critical_hit"
+            }
+        ],
+        "lore": {
+            "short_description": "When you score a critical hit with a melee weapon attack, you roll one of the weapon's damage dice one additional time and add it to the extra damage.",
+            "full_text": "When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit."
+        }
+    }
+}
