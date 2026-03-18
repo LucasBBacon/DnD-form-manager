@@ -1,0 +1,18 @@
+{
+    "trait_fast_movement": {
+        "name": "Fast Movement",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "speed",
+                "target": "base_walking",
+                "value": 10,
+                "condition": "no_equipped_armor_heavy"
+            }
+        ],
+        "lore": {
+            "short_description": "Your speed increases by 10 ft if not wearing heavy armor.",
+            "full_text": "Starting at 5th level, your speed increases by 10 feet while you aren't wearing heavy armor."
+        }
+    }
+}

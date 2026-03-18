@@ -1,0 +1,13 @@
+{
+    "trait_frenzy": {
+        "name": "Frenzy",
+        "is_active": true,
+        "activation_type": "special",
+        "effects": [],
+        "mechanics": {
+            "granted_actions": [
+                "action_rage"
+            ]
+        }
+    }
+}

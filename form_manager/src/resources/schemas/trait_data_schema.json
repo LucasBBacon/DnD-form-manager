@@ -79,7 +79,8 @@
                                     "stat_modifier",
                                     "speed",
                                     "ac_calc",
-                                    "rule_bypass"
+                                    "rule_bypass",
+                                    "ability_score_improvement"
                                 ]
                             },
                             "level_available": {
@@ -264,8 +265,7 @@
                 }
             },
             "required": [
-                "name",
-                "effects"
+                "name"
             ]
         }
     }

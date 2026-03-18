@@ -1,0 +1,22 @@
+{
+    "trait_feral_instinct": {
+        "name": "Feral Instinct",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "advantage",
+                "target": "roll_initiative"
+            },
+            {
+                "type": "rule_bypass",
+                "target": "condition_surprised",
+                "value": true,
+                "condition": "not_incapacitated_and_enter_rage_first"
+            }
+        ],
+        "lore": {
+            "short_description": "You have advantage on initiative rolls, and if surprised you can act normally on your first turn by entering rage first.",
+            "full_text": "By 7th level, your instincts are so honed that you have advantage on initiative rolls.\nAdditionally, if you are surprised at the beginning of combat and aren't incapacitated. you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn."
+        }
+    }
+}
