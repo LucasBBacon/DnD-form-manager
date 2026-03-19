@@ -1,0 +1,32 @@
+{
+    "trait_primal_champion": {
+        "name": "Primal Champion",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "stat_modifier",
+                "target": "stat_str_score",
+                "value": 4
+            },
+            {
+                "type": "stat_modifier",
+                "target": "stat_con_score",
+                "value": 4
+            },
+            {
+                "type": "stat_modifier",
+                "target": "stat_str_max_cap",
+                "value": 24
+            },
+            {
+                "type": "stat_modifier",
+                "target": "stat_con_max_cap",
+                "value": 24
+            }
+        ],
+        "lore": {
+            "short_description": "Your Strength and Constitution scores increase by 4, and their maximums increase to 24.",
+            "full_text": "At 20th level, you embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24."
+        }
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "trait_mindless_rage": {
+        "name": "Mindless Rage",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "immunity",
+                "target": "status_charmed",
+                "condition": {
+                    "operator": "INCLUDES",
+                    "target": "character.status_conditions",
+                    "value": "raging"
+                }
+            },
+            {
+                "type": "immunity",
+                "target": "status_frightened",
+                "condition": {
+                    "operator": "INCLUDES",
+                    "target": "character.status_conditions",
+                    "value": "raging"
+                }
+            },
+            {
+                "type": "rule_bypass",
+                "target": "suspend_status_effects",
+                "value": "status_charmed",
+                "condition": {
+                    "operator": "INCLUDES",
+                    "target": "character.status_conditions",
+                    "value": "raging"
+                }
+            },
+            {
+                "type": "rule_bypass",
+                "target": "suspend_status_effects",
+                "value": "status_frightened",
+                "condition": {
+                    "operator": "INCLUDES",
+                    "target": "character.status_conditions",
+                    "value": "raging"
+                }
+            }
+        ],
+        "lore": {
+            "short_description": "You can't be charmed or frightened while raging. If you are charmed or frightened when you enter your rage, the effect is suspended for the duration of the rage.",
+            "full_text": "Beginning at 6th level, you can't be charmed or frightened while raging. If you are charmed or frightened when you enter your rage, the effect is suspended for the duration of the rage."
+        }
+    }
+}

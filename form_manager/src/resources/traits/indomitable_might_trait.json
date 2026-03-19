@@ -1,0 +1,17 @@
+{
+    "trait_indomitable_might": {
+        "name": "Indomitable Might",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "rule_bypass",
+                "target": "roll_floor_str_check",
+                "value": "use_str_score"
+            }
+        ],
+        "lore": {
+            "short_description": "If your total for a Strength check is less than your Strength score, you can use that score in place of the total.",
+            "full_text": "Beginning at 18th level, if your total for a Strength check is less than your Strength score, you can use that score in place of the total."
+        }
+    }
+}

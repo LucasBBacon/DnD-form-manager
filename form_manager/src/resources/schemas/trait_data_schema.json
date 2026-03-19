@@ -2,6 +2,61 @@
     "$schema": "https://json-schema.org/draft-07/schema#",
     "title": "DnD Trait",
     "type": "object",
+    "definitions": {
+        "predicate": {
+            "anyOf": [
+                {
+                    "type": "string",
+                    "description": "ID of globally defined predicate (e.g., 'pred_no_heavy_armor')"
+                },
+                {
+                    "type": "object",
+                    "description": "An inline logic evaluation evaluated against the character's state",
+                    "properties": {
+                        "operator": {
+                            "type": "string",
+                            "enum": [
+                                "AND",
+                                "OR",
+                                "NOT",
+                                "EQUALS",
+                                "NOT_EQUALS",
+                                "GREATER_THAN",
+                                "LESS_THAN",
+                                "GREATER_THAN_OR_EQUAL",
+                                "LESS_THAN_OR_EQUAL",
+                                "INCLUDES",
+                                "EXISTS"
+                            ]
+                        },
+                        "target": {
+                            "type": "string",
+                            "description": "The dot-notation path in the state to evaluate (e.g., 'equipment.armor.type')."
+                        },
+                        "value": {
+                            "type": [
+                                "string",
+                                "number",
+                                "boolean",
+                                "array"
+                            ],
+                            "description": "The value to compare against target."
+                        },
+                        "conditions": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/predicate"
+                            },
+                            "description": "Array of child predicates for recursive logic."
+                        }
+                    },
+                    "required": [
+                        "operator"
+                    ]
+                }
+            ]
+        }
+    },
     "patternProperties": {
         "^trait_[a-z0-9_]+$": {
             "type": "object",
@@ -21,7 +76,8 @@
                         "action",
                         "bonus_action",
                         "reaction",
-                        "special"
+                        "special",
+                        "trigger"
                     ],
                     "description": "Required if is_active is true. Defines the action economy."
                 },
@@ -34,7 +90,7 @@
                                 "integer",
                                 "string"
                             ],
-                            "description": "Number of uses (can be a string if tied to a scaling  stat like 'proficiency_bonus')."
+                            "description": "Number of uses (can be a string if tied to a scaling  stat like '@rage_number_of_rages')."
                         },
                         "reset": {
                             "type": "string",
@@ -57,6 +113,10 @@
                             "items": {
                                 "type": "string"
                             }
+                        },
+                        "trigger_event": {
+                            "type": "string",
+                            "description": "If activation_type is 'trigger', defines the engine event to listen for (e.g., 'on_hp_zero', 'on_take_damage')."
                         }
                     }
                 },
@@ -76,6 +136,7 @@
                                     "advantage",
                                     "disadvantage",
                                     "spell_grant",
+                                    "trait_grant",
                                     "stat_modifier",
                                     "speed",
                                     "ac_calc",
@@ -94,14 +155,15 @@
                             },
                             "value": {
                                 "type": [
+                                    "array",
                                     "integer",
                                     "string",
                                     "boolean"
                                 ],
-                                "description": "The magnitude of the effect."
+                                "description": "The magnitude of the effect. Can use an '@' prefix to point to class-specific scaling values."
                             },
                             "condition": {
-                                "type": "string",
+                                "$ref": "#/definitions/predicate",
                                 "description": "Context required for the effect (e.g., 'against_poison', 'in_direct_sunlight')"
                             },
                             "spellcasting_ability": {
@@ -125,7 +187,7 @@
                                             "integer",
                                             "string"
                                         ],
-                                        "description": "Number of uses (can be a string if tied to a scaling  stat like 'proficiency_bonus')."
+                                        "description": "Number of uses (can be a string if tied to a scaling stat like '@rage_number_of_rages')."
                                     },
                                     "reset": {
                                         "type": "string",
@@ -154,7 +216,8 @@
                                             "weapon",
                                             "spell",
                                             "language",
-                                            "armor"
+                                            "armor",
+                                            "trait"
                                         ]
                                     },
                                     "pool": {

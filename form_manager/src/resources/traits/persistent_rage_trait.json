@@ -1,0 +1,17 @@
+{
+    "trait_persistent_rage": {
+        "name": "Persistent Rage",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "rule_bypass",
+                "target": "rage_end_of_turn_expiration",
+                "value": true
+            }
+        ],
+        "lore": {
+            "short_description": "Your rage ends early only if you fall unconscious or if you choose to end it.",
+            "full_text": "Beginning at 15th level, your rage is so fierce that it ends early only if you fall unconscious or if you choose to end it."
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "trait_retaliation": {
+        "name": "Retaliation",
+        "is_active": true,
+        "activation_type": "reaction",
+        "mechanics": {
+            "granted_actions": [
+                "action_retaliation"
+            ],
+            "trigger_event": "on_take_damage"
+        },
+        "effects": [
+            {
+                "type": "rule_bypass",
+                "target": "prompt_reaction_attack",
+                "value": "melee_weapon",
+                "condition": {
+                    "operator": "LESS_THAN_OR_EQUAL",
+                    "target": "event.source.distance",
+                    "value": 5
+                }
+            }
+        ],
+        "lore": {
+            "short_description": "When you take damage from a creature within 5 feet of you, you can use your reaction to make a melee weapon attack against that creature.",
+            "full_text": "Starting at 14th level, when you take damage from a creature that is within 5 feet of you, you can use your reaction to make a melee weapon attack against that creature."
+        }
+    }
+}

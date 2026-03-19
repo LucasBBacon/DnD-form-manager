@@ -6,7 +6,41 @@
             {
                 "type": "advantage",
                 "target": "stat_dex_save",
-                "condition": "seen_threat_and_senses_intact"
+                "condition": {
+                    "operator": "AND",
+                    "conditions": [
+                        {
+                            "operator": "NOT",
+                            "conditions": [
+                                {
+                                    "operator": "OR",
+                                    "conditions": [
+                                        {
+                                            "operator": "INCLUDES",
+                                            "target": "character.status_conditions",
+                                            "value": "blinded"
+                                        },
+                                        {
+                                            "operator": "INCLUDES",
+                                            "target": "character.status_conditions",
+                                            "value": "deafened"
+                                        },
+                                        {
+                                            "operator": "INCLUDES",
+                                            "target": "character.status_conditions",
+                                            "value": "incapacitated"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "operator": "EQUALS",
+                            "target": "event.source.is_visible",
+                            "value": true
+                        }
+                    ]
+                }
             }
         ],
         "lore": {

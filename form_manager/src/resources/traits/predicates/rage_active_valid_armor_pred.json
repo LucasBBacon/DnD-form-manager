@@ -1,0 +1,17 @@
+{
+    "pred_rage_active_valid_armor": {
+        "operator": "AND",
+        "conditions": [
+            {
+                "operator": "INCLUDES",
+                "target": "character.status_conditions",
+                "value": "raging"
+            },
+            {
+                "operator": "NOT_EQUALS",
+                "target": "equipment.body.base_type",
+                "value": "heavy"
+            }
+        ]
+    }
+}

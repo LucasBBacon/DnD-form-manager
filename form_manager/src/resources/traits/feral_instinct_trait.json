@@ -10,8 +10,17 @@
             {
                 "type": "rule_bypass",
                 "target": "condition_surprised",
-                "value": true,
-                "condition": "not_incapacitated_and_enter_rage_first"
+                "value": "action_lock_rage",
+                "condition": {
+                    "operator": "NOT",
+                    "conditions": [
+                        {
+                            "operator": "INCLUDES",
+                            "target": "character.status_conditions",
+                            "value": "incapacitated"
+                        }
+                    ]
+                }
             }
         ],
         "lore": {

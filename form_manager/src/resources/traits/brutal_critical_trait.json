@@ -5,8 +5,13 @@
         "effects": [
             {
                 "type": "stat_modifier",
-                "target": "melee_critical_extra_dice",
-                "value": "@brutal_critical_extra_die_count"
+                "target": "critical_extra_damage_dice",
+                "value": "@brutal_critical_extra_die_count",
+                "condition": {
+                    "operator": "EQUALS",
+                    "target": "event.attack.is_melee",
+                    "value": true
+                }
             }
         ],
         "lore": {

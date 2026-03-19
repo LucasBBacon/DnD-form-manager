@@ -2,12 +2,29 @@
     "trait_frenzy": {
         "name": "Frenzy",
         "is_active": true,
-        "activation_type": "special",
-        "effects": [],
+        "activation_type": "trigger",
         "mechanics": {
             "granted_actions": [
-                "action_rage"
-            ]
+                "action_enter_frenzied_rage",
+                "action_frenzy_bonus_attack"
+            ],
+            "trigger_event": "on_status_removed_frenzied"
+        },
+        "effects": [
+            {
+                "type": "rule_bypass",
+                "target": "apply_exhaustion",
+                "value": 1,
+                "condition": {
+                    "operator": "EXISTS",
+                    "target": "event.status.frenzied",
+                    "value": "true"
+                }
+            }
+        ],
+        "lore": {
+            "short_description": "You can choose to go into a frenzy when you rage. Doing so grants a bonus action melee attack, but causes 1 level of exhaustion when the rage ends.",
+            "full_text": "Starting when you choose this path at 3rd level, you can go into a frenzy when you rage. If you do so, for the duration of your rage you can make a single melee weapon attack as a bonus action on each of your turns after this one. When your rage ends, you suffer one level of exhaustion."
         }
     }
 }

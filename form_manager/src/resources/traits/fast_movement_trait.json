@@ -7,7 +7,11 @@
                 "type": "speed",
                 "target": "base_walking",
                 "value": 10,
-                "condition": "no_equipped_armor_heavy"
+                "condition": {
+                    "operator": "NOT_EQUALS",
+                    "target": "equipment.body.base_type",
+                    "value": "heavy"
+                }
             }
         ],
         "lore": {

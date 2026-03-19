@@ -2,13 +2,30 @@
     "trait_relentless_rage": {
         "name": "Relentless Rage",
         "is_active": true,
-        "activation_type": "special",
+        "activation_type": "trigger",
+        "mechanics": {
+            "trigger_event": "on_hp_zero"
+        },
         "effects": [
             {
                 "type": "rule_bypass",
-                "target": "drop_to_1_hp_instead_of_0",
-                "value": true,
-                "condition": "reduced_to_0_hp_not_killed_outright"
+                "target": "hp_drop_to_zero",
+                "value": "prompt_relentless_rage_save",
+                "condition": {
+                    "operator": "AND",
+                    "conditions": [
+                        {
+                            "operator": "INCLUDES",
+                            "target": "character.status_conditions",
+                            "value": "raging"
+                        },
+                        {
+                            "operator": "EQUALS",
+                            "target": "event.damage.is_instakill",
+                            "value": false
+                        }
+                    ]
+                }
             }
         ],
         "uses": {

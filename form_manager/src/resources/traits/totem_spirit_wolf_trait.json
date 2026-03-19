@@ -1,0 +1,22 @@
+{
+    "trait_totem_spirit_wolf": {
+        "name": "Totem Spirit: Wolf",
+        "is_active": false,
+        "effects": [
+            {
+                "type": "rule_bypass",
+                "target": "grant_allies_advantage_melee",
+                "value": true,
+                "condition": {
+                    "operator": "INCLUDES",
+                    "target": "character.status_conditions",
+                    "value": "raging"
+                }
+            }
+        ],
+        "lore": {
+            "short_description": "While raging and not wearing armor, you gain a bonus Dash action and have incoming attacks at a disadvantage.",
+            "full_text": "While you're raging. your friends have advantage on melee attack rolls against any creature within 5 feet of you that is hostile to you.The spirit of the wolf makes you a leader of hunters."
+        }
+    }
+}

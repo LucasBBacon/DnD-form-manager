@@ -7,7 +7,16 @@
                 "type": "ac_calc",
                 "target": "ac",
                 "value": "calc_unarmored_con",
-                "condition": "no_armor_equipped_shield_allowed"
+                "condition": {
+                    "operator": "OR",
+                    "conditions": [
+                        {
+                            "operator": "EQUALS",
+                            "target": "equipment.armor.base_type",
+                            "value": "none"
+                        }
+                    ]
+                }
             }
         ],
         "lore": {
