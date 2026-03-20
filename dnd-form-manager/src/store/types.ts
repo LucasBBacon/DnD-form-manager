@@ -72,3 +72,14 @@ export interface ActiveEffect extends TraitEffect {
   source_trait_id: string;
   source_trait_name: string;
 }
+
+export type AbilityScore = 'str' | 'dex' | 'con' | 'int' | 'wis' | 'cha';
+
+export type StatsRecord = Record<AbilityScore, number>;
+
+export interface CalculatedStat {
+  score: number;
+  modifier: number;
+}
+
+export type FinalStats = Record<AbilityScore, CalculatedStat>;
