@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { Trait } from "./types";
+import type { Trait } from "../types/types";
 import { aggregateActiveEffects } from "./traitUtils";
 
 const mockTraitDB: Record<string, Trait> = {

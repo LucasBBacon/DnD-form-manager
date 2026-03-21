@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mergeRaceAndSubrace } from './raceUtils'
-import type { Race, Subrace } from './types'
+import type { Race, Subrace } from '../types/types'
 
 describe('mergeRaceAndSubrace', () => {
     const mockDwarf: Race = {

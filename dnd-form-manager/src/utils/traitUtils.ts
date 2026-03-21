@@ -1,4 +1,4 @@
-import type { ActiveEffect, Trait } from "./types";
+import type { ActiveEffect, Trait } from "../types/types";
 
 export const aggregateActiveEffects = (
   traitIds: string[],

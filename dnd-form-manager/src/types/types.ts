@@ -9,6 +9,7 @@ export interface Race {
   id: string;
   name: string;
   size: "tiny" | "small" | "medium" | "large";
+  subrace_info?: string;
   speed: Speed;
   ability_bonuses: {
     fixed?: Record<string, number>;
@@ -16,6 +17,7 @@ export interface Race {
   };
   traits: string[];
   languages: { known: string[]; choices?: number };
+  lore: { short_description: string; full_text: string; }
 }
 
 export interface Subrace {

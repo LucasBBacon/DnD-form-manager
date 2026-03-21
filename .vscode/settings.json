@@ -82,42 +82,45 @@
         "wieldable"
     ],
     "json.schemas": [
+
+
         {
             "fileMatch": [
                 "spells/*_data.json",
                 "spells/*_spell.json"
             ],
-            "url": "./form_manager/src/resources/schemas/spell_data_schema.json"
+            "url": "./dnd-form-manager/src/assets/schemas/spell_data_schema.json"
         },
         {
             "fileMatch": [
-                "races/*_race.json"
+                "races/*_race.json",
+                "resources/race.json"
             ],
-            "url": "./form_manager/src/resources/schemas/race_data_schema.json"
+            "url": "./dnd-form-manager/src/assets/schemas/race_data_schema.json"
         },
         {
             "fileMatch": [
                 "traits/*_trait.json"
             ],
-            "url": "./form_manager/src/resources/schemas/trait_data_schema.json"
+            "url": "./dnd-form-manager/src/assets/schemas/trait_data_schema.json"
         },
         {
             "fileMatch": [
                 "classes/*_class.json"
             ],
-            "url": "./form_manager/src/resources/schemas/class_data_schema.json"
+            "url": "./dnd-form-manager/src/assets/schemas/class_data_schema.json"
         },
         {
             "fileMatch": [
                 "subclasses/*_subclass.json"
             ],
-            "url": "./form_manager/src/resources/schemas/subclass_data_schema.json"
+            "url": "./dnd-form-manager/src/assets/schemas/subclass_data_schema.json"
         },
         {
             "fileMatch": [
                 "subraces/*_subrace.json"
             ],
-            "url": "./form_manager/src/resources/schemas/subrace_data_schema.json"
+            "url": "./dnd-form-manager/src/assets/schemas/subrace_data_schema.json"
         },
         {
             "fileMatch": [
@@ -126,7 +129,7 @@
                 "armor/*_item.json",
                 "weapon/*_item.json"
             ],
-            "url": "./form_manager/src/resources/schemas/item_data_schema.json"
+            "url": "./dnd-form-manager/src/assets/schemas/item_data_schema.json"
         }
     ]
 }

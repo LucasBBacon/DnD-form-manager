@@ -1,0 +1,276 @@
+{
+  "subrace_dragonborn_black": {
+    "name": "Black Draconic Ancestry",
+    "parent_race_id": "race_dragonborn",
+    "traits_added": [
+      "trait_breath_weapon_acid_line",
+      "trait_damage_resistance_acid"
+    ]
+  },
+  "subrace_dragonborn_blue": {
+    "name": "Blue Draconic Ancestry",
+    "parent_race_id": "race_dragonborn",
+    "traits_added": [
+      "trait_breath_weapon_lightning_line",
+      "trait_damage_resistance_lightning"
+    ]
+  },
+  "subrace_dragonborn_brass": {
+    "name": "Brass Draconic Ancestry",
+    "parent_race_id": "race_dragonborn",
+    "traits_added": [
+      "trait_breath_weapon_fire_line",
+      "trait_damage_resistance_fire"
+    ]
+  },
+  "subrace_dragonborn_bronze": {
+    "name": "Bronze Draconic Ancestry",
+    "parent_race_id": "race_dragonborn",
+    "traits_added": [
+      "trait_breath_weapon_lightning_line",
+      "trait_damage_resistance_lightning"
+    ]
+  },
+  "subrace_dragonborn_copper": {
+    "name": "Copper Draconic Ancestry",
+    "parent_race_id": "race_dragonborn",
+    "traits_added": [
+      "trait_breath_weapon_acid_line",
+      "trait_damage_resistance_acid"
+    ]
+  },
+  "subrace_dragonborn_gold": {
+    "name": "Gold Draconic Ancestry",
+    "parent_race_id": "race_dragonborn",
+    "traits_added": [
+      "trait_breath_weapon_fire_cone",
+      "trait_damage_resistance_fire"
+    ]
+  },
+  "subrace_dragonborn_green": {
+    "name": "Green Draconic Ancestry",
+    "parent_race_id": "race_dragonborn",
+    "traits_added": [
+      "trait_breath_weapon_poison_cone",
+      "trait_damage_resistance_poison"
+    ]
+  },
+  "subrace_dragonborn_red": {
+    "name": "Red Draconic Ancestry",
+    "parent_race_id": "race_dragonborn",
+    "traits_added": [
+      "trait_breath_weapon_fire_cone",
+      "trait_damage_resistance_fire"
+    ]
+  },
+  "subrace_dragonborn_silver": {
+    "name": "Silver Draconic Ancestry",
+    "parent_race_id": "race_dragonborn",
+    "traits_added": [
+      "trait_breath_weapon_cold_cone",
+      "trait_damage_resistance_cold"
+    ]
+  },
+  "subrace_dragonborn_white": {
+    "name": "White Draconic Ancestry",
+    "parent_race_id": "race_dragonborn",
+    "traits_added": [
+      "trait_breath_weapon_cold_cone",
+      "trait_damage_resistance_cold"
+    ]
+  },
+  "subrace_dwarf_hill": {
+    "name": "Hill Dwarf",
+    "parent_race_id": "race_dwarf",
+    "ability_bonuses_additions": {
+      "wis": 1
+    },
+    "traits_added": [
+      "trait_dwarven_toughness"
+    ],
+    "lore": {
+      "short_description": "As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience.",
+      "full_text": "As a hill dwarf, you have keen senses, deep intuition, and remarkable resilience. The gold dwarves of Faerûn in their mighty southern kingdom are hill dwarves, as are the exiled Neidar and the debased Klar of Krynn in the Dragonlance setting.",
+      "sections": [
+        {
+          "title": "Ability Score Increase",
+          "body": "Your Wisdom score increases by 1."
+        }
+      ]
+    }
+  },
+  "subrace_dwarf_mountain": {
+    "name": "Mountain Dwarf",
+    "parent_race_id": "race_dwarf",
+    "ability_bonuses_additions": {
+      "str": 2
+    },
+    "traits_added": [
+      "trait_dwarven_armor_training"
+    ],
+    "lore": {
+      "short_description": "As a mountain dwarf, you're strong and hardy, accustomed to a difficult life in rugged terrain.",
+      "full_text": "As a mountain dwarf, you're strong and hardy, accustomed to a difficult life in rugged terrain. You're probably on the tall side (for a dwarf), and tend toward lighter coloration. The shield dwarves of northern Faerun, as well as the ruling Hylar clan and the noble Daewar clan of Dragonlance, are mountain dwarves.",
+      "sections": [
+        {
+          "title": "Ability Score Increase",
+          "body": "Your Strength score increases by 2."
+        }
+      ]
+    }
+  },
+  "subrace_elf_drow": {
+    "name": "Dark Elf (Drow)",
+    "parent_race_id": "race_elf",
+    "ability_bonuses_additions": {
+      "cha": 1
+    },
+    "traits_added": [
+      "trait_superior_darkvision",
+      "trait_sunlight_sensitivity",
+      "trait_drow_magic",
+      "trait_drow_weapon_training"
+    ],
+    "lore": {
+      "short_description": "Drow are dark elves from the Underdark, known for keen senses, graceful agility, and a mysterious heritage tied to shadow and magic.",
+      "full_text": "Descended from an earlier subrace of dark-skinned elves; the drow were banished from lhe surface world for following lhe goddess Lolth down lhe path to evil and corruption. Now they have built their own civilization in lhe depths of lhe Underdark, patterned after the Way of Lolth. Also called dark elves. The drow have black skin that resembles polished obsidian and stark while ar pale yellow hair. They commonly have very pale eyes (so pale as to be mistaken for white) in shades of lilac, silver, pink, red, and blue. They tend to be smaller and thinner than most elves.\nDrow adventurers are rare, and the race does not exist in all worlds. Check with your Dungeon Master to see if you can play a drow character.",
+      "sections": [
+        {
+          "title": "Ability Score Increase",
+          "body": "Your Charisma score increases by 1."
+        }
+      ]
+    }
+  },
+  "subrace_elf_high": {
+    "name": "High Elf",
+    "parent_race_id": "race_elf",
+    "ability_bonuses_additions": {
+      "int": 1
+    },
+    "traits_added": [
+      "trait_elf_weapon_training",
+      "trait_cantrip_high_elf",
+      "trait_extra_language"
+    ],
+    "languages_added": {
+      "choices": {
+        "count": 1,
+        "unique_choices": true
+      }
+    },
+    "lore": {
+      "short_description": "High elves are graceful, sharp-minded elves with a natural talent for magic, known for their keen senses, disciplined training, and refined culture. They combine agility and intellect, often excelling as scholars, archers, and arcane practitioners.",
+      "full_text": "As a high elf, you have a keep mind and a mastery of at least the basics of magic. In many of the worlds of D&D, there are two kinds of high elves. Ooe type (which includes the gray e1ves and valley elves of Greyhawk, the Silvanesti of Dragonlance, and the sun elves of the Forgotten Realms) is haughty and reclusive, believing themselves to be superior to non-elves and even other elves. The other type (including the high elves of Greyhawk, the Qualinesti of Dragonlance, and the moon elves of the Forgotten Realms) are more common and more friendly, and often encountered among humans and other races.\nThe sun elves of Faerun (also called gold elves or sunrise elves) have bronze skin and hair of copper, black, or golden blood. Their eyes are golden, silver, or black. Moon elves (also called silver elves or gray elves) are much paler, with alabaster skin sometimes tinged with blue. They often have hair of silver-while, black, or blue, but various shades of blond, brown, and red are not uncommon. Their eyes are blue or green and flecked with gold.",
+      "sections": [
+        {
+          "title": "Ability Score Increase",
+          "body": "Your Intelligence score increases by 1."
+        },
+        {
+          "title": "Extra Language",
+          "body": "You can speak, read, and write on extra language of your choice."
+        }
+      ]
+    }
+  },
+  "subrace_elf_wood": {
+    "name": "Wood Elf",
+    "parent_race_id": "race_elf",
+    "ability_bonuses_additions": {
+      "wis": 1
+    },
+    "traits_added": [
+      "trait_elf_weapon_training",
+      "trait_mask_of_the_wild",
+      "trait_fleet_of_foot"
+    ],
+    "overrides": {
+      "speed": {
+        "walk": 35
+      }
+    }
+  },
+  "subrace_gnome_forest": {
+    "name": "Forest Gnome",
+    "parent_race_id": "race_gnome",
+    "ability_bonuses_additions": {
+      "dex": 1
+    },
+    "traits_added": [
+      "trait_natural_illusionist",
+      "trait_speak_with_small_beasts"
+    ],
+    "lore": {
+      "short_description": "Forest gnomes are shy, nimble woodland folk with a gift for subtle magic and a deep bond with small animals, preferring cleverness and quiet over brute force.",
+      "full_text": "As a forest gnome, you have a natural knack for illusion and inherent quickness and stealth. In the worlds of D&D, forest gnomes are rare and secretive. They gather in hidden communities in sylvan forests, using illusions and trickery to conceal themselves from threats or to mask their escape should they be detected. Forest gnomes tend to be friendly with other good-spirited woodland folk, and they regard elves and good fey as their most important allies. These gnomes also befriend small forest animals and rely on them for information about threats that might prowl their lands.",
+      "sections": [
+        {
+          "title": "Ability Score Increase",
+          "body": "Your Dexterity score increases by 1."
+        }
+      ]
+    }
+  },
+  "subrace_gnome_rock": {
+    "name": "Rock Gnome",
+    "parent_race_id": "race_gnome",
+    "ability_bonuses_additions": {
+      "con": 1
+    },
+    "traits_added": [
+      "trait_artificers_lore",
+      "trait_tinker"
+    ],
+    "lore": {
+      "short_description": "Rock gnomes are inventive and practical tinkerers, known for sharp intellect, sturdy resilience, and a natural talent for crafting clever mechanical devices.",
+      "full_text": "As a rock gnome, you have a natural inventiveness and hardiness beyond that of other gnomes. Most gnomes in the worlds of D&D are rock gnomes, including the tinker gnomes of the Dragonlance setting.",
+      "sections": [
+        {
+          "title": "Ability Score Increase",
+          "body": "Your Constitution score increases by 1."
+        }
+      ]
+    }
+  },
+  "subrace_halfling_lightfoot": {
+    "name": "Lightfoot",
+    "parent_race_id": "race_halfling",
+    "ability_bonuses_additions": {
+      "cha": 1
+    },
+    "traits_added": [
+      "trait_naturally_stealthy"
+    ],
+    "lore": {
+      "short_description": "Lightfoot halflings are the most common and wandering of their kind; remarkably stealthy, naturally charming, and able to hide behind creatures larger than themselves with ease.",
+      "full_text": "As a lightfoot halfling, you can easily hide from notice, even using other people as cover. You're inclined to be affable and get along well with others. In the Forgotten Realms, lightfoot halflings have spread the farthest and thus are the most common variety. Lightfoots are more prone to wanderlust than other halflings. and often dwell alongside other races or take up a nomadic life. In the world of Greyhawk. these halflings are called hairfeet or tallfellows.",
+      "sections": [
+        {
+          "title": "Ability Score Increase",
+          "body": "Your Charisma score increases by 1."
+        }
+      ]
+    }
+  },
+  "subrace_halfling_stout": {
+    "name": "Stout",
+    "parent_race_id": "race_halfling",
+    "ability_bonuses_additions": {
+      "con": 1
+    },
+    "traits_added": [
+      "trait_stout_resilience"
+    ],
+    "lore": {
+      "short_description": "Stout halflings are hardier than their kin, with a resilience that borders on dwarven; tough-constitutioned, resistant to poison, and steadfast in the face of hardship.",
+      "full_text": "As a stout halfling. you're hardier than average and have some resistance to poison. Some say that stouts have dwarven blood. In the Forgotten Realms, these halflings are called stronghearts. and they're most common in the south.",
+      "sections": [
+        {
+          "title": "Ability Score Increase",
+          "body": "Your Constitution score increases by 1."
+        }
+      ]
+    }
+  }
+}

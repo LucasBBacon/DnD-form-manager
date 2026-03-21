@@ -1,4 +1,4 @@
-import type { MergedRaceData, Race, Subrace } from "./types";
+import type { MergedRaceData, Race, Subrace } from "../types/types";
 
 export const mergeRaceAndSubrace = (baseRace: Race, subrace?: Subrace): MergedRaceData => {
     if (!subrace) {

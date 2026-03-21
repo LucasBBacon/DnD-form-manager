@@ -4,7 +4,7 @@ import type {
   FinalStats,
   MergedRaceData,
   StatsRecord,
-} from "./types";
+} from "../types/types";
 
 export const calculateModifier = (score: number): number => {
   return Math.floor((score - 10) / 2);

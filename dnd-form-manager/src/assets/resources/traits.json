@@ -1,0 +1,794 @@
+{
+  "trait_artificers_lore": {
+    "name": "Artificers Lore",
+    "effects": [
+      {
+        "type": "proficiency",
+        "target": "skill_history",
+        "value": "expertise",
+        "condition": "category_magic_item"
+      },
+      {
+        "type": "proficiency",
+        "target": "skill_history",
+        "value": "expertise",
+        "condition": "category_alchemical_object"
+      },
+      {
+        "type": "proficiency",
+        "target": "skill_history",
+        "value": "expertise",
+        "condition": "category_technology_device"
+      }
+    ],
+    "lore": {
+      "short_description": "Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.",
+      "full_text": "Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply."
+    }
+  },
+  "trait_brave": {
+    "name": "Brave",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "advantage",
+        "target": "saving_throw",
+        "condition": "against_frighten"
+      }
+    ],
+    "lore": {
+      "short_description": "Vou have advantage on saving throws against being frightened.",
+      "full_text": "Vou have advantage on saving throws against being frightened."
+    }
+  },
+  "trait_breath_weapon_acid_line": {
+    "name": "Breath Weapon (Acid, line)",
+    "is_active": true,
+    "activation_type": "action",
+    "effects": [],
+    "mechanics": {
+      "granted_actions": [
+        "action_breath_weapon_acid_line"
+      ]
+    },
+    "uses": {
+      "count": 1,
+      "reset": "long_rest"
+    }
+  },
+  "trait_breath_weapon_cold_cone": {
+    "name": "Breath Weapon (Cold, cone)",
+    "is_active": true,
+    "activation_type": "action",
+    "effects": [],
+    "mechanics": {
+      "granted_actions": [
+        "action_breath_weapon_cold_cone"
+      ]
+    },
+    "uses": {
+      "count": 1,
+      "reset": "long_rest"
+    }
+  },
+  "trait_breath_weapon_fire_cone": {
+    "name": "Breath Weapon (Fire, cone)",
+    "is_active": true,
+    "activation_type": "action",
+    "effects": [],
+    "mechanics": {
+      "granted_actions": [
+        "action_breath_weapon_fire_cone"
+      ]
+    },
+    "uses": {
+      "count": 1,
+      "reset": "long_rest"
+    }
+  },
+  "trait_breath_weapon_fire_line": {
+    "name": "Breath Weapon (Fire, line)",
+    "is_active": true,
+    "activation_type": "action",
+    "effects": [],
+    "mechanics": {
+      "granted_actions": [
+        "action_breath_weapon_fire_line"
+      ]
+    },
+    "uses": {
+      "count": 1,
+      "reset": "long_rest"
+    }
+  },
+  "trait_breath_weapon_lightning_line": {
+    "name": "Breath Weapon (Lightning, line)",
+    "is_active": true,
+    "activation_type": "action",
+    "effects": [],
+    "mechanics": {
+      "granted_actions": [
+        "action_breath_weapon_lightning_line"
+      ]
+    },
+    "uses": {
+      "count": 1,
+      "reset": "long_rest"
+    }
+  },
+  "trait_breath_weapon_poison_cone": {
+    "name": "Breath Weapon (Poison, cone)",
+    "is_active": true,
+    "activation_type": "action",
+    "effects": [],
+    "mechanics": {
+      "granted_actions": [
+        "action_breath_weapon_poison_cone"
+      ]
+    },
+    "uses": {
+      "count": 1,
+      "reset": "long_rest"
+    }
+  },
+  "trait_cantrip_high_elf": {
+    "name": "Cantrip",
+    "effects": [
+      {
+        "type": "spell_grant",
+        "spellcasting_ability": "int",
+        "choice": {
+          "count": 1,
+          "category": "spell",
+          "pool": "category_spells_cantrip_wizard"
+        }
+      }
+    ],
+    "lore": {
+      "short_description": "Vou know one Cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.",
+      "full_text": "Vou know one Cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it."
+    }
+  },
+  "trait_cantrip_wizard": {
+    "name": "Cantrip",
+    "is_active": true,
+    "effects": [
+      {
+        "type": "spell_grant",
+        "spellcasting_ability": "int",
+        "choice": {
+          "count": 1,
+          "category": "spell",
+          "pool": "category_spells_cantrip_wizard"
+        }
+      }
+    ]
+  },
+  "trait_damage_resistance_acid": {
+    "name": "Damage Resistance (Acid)",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "resistance",
+        "target": "against_acid",
+        "value": "half_damage"
+      }
+    ]
+  },
+  "trait_damage_resistance_cold": {
+    "name": "Damage Resistance (Cold)",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "resistance",
+        "target": "against_cold",
+        "value": "half_damage"
+      }
+    ]
+  },
+  "trait_damage_resistance_fire": {
+    "name": "Damage Resistance (Fire)",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "resistance",
+        "target": "against_fire",
+        "value": "half_damage"
+      }
+    ]
+  },
+  "trait_damage_resistance_lightning": {
+    "name": "Damage Resistance (Acid)",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "resistance",
+        "target": "against_acid",
+        "value": "half_damage"
+      }
+    ]
+  },
+  "trait_darkvision_60": {
+    "name": "Darkvision",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "sense",
+        "target": "darkvision",
+        "value": 60
+      }
+    ]
+  },
+  "trait_drow_magic": {
+    "name": "Drow Magic",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "spell_grant",
+        "target": "spell_dancing_lights",
+        "level_available": 1,
+        "spellcasting_ability": "cha"
+      },
+      {
+        "type": "spell_grant",
+        "target": "spell_faerie_fire",
+        "level_available": 3,
+        "spellcasting_ability": "cha",
+        "uses": {
+          "count": 1,
+          "reset": "long_rest"
+        }
+      },
+      {
+        "type": "spell_grant",
+        "target": "spell_darkness",
+        "level_available": 5,
+        "spellcasting_ability": "cha",
+        "uses": {
+          "count": 1,
+          "reset": "long_rest"
+        }
+      }
+    ],
+    "lore": {
+      "short_description": "You know the Dancing Lights cantrip, and can cast Faerie Fire and Darkness innately once per long rest at higher levels.",
+      "full_text": "You know the dancing lights cantrip. When you reach 3rd level, you can cast the faerie fire spell once per day. When you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells."
+    }
+  },
+  "trait_elf_weapon_training": {
+    "name": "Elf Weapon Training",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "proficiency",
+        "target": "weapon_longsword",
+        "value": true
+      },
+      {
+        "type": "proficiency",
+        "target": "weapon_shortsword",
+        "value": true
+      },
+      {
+        "type": "proficiency",
+        "target": "weapon_shortbow",
+        "value": true
+      },
+      {
+        "type": "proficiency",
+        "target": "weapon_longbow",
+        "value": true
+      }
+    ],
+    "lore": {
+      "short_description": "You have proficiency with the longsword, shortsword, shortbow, and longbow.",
+      "full_text": "You have proficiency with the longsword, shortsword, shortbow, and longbow."
+    }
+  },
+  "trait_dwarf_speed": {
+    "name": "Speed",
+    "effects": [
+      {
+        "type": "speed",
+        "target": "base_walking",
+        "value": 25
+      },
+      {
+        "type": "rule_bypass",
+        "target": "heavy_armor_speed_penalty",
+        "value": true
+      }
+    ],
+    "lore": {
+      "short_description": "Your base walking speed is 25 feet. Your speed is not reduced by wearing heavy armor.",
+      "full_text": "Your base walking speed is 25 feet. Your speed is not reduced by wearing heavy armor."
+    }
+  },
+  "trait_dwarf_tool_proficiency": {
+    "name": "Tool Proficiency",
+    "effects": [
+      {
+        "type": "proficiency",
+        "target": "tool",
+        "choice": {
+          "count": 1,
+          "category": "tool",
+          "pool": "category_dwarf_artisans_tools"
+        }
+      }
+    ],
+    "lore": {
+      "short_description": "Proficiency with smith's tools, brewer's supplies, or mason's tools.",
+      "full_text": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools."
+    }
+  },
+  "trait_dwarven_armor_training": {
+    "name": "Dwarven Armor Training",
+    "effects": [
+      {
+        "type": "proficiency",
+        "target": "category_armor_light",
+        "value": true
+      },
+      {
+        "type": "proficiency",
+        "target": "category_armor_medium",
+        "value": true
+      }
+    ],
+    "lore": {
+      "short_description": "You have proficiency with light and medium armor.",
+      "full_text": "You have proficiency with light and medium armor."
+    }
+  },
+  "trait_dwarven_combat_training": {
+    "name": "Dwarven Combat Training",
+    "effects": [
+      {
+        "type": "proficiency",
+        "target": "weapon_battleaxe"
+      },
+      {
+        "type": "proficiency",
+        "target": "weapon_handaxe"
+      },
+      {
+        "type": "proficiency",
+        "target": "weapon_throwing_hammer"
+      },
+      {
+        "type": "proficiency",
+        "target": "weapon_warhammer"
+      }
+    ],
+    "lore": {
+      "short_description": "Vou have proficiency with the battleaxe, handaxe, throwing hammer, and warhammer.",
+      "full_text": "Vou have proficiency with the battleaxe, handaxe, throwing hammer, and warhammer."
+    }
+  },
+  "trait_dwarven_resilience": {
+    "name": "Dwarven Resilience",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "advantage",
+        "target": "saving_throw",
+        "condition": "against_poison"
+      },
+      {
+        "type": "resistance",
+        "target": "damage_type_poison",
+        "value": "half_damage"
+      }
+    ],
+    "lore": {
+      "short_description": "Vou have advantage on saving throws against poison, and you have resistance against poison damage.",
+      "full_text": "Vou have advantage on saving throws against poison, and you have resistance against poison damage."
+    }
+  },
+  "trait_dwarven_toughness": {
+    "name": "Dwarven Toughness",
+    "effects": [
+      {
+        "type": "stat_modifier",
+        "target": "hp_max",
+        "value": "character_level"
+      }
+    ],
+    "lore": {
+      "short_description": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.",
+      "full_text": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
+    }
+  },
+  "trait_fey_ancestry": {
+    "name": "Fey Ancestry",
+    "effects": [
+      {
+        "type": "advantage",
+        "target": "saving_throw",
+        "condition": "against_charmed"
+      },
+      {
+        "type": "immunity",
+        "target": "magic_sleep",
+        "value": "no_effect"
+      }
+    ],
+    "lore": {
+      "short_description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep.",
+      "full_text": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+    }
+  },
+  "trait_gnome_cunning": {
+    "name": "Gnome Cunning",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "advantage",
+        "target": "save_int",
+        "condition": "against_magic"
+      },
+      {
+        "type": "advantage",
+        "target": "save_wis",
+        "condition": "against_magic"
+      },
+      {
+        "type": "advantage",
+        "target": "save_cha",
+        "condition": "against_magic"
+      }
+    ],
+    "lore": {
+      "short_description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic.",
+      "full_text": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic."
+    }
+  },
+  "trait_halfling_nimbleness": {
+    "name": "Halfling Nimbleness",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "rule_bypass",
+        "target": "movement_occupied_space",
+        "value": true,
+        "condition": "target_size_larger"
+      }
+    ],
+    "lore": {
+      "short_description": "You can move through the space of any creature that is of a size larger than yours.",
+      "full_text": "You can move through the space of any creature that is of a size larger than yours."
+    }
+  },
+  "trait_hellish_resistance": {
+    "name": "Hellish Resistance",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "resistance",
+        "target": "against_fire",
+        "value": "half_damage"
+      }
+    ],
+    "lore": {
+      "short_description": "You have resistance to fire damage.",
+      "full_text": "You have resistance to fire damage."
+    }
+  },
+  "trait_infernal_legacy": {
+    "name": "Infernal Legacy",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "spell_grant",
+        "target": "spell_thaumaturgy",
+        "level_available": 1,
+        "spellcasting_ability": "cha"
+      },
+      {
+        "type": "spell_grant",
+        "target": "spell_hellish_rebuke",
+        "level_available": 3,
+        "spellcasting_ability": "cha",
+        "uses": {
+          "count": 1,
+          "reset": "long_rest"
+        }
+      },
+      {
+        "type": "spell_grant",
+        "target": "spell_darkness",
+        "level_available": 5,
+        "spellcasting_ability": "cha",
+        "uses": {
+          "count": 1,
+          "reset": "long_rest"
+        }
+      }
+    ],
+    "lore": {
+      "short_description": "You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells.",
+      "full_text": "You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells."
+    }
+  },
+  "trait_keen_senses": {
+    "name": "Keen Senses",
+    "effects": [
+      {
+        "type": "proficiency",
+        "target": "skill_perception",
+        "value": true
+      }
+    ],
+    "lore": {
+      "short_description": "You have proficiency in the Perception skill.",
+      "full_text": "You have proficiency in the Perception skill."
+    }
+  },
+  "trait_lucky": {
+    "name": "Lucky",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "rule_bypass",
+        "target": "natural_1_reroll",
+        "value": true,
+        "condition": "on_attack_roll"
+      },
+      {
+        "type": "rule_bypass",
+        "target": "natural_1_reroll",
+        "value": true,
+        "condition": "on_ability_check"
+      },
+      {
+        "type": "rule_bypass",
+        "target": "natural_1_reroll",
+        "value": true,
+        "condition": "on_saving_throw"
+      }
+    ],
+    "lore": {
+      "short_description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.",
+      "full_text": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
+    }
+  },
+  "trait_menacing": {
+    "name": "Menacing",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "proficiency",
+        "target": "skill_intimidation",
+        "value": true
+      }
+    ],
+    "lore": {
+      "short_description": "You gain proficiency in the Intimidation skill.",
+      "full_text": "You gain proficiency in the Intimidation skill."
+    }
+  },
+  "trait_naturally_stealthy": {
+    "name": "Naturally Stealthy",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "rule_bypass",
+        "target": "hide_obscurement_requirement",
+        "condition": "behind_larger_creature",
+        "value": true
+      }
+    ],
+    "lore": {
+      "short_description": "You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.",
+      "full_text": "You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you."
+    }
+  },
+  "trait_natural_illusionist": {
+    "name": "Natural Illusionist",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "spell_grant",
+        "target": "spell_minor_illusion",
+        "spellcasting_ability": "int"
+      }
+    ],
+    "lore": {
+      "short_description": "Vou know the minor illusion cantrip. Intelligence is your spellcasting ability for it.",
+      "full_text": "Vou know the minor illusion cantrip. Intelligence is your spellcasting ability for it."
+    }
+  },
+  "trait_relentless_endurance": {
+    "name": "Relentless Endurance",
+    "is_active": true,
+    "activation_type": "special",
+    "effects": [
+      {
+        "type": "rule_bypass",
+        "target": "drop_to_1_hp_instead_of_0",
+        "value": true,
+        "condition": "reduced_to_0_hp_not_killed_outright"
+      }
+    ],
+    "uses": {
+      "count": 1,
+      "reset": "long_rest"
+    },
+    "lore": {
+      "short_description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead once per long rest.",
+      "full_text": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."
+    }
+  },
+  "trait_savage_attacks": {
+    "name": "Savage Attacks",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "rule_bypass",
+        "target": "extra_critical_hit_damage_die",
+        "value": true,
+        "condition": "on_melee_weapon_critical_hit"
+      }
+    ],
+    "lore": {
+      "short_description": "When you score a critical hit with a melee weapon attack, you roll one of the weapon's damage dice one additional time and add it to the extra damage.",
+      "full_text": "When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit."
+    }
+  },
+  "trait_skill_versatility": {
+    "name": "Skill Versatility",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "proficiency",
+        "target": "skill",
+        "choice": {
+          "count": 2,
+          "category": "skill",
+          "pool": "any_skill"
+        }
+      }
+    ],
+    "lore": {
+      "short_description": "You gain proficiency in two skills of your choice.",
+      "full_text": "You gain proficiency in two skills of your choice."
+    }
+  },
+  "trait_speak_with_small_beasts": {
+    "name": "Speak With Small Beasts",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "rule_bypass",
+        "target": "communicate_beasts_small_tiny",
+        "value": true
+      }
+    ],
+    "lore": {
+      "short_description": "Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts. Forest gnomes love animals and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures as beloved pets.",
+      "full_text": "Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts. Forest gnomes love animals and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures as beloved pets."
+    }
+  },
+  "trait_stonecutting": {
+    "name": "Stonecutting",
+    "effects": [
+      {
+        "type": "proficiency",
+        "target": "skill_history",
+        "value": "expertise",
+        "condition": "origin_of_stonework"
+      }
+    ],
+    "lore": {
+      "short_description": "Add double your proficiency bonus to History checks related to stonework.",
+      "full_text": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus."
+    }
+  },
+  "trait_stout_resilience": {
+    "name": "Stout Resilience",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "advantage",
+        "target": "saving_throw",
+        "condition": "against_poison"
+      },
+      {
+        "type": "resistance",
+        "target": "damage_type_poison",
+        "value": "half_damage"
+      }
+    ],
+    "lore": {
+      "short_description": "You have advantage on saving throws against poison, and you have resistance against poison damage.",
+      "full_text": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+    }
+  },
+  "trait_sunlight_sensitivity": {
+    "name": "Sunlight Sensitivity",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "disadvantage",
+        "target": "attack_roll",
+        "condition": "in_direct_sunlight"
+      },
+      {
+        "type": "disadvantage",
+        "target": "skill_perception",
+        "condition": "in_direct_sunlight_sight"
+      }
+    ],
+    "lore": {
+      "short_description": "You have disadvantage on attack rolls and sight-based Wisdom (Perception) checks in direct sunlight.",
+      "full_text": "You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight."
+    }
+  },
+  "trait_superior_darkvision": {
+    "name": "Superior Darkvision",
+    "is_active": false,
+    "effects": [
+      {
+        "type": "sense",
+        "target": "darkvision",
+        "value": 120
+      }
+    ],
+    "lore": {
+      "short_description": "Your darkvision has a radius of 120 feet.",
+      "full_text": "Your darkvision has a radius of 120 feet."
+    }
+  },
+  "trait_tinker": {
+    "name": "Tinker",
+    "effects": [
+      {
+        "type": "proficiency",
+        "target": "tool_tinkers_tools"
+      }
+    ],
+    "mechanics": {
+      "granted_actions": [
+        "action_craft_tinker_device"
+      ]
+    },
+    "lore": {
+      "short_description": "Craft Tiny clockwork devices using tinker's tools.",
+      "full_text": "Vou have proficiency with artisan's tools (tinker's tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time.\nWhen you create a device, choose one of the following options:",
+      "sections": [
+        {
+          "title": "Clockwork Toy",
+          "body": "This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, dragon, or soldier. When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random direction. It makes noises as appropriate to the creature it represents."
+        },
+        {
+          "title": "Fire Starter",
+          "body": "The device produces a miniature flame, which you can use to light a candle, torch, or campfire. Using the device requires your action."
+        },
+        {
+          "title": "Music Box",
+          "body": "When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song's end or when it is closed."
+        }
+      ]
+    }
+  },
+  "trait_trance": {
+    "name": "Trance",
+    "effects": [
+      {
+        "type": "rule_bypass",
+        "target": "sleep_requirement",
+        "value": true
+      },
+      {
+        "type": "rule_bypass",
+        "target": "long_rest_duration",
+        "value": 4
+      }
+    ],
+    "lore": {
+      "short_description": "You don't need to sleep, and you can finish a long rest in 4 hours.",
+      "full_text": "Elves don't need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is \"trance.\") While meditation, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, you gain the same benefit that a human does from 8 hours of sleep."
+    }
+  }
+}

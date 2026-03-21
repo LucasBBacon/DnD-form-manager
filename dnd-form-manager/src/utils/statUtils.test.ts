@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { calculateModifier, calculateStats } from "./statUtils";
-import type { ActiveEffect, MergedRaceData, StatsRecord } from "./types";
+import type { ActiveEffect, MergedRaceData, StatsRecord } from "../types/types";
 
 describe("calculateModifier", () => {
   it("correctly calculates 5E ability modifiers", () => {
